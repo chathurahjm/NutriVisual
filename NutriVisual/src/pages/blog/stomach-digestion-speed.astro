@@ -1,0 +1,494 @@
+---
+import '../../styles/global.css';
+
+const title = "The Stomach Timeline: How Fast Do Different Foods Actually Digest? - NutriVisual";
+const description = "Discover how fast liquids, simple carbs, complex carbs, proteins, and healthy fats digest in the stomach, and how to structure meals for long-lasting energy.";
+const canonicalUrl = "https://nutrivisual.com/blog/stomach-digestion-speed/";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+
+    <!-- Early Theme Script to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/blog/stomach-digestion-speed/" style="color: var(--accent-green); font-weight: 600;">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem; max-width: 800px; line-height: 1.7;">
+      <article>
+        <!-- Breadcrumbs -->
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <span style="color: var(--text-muted);">Blog</span> / <span style="color: var(--accent-green);">Stomach Digestion Speed</span>
+        </div>
+
+        <h1 style="font-size: 2.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); line-height: 1.2;">
+          The Stomach Timeline: How Fast Do Different Foods Actually Digest?
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">
+          Published on July 22, 2026 • Written by John & Mary • 4 min read
+        </p>
+
+        <div style="font-size: 1.05rem; color: var(--text-main); display: flex; flex-direction: column; gap: 1.5rem;">
+          <p>
+            Have you ever wondered why you can eat a large bowl of white pasta and feel starving just an hour later, while a small handful of almonds keeps you full all afternoon?
+          </p>
+
+          <p>
+            The answer lies in <strong>gastric emptying</strong>—the rate at which different foods leave your stomach and enter the small intestine. By understanding the digestion timeline of what you eat, you can design meals that provide sustained, long-lasting energy without the midday crash.
+          </p>
+
+          <p>
+            Here is the exact stomach timeline for how different macronutrients digest.
+          </p>
+
+          <!-- Interactive Stomach Digestion Race Widget -->
+          <div class="glass-card" style="padding: 2rem; margin: 1.5rem 0; background-color: var(--bg-card);">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; text-align: center;">
+              🏁 Stomach Digestion Race Visualizer
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; text-align: center; margin-bottom: 1.5rem;">
+              Watch how fast different food groups leave your stomach in real-time. (Master Clock represents elapsed digestion time).
+            </p>
+
+            <!-- Master Timer Controls -->
+            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Master Elapsed Time:</span>
+                  <span id="race-master-time" style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 700; color: var(--accent-green);">00:00:00</span>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">
+                  ⏱️ Speed: 1 Second on Screen = 1 Minute of Digestion
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button id="race-control-btn" style="background-color: var(--accent-green); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;">
+                  Pause Race
+                </button>
+                <button id="race-reset-btn" style="background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;">
+                  Restart Race
+                </button>
+              </div>
+            </div>
+
+            <!-- Stomachs Grid Layout -->
+            <div class="race-grid">
+              <!-- Liquid -->
+              <div class="race-track" id="track-liquid">
+                <div class="track-header">
+                  <span class="track-icon">💧</span>
+                  <div class="track-title">Liquids</div>
+                  <div class="track-subtitle">Water / Juice</div>
+                </div>
+                <div class="stomach-graphic-container">
+                  <svg viewBox="0 0 100 100" class="stomach-svg">
+                    <path d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" fill="none" stroke="var(--border-color)" stroke-width="4" />
+                    <path class="stomach-fill-path" data-time="15" data-color="rgba(8, 145, 178, 0.45)" d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" />
+                  </svg>
+                  <div class="fullness-overlay">100%</div>
+                </div>
+                <div class="track-status text-liquid">Empty in 15s</div>
+              </div>
+
+              <!-- Simple Carb -->
+              <div class="race-track" id="track-simple-carb">
+                <div class="track-header">
+                  <span class="track-icon">🍞</span>
+                  <div class="track-title">Simple Carbs</div>
+                  <div class="track-subtitle">Donut / White Bread</div>
+                </div>
+                <div class="stomach-graphic-container">
+                  <svg viewBox="0 0 100 100" class="stomach-svg">
+                    <path d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" fill="none" stroke="var(--border-color)" stroke-width="4" />
+                    <path class="stomach-fill-path" data-time="45" data-color="rgba(217, 119, 6, 0.45)" d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" />
+                  </svg>
+                  <div class="fullness-overlay">100%</div>
+                </div>
+                <div class="track-status text-simple">Empty in 45s</div>
+              </div>
+
+              <!-- Complex Carb -->
+              <div class="race-track" id="track-complex-carb">
+                <div class="track-header">
+                  <span class="track-icon">🌾</span>
+                  <div class="track-title">Complex Carbs</div>
+                  <div class="track-subtitle">Quinoa / Oats</div>
+                </div>
+                <div class="stomach-graphic-container">
+                  <svg viewBox="0 0 100 100" class="stomach-svg">
+                    <path d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" fill="none" stroke="var(--border-color)" stroke-width="4" />
+                    <path class="stomach-fill-path" data-time="105" data-color="rgba(16, 185, 129, 0.45)" d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" />
+                  </svg>
+                  <div class="fullness-overlay">100%</div>
+                </div>
+                <div class="track-status text-complex">Empty in 1m 45s</div>
+              </div>
+
+              <!-- Protein -->
+              <div class="race-track" id="track-protein">
+                <div class="track-header">
+                  <span class="track-icon">🥚</span>
+                  <div class="track-title">Protein</div>
+                  <div class="track-subtitle">Chicken / Eggs</div>
+                </div>
+                <div class="stomach-graphic-container">
+                  <svg viewBox="0 0 100 100" class="stomach-svg">
+                    <path d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" fill="none" stroke="var(--border-color)" stroke-width="4" />
+                    <path class="stomach-fill-path" data-time="150" data-color="rgba(245, 158, 11, 0.45)" d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" />
+                  </svg>
+                  <div class="fullness-overlay">100%</div>
+                </div>
+                <div class="track-status text-protein">Empty in 2m 30s</div>
+              </div>
+
+              <!-- Fat -->
+              <div class="race-track" id="track-fat">
+                <div class="track-header">
+                  <span class="track-icon">🥑</span>
+                  <div class="track-title">Healthy Fats</div>
+                  <div class="track-subtitle">Avocado / Nuts</div>
+                </div>
+                <div class="stomach-graphic-container">
+                  <svg viewBox="0 0 100 100" class="stomach-svg">
+                    <path d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" fill="none" stroke="var(--border-color)" stroke-width="4" />
+                    <path class="stomach-fill-path" data-time="240" data-color="rgba(16, 185, 129, 0.55)" d="M50 15 C20 15, 10 40, 10 65 C10 85, 35 90, 50 90 C70 90, 90 75, 90 55 C90 35, 75 15, 50 15 Z" />
+                  </svg>
+                  <div class="fullness-overlay">100%</div>
+                </div>
+                <div class="track-status text-fat">Empty in 4m</div>
+              </div>
+            </div>
+          </div>
+
+          <style is:inline>
+            .race-grid {
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              gap: 1rem;
+            }
+            .race-track {
+              background: var(--bg-surface);
+              border: 1px solid var(--border-color);
+              border-radius: 12px;
+              padding: 1rem 0.75rem;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-between;
+              min-height: 270px;
+              box-shadow: var(--shadow-card);
+              transition: all 0.3s ease;
+            }
+            .track-header {
+              margin-bottom: 0.5rem;
+            }
+            .track-icon {
+              font-size: 1.5rem;
+              display: block;
+              margin-bottom: 0.25rem;
+            }
+            .track-title {
+              font-weight: 700;
+              font-size: 0.85rem;
+              color: var(--text-main);
+              line-height: 1.2;
+            }
+            .track-subtitle {
+              font-size: 0.7rem;
+              color: var(--text-muted);
+            }
+            .stomach-graphic-container {
+              position: relative;
+              width: 80px;
+              height: 80px;
+              margin: 0.75rem 0;
+            }
+            .stomach-svg {
+              width: 100%;
+              height: 100%;
+            }
+            .fullness-overlay {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--text-main);
+              pointer-events: none;
+              font-family: var(--font-mono);
+            }
+            .track-status {
+              font-size: 0.75rem;
+              font-weight: 700;
+              margin-top: 0.5rem;
+            }
+            .text-liquid { color: var(--accent-cyan); }
+            .text-simple { color: var(--accent-amber); }
+            .text-complex { color: var(--accent-green); }
+            .text-protein { color: #f59e0b; }
+            .text-fat { color: var(--accent-green); }
+
+            @media (max-width: 768px) {
+              .race-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+              }
+              #track-fat {
+                grid-column: span 2;
+              }
+            }
+            @media (max-width: 480px) {
+              .race-grid {
+                grid-template-columns: 1fr;
+              }
+              #track-fat {
+                grid-column: span 1;
+              }
+            }
+          </style>
+
+          <script is:inline>
+            (function() {
+              const masterTimeEl = document.getElementById('race-master-time');
+              const controlBtn = document.getElementById('race-control-btn');
+              const resetBtn = document.getElementById('race-reset-btn');
+              const tracks = document.querySelectorAll('.race-track');
+
+              let activeInterval = null;
+              let elapsedMinutes = 0;
+              const maxMinutes = 240; // Max time is 4 hours (240 mins)
+              let isRunning = false;
+
+              function initTracks() {
+                tracks.forEach(track => {
+                  const path = track.querySelector('.stomach-fill-path');
+                  const overlay = track.querySelector('.fullness-overlay');
+                  const color = path.getAttribute('data-color');
+                  path.setAttribute('fill', color);
+                  path.style.opacity = '1';
+                  path.style.transition = 'opacity 1s linear';
+                  overlay.textContent = '100%';
+                  
+                  const targetTime = parseInt(path.getAttribute('data-time'));
+                  const statusText = track.querySelector('.track-status');
+                  if (targetTime < 60) {
+                    statusText.textContent = `Empty in ${targetTime}s`;
+                  } else {
+                    const mins = targetTime;
+                    const hrs = Math.floor(mins / 60);
+                    const remMins = mins % 60;
+                    statusText.textContent = `Empty in ${hrs}m ${remMins > 0 ? remMins + 's' : ''}`;
+                  }
+                  statusText.style.color = '';
+                });
+              }
+
+              function resetRace() {
+                stopRace();
+                elapsedMinutes = 0;
+                masterTimeEl.textContent = '00:00:00';
+                initTracks();
+                startRace();
+              }
+
+              function stopRace() {
+                clearInterval(activeInterval);
+                isRunning = false;
+                controlBtn.textContent = 'Resume Race';
+                controlBtn.style.backgroundColor = 'var(--accent-green)';
+              }
+
+              function startRace() {
+                isRunning = true;
+                controlBtn.textContent = 'Pause Race';
+                controlBtn.style.backgroundColor = 'var(--accent-amber)';
+
+                activeInterval = setInterval(() => {
+                  elapsedMinutes += 1;
+
+                  // Update master clock: show minutes mapped as seconds
+                  const mins = elapsedMinutes;
+                  const displayMins = Math.floor(mins / 60);
+                  const displaySecs = mins % 60;
+                  masterTimeEl.textContent = `00:${String(displayMins).padStart(2, '0')}:${String(displaySecs).padStart(2, '0')}`;
+
+                  // Update each track stomach fill level
+                  tracks.forEach(track => {
+                    const path = track.querySelector('.stomach-fill-path');
+                    const overlay = track.querySelector('.fullness-overlay');
+                    const targetTime = parseInt(path.getAttribute('data-time'));
+                    const statusText = track.querySelector('.track-status');
+
+                    const pct = Math.max(0, 100 - (elapsedMinutes / targetTime) * 100);
+                    overlay.textContent = `${Math.round(pct)}%`;
+                    path.style.opacity = `${pct / 100}`;
+
+                    if (pct === 0) {
+                      statusText.textContent = 'Stomach Empty';
+                      statusText.style.color = '#ef4444';
+                    } else if (pct < 15) {
+                      statusText.textContent = 'Almost Empty / Hungry';
+                      statusText.style.color = '#ef4444';
+                    } else {
+                      statusText.textContent = 'Digesting...';
+                      statusText.style.color = '#10b981';
+                    }
+                  });
+
+                  if (elapsedMinutes >= maxMinutes) {
+                    stopRace();
+                    controlBtn.textContent = 'Restart Race';
+                  }
+                }, 1000); // 1 minute of digestion = exactly 1000ms (1 second on screen)
+              }
+
+              controlBtn.addEventListener('click', () => {
+                if (isRunning) {
+                  stopRace();
+                } else {
+                  if (elapsedMinutes >= maxMinutes) {
+                    resetRace();
+                  } else {
+                    startRace();
+                  }
+                }
+              });
+
+              resetBtn.addEventListener('click', resetRace);
+
+              // Auto-start on load
+              resetRace();
+            })();
+          </script>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1rem 0;" />
+
+          <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;">1. Liquids (10 to 20 Minutes)</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Whether it is water, black coffee, fruit juice, or a protein shake, liquids require virtually no mechanical breakdown. They pass through the pyloric sphincter (the valve at the bottom of the stomach) almost immediately.
+            </p>
+            <p style="color: var(--accent-amber); font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem; margin-bottom: 0;">
+              ⚠️ The Trap: Drinking fruit juices or sugary drinks causes a rapid spike in blood glucose because there is no solid food matrix or fiber to slow down absorption.
+            </p>
+          </div>
+
+          <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;">2. Simple Carbohydrates (30 to 60 Minutes)</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Simple carbs like white bread, crackers, white rice, and sugary pastries are made of simple sugars that break down rapidly. Amylase enzymes in your saliva begin digesting them before they even reach your stomach.
+            </p>
+            <p style="color: var(--accent-amber); font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem; margin-bottom: 0;">
+              ⚠️ The Result: They empty from the stomach in under an hour, leading to a quick insulin response and a subsequent drop in blood sugar (the classic "sugar crash").
+            </p>
+          </div>
+
+          <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;">3. Complex Carbohydrates (1.5 to 2 Hours)</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Oatmeal, sweet potatoes, quinoa, and vegetables contain complex starch structures and fiber. Fiber cannot be digested by human enzymes, creating a gel-like substance in the stomach that slows down the release of nutrients.
+            </p>
+          </div>
+
+          <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;">4. Proteins (2 to 3 Hours)</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Protein-rich foods like eggs, chicken, fish, and tofu require significant stomach acid (hydrochloric acid) and pepsin enzymes to unravel and break down their dense peptide chains. This mechanical and chemical effort keeps protein in the stomach much longer.
+            </p>
+          </div>
+
+          <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;">5. Healthy Fats (3 to 4+ Hours)</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+              Fats are the ultimate digestion anchors. When fats enter the duodenum (the beginning of the small intestine), they trigger the release of a hormone called <strong>Cholecystokinin (CCK)</strong>. CCK signals the stomach to slow down its contractions, actively delaying gastric emptying to allow proper fat emulsification.
+            </p>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1rem 0;" />
+
+          <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin-top: 0.5rem;">How to Apply This to Your Daily Nutrition</h3>
+          <p>
+            To maintain stable cognitive energy throughout the workday, aim to combine elements from different parts of the timeline:
+          </p>
+          <ul>
+            <li><strong>Instead of:</strong> Just oatmeal (digests in ~2 hours).</li>
+            <li><strong>Try:</strong> Oatmeal topped with pumpkin seeds and chia seeds (complex carbs + healthy fats + protein). This extends the digestion window to 3.5+ hours, giving you a steady drip of glucose instead of a spike and crash.</li>
+          </ul>
+
+          <div style="background-color: var(--accent-green-glow); border: 1px solid var(--accent-green); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; text-align: center;">
+            <h4 style="font-weight: 700; color: var(--accent-green); font-size: 1.1rem; margin-bottom: 0.5rem;">📊 Visualize Your Swaps</h4>
+            <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 1rem;">
+              Compare digestion factors, portions, and total calories in real-time.
+            </p>
+            <a href="/" style="display: inline-block; background-color: var(--accent-green); color: white; padding: 0.6rem 1.25rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem;">
+              Open NutriVisual Engine →
+            </a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-color); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      <div class="container">
+        <p>© 2026 NutriVisual. All rights reserved. <a href="/privacy/" style="color: var(--accent-green);">Privacy Policy</a> | <a href="/terms/" style="color: var(--accent-green);">Terms</a> | <a href="/about/" style="color: var(--accent-green);">About</a> | <a href="/contact/" style="color: var(--accent-green);">Contact</a></p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      function initThemeToggle() {
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+        const text = document.getElementById('theme-text');
+        function syncUI(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          if (icon && text) {
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            text.textContent = theme === 'light' ? 'Light' : 'Dark';
+          }
+        }
+        syncUI(localStorage.getItem('theme') || 'light');
+        if (btn) btn.onclick = () => syncUI(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      }
+      function initMobileMenu() { const menuBtn = document.getElementById("mobile-menu-btn"); const nav = document.getElementById("header-nav"); if (menuBtn && nav) { menuBtn.onclick = () => { nav.classList.toggle("open"); menuBtn.textContent = nav.classList.contains('open') ? '✕' : '☰'; }; } } initThemeToggle(); initMobileMenu();
+    </script>
+  </body>
+</html>

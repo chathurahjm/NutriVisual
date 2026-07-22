@@ -1,0 +1,218 @@
+---
+import '../styles/global.css';
+import NutriVisualApp from '../components/NutriVisualApp.jsx';
+
+const title = "NutriVisual - Visual Nutrition & Longevity Reference Engine";
+const description = "Explore lab-tested macro and micro-nutrient profiles for popular foods with dynamic portion sliders, SVG macro charts, and side-by-side food comparisons.";
+const canonicalUrl = "https://nutrivisual.com/";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "NutriVisual",
+        "url": "https://nutrivisual.com",
+        "description": "Visual Nutrition and Longevity Reference Engine",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All"
+      }
+    <!-- Early Theme Script to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/blog/stomach-digestion-speed/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/disclaimer/">Disclaimer</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; font-weight: 600; box-shadow: var(--shadow-card); transition: all 0.2s ease;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+      {/* Hero Header */}
+      <div style="text-align: center; max-width: 750px; margin: 0 auto 3rem auto;">
+        <h1 class="hero-title">
+          Visual Nutrition & <span style="color: var(--accent-green);">Longevity</span> Reference Engine
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">
+          Instant lab-tested macro breakdowns, portion scaling, and essential micronutrient density metrics for health, performance, and longevity.
+        </p>
+      </div>
+
+      {/* Astro Island: Interactive NutriVisual React App */}
+      <NutriVisualApp client:load />
+
+      {/* Pre-rendered Longevity Science Articles */}
+      <section id="science" style="margin-top: 6rem;">
+        <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+          🧪 Essential Longevity Micronutrients
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <div class="glass-card" style="padding: 1.75rem;">
+            <div style="fontSize: 1.8rem; margin-bottom: 0.5rem;">🥑</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--accent-green); margin-bottom: 0.75rem;">
+              Magnesium & Cardiovascular Longevity
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Magnesium acts as a co-factor in over 300 enzymatic reactions, supporting arterial flexibility, ATP cellular energy production, and deep sleep architecture.
+            </p>
+          </div>
+
+          <div class="glass-card" style="padding: 1.75rem;">
+            <div style="fontSize: 1.8rem; margin-bottom: 0.5rem;">🐟</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--accent-green); margin-bottom: 0.75rem;">
+              Omega-3 Index (EPA & DHA)
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Long-chain omega-3 fatty acids from wild seafood decrease systemic inflammatory biomarkers (hs-CRP) and preserve cognitive brain volume during aging.
+            </p>
+          </div>
+
+          <div class="glass-card" style="padding: 1.75rem;">
+            <div style="fontSize: 1.8rem; margin-bottom: 0.5rem;">🥦</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--accent-green); margin-bottom: 0.75rem;">
+              Sulforaphane & Nrf2 Activation
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Cruciferous vegetables release sulforaphane, a powerful phytochemical compound that triggers Phase-2 liver detoxification enzymes and protects DNA from oxidative stress.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Science Articles (Blog) -->
+      <section id="blog" style="margin-top: 6rem; margin-bottom: 4rem;">
+        <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+          📚 Latest Nutrition Science Insights
+        </h2>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+          <div class="glass-card" style="padding: 2rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between;">
+            <div style="flex: 1 1 450px;">
+              <span style="display: inline-block; background-color: var(--accent-green-glow); color: var(--accent-green); font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                Gastric Emptying & Satiety
+              </span>
+              <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
+                The Stomach Timeline: How Fast Do Different Foods Actually Digest?
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                Learn how liquids, simple carbs, complex carbs, proteins, and healthy fats digest in your stomach. Try our interactive visualizer showing real-time emptying speeds to design meals for sustained, all-day cognitive energy.
+              </p>
+              <a href="/blog/stomach-digestion-speed/" style="display: inline-block; background-color: var(--accent-green); color: white; padding: 0.65rem 1.35rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: opacity 0.2s ease;">
+                Read Article & Run Simulator →
+              </a>
+            </div>
+            <div style="flex: 1 1 200px; display: flex; justify-content: center; align-items: center;">
+              <!-- Mini Graphic of Stomachs -->
+              <div style="background: var(--bg-surface); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border-color); width: 100%; max-width: 260px; text-align: center;">
+                <span style="font-size: 3rem;">🏁</span>
+                <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-main);">Digestion Speed Race</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Interactive Simulator Included</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-color); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      <div class="container">
+        <p style="margin-bottom: 0.75rem;">© 2026 NutriVisual. Visual nutrition and longevity reference engine.</p>
+        <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="/about/" style="color: var(--accent-green); text-decoration: none;">About Us</a>
+          <a href="/privacy/" style="color: var(--accent-green); text-decoration: none;">Privacy Policy</a>
+          <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>
+          <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
+          <a href="/blog/stomach-digestion-speed/" style="color: var(--accent-green); text-decoration: none;">Blog</a>
+          <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      function initThemeToggle() {
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+        const text = document.getElementById('theme-text');
+
+        function syncUI(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          if (icon && text) {
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            text.textContent = theme === 'light' ? 'Light' : 'Dark';
+          }
+        }
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        syncUI(currentTheme);
+
+        if (btn) {
+          btn.onclick = () => {
+            const now = document.documentElement.getAttribute('data-theme') || 'light';
+            const next = now === 'dark' ? 'light' : 'dark';
+            syncUI(next);
+          };
+        }
+      }
+
+      function initMobileMenu() {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('header-nav');
+        if (menuBtn && nav) {
+          menuBtn.onclick = () => {
+            nav.classList.toggle('open');
+            menuBtn.textContent = nav.classList.contains('open') ? '✕' : '☰';
+          };
+        }
+      }
+
+      initThemeToggle();
+      initMobileMenu();
+    </script>
+  </body>
+</html>

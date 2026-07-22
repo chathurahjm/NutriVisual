@@ -1,0 +1,5726 @@
+[
+  {
+    "id": "wild-atlantic-salmon",
+    "name": "Wild Atlantic Salmon",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 206,
+    "macros": {
+      "fat": 12.3,
+      "carbs": 0,
+      "protein": 22.1
+    },
+    "micros": {
+      "potassium": "433 mg",
+      "magnesium": "108 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Omega-3 Rich",
+      "Brain Health"
+    ]
+  },
+  {
+    "id": "grilled-chicken-breast",
+    "name": "Grilled Chicken Breast",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 165,
+    "macros": {
+      "fat": 3.6,
+      "carbs": 0,
+      "protein": 31
+    },
+    "micros": {
+      "potassium": "347 mg",
+      "magnesium": "145 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Lean Protein",
+      "Zero Carbs",
+      "Muscle Build"
+    ]
+  },
+  {
+    "id": "grass-fed-beef-ribeye",
+    "name": "Grass-Fed Beef Ribeye",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 290,
+    "macros": {
+      "fat": 22,
+      "carbs": 0,
+      "protein": 24
+    },
+    "micros": {
+      "potassium": "609 mg",
+      "magnesium": "116 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Iron Rich",
+      "Keto"
+    ]
+  },
+  {
+    "id": "turkey-breast-fillet",
+    "name": "Turkey Breast Fillet",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 135,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 29
+    },
+    "micros": {
+      "potassium": "284 mg",
+      "magnesium": "137 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Ultra Lean",
+      "High Protein"
+    ]
+  },
+  {
+    "id": "pan-seared-pacific-cod",
+    "name": "Pan-Seared Pacific Cod",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 89,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 20.4
+    },
+    "micros": {
+      "potassium": "187 mg",
+      "magnesium": "101 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lean Fish"
+    ]
+  },
+  {
+    "id": "yellowfin-tuna-steak",
+    "name": "Yellowfin Tuna Steak",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 130,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 29.9
+    },
+    "micros": {
+      "potassium": "273 mg",
+      "magnesium": "141 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Selenium"
+    ]
+  },
+  {
+    "id": "organic-tofu-firm",
+    "name": "Organic Tofu (Firm)",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 76,
+    "macros": {
+      "fat": 4.8,
+      "carbs": 1.9,
+      "protein": 8.1
+    },
+    "micros": {
+      "potassium": "160 mg",
+      "magnesium": "49 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Plant Protein",
+      "Isoflavones"
+    ]
+  },
+  {
+    "id": "fermented-tempeh",
+    "name": "Fermented Tempeh",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 193,
+    "macros": {
+      "fat": 10.8,
+      "carbs": 9.4,
+      "protein": 19
+    },
+    "micros": {
+      "potassium": "405 mg",
+      "magnesium": "95 mg",
+      "fiber": "3.8 g"
+    },
+    "tags": [
+      "Probiotic",
+      "Plant Protein"
+    ]
+  },
+  {
+    "id": "whey-protein-isolate",
+    "name": "Whey Protein Isolate",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 370,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 1,
+      "protein": 90
+    },
+    "micros": {
+      "potassium": "777 mg",
+      "magnesium": "393 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Fast Digesting",
+      "BCAAs"
+    ]
+  },
+  {
+    "id": "sliced-avocado",
+    "name": "Sliced Avocado",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 160,
+    "macros": {
+      "fat": 14.7,
+      "carbs": 8.5,
+      "protein": 2
+    },
+    "micros": {
+      "potassium": "336 mg",
+      "magnesium": "23 mg",
+      "fiber": "3.4 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "High Potassium",
+      "Fiber"
+    ]
+  },
+  {
+    "id": "extra-virgin-olive-oil",
+    "name": "Extra Virgin Olive Oil",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 884,
+    "macros": {
+      "fat": 100,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1856 mg",
+      "magnesium": "15 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Polyphenols",
+      "Heart Health",
+      "Oleic Acid"
+    ]
+  },
+  {
+    "id": "macadamia-nuts",
+    "name": "Macadamia Nuts",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 718,
+    "macros": {
+      "fat": 75.8,
+      "carbs": 13.8,
+      "protein": 7.9
+    },
+    "micros": {
+      "potassium": "1508 mg",
+      "magnesium": "48 mg",
+      "fiber": "5.5 g"
+    },
+    "tags": [
+      "Keto Favorite",
+      "Monounsaturated"
+    ]
+  },
+  {
+    "id": "raw-walnuts",
+    "name": "Raw Walnuts",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 654,
+    "macros": {
+      "fat": 65.2,
+      "carbs": 13.7,
+      "protein": 15.2
+    },
+    "micros": {
+      "potassium": "1373 mg",
+      "magnesium": "79 mg",
+      "fiber": "5.5 g"
+    },
+    "tags": [
+      "ALA Omega-3",
+      "Brain Health"
+    ]
+  },
+  {
+    "id": "organic-chia-seeds",
+    "name": "Organic Chia Seeds",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 486,
+    "macros": {
+      "fat": 30.7,
+      "carbs": 42.1,
+      "protein": 16.5
+    },
+    "micros": {
+      "potassium": "1021 mg",
+      "magnesium": "84 mg",
+      "fiber": "16.8 g"
+    },
+    "tags": [
+      "High Fiber",
+      "Omega-3",
+      "Calcium"
+    ]
+  },
+  {
+    "id": "flaxseeds-ground",
+    "name": "Flaxseeds (Ground)",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 534,
+    "macros": {
+      "fat": 42.2,
+      "carbs": 28.9,
+      "protein": 18.3
+    },
+    "micros": {
+      "potassium": "1121 mg",
+      "magnesium": "92 mg",
+      "fiber": "11.6 g"
+    },
+    "tags": [
+      "Lignans",
+      "Fiber 27g"
+    ]
+  },
+  {
+    "id": "grass-fed-ghee",
+    "name": "Grass-Fed Ghee",
+    "category": "Healthy Fats",
+    "image": "/images/grass-fed-ghee.png",
+    "servingBaseGrams": 100,
+    "calories": 897,
+    "macros": {
+      "fat": 99.5,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1884 mg",
+      "magnesium": "15 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Butyrate",
+      "High Smoke Point"
+    ]
+  },
+  {
+    "id": "mct-oil-c8",
+    "name": "MCT Oil (C8)",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 860,
+    "macros": {
+      "fat": 100,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1806 mg",
+      "magnesium": "15 mg",
+      "fiber": "0.0 g"
+    },
+    "tags": [
+      "Fast Ketones",
+      "Brain Energy"
+    ]
+  },
+  {
+    "id": "hemp-seeds",
+    "name": "Hemp Seeds",
+    "category": "Healthy Fats",
+    "image": "/images/hemp-seeds.png",
+    "servingBaseGrams": 100,
+    "calories": 553,
+    "macros": {
+      "fat": 48.8,
+      "carbs": 8.7,
+      "protein": 31.6
+    },
+    "micros": {
+      "potassium": "1161 mg",
+      "magnesium": "148 mg",
+      "fiber": "3.5 g"
+    },
+    "tags": [
+      "Complete Protein",
+      "GLA Fatty Acids"
+    ]
+  },
+  {
+    "id": "wild-blueberries",
+    "name": "Wild Blueberries",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 57,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 14.5,
+      "protein": 0.7
+    },
+    "micros": {
+      "potassium": "120 mg",
+      "magnesium": "18 mg",
+      "fiber": "5.8 g"
+    },
+    "tags": [
+      "Anthocyanins",
+      "Cognitive Longevity"
+    ]
+  },
+  {
+    "id": "85-cocoa-dark-chocolate",
+    "name": "85% Cocoa Dark Chocolate",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 598,
+    "macros": {
+      "fat": 42.6,
+      "carbs": 36.3,
+      "protein": 7.8
+    },
+    "micros": {
+      "potassium": "1256 mg",
+      "magnesium": "48 mg",
+      "fiber": "14.5 g"
+    },
+    "tags": [
+      "Flavanols",
+      "Magnesium Bomb"
+    ]
+  },
+  {
+    "id": "organic-spirulina-powder",
+    "name": "Organic Spirulina Powder",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 290,
+    "macros": {
+      "fat": 7.7,
+      "carbs": 23.9,
+      "protein": 57.5
+    },
+    "micros": {
+      "potassium": "609 mg",
+      "magnesium": "257 mg",
+      "fiber": "9.6 g"
+    },
+    "tags": [
+      "Phycocyanin",
+      "Detox Support"
+    ]
+  },
+  {
+    "id": "matcha-green-tea-powder",
+    "name": "Matcha Green Tea Powder",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 300,
+    "macros": {
+      "fat": 1,
+      "carbs": 38,
+      "protein": 30
+    },
+    "micros": {
+      "potassium": "630 mg",
+      "magnesium": "141 mg",
+      "fiber": "15.2 g"
+    },
+    "tags": [
+      "EGCG",
+      "L-Theanine",
+      "Focus"
+    ]
+  },
+  {
+    "id": "turmeric-root-curcumin",
+    "name": "Turmeric Root (Curcumin)",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 312,
+    "macros": {
+      "fat": 1,
+      "carbs": 65,
+      "protein": 8
+    },
+    "micros": {
+      "potassium": "655 mg",
+      "magnesium": "49 mg",
+      "fiber": "26 g"
+    },
+    "tags": [
+      "Curcumin",
+      "Anti-Inflammatory"
+    ]
+  },
+  {
+    "id": "fresh-ginger-root",
+    "name": "Fresh Ginger Root",
+    "category": "Superfoods",
+    "image": "/images/ginger-root.png",
+    "servingBaseGrams": 100,
+    "calories": 80,
+    "macros": {
+      "fat": 0.8,
+      "carbs": 17.8,
+      "protein": 1.8
+    },
+    "micros": {
+      "potassium": "168 mg",
+      "magnesium": "23 mg",
+      "fiber": "7.1 g"
+    },
+    "tags": [
+      "Gingerols",
+      "Gut Digestion"
+    ]
+  },
+  {
+    "id": "acai-berry-puree",
+    "name": "Acai Berry Puree",
+    "category": "Superfoods",
+    "image": "/images/acai-puree.png",
+    "servingBaseGrams": 100,
+    "calories": 70,
+    "macros": {
+      "fat": 5,
+      "carbs": 4,
+      "protein": 1
+    },
+    "micros": {
+      "potassium": "147 mg",
+      "magnesium": "19 mg",
+      "fiber": "1.6 g"
+    },
+    "tags": [
+      "Polyphenols",
+      "Low Sugar"
+    ]
+  },
+  {
+    "id": "goji-berries-dried",
+    "name": "Goji Berries (Dried)",
+    "category": "Superfoods",
+    "image": "/images/goji-berries.png",
+    "servingBaseGrams": 100,
+    "calories": 349,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 77,
+      "protein": 14
+    },
+    "micros": {
+      "potassium": "733 mg",
+      "magnesium": "74 mg",
+      "fiber": "30.8 g"
+    },
+    "tags": [
+      "Zeaxanthin",
+      "Eye Health"
+    ]
+  },
+  {
+    "id": "steamed-organic-broccoli",
+    "name": "Steamed Organic Broccoli",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 35,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7.2,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "74 mg",
+      "magnesium": "25 mg",
+      "fiber": "2.9 g"
+    },
+    "tags": [
+      "Sulforaphane",
+      "Vitamin K"
+    ]
+  },
+  {
+    "id": "baby-spinach-leaves",
+    "name": "Baby Spinach Leaves",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 23,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.6,
+      "protein": 2.9
+    },
+    "micros": {
+      "potassium": "48 mg",
+      "magnesium": "27 mg",
+      "fiber": "1.4 g"
+    },
+    "tags": [
+      "Lutein",
+      "Magnesium",
+      "Folate"
+    ]
+  },
+  {
+    "id": "curly-kale",
+    "name": "Curly Kale",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 49,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 8.8,
+      "protein": 4.3
+    },
+    "micros": {
+      "potassium": "103 mg",
+      "magnesium": "33 mg",
+      "fiber": "3.5 g"
+    },
+    "tags": [
+      "Vitamin C",
+      "Glucosinolates"
+    ]
+  },
+  {
+    "id": "grilled-asparagus",
+    "name": "Grilled Asparagus",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 53,
+    "macros": {
+      "fat": 3.5,
+      "carbs": 4.1,
+      "protein": 2.3
+    },
+    "micros": {
+      "potassium": "111 mg",
+      "magnesium": "25 mg",
+      "fiber": "1.6 g"
+    },
+    "tags": [
+      "Glutathione",
+      "Prebiotic"
+    ]
+  },
+  {
+    "id": "cauliflower-florets",
+    "name": "Cauliflower Florets",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 25,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 5,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "53 mg",
+      "magnesium": "23 mg",
+      "fiber": "2 g"
+    },
+    "tags": [
+      "Choline",
+      "Low Carb"
+    ]
+  },
+  {
+    "id": "roasted-brussels-sprouts",
+    "name": "Roasted Brussels Sprouts",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1438118991616-0e5d0337c7e5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 43,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 9,
+      "protein": 3.4
+    },
+    "micros": {
+      "potassium": "90 mg",
+      "magnesium": "29 mg",
+      "fiber": "3.6 g"
+    },
+    "tags": [
+      "Fiber 3.8g",
+      "Vitamin C"
+    ]
+  },
+  {
+    "id": "fresh-garlic-cloves",
+    "name": "Fresh Garlic Cloves",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 149,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 33,
+      "protein": 6.4
+    },
+    "micros": {
+      "potassium": "313 mg",
+      "magnesium": "42 mg",
+      "fiber": "13.2 g"
+    },
+    "tags": [
+      "Allicin",
+      "Immune Boost"
+    ]
+  },
+  {
+    "id": "shiitake-mushrooms",
+    "name": "Shiitake Mushrooms",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 34,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6.8,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "71 mg",
+      "magnesium": "24 mg",
+      "fiber": "2.7 g"
+    },
+    "tags": [
+      "Beta-Glucans",
+      "Ergothioneine"
+    ]
+  },
+  {
+    "id": "wild-caught-atlantic-salmon-vol-1",
+    "name": "Wild-Caught Atlantic Salmon Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 189,
+    "macros": {
+      "fat": 10.5,
+      "carbs": 0,
+      "protein": 23.7
+    },
+    "micros": {
+      "potassium": "340 mg",
+      "magnesium": "93 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-chicken-breast-vol-1",
+    "name": "Organic Chicken Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 143,
+    "macros": {
+      "fat": 3.3,
+      "carbs": 0,
+      "protein": 28.2
+    },
+    "micros": {
+      "potassium": "257 mg",
+      "magnesium": "109 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "grass-fed-beef-vol-1",
+    "name": "Grass-Fed Beef Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 323,
+    "macros": {
+      "fat": 25.1,
+      "carbs": 0,
+      "protein": 24.2
+    },
+    "micros": {
+      "potassium": "581 mg",
+      "magnesium": "95 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-turkey-breast-vol-1",
+    "name": "Organic Turkey Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 135,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 31.7
+    },
+    "micros": {
+      "potassium": "243 mg",
+      "magnesium": "121 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-caught-cod-fillet-vol-1",
+    "name": "Wild-Caught Cod Fillet Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 84,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 18.8
+    },
+    "micros": {
+      "potassium": "151 mg",
+      "magnesium": "76 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-caught-tuna-vol-1",
+    "name": "Wild-Caught Tuna Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 121,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 28.3
+    },
+    "micros": {
+      "potassium": "218 mg",
+      "magnesium": "109 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-tofu-vol-1",
+    "name": "Organic Tofu Vol.1",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 79,
+    "macros": {
+      "fat": 4.2,
+      "carbs": 2.1,
+      "protein": 8.2
+    },
+    "micros": {
+      "potassium": "142 mg",
+      "magnesium": "39 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-tempeh-vol-1",
+    "name": "Organic Tempeh Vol.1",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 214,
+    "macros": {
+      "fat": 11.9,
+      "carbs": 10.1,
+      "protein": 16.6
+    },
+    "micros": {
+      "potassium": "385 mg",
+      "magnesium": "68 mg",
+      "fiber": "3 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-avocado-vol-1",
+    "name": "Fresh Avocado Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 173,
+    "macros": {
+      "fat": 14.9,
+      "carbs": 7.6,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "311 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-almonds-vol-1",
+    "name": "Roasted Almonds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 614,
+    "macros": {
+      "fat": 49.4,
+      "carbs": 21.4,
+      "protein": 20.9
+    },
+    "micros": {
+      "potassium": "1105 mg",
+      "magnesium": "83 mg",
+      "fiber": "6.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-walnuts-vol-1",
+    "name": "Raw Walnuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 639,
+    "macros": {
+      "fat": 60,
+      "carbs": 11.7,
+      "protein": 13
+    },
+    "micros": {
+      "potassium": "1150 mg",
+      "magnesium": "56 mg",
+      "fiber": "3.5 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-chia-seeds-vol-1",
+    "name": "Organic Chia Seeds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 578,
+    "macros": {
+      "fat": 35.2,
+      "carbs": 47.3,
+      "protein": 17.9
+    },
+    "micros": {
+      "potassium": "1040 mg",
+      "magnesium": "73 mg",
+      "fiber": "14.2 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-flaxseed-vol-1",
+    "name": "Organic Flaxseed Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 589,
+    "macros": {
+      "fat": 43.1,
+      "carbs": 31.2,
+      "protein": 19
+    },
+    "micros": {
+      "potassium": "1060 mg",
+      "magnesium": "77 mg",
+      "fiber": "9.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cold-pressed-olive-oil-vol-1",
+    "name": "Cold-Pressed Olive Oil Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 858,
+    "macros": {
+      "fat": 95.3,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1544 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-macadamia-nuts-vol-1",
+    "name": "Roasted Macadamia Nuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 740,
+    "macros": {
+      "fat": 72.4,
+      "carbs": 14.4,
+      "protein": 7.6
+    },
+    "micros": {
+      "potassium": "1332 mg",
+      "magnesium": "37 mg",
+      "fiber": "4.3 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-blueberries-vol-1",
+    "name": "Fresh Blueberries Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 64,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 14.6,
+      "protein": 0.6
+    },
+    "micros": {
+      "potassium": "115 mg",
+      "magnesium": "12 mg",
+      "fiber": "4.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-dark-chocolate-vol-1",
+    "name": "Artisanal Dark Chocolate Vol.1",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 544,
+    "macros": {
+      "fat": 42,
+      "carbs": 34.4,
+      "protein": 7.1
+    },
+    "micros": {
+      "potassium": "979 mg",
+      "magnesium": "35 mg",
+      "fiber": "10.3 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-matcha-vol-1",
+    "name": "Organic Matcha Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 304,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 43.5,
+      "protein": 30.4
+    },
+    "micros": {
+      "potassium": "547 mg",
+      "magnesium": "116 mg",
+      "fiber": "13.1 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-turmeric-vol-1",
+    "name": "Organic Turmeric Vol.1",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 338,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 74.6,
+      "protein": 7.8
+    },
+    "micros": {
+      "potassium": "608 mg",
+      "magnesium": "37 mg",
+      "fiber": "22.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-quinoa-vol-1",
+    "name": "Organic Quinoa Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 349,
+    "macros": {
+      "fat": 6.5,
+      "carbs": 58.2,
+      "protein": 14.3
+    },
+    "micros": {
+      "potassium": "628 mg",
+      "magnesium": "60 mg",
+      "fiber": "17.5 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-greek-yogurt-vol-1",
+    "name": "Organic Greek Yogurt Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 93,
+    "macros": {
+      "fat": 4.1,
+      "carbs": 3.3,
+      "protein": 10.6
+    },
+    "micros": {
+      "potassium": "167 mg",
+      "magnesium": "47 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-spirulina-vol-1",
+    "name": "Organic Spirulina Vol.1",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 409,
+    "macros": {
+      "fat": 7.5,
+      "carbs": 23.5,
+      "protein": 61.8
+    },
+    "micros": {
+      "potassium": "736 mg",
+      "magnesium": "226 mg",
+      "fiber": "7.1 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-broccoli-vol-1",
+    "name": "Steamed Broccoli Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 46,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7.9,
+      "protein": 2.6
+    },
+    "micros": {
+      "potassium": "83 mg",
+      "magnesium": "19 mg",
+      "fiber": "2.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-spinach-vol-1",
+    "name": "Fresh Spinach Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 26,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.1,
+      "protein": 2.6
+    },
+    "micros": {
+      "potassium": "47 mg",
+      "magnesium": "19 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-kale-vol-1",
+    "name": "Organic Kale Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 58,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 8.5,
+      "protein": 4
+    },
+    "micros": {
+      "potassium": "104 mg",
+      "magnesium": "24 mg",
+      "fiber": "2.6 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-asparagus-vol-1",
+    "name": "Fresh Asparagus Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 24,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 3.9,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "43 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-cauliflower-vol-1",
+    "name": "Roasted Cauliflower Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 30,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 4.8,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "54 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-garlic-vol-1",
+    "name": "Fresh Garlic Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 172,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 34.6,
+      "protein": 7.2
+    },
+    "micros": {
+      "potassium": "310 mg",
+      "magnesium": "35 mg",
+      "fiber": "10.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-shiitake-mushroom-vol-1",
+    "name": "Fresh Shiitake Mushroom Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 41,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6.7,
+      "protein": 2.5
+    },
+    "micros": {
+      "potassium": "74 mg",
+      "magnesium": "19 mg",
+      "fiber": "2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-atlantic-salmon-vol-1",
+    "name": "Fresh Atlantic Salmon Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 193,
+    "macros": {
+      "fat": 12.2,
+      "carbs": 0,
+      "protein": 20.9
+    },
+    "micros": {
+      "potassium": "347 mg",
+      "magnesium": "83 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-chicken-breast-vol-1",
+    "name": "Roasted Chicken Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 168,
+    "macros": {
+      "fat": 3.9,
+      "carbs": 0,
+      "protein": 33.3
+    },
+    "micros": {
+      "potassium": "302 mg",
+      "magnesium": "127 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-beef-vol-1",
+    "name": "Organic Beef Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 298,
+    "macros": {
+      "fat": 22.4,
+      "carbs": 0,
+      "protein": 24.2
+    },
+    "micros": {
+      "potassium": "536 mg",
+      "magnesium": "95 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-turkey-breast-vol-1",
+    "name": "Roasted Turkey Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 118,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 27.4
+    },
+    "micros": {
+      "potassium": "212 mg",
+      "magnesium": "106 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-cod-fillet-vol-1",
+    "name": "Fresh Cod Fillet Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 93,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 21.3
+    },
+    "micros": {
+      "potassium": "167 mg",
+      "magnesium": "85 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-tuna-vol-1",
+    "name": "Fresh Tuna Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 126,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 29.5
+    },
+    "micros": {
+      "potassium": "227 mg",
+      "magnesium": "113 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-tofu-vol-1",
+    "name": "Steamed Tofu Vol.1",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 76,
+    "macros": {
+      "fat": 4.1,
+      "carbs": 2,
+      "protein": 7.8
+    },
+    "micros": {
+      "potassium": "137 mg",
+      "magnesium": "37 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-tempeh-vol-1",
+    "name": "Fresh Tempeh Vol.1",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 205,
+    "macros": {
+      "fat": 10.6,
+      "carbs": 10.6,
+      "protein": 16.9
+    },
+    "micros": {
+      "potassium": "369 mg",
+      "magnesium": "69 mg",
+      "fiber": "3.2 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-avocado-vol-1",
+    "name": "Organic Avocado Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 169,
+    "macros": {
+      "fat": 14.4,
+      "carbs": 8,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "304 mg",
+      "magnesium": "17 mg",
+      "fiber": "2.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-almonds-vol-1",
+    "name": "Raw Almonds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 588,
+    "macros": {
+      "fat": 46.1,
+      "carbs": 20.7,
+      "protein": 22.5
+    },
+    "micros": {
+      "potassium": "1058 mg",
+      "magnesium": "89 mg",
+      "fiber": "6.2 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-walnuts-vol-1",
+    "name": "Roasted Walnuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 771,
+    "macros": {
+      "fat": 73.7,
+      "carbs": 11.7,
+      "protein": 15.1
+    },
+    "micros": {
+      "potassium": "1388 mg",
+      "magnesium": "63 mg",
+      "fiber": "3.5 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-chia-seeds-vol-1",
+    "name": "Raw Chia Seeds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 532,
+    "macros": {
+      "fat": 33.7,
+      "carbs": 42.5,
+      "protein": 14.6
+    },
+    "micros": {
+      "potassium": "958 mg",
+      "magnesium": "61 mg",
+      "fiber": "12.8 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-flaxseed-vol-1",
+    "name": "Raw Flaxseed Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 551,
+    "macros": {
+      "fat": 40.9,
+      "carbs": 25.7,
+      "protein": 20
+    },
+    "micros": {
+      "potassium": "992 mg",
+      "magnesium": "80 mg",
+      "fiber": "7.7 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-olive-oil-vol-1",
+    "name": "Organic Olive Oil Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 871,
+    "macros": {
+      "fat": 96.8,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1568 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-macadamia-nuts-vol-1",
+    "name": "Raw Macadamia Nuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 731,
+    "macros": {
+      "fat": 72.1,
+      "carbs": 12.8,
+      "protein": 7.6
+    },
+    "micros": {
+      "potassium": "1316 mg",
+      "magnesium": "37 mg",
+      "fiber": "3.8 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-blueberries-vol-1",
+    "name": "Organic Blueberries Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 65,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 15,
+      "protein": 0.6
+    },
+    "micros": {
+      "potassium": "117 mg",
+      "magnesium": "12 mg",
+      "fiber": "4.5 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-dark-chocolate-vol-1",
+    "name": "Organic Dark Chocolate Vol.1",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 553,
+    "macros": {
+      "fat": 39.8,
+      "carbs": 41.6,
+      "protein": 7.1
+    },
+    "micros": {
+      "potassium": "995 mg",
+      "magnesium": "35 mg",
+      "fiber": "12.5 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-matcha-vol-1",
+    "name": "Artisanal Matcha Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 292,
+    "macros": {
+      "fat": 1,
+      "carbs": 38.2,
+      "protein": 32.6
+    },
+    "micros": {
+      "potassium": "526 mg",
+      "magnesium": "124 mg",
+      "fiber": "11.5 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-turmeric-vol-1",
+    "name": "Fresh Turmeric Vol.1",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 286,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 62.2,
+      "protein": 7.3
+    },
+    "micros": {
+      "potassium": "515 mg",
+      "magnesium": "36 mg",
+      "fiber": "18.7 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-quinoa-vol-1",
+    "name": "Steamed Quinoa Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 347,
+    "macros": {
+      "fat": 5.7,
+      "carbs": 57.8,
+      "protein": 16
+    },
+    "micros": {
+      "potassium": "625 mg",
+      "magnesium": "66 mg",
+      "fiber": "17.3 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-greek-yogurt-vol-1",
+    "name": "Fresh Greek Yogurt Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 89,
+    "macros": {
+      "fat": 3.8,
+      "carbs": 3.7,
+      "protein": 10.1
+    },
+    "micros": {
+      "potassium": "160 mg",
+      "magnesium": "45 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-spirulina-vol-1",
+    "name": "Raw Spirulina Vol.1",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 377,
+    "macros": {
+      "fat": 7.7,
+      "carbs": 22.9,
+      "protein": 53.9
+    },
+    "micros": {
+      "potassium": "679 mg",
+      "magnesium": "199 mg",
+      "fiber": "6.9 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-broccoli-vol-1",
+    "name": "Organic Broccoli Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 41,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7,
+      "protein": 2.3
+    },
+    "micros": {
+      "potassium": "74 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-spinach-vol-1",
+    "name": "Organic Spinach Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 28,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.4,
+      "protein": 2.6
+    },
+    "micros": {
+      "potassium": "50 mg",
+      "magnesium": "19 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-kale-vol-1",
+    "name": "Fresh Kale Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 58,
+    "macros": {
+      "fat": 1,
+      "carbs": 8.6,
+      "protein": 3.7
+    },
+    "micros": {
+      "potassium": "104 mg",
+      "magnesium": "23 mg",
+      "fiber": "2.6 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-asparagus-vol-1",
+    "name": "Organic Asparagus Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 25,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 3.9,
+      "protein": 2
+    },
+    "micros": {
+      "potassium": "45 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-cauliflower-vol-1",
+    "name": "Steamed Cauliflower Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 34,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 5.6,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "61 mg",
+      "magnesium": "18 mg",
+      "fiber": "1.7 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-garlic-vol-1",
+    "name": "Organic Garlic Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 152,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 30.4,
+      "protein": 6.4
+    },
+    "micros": {
+      "potassium": "274 mg",
+      "magnesium": "32 mg",
+      "fiber": "9.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-shiitake-mushroom-vol-1",
+    "name": "Organic Shiitake Mushroom Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 45,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 7.6,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "81 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-atlantic-salmon-vol-1",
+    "name": "Slow-Cooked Atlantic Salmon Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 219,
+    "macros": {
+      "fat": 14.1,
+      "carbs": 0,
+      "protein": 23
+    },
+    "micros": {
+      "potassium": "394 mg",
+      "magnesium": "91 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-chicken-breast-vol-1",
+    "name": "Steamed Chicken Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 144,
+    "macros": {
+      "fat": 3.8,
+      "carbs": 0,
+      "protein": 27.5
+    },
+    "micros": {
+      "potassium": "259 mg",
+      "magnesium": "106 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-beef-vol-1",
+    "name": "Slow-Cooked Beef Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 318,
+    "macros": {
+      "fat": 23.2,
+      "carbs": 0,
+      "protein": 27.4
+    },
+    "micros": {
+      "potassium": "572 mg",
+      "magnesium": "106 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-turkey-breast-vol-1",
+    "name": "Slow-Cooked Turkey Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 108,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 25
+    },
+    "micros": {
+      "potassium": "194 mg",
+      "magnesium": "98 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-cod-fillet-vol-1",
+    "name": "Steamed Cod Fillet Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 90,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 20.4
+    },
+    "micros": {
+      "potassium": "162 mg",
+      "magnesium": "81 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-tuna-vol-1",
+    "name": "Raw Tuna Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 119,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 27.7
+    },
+    "micros": {
+      "potassium": "214 mg",
+      "magnesium": "107 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-tofu-vol-1",
+    "name": "Fresh Tofu Vol.1",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 82,
+    "macros": {
+      "fat": 4.4,
+      "carbs": 1.8,
+      "protein": 8.7
+    },
+    "micros": {
+      "potassium": "148 mg",
+      "magnesium": "40 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-tempeh-vol-1",
+    "name": "Steamed Tempeh Vol.1",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 215,
+    "macros": {
+      "fat": 10.5,
+      "carbs": 10.7,
+      "protein": 19.4
+    },
+    "micros": {
+      "potassium": "387 mg",
+      "magnesium": "78 mg",
+      "fiber": "3.2 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-avocado-vol-1",
+    "name": "Raw Avocado Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 175,
+    "macros": {
+      "fat": 14.5,
+      "carbs": 8.9,
+      "protein": 2.3
+    },
+    "micros": {
+      "potassium": "315 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.7 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-almonds-vol-1",
+    "name": "Organic Almonds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 608,
+    "macros": {
+      "fat": 49.8,
+      "carbs": 21.3,
+      "protein": 18.6
+    },
+    "micros": {
+      "potassium": "1094 mg",
+      "magnesium": "75 mg",
+      "fiber": "6.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-walnuts-vol-1",
+    "name": "Organic Walnuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 743,
+    "macros": {
+      "fat": 70.2,
+      "carbs": 12.3,
+      "protein": 15.5
+    },
+    "micros": {
+      "potassium": "1337 mg",
+      "magnesium": "64 mg",
+      "fiber": "3.7 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-chia-seeds-vol-1",
+    "name": "Fresh Chia Seeds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 510,
+    "macros": {
+      "fat": 31.7,
+      "carbs": 40.1,
+      "protein": 16
+    },
+    "micros": {
+      "potassium": "918 mg",
+      "magnesium": "66 mg",
+      "fiber": "12 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-flaxseed-vol-1",
+    "name": "Fresh Flaxseed Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 548,
+    "macros": {
+      "fat": 38.7,
+      "carbs": 31.6,
+      "protein": 18.2
+    },
+    "micros": {
+      "potassium": "986 mg",
+      "magnesium": "74 mg",
+      "fiber": "9.5 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-olive-oil-vol-1",
+    "name": "Artisanal Olive Oil Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 941,
+    "macros": {
+      "fat": 104.5,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1694 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-macadamia-nuts-vol-1",
+    "name": "Organic Macadamia Nuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 796,
+    "macros": {
+      "fat": 78.8,
+      "carbs": 14.5,
+      "protein": 7.1
+    },
+    "micros": {
+      "potassium": "1433 mg",
+      "magnesium": "35 mg",
+      "fiber": "4.4 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-blueberries-vol-1",
+    "name": "Wild Blueberries Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 58,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 13.3,
+      "protein": 0.6
+    },
+    "micros": {
+      "potassium": "104 mg",
+      "magnesium": "12 mg",
+      "fiber": "4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-dark-chocolate-vol-1",
+    "name": "Raw Dark Chocolate Vol.1",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 570,
+    "macros": {
+      "fat": 42.1,
+      "carbs": 38.9,
+      "protein": 8.9
+    },
+    "micros": {
+      "potassium": "1026 mg",
+      "magnesium": "41 mg",
+      "fiber": "11.7 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ceremonial-matcha-vol-1",
+    "name": "Ceremonial Matcha Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 265,
+    "macros": {
+      "fat": 1,
+      "carbs": 32.8,
+      "protein": 31.3
+    },
+    "micros": {
+      "potassium": "477 mg",
+      "magnesium": "120 mg",
+      "fiber": "9.8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-turmeric-vol-1",
+    "name": "Raw Turmeric Vol.1",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 300,
+    "macros": {
+      "fat": 1,
+      "carbs": 65,
+      "protein": 7.7
+    },
+    "micros": {
+      "potassium": "540 mg",
+      "magnesium": "37 mg",
+      "fiber": "19.5 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-quinoa-vol-1",
+    "name": "Fresh Quinoa Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 399,
+    "macros": {
+      "fat": 5.9,
+      "carbs": 70.9,
+      "protein": 15.6
+    },
+    "micros": {
+      "potassium": "718 mg",
+      "magnesium": "65 mg",
+      "fiber": "21.3 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-greek-yogurt-vol-1",
+    "name": "Artisanal Greek Yogurt Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 86,
+    "macros": {
+      "fat": 4,
+      "carbs": 3.7,
+      "protein": 8.7
+    },
+    "micros": {
+      "potassium": "155 mg",
+      "magnesium": "40 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-spirulina-vol-1",
+    "name": "Fresh Spirulina Vol.1",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 401,
+    "macros": {
+      "fat": 8.2,
+      "carbs": 22.2,
+      "protein": 59.5
+    },
+    "micros": {
+      "potassium": "722 mg",
+      "magnesium": "218 mg",
+      "fiber": "6.7 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-broccoli-vol-1",
+    "name": "Fresh Broccoli Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 41,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 7.1,
+      "protein": 2.5
+    },
+    "micros": {
+      "potassium": "74 mg",
+      "magnesium": "19 mg",
+      "fiber": "2.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-spinach-vol-1",
+    "name": "Raw Spinach Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 30,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.4,
+      "protein": 3.2
+    },
+    "micros": {
+      "potassium": "54 mg",
+      "magnesium": "21 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-kale-vol-1",
+    "name": "Roasted Kale Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 61,
+    "macros": {
+      "fat": 1,
+      "carbs": 8.7,
+      "protein": 4.3
+    },
+    "micros": {
+      "potassium": "110 mg",
+      "magnesium": "25 mg",
+      "fiber": "2.6 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-asparagus-vol-1",
+    "name": "Roasted Asparagus Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 22,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 3.3,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "40 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-cauliflower-vol-1",
+    "name": "Organic Cauliflower Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 30,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 5.1,
+      "protein": 1.8
+    },
+    "micros": {
+      "potassium": "54 mg",
+      "magnesium": "16 mg",
+      "fiber": "1.5 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-garlic-vol-1",
+    "name": "Roasted Garlic Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 169,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 34.6,
+      "protein": 6.6
+    },
+    "micros": {
+      "potassium": "304 mg",
+      "magnesium": "33 mg",
+      "fiber": "10.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "dried-shiitake-mushroom-vol-1",
+    "name": "Dried Shiitake Mushroom Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 38,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "68 mg",
+      "magnesium": "18 mg",
+      "fiber": "1.8 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-atlantic-salmon-vol-1",
+    "name": "Roasted Atlantic Salmon Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 207,
+    "macros": {
+      "fat": 13.4,
+      "carbs": 0,
+      "protein": 21.7
+    },
+    "micros": {
+      "potassium": "373 mg",
+      "magnesium": "86 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-chicken-breast-vol-1",
+    "name": "Slow-Cooked Chicken Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 171,
+    "macros": {
+      "fat": 3.2,
+      "carbs": 0,
+      "protein": 35.5
+    },
+    "micros": {
+      "potassium": "308 mg",
+      "magnesium": "134 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-beef-vol-1",
+    "name": "Roasted Beef Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 317,
+    "macros": {
+      "fat": 25.1,
+      "carbs": 0,
+      "protein": 22.8
+    },
+    "micros": {
+      "potassium": "571 mg",
+      "magnesium": "90 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-turkey-breast-vol-1",
+    "name": "Steamed Turkey Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 122,
+    "macros": {
+      "fat": 1.1,
+      "carbs": 0,
+      "protein": 27.9
+    },
+    "micros": {
+      "potassium": "220 mg",
+      "magnesium": "108 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-cod-fillet-vol-1",
+    "name": "Roasted Cod Fillet Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 99,
+    "macros": {
+      "fat": 0.8,
+      "carbs": 0,
+      "protein": 23
+    },
+    "micros": {
+      "potassium": "178 mg",
+      "magnesium": "91 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "seared-tuna-vol-1",
+    "name": "Seared Tuna Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 137,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 32.1
+    },
+    "micros": {
+      "potassium": "247 mg",
+      "magnesium": "122 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "silken-tofu-vol-1",
+    "name": "Silken Tofu Vol.1",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 87,
+    "macros": {
+      "fat": 5.3,
+      "carbs": 1.7,
+      "protein": 8
+    },
+    "micros": {
+      "potassium": "157 mg",
+      "magnesium": "38 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-tempeh-vol-1",
+    "name": "Roasted Tempeh Vol.1",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 190,
+    "macros": {
+      "fat": 9.4,
+      "carbs": 8.8,
+      "protein": 17.6
+    },
+    "micros": {
+      "potassium": "342 mg",
+      "magnesium": "72 mg",
+      "fiber": "2.6 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ripe-avocado-vol-1",
+    "name": "Ripe Avocado Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 174,
+    "macros": {
+      "fat": 14.4,
+      "carbs": 9.1,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "313 mg",
+      "magnesium": "17 mg",
+      "fiber": "2.7 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "toasted-almonds-vol-1",
+    "name": "Toasted Almonds Vol.1",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 591,
+    "macros": {
+      "fat": 46,
+      "carbs": 21.1,
+      "protein": 23.1
+    },
+    "micros": {
+      "potassium": "1064 mg",
+      "magnesium": "91 mg",
+      "fiber": "6.3 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "toasted-walnuts-vol-1",
+    "name": "Toasted Walnuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 730,
+    "macros": {
+      "fat": 67.6,
+      "carbs": 13.7,
+      "protein": 16.6
+    },
+    "micros": {
+      "potassium": "1314 mg",
+      "magnesium": "68 mg",
+      "fiber": "4.1 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-chia-seeds-vol-2",
+    "name": "Organic Chia Seeds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 520,
+    "macros": {
+      "fat": 33.6,
+      "carbs": 39.2,
+      "protein": 15.1
+    },
+    "micros": {
+      "potassium": "936 mg",
+      "magnesium": "63 mg",
+      "fiber": "11.8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ground-flaxseed-vol-1",
+    "name": "Ground Flaxseed Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 575,
+    "macros": {
+      "fat": 44.2,
+      "carbs": 26.6,
+      "protein": 17.6
+    },
+    "micros": {
+      "potassium": "1035 mg",
+      "magnesium": "72 mg",
+      "fiber": "8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cold-pressed-olive-oil-vol-2",
+    "name": "Cold-Pressed Olive Oil Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 831,
+    "macros": {
+      "fat": 92.3,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1496 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "toasted-macadamia-nuts-vol-1",
+    "name": "Toasted Macadamia Nuts Vol.1",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 785,
+    "macros": {
+      "fat": 78.2,
+      "carbs": 13.3,
+      "protein": 7
+    },
+    "micros": {
+      "potassium": "1413 mg",
+      "magnesium": "35 mg",
+      "fiber": "4 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "dried-blueberries-vol-1",
+    "name": "Dried Blueberries Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 62,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 14,
+      "protein": 0.7
+    },
+    "micros": {
+      "potassium": "112 mg",
+      "magnesium": "12 mg",
+      "fiber": "4.2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "single-origin-dark-chocolate-vol-1",
+    "name": "Single-Origin Dark Chocolate Vol.1",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 585,
+    "macros": {
+      "fat": 48.1,
+      "carbs": 31.2,
+      "protein": 6.9
+    },
+    "micros": {
+      "potassium": "1053 mg",
+      "magnesium": "34 mg",
+      "fiber": "9.4 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-matcha-vol-2",
+    "name": "Organic Matcha Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 301,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 40.2,
+      "protein": 33.1
+    },
+    "micros": {
+      "potassium": "542 mg",
+      "magnesium": "126 mg",
+      "fiber": "12.1 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "dried-turmeric-vol-1",
+    "name": "Dried Turmeric Vol.1",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 265,
+    "macros": {
+      "fat": 1,
+      "carbs": 55.4,
+      "protein": 8.7
+    },
+    "micros": {
+      "potassium": "477 mg",
+      "magnesium": "40 mg",
+      "fiber": "16.6 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-quinoa-vol-1",
+    "name": "Roasted Quinoa Vol.1",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 332,
+    "macros": {
+      "fat": 5.9,
+      "carbs": 57.1,
+      "protein": 12.6
+    },
+    "micros": {
+      "potassium": "598 mg",
+      "magnesium": "54 mg",
+      "fiber": "17.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-greek-yogurt-vol-2",
+    "name": "Organic Greek Yogurt Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 81,
+    "macros": {
+      "fat": 3.5,
+      "carbs": 3.1,
+      "protein": 9.3
+    },
+    "micros": {
+      "potassium": "146 mg",
+      "magnesium": "43 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-spirulina-vol-2",
+    "name": "Organic Spirulina Vol.2",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 359,
+    "macros": {
+      "fat": 8.1,
+      "carbs": 21.7,
+      "protein": 49.8
+    },
+    "micros": {
+      "potassium": "646 mg",
+      "magnesium": "184 mg",
+      "fiber": "6.5 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-broccoli-vol-1",
+    "name": "Roasted Broccoli Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 43,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7.8,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "77 mg",
+      "magnesium": "17 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-spinach-vol-1",
+    "name": "Steamed Spinach Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 30,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.7,
+      "protein": 2.9
+    },
+    "micros": {
+      "potassium": "54 mg",
+      "magnesium": "20 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-kale-vol-1",
+    "name": "Raw Kale Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 65,
+    "macros": {
+      "fat": 1,
+      "carbs": 10.1,
+      "protein": 4
+    },
+    "micros": {
+      "potassium": "117 mg",
+      "magnesium": "24 mg",
+      "fiber": "3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-asparagus-vol-1",
+    "name": "Steamed Asparagus Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 25,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 3.7,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "45 mg",
+      "magnesium": "18 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-cauliflower-vol-1",
+    "name": "Fresh Cauliflower Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 28,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 4.6,
+      "protein": 1.8
+    },
+    "micros": {
+      "potassium": "50 mg",
+      "magnesium": "16 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-garlic-vol-1",
+    "name": "Raw Garlic Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 165,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 34,
+      "protein": 6
+    },
+    "micros": {
+      "potassium": "297 mg",
+      "magnesium": "31 mg",
+      "fiber": "10.2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-shiitake-mushroom-vol-1",
+    "name": "Roasted Shiitake Mushroom Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 39,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6.5,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "70 mg",
+      "magnesium": "18 mg",
+      "fiber": "2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-atlantic-salmon-vol-1",
+    "name": "Steamed Atlantic Salmon Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 205,
+    "macros": {
+      "fat": 12.3,
+      "carbs": 0,
+      "protein": 23.6
+    },
+    "micros": {
+      "potassium": "369 mg",
+      "magnesium": "93 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-chicken-breast-vol-1",
+    "name": "Fresh Chicken Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 157,
+    "macros": {
+      "fat": 3.9,
+      "carbs": 0,
+      "protein": 30.4
+    },
+    "micros": {
+      "potassium": "283 mg",
+      "magnesium": "116 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "aged-beef-vol-1",
+    "name": "Aged Beef Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 280,
+    "macros": {
+      "fat": 21.6,
+      "carbs": 0,
+      "protein": 21.4
+    },
+    "micros": {
+      "potassium": "504 mg",
+      "magnesium": "85 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-turkey-breast-vol-1",
+    "name": "Fresh Turkey Breast Vol.1",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 141,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 33
+    },
+    "micros": {
+      "potassium": "254 mg",
+      "magnesium": "126 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-caught-cod-fillet-vol-2",
+    "name": "Wild-Caught Cod Fillet Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 91,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 20.5
+    },
+    "micros": {
+      "potassium": "164 mg",
+      "magnesium": "82 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-caught-tuna-vol-2",
+    "name": "Wild-Caught Tuna Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 129,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 30.3
+    },
+    "micros": {
+      "potassium": "232 mg",
+      "magnesium": "116 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-tofu-vol-2",
+    "name": "Organic Tofu Vol.2",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 79,
+    "macros": {
+      "fat": 4.4,
+      "carbs": 2,
+      "protein": 7.8
+    },
+    "micros": {
+      "potassium": "142 mg",
+      "magnesium": "37 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-tempeh-vol-2",
+    "name": "Organic Tempeh Vol.2",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 197,
+    "macros": {
+      "fat": 10.6,
+      "carbs": 8.4,
+      "protein": 17
+    },
+    "micros": {
+      "potassium": "355 mg",
+      "magnesium": "70 mg",
+      "fiber": "2.5 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-avocado-vol-2",
+    "name": "Fresh Avocado Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 172,
+    "macros": {
+      "fat": 13.9,
+      "carbs": 9.6,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "310 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.9 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-almonds-vol-2",
+    "name": "Roasted Almonds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 648,
+    "macros": {
+      "fat": 52.8,
+      "carbs": 23.1,
+      "protein": 20.2
+    },
+    "micros": {
+      "potassium": "1166 mg",
+      "magnesium": "81 mg",
+      "fiber": "6.9 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-walnuts-vol-2",
+    "name": "Raw Walnuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 700,
+    "macros": {
+      "fat": 64.5,
+      "carbs": 14,
+      "protein": 15.9
+    },
+    "micros": {
+      "potassium": "1260 mg",
+      "magnesium": "66 mg",
+      "fiber": "4.2 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-chia-seeds-vol-2",
+    "name": "Raw Chia Seeds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 503,
+    "macros": {
+      "fat": 28.1,
+      "carbs": 45.1,
+      "protein": 17.3
+    },
+    "micros": {
+      "potassium": "905 mg",
+      "magnesium": "71 mg",
+      "fiber": "13.5 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-flaxseed-vol-2",
+    "name": "Organic Flaxseed Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 530,
+    "macros": {
+      "fat": 38.3,
+      "carbs": 26.1,
+      "protein": 20.1
+    },
+    "micros": {
+      "potassium": "954 mg",
+      "magnesium": "80 mg",
+      "fiber": "7.8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-olive-oil-vol-2",
+    "name": "Organic Olive Oil Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 861,
+    "macros": {
+      "fat": 95.7,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1550 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-macadamia-nuts-vol-2",
+    "name": "Roasted Macadamia Nuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 844,
+    "macros": {
+      "fat": 84.6,
+      "carbs": 13.2,
+      "protein": 7.5
+    },
+    "micros": {
+      "potassium": "1519 mg",
+      "magnesium": "36 mg",
+      "fiber": "4 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-blueberries-vol-2",
+    "name": "Fresh Blueberries Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 65,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 14.8,
+      "protein": 0.8
+    },
+    "micros": {
+      "potassium": "117 mg",
+      "magnesium": "13 mg",
+      "fiber": "4.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-dark-chocolate-vol-2",
+    "name": "Artisanal Dark Chocolate Vol.2",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 609,
+    "macros": {
+      "fat": 46.5,
+      "carbs": 40.1,
+      "protein": 7.5
+    },
+    "micros": {
+      "potassium": "1096 mg",
+      "magnesium": "36 mg",
+      "fiber": "12 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-matcha-vol-2",
+    "name": "Artisanal Matcha Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 261,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 34.6,
+      "protein": 28.5
+    },
+    "micros": {
+      "potassium": "470 mg",
+      "magnesium": "110 mg",
+      "fiber": "10.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-turmeric-vol-2",
+    "name": "Organic Turmeric Vol.2",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 326,
+    "macros": {
+      "fat": 1.1,
+      "carbs": 70.7,
+      "protein": 8.3
+    },
+    "micros": {
+      "potassium": "587 mg",
+      "magnesium": "39 mg",
+      "fiber": "21.2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-quinoa-vol-2",
+    "name": "Organic Quinoa Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 357,
+    "macros": {
+      "fat": 6.6,
+      "carbs": 59.8,
+      "protein": 14.6
+    },
+    "micros": {
+      "potassium": "643 mg",
+      "magnesium": "61 mg",
+      "fiber": "17.9 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-greek-yogurt-vol-2",
+    "name": "Fresh Greek Yogurt Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 86,
+    "macros": {
+      "fat": 3.9,
+      "carbs": 3.1,
+      "protein": 9.7
+    },
+    "micros": {
+      "potassium": "155 mg",
+      "magnesium": "44 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-spirulina-vol-2",
+    "name": "Raw Spirulina Vol.2",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 409,
+    "macros": {
+      "fat": 7.4,
+      "carbs": 26.6,
+      "protein": 59
+    },
+    "micros": {
+      "potassium": "736 mg",
+      "magnesium": "217 mg",
+      "fiber": "8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-broccoli-vol-2",
+    "name": "Steamed Broccoli Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 42,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 6.8,
+      "protein": 2.7
+    },
+    "micros": {
+      "potassium": "76 mg",
+      "magnesium": "19 mg",
+      "fiber": "2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-spinach-vol-2",
+    "name": "Fresh Spinach Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 29,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.5,
+      "protein": 2.9
+    },
+    "micros": {
+      "potassium": "52 mg",
+      "magnesium": "20 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-kale-vol-1",
+    "name": "Steamed Kale Vol.1",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 54,
+    "macros": {
+      "fat": 0.8,
+      "carbs": 7.7,
+      "protein": 3.9
+    },
+    "micros": {
+      "potassium": "97 mg",
+      "magnesium": "24 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-asparagus-vol-2",
+    "name": "Fresh Asparagus Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 26,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 4.2,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "47 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-cauliflower-vol-2",
+    "name": "Roasted Cauliflower Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 27,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 4.3,
+      "protein": 1.7
+    },
+    "micros": {
+      "potassium": "49 mg",
+      "magnesium": "16 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-garlic-vol-2",
+    "name": "Fresh Garlic Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 170,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 34.1,
+      "protein": 7.2
+    },
+    "micros": {
+      "potassium": "306 mg",
+      "magnesium": "35 mg",
+      "fiber": "10.2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-shiitake-mushroom-vol-2",
+    "name": "Fresh Shiitake Mushroom Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 41,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6.7,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "74 mg",
+      "magnesium": "18 mg",
+      "fiber": "2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-caught-atlantic-salmon-vol-2",
+    "name": "Wild-Caught Atlantic Salmon Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 178,
+    "macros": {
+      "fat": 10.7,
+      "carbs": 0,
+      "protein": 20.3
+    },
+    "micros": {
+      "potassium": "320 mg",
+      "magnesium": "81 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-chicken-breast-vol-2",
+    "name": "Organic Chicken Breast Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 149,
+    "macros": {
+      "fat": 4,
+      "carbs": 0,
+      "protein": 28.2
+    },
+    "micros": {
+      "potassium": "268 mg",
+      "magnesium": "109 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "grass-fed-beef-vol-2",
+    "name": "Grass-Fed Beef Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 267,
+    "macros": {
+      "fat": 18.9,
+      "carbs": 0,
+      "protein": 24.2
+    },
+    "micros": {
+      "potassium": "481 mg",
+      "magnesium": "95 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-turkey-breast-vol-2",
+    "name": "Organic Turkey Breast Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 138,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 32.3
+    },
+    "micros": {
+      "potassium": "248 mg",
+      "magnesium": "123 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-cod-fillet-vol-2",
+    "name": "Fresh Cod Fillet Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 98,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 22.2
+    },
+    "micros": {
+      "potassium": "176 mg",
+      "magnesium": "88 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-tuna-vol-2",
+    "name": "Fresh Tuna Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 119,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 27.4
+    },
+    "micros": {
+      "potassium": "214 mg",
+      "magnesium": "106 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-tofu-vol-2",
+    "name": "Steamed Tofu Vol.2",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 76,
+    "macros": {
+      "fat": 4.2,
+      "carbs": 2.2,
+      "protein": 7.4
+    },
+    "micros": {
+      "potassium": "137 mg",
+      "magnesium": "36 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-tempeh-vol-2",
+    "name": "Fresh Tempeh Vol.2",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 229,
+    "macros": {
+      "fat": 12.2,
+      "carbs": 10.5,
+      "protein": 19.4
+    },
+    "micros": {
+      "potassium": "412 mg",
+      "magnesium": "78 mg",
+      "fiber": "3.2 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-avocado-vol-2",
+    "name": "Organic Avocado Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 184,
+    "macros": {
+      "fat": 16.1,
+      "carbs": 7.6,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "331 mg",
+      "magnesium": "17 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-almonds-vol-2",
+    "name": "Raw Almonds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 593,
+    "macros": {
+      "fat": 46.5,
+      "carbs": 24.5,
+      "protein": 19.2
+    },
+    "micros": {
+      "potassium": "1067 mg",
+      "magnesium": "77 mg",
+      "fiber": "7.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-walnuts-vol-2",
+    "name": "Roasted Walnuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 787,
+    "macros": {
+      "fat": 74.5,
+      "carbs": 11.9,
+      "protein": 17.3
+    },
+    "micros": {
+      "potassium": "1417 mg",
+      "magnesium": "71 mg",
+      "fiber": "3.6 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-chia-seeds-vol-2",
+    "name": "Fresh Chia Seeds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 564,
+    "macros": {
+      "fat": 34.3,
+      "carbs": 45.9,
+      "protein": 17.9
+    },
+    "micros": {
+      "potassium": "1015 mg",
+      "magnesium": "73 mg",
+      "fiber": "13.8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-flaxseed-vol-2",
+    "name": "Raw Flaxseed Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 612,
+    "macros": {
+      "fat": 48.2,
+      "carbs": 26.8,
+      "protein": 17.7
+    },
+    "micros": {
+      "potassium": "1102 mg",
+      "magnesium": "72 mg",
+      "fiber": "8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-olive-oil-vol-2",
+    "name": "Artisanal Olive Oil Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 812,
+    "macros": {
+      "fat": 90.2,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1462 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-macadamia-nuts-vol-2",
+    "name": "Raw Macadamia Nuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 845,
+    "macros": {
+      "fat": 84.2,
+      "carbs": 14.9,
+      "protein": 7
+    },
+    "micros": {
+      "potassium": "1521 mg",
+      "magnesium": "35 mg",
+      "fiber": "4.5 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-blueberries-vol-2",
+    "name": "Organic Blueberries Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 70,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 16.2,
+      "protein": 0.6
+    },
+    "micros": {
+      "potassium": "126 mg",
+      "magnesium": "12 mg",
+      "fiber": "4.9 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-dark-chocolate-vol-2",
+    "name": "Organic Dark Chocolate Vol.2",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 555,
+    "macros": {
+      "fat": 41,
+      "carbs": 39.1,
+      "protein": 7.4
+    },
+    "micros": {
+      "potassium": "999 mg",
+      "magnesium": "36 mg",
+      "fiber": "11.7 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ceremonial-matcha-vol-2",
+    "name": "Ceremonial Matcha Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 267,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 38.1,
+      "protein": 26.5
+    },
+    "micros": {
+      "potassium": "481 mg",
+      "magnesium": "103 mg",
+      "fiber": "11.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-turmeric-vol-2",
+    "name": "Fresh Turmeric Vol.2",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 339,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 74.7,
+      "protein": 7.9
+    },
+    "micros": {
+      "potassium": "610 mg",
+      "magnesium": "38 mg",
+      "fiber": "22.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-quinoa-vol-2",
+    "name": "Steamed Quinoa Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 378,
+    "macros": {
+      "fat": 5.6,
+      "carbs": 66.7,
+      "protein": 15.3
+    },
+    "micros": {
+      "potassium": "680 mg",
+      "magnesium": "64 mg",
+      "fiber": "20 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artisanal-greek-yogurt-vol-2",
+    "name": "Artisanal Greek Yogurt Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 85,
+    "macros": {
+      "fat": 3.6,
+      "carbs": 3.8,
+      "protein": 9.4
+    },
+    "micros": {
+      "potassium": "153 mg",
+      "magnesium": "43 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-spirulina-vol-2",
+    "name": "Fresh Spirulina Vol.2",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 423,
+    "macros": {
+      "fat": 8,
+      "carbs": 23.3,
+      "protein": 64.4
+    },
+    "micros": {
+      "potassium": "761 mg",
+      "magnesium": "235 mg",
+      "fiber": "7 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-broccoli-vol-2",
+    "name": "Organic Broccoli Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 42,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7.1,
+      "protein": 2.6
+    },
+    "micros": {
+      "potassium": "76 mg",
+      "magnesium": "19 mg",
+      "fiber": "2.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-spinach-vol-2",
+    "name": "Organic Spinach Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 31,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 4.1,
+      "protein": 2.7
+    },
+    "micros": {
+      "potassium": "56 mg",
+      "magnesium": "19 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-kale-vol-2",
+    "name": "Organic Kale Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 58,
+    "macros": {
+      "fat": 1,
+      "carbs": 7.5,
+      "protein": 4.7
+    },
+    "micros": {
+      "potassium": "104 mg",
+      "magnesium": "26 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-asparagus-vol-2",
+    "name": "Organic Asparagus Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 27,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 4.3,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "49 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-cauliflower-vol-2",
+    "name": "Steamed Cauliflower Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 30,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 4.8,
+      "protein": 2
+    },
+    "micros": {
+      "potassium": "54 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-garlic-vol-2",
+    "name": "Organic Garlic Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 159,
+    "macros": {
+      "fat": 0.6,
+      "carbs": 31.2,
+      "protein": 7.1
+    },
+    "micros": {
+      "potassium": "286 mg",
+      "magnesium": "35 mg",
+      "fiber": "9.4 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-shiitake-mushroom-vol-2",
+    "name": "Organic Shiitake Mushroom Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 42,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6.9,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "76 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-atlantic-salmon-vol-2",
+    "name": "Fresh Atlantic Salmon Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 199,
+    "macros": {
+      "fat": 12,
+      "carbs": 0,
+      "protein": 22.7
+    },
+    "micros": {
+      "potassium": "358 mg",
+      "magnesium": "89 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-chicken-breast-vol-2",
+    "name": "Roasted Chicken Breast Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 164,
+    "macros": {
+      "fat": 3.1,
+      "carbs": 0,
+      "protein": 34
+    },
+    "micros": {
+      "potassium": "295 mg",
+      "magnesium": "129 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-beef-vol-2",
+    "name": "Organic Beef Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 311,
+    "macros": {
+      "fat": 23.5,
+      "carbs": 0,
+      "protein": 24.9
+    },
+    "micros": {
+      "potassium": "560 mg",
+      "magnesium": "97 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-turkey-breast-vol-2",
+    "name": "Roasted Turkey Breast Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 123,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 28.7
+    },
+    "micros": {
+      "potassium": "221 mg",
+      "magnesium": "110 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-cod-fillet-vol-2",
+    "name": "Steamed Cod Fillet Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 101,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 23.2
+    },
+    "micros": {
+      "potassium": "182 mg",
+      "magnesium": "91 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-tuna-vol-2",
+    "name": "Raw Tuna Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 136,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 31.9
+    },
+    "micros": {
+      "potassium": "245 mg",
+      "magnesium": "122 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-tofu-vol-2",
+    "name": "Fresh Tofu Vol.2",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 85,
+    "macros": {
+      "fat": 5.2,
+      "carbs": 1.9,
+      "protein": 7.7
+    },
+    "micros": {
+      "potassium": "153 mg",
+      "magnesium": "37 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-tempeh-vol-2",
+    "name": "Steamed Tempeh Vol.2",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 219,
+    "macros": {
+      "fat": 10.7,
+      "carbs": 10.3,
+      "protein": 20.4
+    },
+    "micros": {
+      "potassium": "394 mg",
+      "magnesium": "81 mg",
+      "fiber": "3.1 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-avocado-vol-2",
+    "name": "Raw Avocado Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 191,
+    "macros": {
+      "fat": 16.8,
+      "carbs": 7.8,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "344 mg",
+      "magnesium": "17 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-almonds-vol-2",
+    "name": "Organic Almonds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 655,
+    "macros": {
+      "fat": 55.1,
+      "carbs": 19.2,
+      "protein": 20.5
+    },
+    "micros": {
+      "potassium": "1179 mg",
+      "magnesium": "82 mg",
+      "fiber": "5.8 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-walnuts-vol-2",
+    "name": "Organic Walnuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 670,
+    "macros": {
+      "fat": 62.1,
+      "carbs": 12.8,
+      "protein": 14.9
+    },
+    "micros": {
+      "potassium": "1206 mg",
+      "magnesium": "62 mg",
+      "fiber": "3.8 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-chia-seeds-vol-3",
+    "name": "Organic Chia Seeds Vol.3",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 487,
+    "macros": {
+      "fat": 28,
+      "carbs": 44.1,
+      "protein": 14.6
+    },
+    "micros": {
+      "potassium": "877 mg",
+      "magnesium": "61 mg",
+      "fiber": "13.2 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-flaxseed-vol-2",
+    "name": "Fresh Flaxseed Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 596,
+    "macros": {
+      "fat": 46.9,
+      "carbs": 25.4,
+      "protein": 18.2
+    },
+    "micros": {
+      "potassium": "1073 mg",
+      "magnesium": "74 mg",
+      "fiber": "7.6 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cold-pressed-olive-oil-vol-3",
+    "name": "Cold-Pressed Olive Oil Vol.3",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 956,
+    "macros": {
+      "fat": 106.2,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "1721 mg",
+      "magnesium": "10 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-macadamia-nuts-vol-2",
+    "name": "Organic Macadamia Nuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 745,
+    "macros": {
+      "fat": 73.7,
+      "carbs": 12.1,
+      "protein": 8.3
+    },
+    "micros": {
+      "potassium": "1341 mg",
+      "magnesium": "39 mg",
+      "fiber": "3.6 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "wild-blueberries-vol-2",
+    "name": "Wild Blueberries Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 56,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 12.7,
+      "protein": 0.7
+    },
+    "micros": {
+      "potassium": "101 mg",
+      "magnesium": "12 mg",
+      "fiber": "3.8 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-dark-chocolate-vol-2",
+    "name": "Raw Dark Chocolate Vol.2",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 542,
+    "macros": {
+      "fat": 39.2,
+      "carbs": 40.5,
+      "protein": 6.8
+    },
+    "micros": {
+      "potassium": "976 mg",
+      "magnesium": "34 mg",
+      "fiber": "12.2 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-matcha-vol-3",
+    "name": "Organic Matcha Vol.3",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 269,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 36.9,
+      "protein": 28.3
+    },
+    "micros": {
+      "potassium": "484 mg",
+      "magnesium": "109 mg",
+      "fiber": "11.1 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-turmeric-vol-2",
+    "name": "Raw Turmeric Vol.2",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 296,
+    "macros": {
+      "fat": 1.1,
+      "carbs": 63.1,
+      "protein": 8.3
+    },
+    "micros": {
+      "potassium": "533 mg",
+      "magnesium": "39 mg",
+      "fiber": "18.9 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-quinoa-vol-2",
+    "name": "Fresh Quinoa Vol.2",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 344,
+    "macros": {
+      "fat": 5.4,
+      "carbs": 58,
+      "protein": 15.9
+    },
+    "micros": {
+      "potassium": "619 mg",
+      "magnesium": "66 mg",
+      "fiber": "17.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-greek-yogurt-vol-3",
+    "name": "Organic Greek Yogurt Vol.3",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 92,
+    "macros": {
+      "fat": 4,
+      "carbs": 4,
+      "protein": 9.9
+    },
+    "micros": {
+      "potassium": "166 mg",
+      "magnesium": "45 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-spirulina-vol-3",
+    "name": "Organic Spirulina Vol.3",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 412,
+    "macros": {
+      "fat": 8,
+      "carbs": 23.4,
+      "protein": 61.5
+    },
+    "micros": {
+      "potassium": "742 mg",
+      "magnesium": "225 mg",
+      "fiber": "7 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-broccoli-vol-2",
+    "name": "Fresh Broccoli Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 42,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7.1,
+      "protein": 2.5
+    },
+    "micros": {
+      "potassium": "76 mg",
+      "magnesium": "19 mg",
+      "fiber": "2.1 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-spinach-vol-2",
+    "name": "Raw Spinach Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 28,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.4,
+      "protein": 2.8
+    },
+    "micros": {
+      "potassium": "50 mg",
+      "magnesium": "20 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "fresh-kale-vol-2",
+    "name": "Fresh Kale Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 56,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 7.6,
+      "protein": 4.3
+    },
+    "micros": {
+      "potassium": "101 mg",
+      "magnesium": "25 mg",
+      "fiber": "2.3 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-asparagus-vol-2",
+    "name": "Roasted Asparagus Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 26,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 4.1,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "47 mg",
+      "magnesium": "18 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "organic-cauliflower-vol-2",
+    "name": "Organic Cauliflower Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 32,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 5.4,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "58 mg",
+      "magnesium": "17 mg",
+      "fiber": "1.6 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-garlic-vol-2",
+    "name": "Roasted Garlic Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 168,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 33.9,
+      "protein": 7
+    },
+    "micros": {
+      "potassium": "302 mg",
+      "magnesium": "35 mg",
+      "fiber": "10.2 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "dried-shiitake-mushroom-vol-2",
+    "name": "Dried Shiitake Mushroom Vol.2",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 38,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 6.3,
+      "protein": 2.3
+    },
+    "micros": {
+      "potassium": "68 mg",
+      "magnesium": "18 mg",
+      "fiber": "1.9 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-atlantic-salmon-vol-2",
+    "name": "Slow-Cooked Atlantic Salmon Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 212,
+    "macros": {
+      "fat": 13.2,
+      "carbs": 0,
+      "protein": 23.2
+    },
+    "micros": {
+      "potassium": "382 mg",
+      "magnesium": "91 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "steamed-chicken-breast-vol-2",
+    "name": "Steamed Chicken Breast Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 174,
+    "macros": {
+      "fat": 3.9,
+      "carbs": 0,
+      "protein": 34.6
+    },
+    "micros": {
+      "potassium": "313 mg",
+      "magnesium": "131 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-beef-vol-2",
+    "name": "Slow-Cooked Beef Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 325,
+    "macros": {
+      "fat": 24.6,
+      "carbs": 0,
+      "protein": 25.9
+    },
+    "micros": {
+      "potassium": "585 mg",
+      "magnesium": "101 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "slow-cooked-turkey-breast-vol-2",
+    "name": "Slow-Cooked Turkey Breast Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 113,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 26.1
+    },
+    "micros": {
+      "potassium": "203 mg",
+      "magnesium": "101 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-cod-fillet-vol-2",
+    "name": "Roasted Cod Fillet Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 87,
+    "macros": {
+      "fat": 0.8,
+      "carbs": 0,
+      "protein": 20
+    },
+    "micros": {
+      "potassium": "157 mg",
+      "magnesium": "80 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "seared-tuna-vol-2",
+    "name": "Seared Tuna Vol.2",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 134,
+    "macros": {
+      "fat": 1.1,
+      "carbs": 0,
+      "protein": 31.1
+    },
+    "micros": {
+      "potassium": "241 mg",
+      "magnesium": "119 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "silken-tofu-vol-2",
+    "name": "Silken Tofu Vol.2",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 91,
+    "macros": {
+      "fat": 5.3,
+      "carbs": 1.9,
+      "protein": 8.9
+    },
+    "micros": {
+      "potassium": "164 mg",
+      "magnesium": "41 mg",
+      "fiber": "0 g"
+    },
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "roasted-tempeh-vol-2",
+    "name": "Roasted Tempeh Vol.2",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 209,
+    "macros": {
+      "fat": 11.6,
+      "carbs": 9.5,
+      "protein": 16.6
+    },
+    "micros": {
+      "potassium": "376 mg",
+      "magnesium": "68 mg",
+      "fiber": "2.9 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ripe-avocado-vol-2",
+    "name": "Ripe Avocado Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 192,
+    "macros": {
+      "fat": 16.7,
+      "carbs": 8.4,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "346 mg",
+      "magnesium": "17 mg",
+      "fiber": "2.5 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "toasted-almonds-vol-2",
+    "name": "Toasted Almonds Vol.2",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1508061252229-873587b1c312?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 638,
+    "macros": {
+      "fat": 53.2,
+      "carbs": 21.2,
+      "protein": 18.6
+    },
+    "micros": {
+      "potassium": "1148 mg",
+      "magnesium": "75 mg",
+      "fiber": "6.4 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "toasted-walnuts-vol-2",
+    "name": "Toasted Walnuts Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 668,
+    "macros": {
+      "fat": 60,
+      "carbs": 15.3,
+      "protein": 16.8
+    },
+    "micros": {
+      "potassium": "1202 mg",
+      "magnesium": "69 mg",
+      "fiber": "4.6 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "raw-chia-seeds-vol-3",
+    "name": "Raw Chia Seeds Vol.3",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 497,
+    "macros": {
+      "fat": 32.2,
+      "carbs": 37.6,
+      "protein": 14.1
+    },
+    "micros": {
+      "potassium": "895 mg",
+      "magnesium": "59 mg",
+      "fiber": "11.3 g"
+    },
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ground-flaxseed-vol-2",
+    "name": "Ground Flaxseed Vol.2",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 539,
+    "macros": {
+      "fat": 39,
+      "carbs": 31,
+      "protein": 15.9
+    },
+    "micros": {
+      "potassium": "970 mg",
+      "magnesium": "66 mg",
+      "fiber": "9.3 g"
+    },
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  }
+]

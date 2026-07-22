@@ -1,0 +1,267 @@
+---
+import '../../styles/global.css';
+import foodsData from '../../data/foods.json';
+
+export async function getStaticPaths() {
+  const paths = [];
+  const popularPairs = [
+    ['avocado', 'olive-oil'],
+    ['atlantic-salmon', 'chicken-breast'],
+    ['walnuts', 'macadamia-nuts'],
+    ['chia-seeds', 'flaxseed'],
+    ['blueberries', 'dark-chocolate'],
+    ['broccoli', 'spinach'],
+    ['chicken-breast', 'beef'],
+    ['tofu', 'tempeh'],
+    ['matcha', 'spirulina'],
+    ['garlic', 'turmeric'],
+    ['avocado', 'macadamia-nuts'],
+    ['atlantic-salmon', 'tuna'],
+    ['chia-seeds', 'flaxseed'],
+    ['kale', 'broccoli']
+  ];
+
+  // Generate paths for popular predefined pairs
+  popularPairs.forEach(([id1, id2]) => {
+    const f1 = foodsData.find(f => f.id === id1);
+    const f2 = foodsData.find(f => f.id === id2);
+    if (f1 && f2) {
+      paths.push({
+        params: { pair: `${f1.id}-vs-${f2.id}` },
+        props: { food1: f1, food2: f2 }
+      });
+    }
+  });
+
+  // Also auto-generate cross-category top pairs
+  const baseFoods = foodsData.slice(0, 25);
+  for (let i = 0; i < baseFoods.length; i++) {
+    for (let j = i + 1; j < Math.min(i + 4, baseFoods.length); j++) {
+      const f1 = baseFoods[i];
+      const f2 = baseFoods[j];
+      const pairKey = `${f1.id}-vs-${f2.id}`;
+      if (!paths.some(p => p.params.pair === pairKey)) {
+        paths.push({
+          params: { pair: pairKey },
+          props: { food1: f1, food2: f2 }
+        });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { food1, food2 } = Astro.props;
+
+const title = `${food1.name} vs ${food2.name}: Nutrition Comparison & Swap Analysis - NutriVisual`;
+const description = `Compare ${food1.name} (${food1.calories} kcal) vs ${food2.name} (${food2.calories} kcal). Side-by-side macro ratios, micronutrients, and calorie swap metrics.`;
+const canonicalUrl = `https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/`;
+
+// Swap Ratio Calculation (How much Food 2 equals 100g of Food 1)
+const swapGramsFood2 = Math.round((food1.calories / food2.calories) * 100);
+const calDiff = Math.abs(food1.calories - food2.calories);
+const lowerCalFood = food1.calories <= food2.calories ? food1 : food2;
+const higherCalFood = food1.calories > food2.calories ? food1 : food2;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={food1.image} />
+    <meta property="og:type" content="article" />
+
+    <!-- Early Theme Script -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Top Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/swap/" style="color: var(--accent-green); font-weight: 600;">Swap Directory</a>
+          <a href="/blog/stomach-digestion-speed/">Blog</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+      {/* Breadcrumb */}
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <a href="/swap/" style="color: var(--text-muted); text-decoration: none;">Swaps</a> / <span style="color: var(--accent-green);">{food1.name} vs {food2.name}</span>
+      </div>
+
+      {/* Hero Header */}
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+        <h1 style="font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.2;">
+          {food1.name} <span style="color: var(--accent-green);">vs</span> {food2.name}
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Side-by-side nutritional swap analysis for standard <strong>100g reference portions</strong>.
+        </p>
+      </div>
+
+      {/* Highlights & Swap Ratio Verdict Card */}
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 3rem; border-left: 4px solid var(--accent-green);">
+        <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+          💡 Swap Takeaway & Calorie Ratio
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">
+          Eating <strong>100g of {food1.name}</strong> ({food1.calories} kcal) provides the same calorie intake as eating <strong>{swapGramsFood2}g of {food2.name}</strong>.
+          {calDiff > 0 ? ` ${lowerCalFood.name} is ${calDiff} kcal lighter per 100g than ${higherCalFood.name}.` : ' Both foods have identical calorie densities.'}
+        </p>
+      </div>
+
+      {/* Side by Side Comparison Grid */}
+      <div class="layout-swap-cards">
+        {/* Food 1 Card */}
+        <div class="glass-card" style="padding: 2rem;">
+          <div style="border-radius: 12px; overflow: hidden; height: 220px; margin-bottom: 1.25rem;">
+            <img src={food1.image} alt={food1.name} style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem;">{food1.name}</h3>
+          <div style="color: var(--accent-green); font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem;">{food1.category}</div>
+
+          <div class="layout-swap-macros">
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Cal</div>
+              <div style="font-size: 1.1rem; font-weight: 700; font-family: var(--font-mono);">{food1.calories}</div>
+            </div>
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Fat</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-green); font-family: var(--font-mono);">{food1.macros.fat}g</div>
+            </div>
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Carb</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">{food1.macros.carbs}g</div>
+            </div>
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Prot</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">{food1.macros.protein}g</div>
+            </div>
+          </div>
+
+          <h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">🧬 Key Micronutrients</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            {Object.entries(food1.micros).map(([k, v]) => (
+              <div style="background: var(--bg-surface); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.8rem; border: 1px solid var(--border-color);">
+                <span style="color: var(--text-muted); text-transform: capitalize;">{k}:</span> <strong>{v}</strong>
+              </div>
+            ))}
+          </div>
+
+          <a href={`/food/${food1.id}/`} style="display: block; text-align: center; background: var(--bg-surface); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 0.6rem; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem;">
+            View Full {food1.name} Profile →
+          </a>
+        </div>
+
+        {/* Food 2 Card */}
+        <div class="glass-card" style="padding: 2rem;">
+          <div style="border-radius: 12px; overflow: hidden; height: 220px; margin-bottom: 1.25rem;">
+            <img src={food2.image} alt={food2.name} style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem;">{food2.name}</h3>
+          <div style="color: var(--accent-green); font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem;">{food2.category}</div>
+
+          <div class="layout-swap-macros">
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Cal</div>
+              <div style="font-size: 1.1rem; font-weight: 700; font-family: var(--font-mono);">{food2.calories}</div>
+            </div>
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Fat</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-green); font-family: var(--font-mono);">{food2.macros.fat}g</div>
+            </div>
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Carb</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">{food2.macros.carbs}g</div>
+            </div>
+            <div style="background: var(--bg-surface); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Prot</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">{food2.macros.protein}g</div>
+            </div>
+          </div>
+
+          <h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">🧬 Key Micronutrients</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            {Object.entries(food2.micros).map(([k, v]) => (
+              <div style="background: var(--bg-surface); padding: 0.35rem 0.65rem; border-radius: 6px; font-size: 0.8rem; border: 1px solid var(--border-color);">
+                <span style="color: var(--text-muted); text-transform: capitalize;">{k}:</span> <strong>{v}</strong>
+              </div>
+            ))}
+          </div>
+
+          <a href={`/food/${food2.id}/`} style="display: block; text-align: center; background: var(--bg-surface); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 0.6rem; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem;">
+            View Full {food2.name} Profile →
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      <div class="container">
+        <p style="margin-bottom: 0.75rem;">© 2026 NutriVisual. Visual nutrition and longevity reference engine.</p>
+        <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="/about/" style="color: var(--accent-green); text-decoration: none;">About Us</a>
+          <a href="/privacy/" style="color: var(--accent-green); text-decoration: none;">Privacy Policy</a>
+          <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>
+          <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
+          <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      function initThemeToggle() {
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+        const text = document.getElementById('theme-text');
+        function syncUI(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          if (icon && text) {
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            text.textContent = theme === 'light' ? 'Light' : 'Dark';
+          }
+        }
+        syncUI(localStorage.getItem('theme') || 'light');
+        if (btn) btn.onclick = () => syncUI(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      }
+      function initMobileMenu() {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('header-nav');
+        if (menuBtn && nav) {
+          menuBtn.onclick = () => {
+            nav.classList.toggle('open');
+            menuBtn.textContent = nav.classList.contains('open') ? '✕' : '☰';
+          };
+        }
+      }
+      initThemeToggle();
+      initMobileMenu();
+    </script>
+  </body>
+</html>

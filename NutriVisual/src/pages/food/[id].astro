@@ -1,0 +1,335 @@
+---
+import '../../styles/global.css';
+import foodsData from '../../data/foods.json';
+
+export async function getStaticPaths() {
+  return foodsData.map((food) => ({
+    params: { id: food.id },
+    props: { food },
+  }));
+}
+
+const { food } = Astro.props;
+
+const title = `${food.name} Nutrition & Longevity Profile - NutriVisual`;
+const description = `Lab-tested nutrition breakdown for ${food.name}. ${food.calories} kcal, ${food.macros.protein}g protein, ${food.macros.fat}g fat, and ${food.macros.carbs}g carbs per 100g serving.`;
+const canonicalUrl = `https://nutrivisual.com/food/${food.id}/`;
+
+// Find 3 related items in the same category
+const relatedFoods = foodsData.filter((f) => f.category === food.category && f.id !== food.id).slice(0, 3);
+
+// Dynamic Portion Equivalents
+const targetCal = food.calories;
+const comparisons = [
+  { id: 'sliced-avocado', name: 'Sliced Avocado', defaultRef: 'raw-walnuts' },
+  { id: 'grilled-chicken-breast', name: 'Grilled Chicken Breast', defaultRef: 'wild-atlantic-salmon' },
+  { id: 'steamed-organic-broccoli', name: 'Steamed Broccoli', defaultRef: 'baby-spinach-leaves' }
+].map(ref => {
+  let finalId = ref.id;
+  // Prevent comparing the food to itself
+  if (food.id === ref.id || food.id.includes(ref.id) || ref.id.includes(food.id)) {
+    finalId = ref.defaultRef;
+  }
+  const matched = foodsData.find(f => f.id === finalId);
+  if (!matched) return null;
+  const grams = Math.round((targetCal / matched.calories) * 100);
+  return {
+    name: matched.name,
+    image: matched.image,
+    grams: grams
+  };
+}).filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={food.image} />
+    <meta property="og:type" content="article" />
+
+    <!-- Google Rich Snippet Nutrition Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": food.name,
+      "image": food.image,
+      "description": description,
+      "category": food.category,
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": `${food.servingBaseGrams} grams`,
+        "calories": `${food.calories} calories`,
+        "fatContent": `${food.macros.fat} g`,
+        "carbohydrateContent": `${food.macros.carbs} g`,
+        "proteinContent": `${food.macros.protein} g`
+      }
+    })} />
+
+    <!-- Early Theme Script to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    {/* Navigation */}
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/blog/stomach-digestion-speed/">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy/">Privacy</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; font-weight: 600; box-shadow: var(--shadow-card); transition: all 0.2s ease;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+      {/* Breadcrumb */}
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <span style="color: var(--text-muted);">{food.category}</span> / <span style="color: var(--accent-green);">{food.name}</span>
+      </div>
+
+      {/* Main Showcase Hero Card */}
+      <div class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <div class="layout-food-hero">
+          <div style="border-radius: 16px; overflow: hidden; height: 320px; position: relative;">
+            <img src={food.image} alt={food.name} style="width: 100%; height: 100%; object-fit: cover;" />
+            <span style="position: absolute; top: 16px; left: 16px; background-color: var(--bg-header); padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.85rem; color: var(--accent-green); font-weight: 600; backdrop-filter: blur(8px);">
+              {food.category}
+            </span>
+          </div>
+
+          <div>
+            <h1 style="font-size: 2.4rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2;">{food.name}</h1>
+            <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.75rem;">
+              Lab-tested reference nutrition values for a standard <strong>100g serving</strong>.
+            </p>
+
+            {/* Macro Cards Grid */}
+            <div class="layout-food-macros">
+              <div style="background-color: var(--bg-surface); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid var(--border-color);">
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Calories</div>
+                <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); font-family: var(--font-mono);">{food.calories} kcal</div>
+              </div>
+              <div style="background-color: var(--bg-surface); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid var(--border-color);">
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Fat</div>
+                <div style="font-size: 1.3rem; font-weight: 700; color: var(--accent-green); font-family: var(--font-mono);">{food.macros.fat}g</div>
+              </div>
+              <div style="background-color: var(--bg-surface); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid var(--border-color);">
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Carbs</div>
+                <div style="font-size: 1.3rem; font-weight: 700; color: var(--accent-cyan); font-family: var(--font-mono);">{food.macros.carbs}g</div>
+              </div>
+              <div style="background-color: var(--bg-surface); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid var(--border-color);">
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Protein</div>
+                <div style="font-size: 1.3rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">{food.macros.protein}g</div>
+              </div>
+            </div>
+
+            {/* Micronutrient Badges */}
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-main);">
+              🧬 Micronutrients & Longevity Highlights
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+              {Object.entries(food.micros).map(([key, val]) => (
+                <div style="background-color: var(--bg-surface); border: 1px solid var(--border-color); padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.85rem;">
+                  <span style="color: var(--text-muted); text-transform: capitalize;">{key}:</span>{' '}
+                  <strong style="color: var(--accent-green); font-family: var(--font-mono);">{val}</strong>
+                </div>
+              ))}
+              {food.tags.map((tag) => (
+                <div style="background-color: var(--accent-green-glow); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;">
+                  ✓ {tag}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* NEW: Health Benefits ("Good For") Section */}
+      {food.benefits && food.benefits.length > 0 && (
+        <section class="glass-card" style="padding: 2rem; margin-bottom: 3rem;">
+          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            🛡️ Primary Health Benefits & Target Functions
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+            {food.benefits.map((benefit) => (
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 12px; display: flex; align-items: flex-start; gap: 0.75rem; transition: transform 0.2s ease, border-color 0.2s ease;">
+                <div style="font-size: 1.5rem; background: var(--accent-green-glow); color: var(--accent-green); padding: 0.3rem 0.5rem; border-radius: 8px; line-height: 1;">✓</div>
+                <div>
+                  <h4 style="font-weight: 700; color: var(--text-main); font-size: 1rem; margin: 0 0 0.25rem 0;">{benefit}</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.4;">Clinically backed nutritional pathway for longevity promotion.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* NEW: Portion Equivalents Comparison Section */}
+      <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          ⚖️ Visual Calorie portion Equivalents
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">
+          A 100g portion of <strong>{food.name}</strong> ({food.calories} kcal) is equivalent in energy density to:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+          {comparisons.map((comp) => (
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease;">
+              <div style="height: 150px; overflow: hidden; position: relative;">
+                <img src={comp.image} alt={comp.name} style="width: 100%; height: 100%; object-fit: cover;" />
+                <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(0, 0, 0, 0.7); color: #fff; padding: 0.35rem 0.75rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; font-family: var(--font-mono); backdrop-filter: blur(4px);">
+                  {comp.grams} grams
+                </div>
+              </div>
+              <div style="padding: 1.25rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <h4 style="font-weight: 700; color: var(--text-main); font-size: 1.05rem; margin: 0 0 0.25rem 0;">{comp.name}</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Equivalent portion matching the exact calorie target of {food.calories} kcal.</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* MOVE 4: Embeddable NutriVisual Card Widget */}
+      <section class="glass-card" style="padding: 2rem; margin-bottom: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.25rem 0; display: flex; align-items: center; gap: 0.5rem;">
+              📋 Embed {food.name} Card on Your Blog or Site
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+              Copy this interactive HTML widget snippet to embed live nutrition metrics on any food blog or article.
+            </p>
+          </div>
+          <button
+            id="copy-embed-btn"
+            style="background: var(--accent-green); color: #ffffff; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: opacity 0.2s ease;"
+          >
+            Copy Embed Code 📋
+          </button>
+        </div>
+
+        <textarea
+          id="embed-code-textarea"
+          readonly
+          rows="3"
+          style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem; resize: none;"
+        >{`<iframe src="https://nutrivisual.web.app/food/${food.id}/" width="100%" height="450" style="border:1px solid #e2e8f0; border-radius:12px;" title="${food.name} Nutrition"></iframe>\n<p><a href="https://nutrivisual.web.app/food/${food.id}/">Powered by NutriVisual Engine</a></p>`}</textarea>
+      </section>
+
+      {/* Related Foods Section */}
+      {relatedFoods.length > 0 && (
+        <section style="margin-top: 4rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+            🥦 Related Foods in {food.category}
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            {relatedFoods.map((rel) => (
+              <a href={`/food/${rel.id}/`} style="text-decoration: none; color: inherit;">
+                <div class="glass-card" style="padding: 1.25rem; display: flex; align-items: center; gap: 1rem; height: 100%;">
+                  <img src={rel.image} alt={rel.name} style="width: 64px; height: 64px; border-radius: 10px; object-fit: cover;" />
+                  <div>
+                    <div style="font-weight: 600; font-size: 1rem; color: var(--text-main); margin-bottom: 0.25rem;">{rel.name}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">{rel.calories} kcal • {rel.macros.protein}g protein</div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </main>
+
+    {/* Footer */}
+    <footer style="border-top: 1px solid var(--border-color); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      <div class="container">
+        <p style="margin-bottom: 0.75rem;">© 2026 NutriVisual. Visual nutrition and longevity reference engine.</p>
+        <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="/about/" style="color: var(--accent-green); text-decoration: none;">About Us</a>
+          <a href="/privacy/" style="color: var(--accent-green); text-decoration: none;">Privacy Policy</a>
+          <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>
+          <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
+          <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      function initThemeToggle() {
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+        const text = document.getElementById('theme-text');
+
+        function syncUI(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          if (icon && text) {
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            text.textContent = theme === 'light' ? 'Light' : 'Dark';
+          }
+        }
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        syncUI(currentTheme);
+
+        if (btn) {
+          btn.onclick = () => {
+            const now = document.documentElement.getAttribute('data-theme') || 'light';
+            const next = now === 'dark' ? 'light' : 'dark';
+            syncUI(next);
+          };
+        }
+      }
+      function initEmbedCopy() {
+        const copyBtn = document.getElementById('copy-embed-btn');
+        const textarea = document.getElementById('embed-code-textarea');
+        if (copyBtn && textarea) {
+          copyBtn.onclick = () => {
+            textarea.select();
+            navigator.clipboard.writeText(textarea.value);
+            copyBtn.textContent = 'Copied! ✓';
+            setTimeout(() => { copyBtn.textContent = 'Copy Embed Code 📋'; }, 2500);
+          };
+        }
+      }
+      function initMobileMenu() {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('header-nav');
+        if (menuBtn && nav) {
+          menuBtn.onclick = () => {
+            nav.classList.toggle('open');
+            menuBtn.textContent = nav.classList.contains('open') ? '✕' : '☰';
+          };
+        }
+      }
+      initThemeToggle();
+      initEmbedCopy();
+      initMobileMenu();
+    </script>
+  </body>
+</html>

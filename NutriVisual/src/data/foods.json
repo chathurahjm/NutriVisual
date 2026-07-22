@@ -1,0 +1,1626 @@
+[
+  {
+    "id": "atlantic-salmon",
+    "name": "Atlantic Salmon",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 206,
+    "macros": {
+      "fat": 12.3,
+      "carbs": 0,
+      "protein": 22.1
+    },
+    "micros": {
+      "potassium": "363 mg",
+      "magnesium": "27 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Cardiovascular Health",
+      "Muscle Recovery",
+      "Brain Function"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "chicken-breast",
+    "name": "Chicken Breast",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 165,
+    "macros": {
+      "fat": 3.6,
+      "carbs": 0,
+      "protein": 31
+    },
+    "micros": {
+      "potassium": "256 mg",
+      "magnesium": "28 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Muscle Growth",
+      "Metabolic Health",
+      "Weight Management"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "beef",
+    "name": "Beef",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 290,
+    "macros": {
+      "fat": 22,
+      "carbs": 0,
+      "protein": 24
+    },
+    "micros": {
+      "potassium": "318 mg",
+      "magnesium": "21 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Iron Absorption",
+      "Muscle Building",
+      "Energy Levels"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "turkey-breast",
+    "name": "Turkey Breast",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 135,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 29
+    },
+    "micros": {
+      "potassium": "262 mg",
+      "magnesium": "28 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Lean Muscle",
+      "Mood Regulation",
+      "Immune Support"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cod-fillet",
+    "name": "Cod Fillet",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 89,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 0,
+      "protein": 20.4
+    },
+    "micros": {
+      "potassium": "413 mg",
+      "magnesium": "32 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Heart Health",
+      "Brain Health",
+      "Inflammation Reduction"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "tuna",
+    "name": "Tuna",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 130,
+    "macros": {
+      "fat": 1,
+      "carbs": 0,
+      "protein": 29.9
+    },
+    "micros": {
+      "potassium": "323 mg",
+      "magnesium": "50 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Heart Health",
+      "Cognitive Support",
+      "Thyroid Function"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "tofu",
+    "name": "Tofu",
+    "category": "Proteins",
+    "image": "/images/organic-tofu-firm.png",
+    "servingBaseGrams": 100,
+    "calories": 76,
+    "macros": {
+      "fat": 4.8,
+      "carbs": 1.9,
+      "protein": 8.1
+    },
+    "micros": {
+      "potassium": "121 mg",
+      "magnesium": "30 mg",
+      "fiber": "0.3 g"
+    },
+    "benefits": [
+      "Bone Health",
+      "Hormonal Balance",
+      "Muscle Maintenance"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "tempeh",
+    "name": "Tempeh",
+    "category": "Proteins",
+    "image": "/images/fermented-tempeh.png",
+    "servingBaseGrams": 100,
+    "calories": 193,
+    "macros": {
+      "fat": 10.8,
+      "carbs": 9.4,
+      "protein": 19
+    },
+    "micros": {
+      "potassium": "412 mg",
+      "magnesium": "81 mg",
+      "fiber": "9 g"
+    },
+    "benefits": [
+      "Gut Health",
+      "Bone Strength",
+      "Digestive Efficiency"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "eggs",
+    "name": "Eggs",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 143,
+    "macros": {
+      "fat": 9.5,
+      "carbs": 0.7,
+      "protein": 12.6
+    },
+    "micros": {
+      "potassium": "138 mg",
+      "magnesium": "12 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Brain Health (Choline)",
+      "Eye Protection",
+      "Muscle Repair"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "shrimp",
+    "name": "Shrimp",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 99,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 0.2,
+      "protein": 24
+    },
+    "micros": {
+      "potassium": "259 mg",
+      "magnesium": "37 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Thyroid Function",
+      "Cellular Health",
+      "Lean Muscle"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cottage-cheese",
+    "name": "Cottage Cheese",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1559561853-08451507cbe7?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 98,
+    "macros": {
+      "fat": 4.3,
+      "carbs": 3.4,
+      "protein": 11.1
+    },
+    "micros": {
+      "potassium": "104 mg",
+      "magnesium": "8 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Sustained Casein Protein",
+      "Bone Health",
+      "Satiety"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "lentils",
+    "name": "Lentils",
+    "category": "Proteins",
+    "image": "/images/red-lentils.png",
+    "servingBaseGrams": 100,
+    "calories": 116,
+    "macros": {
+      "fat": 1.1,
+      "carbs": 20.1,
+      "protein": 9
+    },
+    "micros": {
+      "potassium": "369 mg",
+      "magnesium": "36 mg",
+      "fiber": "7.9 g"
+    },
+    "benefits": [
+      "Heart Longevity",
+      "Blood Sugar Balance",
+      "Gut Microflora"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "edamame",
+    "name": "Edamame",
+    "category": "Proteins",
+    "image": "/images/fresh-edamame.png",
+    "servingBaseGrams": 100,
+    "calories": 122,
+    "macros": {
+      "fat": 5.2,
+      "carbs": 8.9,
+      "protein": 11.9
+    },
+    "micros": {
+      "potassium": "436 mg",
+      "magnesium": "64 mg",
+      "fiber": "5.2 g"
+    },
+    "benefits": [
+      "Cholesterol Control",
+      "Bone Health",
+      "Cellular Repair"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "sardines",
+    "name": "Sardines",
+    "category": "Proteins",
+    "image": "/images/wild-sardines.png",
+    "servingBaseGrams": 100,
+    "calories": 208,
+    "macros": {
+      "fat": 11.5,
+      "carbs": 0,
+      "protein": 24.6
+    },
+    "micros": {
+      "potassium": "397 mg",
+      "magnesium": "39 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Cardiovascular Defense",
+      "Bone Density",
+      "Cognitive Strength"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "pork-tenderloin",
+    "name": "Pork Tenderloin",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 143,
+    "macros": {
+      "fat": 3.5,
+      "carbs": 0,
+      "protein": 26.2
+    },
+    "micros": {
+      "potassium": "421 mg",
+      "magnesium": "29 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Metabolic Energy",
+      "Muscle Maintenance",
+      "Nerve Support"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "avocado",
+    "name": "Avocado",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 160,
+    "macros": {
+      "fat": 14.7,
+      "carbs": 8.5,
+      "protein": 2
+    },
+    "micros": {
+      "potassium": "485 mg",
+      "magnesium": "29 mg",
+      "fiber": "6.7 g"
+    },
+    "benefits": [
+      "Heart Health",
+      "Skin Vitality",
+      "Enhanced Digestion"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "almonds",
+    "name": "Almonds",
+    "category": "Healthy Fats",
+    "image": "/images/roasted-almonds.png",
+    "servingBaseGrams": 100,
+    "calories": 579,
+    "macros": {
+      "fat": 49.9,
+      "carbs": 21.6,
+      "protein": 21.2
+    },
+    "micros": {
+      "potassium": "733 mg",
+      "magnesium": "270 mg",
+      "fiber": "12.5 g"
+    },
+    "benefits": [
+      "Cellular Protection",
+      "Cholesterol Balance",
+      "Energy Metabolism"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "walnuts",
+    "name": "Walnuts",
+    "category": "Healthy Fats",
+    "image": "/images/raw-walnuts.png",
+    "servingBaseGrams": 100,
+    "calories": 654,
+    "macros": {
+      "fat": 65.2,
+      "carbs": 13.7,
+      "protein": 15.2
+    },
+    "micros": {
+      "potassium": "441 mg",
+      "magnesium": "158 mg",
+      "fiber": "6.7 g"
+    },
+    "benefits": [
+      "Cognitive Vitality",
+      "Anti-Inflammatory",
+      "Cardiovascular Support"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "chia-seeds",
+    "name": "Chia Seeds",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 486,
+    "macros": {
+      "fat": 30.7,
+      "carbs": 42.1,
+      "protein": 16.5
+    },
+    "micros": {
+      "potassium": "407 mg",
+      "magnesium": "335 mg",
+      "fiber": "34.4 g"
+    },
+    "benefits": [
+      "Digestive Regularity",
+      "Bone Mineralization",
+      "Hydration Balance"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "flaxseed",
+    "name": "Flaxseed",
+    "category": "Healthy Fats",
+    "image": "/images/ground-flaxseeds.png",
+    "servingBaseGrams": 100,
+    "calories": 534,
+    "macros": {
+      "fat": 42.2,
+      "carbs": 28.9,
+      "protein": 18.3
+    },
+    "micros": {
+      "potassium": "813 mg",
+      "magnesium": "392 mg",
+      "fiber": "27.3 g"
+    },
+    "benefits": [
+      "Digestive Health",
+      "Hormonal Health",
+      "Cardiovascular Support"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "olive-oil",
+    "name": "Olive Oil",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 884,
+    "macros": {
+      "fat": 100,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "0 mg",
+      "magnesium": "0 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Heart Longevity",
+      "Cellular Health",
+      "Joint Comfort"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "macadamia-nuts",
+    "name": "Macadamia Nuts",
+    "category": "Healthy Fats",
+    "image": "/images/macadamia-nuts.png",
+    "servingBaseGrams": 100,
+    "calories": 718,
+    "macros": {
+      "fat": 75.8,
+      "carbs": 13.8,
+      "protein": 7.9
+    },
+    "micros": {
+      "potassium": "368 mg",
+      "magnesium": "130 mg",
+      "fiber": "8.6 g"
+    },
+    "benefits": [
+      "Brain Protection",
+      "Satiety Support",
+      "Heart Longevity"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "pecans",
+    "name": "Pecans",
+    "category": "Healthy Fats",
+    "image": "/images/raw-pecans.png",
+    "servingBaseGrams": 100,
+    "calories": 691,
+    "macros": {
+      "fat": 72,
+      "carbs": 13.9,
+      "protein": 9.2
+    },
+    "micros": {
+      "potassium": "410 mg",
+      "magnesium": "121 mg",
+      "fiber": "9.6 g"
+    },
+    "benefits": [
+      "Heart Health",
+      "Antioxidant Defense",
+      "Metabolic Balance"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "pistachios",
+    "name": "Pistachios",
+    "category": "Healthy Fats",
+    "image": "/images/roasted-pistachios.png",
+    "servingBaseGrams": 100,
+    "calories": 560,
+    "macros": {
+      "fat": 45.3,
+      "carbs": 27.2,
+      "protein": 20.2
+    },
+    "micros": {
+      "potassium": "1025 mg",
+      "magnesium": "121 mg",
+      "fiber": "10.6 g"
+    },
+    "benefits": [
+      "Eye Longevity",
+      "Blood Sugar Control",
+      "Vascular Elasticity"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cashews",
+    "name": "Cashews",
+    "category": "Healthy Fats",
+    "image": "/images/raw-cashews.png",
+    "servingBaseGrams": 100,
+    "calories": 553,
+    "macros": {
+      "fat": 43.8,
+      "carbs": 30.2,
+      "protein": 18.2
+    },
+    "micros": {
+      "potassium": "660 mg",
+      "magnesium": "292 mg",
+      "fiber": "3.3 g"
+    },
+    "benefits": [
+      "Bone Strength",
+      "Immune Protection",
+      "Cellular Energy"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "pumpkin-seeds",
+    "name": "Pumpkin Seeds",
+    "category": "Healthy Fats",
+    "image": "/images/pumpkin-seeds.png",
+    "servingBaseGrams": 100,
+    "calories": 559,
+    "macros": {
+      "fat": 49,
+      "carbs": 10.7,
+      "protein": 30.2
+    },
+    "micros": {
+      "potassium": "809 mg",
+      "magnesium": "592 mg",
+      "fiber": "6 g"
+    },
+    "benefits": [
+      "Sleep & Mood (Tryptophan)",
+      "Magnesium Surge",
+      "Prostate Support"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "sunflower-seeds",
+    "name": "Sunflower Seeds",
+    "category": "Healthy Fats",
+    "image": "/images/sunflower-seeds.png",
+    "servingBaseGrams": 100,
+    "calories": 584,
+    "macros": {
+      "fat": 51.5,
+      "carbs": 20,
+      "protein": 20.8
+    },
+    "micros": {
+      "potassium": "645 mg",
+      "magnesium": "325 mg",
+      "fiber": "8.6 g"
+    },
+    "benefits": [
+      "Vitamin E Protection",
+      "Anti-Inflammatory",
+      "Skin Elasticity"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "grass-fed-butter",
+    "name": "Grass-Fed Butter",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 717,
+    "macros": {
+      "fat": 81.1,
+      "carbs": 0.1,
+      "protein": 0.9
+    },
+    "micros": {
+      "potassium": "24 mg",
+      "magnesium": "2 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Gut Barrier (Butyrate)",
+      "Vitamin K2 Activation",
+      "Cellular Fuel"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "coconut-oil",
+    "name": "Coconut Oil",
+    "category": "Healthy Fats",
+    "image": "/images/virgin-coconut-oil.png",
+    "servingBaseGrams": 100,
+    "calories": 862,
+    "macros": {
+      "fat": 99.1,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "0 mg",
+      "magnesium": "0 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Rapid Ketone Fuel",
+      "Metabolic Energy",
+      "Antimicrobial Support"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "blueberries",
+    "name": "Blueberries",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 57,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 14.5,
+      "protein": 0.7
+    },
+    "micros": {
+      "potassium": "77 mg",
+      "magnesium": "6 mg",
+      "fiber": "2.4 g"
+    },
+    "benefits": [
+      "Cognitive Longevity",
+      "Cellular Defense",
+      "Skin Elasticity"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "dark-chocolate",
+    "name": "Dark Chocolate",
+    "category": "Superfoods",
+    "image": "/images/dark-chocolate.png",
+    "servingBaseGrams": 100,
+    "calories": 598,
+    "macros": {
+      "fat": 42.6,
+      "carbs": 36.3,
+      "protein": 7.8
+    },
+    "micros": {
+      "potassium": "715 mg",
+      "magnesium": "228 mg",
+      "fiber": "10.9 g"
+    },
+    "benefits": [
+      "Mood Elevation",
+      "Nitric Oxide Boost",
+      "Stress Management"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "matcha",
+    "name": "Matcha",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 300,
+    "macros": {
+      "fat": 1,
+      "carbs": 38,
+      "protein": 30
+    },
+    "micros": {
+      "potassium": "2660 mg",
+      "magnesium": "230 mg",
+      "fiber": "38.5 g"
+    },
+    "benefits": [
+      "Metabolic Boost",
+      "Sustained Focus",
+      "Antioxidant Defense"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "turmeric",
+    "name": "Turmeric",
+    "category": "Superfoods",
+    "image": "/images/turmeric-root.png",
+    "servingBaseGrams": 100,
+    "calories": 312,
+    "macros": {
+      "fat": 1,
+      "carbs": 65,
+      "protein": 8
+    },
+    "micros": {
+      "potassium": "2080 mg",
+      "magnesium": "208 mg",
+      "fiber": "22.7 g"
+    },
+    "benefits": [
+      "Joint Integrity",
+      "Anti-Inflammatory",
+      "Cognitive Health"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "quinoa",
+    "name": "Quinoa",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 368,
+    "macros": {
+      "fat": 6.1,
+      "carbs": 64.2,
+      "protein": 14.1
+    },
+    "micros": {
+      "potassium": "563 mg",
+      "magnesium": "197 mg",
+      "fiber": "7 g"
+    },
+    "benefits": [
+      "Sustained Energy",
+      "Tissue Repair",
+      "Digestive Health"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "greek-yogurt",
+    "name": "Greek Yogurt",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 73,
+    "macros": {
+      "fat": 3.6,
+      "carbs": 3.6,
+      "protein": 10
+    },
+    "micros": {
+      "potassium": "141 mg",
+      "magnesium": "11 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Gut Microbiome",
+      "Bone Density",
+      "Muscle Recovery"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "spirulina",
+    "name": "Spirulina",
+    "category": "Superfoods",
+    "image": "/images/spirulina-powder.png",
+    "servingBaseGrams": 100,
+    "calories": 290,
+    "macros": {
+      "fat": 7.7,
+      "carbs": 23.9,
+      "protein": 57.5
+    },
+    "micros": {
+      "potassium": "1363 mg",
+      "magnesium": "195 mg",
+      "fiber": "3.6 g"
+    },
+    "benefits": [
+      "Heavy Metal Detox",
+      "Energy Vitality",
+      "Immune Defense"
+    ],
+    "tags": [
+      "High Protein",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "acai-berry",
+    "name": "Acai Berry",
+    "category": "Superfoods",
+    "image": "/images/acai-puree.png",
+    "servingBaseGrams": 100,
+    "calories": 70,
+    "macros": {
+      "fat": 5,
+      "carbs": 4,
+      "protein": 1
+    },
+    "micros": {
+      "potassium": "130 mg",
+      "magnesium": "18 mg",
+      "fiber": "3 g"
+    },
+    "benefits": [
+      "Cellular Rejuvenation",
+      "Antioxidant Protection",
+      "Skin Longevity"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "goji-berries",
+    "name": "Goji Berries",
+    "category": "Superfoods",
+    "image": "/images/goji-berries.png",
+    "servingBaseGrams": 100,
+    "calories": 349,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 77.1,
+      "protein": 14.3
+    },
+    "micros": {
+      "potassium": "1132 mg",
+      "magnesium": "184 mg",
+      "fiber": "13 g"
+    },
+    "benefits": [
+      "Vision Longevity",
+      "Immune Support",
+      "Vitality Activation"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ginger-root",
+    "name": "Ginger Root",
+    "category": "Superfoods",
+    "image": "/images/ginger-root.png",
+    "servingBaseGrams": 100,
+    "calories": 80,
+    "macros": {
+      "fat": 0.8,
+      "carbs": 17.8,
+      "protein": 1.8
+    },
+    "micros": {
+      "potassium": "415 mg",
+      "magnesium": "43 mg",
+      "fiber": "2 g"
+    },
+    "benefits": [
+      "Digestive Relief",
+      "Systemic Anti-Inflammatory",
+      "Circulation"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "pomegranate",
+    "name": "Pomegranate",
+    "category": "Superfoods",
+    "image": "/images/fresh-pomegranate.png",
+    "servingBaseGrams": 100,
+    "calories": 83,
+    "macros": {
+      "fat": 1.2,
+      "carbs": 18.7,
+      "protein": 1.7
+    },
+    "micros": {
+      "potassium": "236 mg",
+      "magnesium": "12 mg",
+      "fiber": "4 g"
+    },
+    "benefits": [
+      "Vascular Elasticity",
+      "Mitochondrial Renewal (Urolithin A)",
+      "Nitric Oxide"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "chia-pudding",
+    "name": "Chia Pudding",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1517673400267-0251440c45dc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 150,
+    "macros": {
+      "fat": 8.5,
+      "carbs": 14,
+      "protein": 5
+    },
+    "micros": {
+      "potassium": "210 mg",
+      "magnesium": "110 mg",
+      "fiber": "9 g"
+    },
+    "benefits": [
+      "Sustained Energy",
+      "Gut Regularity",
+      "Hydration Balance"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "kimchi",
+    "name": "Kimchi",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1583224964978-2257b960c3d3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 15,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 2.4,
+      "protein": 1.1
+    },
+    "micros": {
+      "potassium": "151 mg",
+      "magnesium": "14 mg",
+      "fiber": "1.6 g"
+    },
+    "benefits": [
+      "Probiotic Diversity",
+      "Immune Defense",
+      "Digestive Vitality"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "bone-broth",
+    "name": "Bone Broth",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 45,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 0.5,
+      "protein": 10
+    },
+    "micros": {
+      "potassium": "200 mg",
+      "magnesium": "15 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Joint Cartilage",
+      "Gut Lining Support",
+      "Skin Collagen"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cacao-nibs",
+    "name": "Cacao Nibs",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 570,
+    "macros": {
+      "fat": 43,
+      "carbs": 36,
+      "protein": 14
+    },
+    "micros": {
+      "potassium": "830 mg",
+      "magnesium": "270 mg",
+      "fiber": "28 g"
+    },
+    "benefits": [
+      "Mood & Mental Clarity",
+      "Endothelial Health",
+      "Fiber Surge"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 35,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 7.2,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "316 mg",
+      "magnesium": "21 mg",
+      "fiber": "2.6 g"
+    },
+    "benefits": [
+      "Hormone Detox",
+      "Immune Support",
+      "Bone Density"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "spinach",
+    "name": "Spinach",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 23,
+    "macros": {
+      "fat": 0.4,
+      "carbs": 3.6,
+      "protein": 2.9
+    },
+    "micros": {
+      "potassium": "558 mg",
+      "magnesium": "79 mg",
+      "fiber": "2.2 g"
+    },
+    "benefits": [
+      "Oxygen Delivery",
+      "Eye Health",
+      "Blood Pressure Support"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "kale",
+    "name": "Kale",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 49,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 8.8,
+      "protein": 4.3
+    },
+    "micros": {
+      "potassium": "348 mg",
+      "magnesium": "33 mg",
+      "fiber": "3.6 g"
+    },
+    "benefits": [
+      "Vision Longevity",
+      "Detoxification",
+      "Bone Health"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "asparagus",
+    "name": "Asparagus",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 53,
+    "macros": {
+      "fat": 3.5,
+      "carbs": 4.1,
+      "protein": 2.3
+    },
+    "micros": {
+      "potassium": "202 mg",
+      "magnesium": "14 mg",
+      "fiber": "2.1 g"
+    },
+    "benefits": [
+      "Fluid Regulation",
+      "Cellular Repair",
+      "Prebiotic Activity"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 25,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 5,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "299 mg",
+      "magnesium": "15 mg",
+      "fiber": "2 g"
+    },
+    "benefits": [
+      "Brain Function",
+      "Liver Detox",
+      "DNA Protection"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 149,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 33,
+      "protein": 6.4
+    },
+    "micros": {
+      "potassium": "401 mg",
+      "magnesium": "25 mg",
+      "fiber": "2.1 g"
+    },
+    "benefits": [
+      "Immune Strength",
+      "Heart Longevity",
+      "Microbial Defense"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "shiitake-mushroom",
+    "name": "Shiitake Mushroom",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 34,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 6.8,
+      "protein": 2.2
+    },
+    "micros": {
+      "potassium": "304 mg",
+      "magnesium": "20 mg",
+      "fiber": "2.5 g"
+    },
+    "benefits": [
+      "Immune Boosting",
+      "Cholesterol Control",
+      "Longevity Support"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "sweet-potato",
+    "name": "Sweet Potato",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 86,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 20.1,
+      "protein": 1.6
+    },
+    "micros": {
+      "potassium": "337 mg",
+      "magnesium": "25 mg",
+      "fiber": "3 g"
+    },
+    "benefits": [
+      "Vitamin A Surge",
+      "Glycemic Stability",
+      "Gut Microflora"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "brussels-sprouts",
+    "name": "Brussels Sprouts",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1438118991616-0e5d0337c7e5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 43,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 9,
+      "protein": 3.4
+    },
+    "micros": {
+      "potassium": "389 mg",
+      "magnesium": "23 mg",
+      "fiber": "3.8 g"
+    },
+    "benefits": [
+      "Sulforaphane Surge",
+      "DNA Protection",
+      "Liver Detox"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "red-beets",
+    "name": "Red Beets",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1593105544559-ecb03bf76f82?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 43,
+    "macros": {
+      "fat": 0.2,
+      "carbs": 9.6,
+      "protein": 1.6
+    },
+    "micros": {
+      "potassium": "325 mg",
+      "magnesium": "23 mg",
+      "fiber": "2.8 g"
+    },
+    "benefits": [
+      "Nitric Oxide Boost",
+      "Exercise Stamina",
+      "Liver Health"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "carrots",
+    "name": "Carrots",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1598170845058-12f6a6a5ce87?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 41,
+    "macros": {
+      "fat": 0.2,
+      "carbs": 9.6,
+      "protein": 0.9
+    },
+    "micros": {
+      "potassium": "320 mg",
+      "magnesium": "12 mg",
+      "fiber": "2.8 g"
+    },
+    "benefits": [
+      "Beta-Carotene",
+      "Vision Longevity",
+      "Skin Health"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "zucchini",
+    "name": "Zucchini",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 17,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 3.1,
+      "protein": 1.2
+    },
+    "micros": {
+      "potassium": "261 mg",
+      "magnesium": "18 mg",
+      "fiber": "1 g"
+    },
+    "benefits": [
+      "Hydration Balance",
+      "Low-Calorie Volume",
+      "Eye Health"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "red-bell-pepper",
+    "name": "Red Bell Pepper",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 26,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 6,
+      "protein": 1
+    },
+    "micros": {
+      "potassium": "211 mg",
+      "magnesium": "12 mg",
+      "fiber": "2.1 g"
+    },
+    "benefits": [
+      "Vitamin C Defense",
+      "Collagen Support",
+      "Cellular Protection"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "artichoke",
+    "name": "Artichoke",
+    "category": "Vegetables",
+    "image": "/images/steamed-artichoke.png",
+    "servingBaseGrams": 100,
+    "calories": 47,
+    "macros": {
+      "fat": 0.2,
+      "carbs": 10.5,
+      "protein": 3.3
+    },
+    "micros": {
+      "potassium": "370 mg",
+      "magnesium": "60 mg",
+      "fiber": "5.4 g"
+    },
+    "benefits": [
+      "Bile Flow & Liver Health",
+      "Prebiotic Inulin",
+      "Cholesterol Support"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Lab Tested",
+      "Clean Foods"
+    ]
+  }
+]

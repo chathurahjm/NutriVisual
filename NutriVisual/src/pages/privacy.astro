@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+
+const title = "Privacy Policy - NutriVisual";
+const description = "Privacy Policy for NutriVisual including Google AdSense, cookie usage, third-party analytics, and user privacy protections.";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/blog/stomach-digestion-speed/">Blog</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem; max-width: 800px; line-height: 1.7;">
+      <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Privacy Policy</h1>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem;">Last updated: July 21, 2026</p>
+
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">1. Introduction</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          Welcome to NutriVisual ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience on our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit <strong>https://nutrivisual.web.app</strong>.
+        </p>
+      </div>
+
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">2. Information We Collect</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          We do not require user accounts or personal identification to browse NutriVisual. However, like most websites, we may collect non-personal information such as your IP address, browser type, device information, and pages visited through automated analytics and cookies.
+        </p>
+      </div>
+
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">3. Google AdSense & Cookies</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          NutriVisual uses Google AdSense to serve ads when you visit our website. Google, as a third-party vendor, uses cookies to serve ads based on your prior visits to our site or other websites.
+        </p>
+        <ul style="color: var(--text-muted); font-size: 0.95rem; margin-left: 1.5rem; margin-bottom: 1rem;">
+          <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to NutriVisual and/or other sites on the Internet.</li>
+          <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green);">Google Ad Settings</a>.</li>
+          <li>Alternatively, you can opt out of third-party vendor's use of cookies for personalized advertising by visiting <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green);">aboutads.info</a>.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">4. Third-Party Analytics</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          We may use third-party services such as Google Analytics to help analyze how users navigate our website. These tools use cookies to collect standard internet log information and visitor behavior in an anonymous form.
+        </p>
+      </div>
+
+      <div class="glass-card" style="padding: 2rem;">
+        <h2 style="font-size: 1.3rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">5. Contact Us</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          If you have questions or concerns regarding this Privacy Policy, please contact us at: <br/>
+          <strong style="color: var(--text-main);">chathurahjm@gmail.com</strong>
+        </p>
+      </div>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      <div class="container">
+        <p>© 2026 NutriVisual. All rights reserved. <a href="/blog/stomach-digestion-speed/" style="color: var(--accent-green);">Blog</a> | <a href="/terms/" style="color: var(--accent-green);">Terms</a> | <a href="/disclaimer/" style="color: var(--accent-green);">Disclaimer</a></p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      function initThemeToggle() {
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+        const text = document.getElementById('theme-text');
+        function syncUI(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          if (icon && text) {
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            text.textContent = theme === 'light' ? 'Light' : 'Dark';
+          }
+        }
+        syncUI(localStorage.getItem('theme') || 'light');
+        if (btn) btn.onclick = () => syncUI(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      }
+      function initMobileMenu() { const menuBtn = document.getElementById("mobile-menu-btn"); const nav = document.getElementById("header-nav"); if (menuBtn && nav) { menuBtn.onclick = () => { nav.classList.toggle("open"); menuBtn.textContent = nav.classList.contains("open") ? "✕" : "☰"; }; } } initThemeToggle(); initMobileMenu();
+    </script>
+  </body>
+</html>

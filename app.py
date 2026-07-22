@@ -74,7 +74,7 @@ if uploaded_file is not None:
         rs = gain / loss
         df['RSI'] = 100 - (100 / (1 + rs))
 
-        # MACD 
+        # MACD
         exp1 = df['close'].ewm(span=12, adjust=False).mean()
         exp2 = df['close'].ewm(span=26, adjust=False).mean()
         df['MACD'] = exp1 - exp2

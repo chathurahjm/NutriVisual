@@ -1,3 +1,5 @@
 /.DS_Store
 tv_scraper/venv
 venv
+.agent/
+_bmad-output/

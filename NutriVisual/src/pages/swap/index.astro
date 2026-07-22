@@ -1,0 +1,149 @@
+---
+import '../../styles/global.css';
+import foodsData from '../../data/foods.json';
+
+const title = "Food Swap Engine & Nutrition Comparisons - NutriVisual";
+const description = "Discover nutritional food swaps and side-by-side macro comparisons for healthy eating, keto diets, muscle building, and longevity.";
+
+// List popular comparisons
+const popularSwaps = [
+  { id1: 'avocado', id2: 'olive-oil', title: 'Avocado vs Olive Oil' },
+  { id1: 'atlantic-salmon', id2: 'chicken-breast', title: 'Salmon vs Chicken Breast' },
+  { id1: 'walnuts', id2: 'macadamia-nuts', title: 'Walnuts vs Macadamia Nuts' },
+  { id1: 'chia-seeds', id2: 'flaxseed', title: 'Chia Seeds vs Flaxseed' },
+  { id1: 'blueberries', id2: 'dark-chocolate', title: 'Blueberries vs Dark Chocolate' },
+  { id1: 'broccoli', id2: 'spinach', title: 'Broccoli vs Spinach' },
+  { id1: 'chicken-breast', id2: 'beef', title: 'Chicken Breast vs Beef' },
+  { id1: 'tofu', id2: 'tempeh', title: 'Tofu vs Tempeh' },
+  { id1: 'matcha', id2: 'spirulina', title: 'Matcha vs Spirulina' },
+  { id1: 'garlic', id2: 'turmeric', title: 'Garlic vs Turmeric' },
+  { id1: 'eggs', id2: 'cottage-cheese', title: 'Pasture Eggs vs Cottage Cheese' },
+  { id1: 'sweet-potato', id2: 'quinoa', title: 'Sweet Potato vs Quinoa' },
+  { id1: 'red-beets', id2: 'spinach', title: 'Red Beets vs Spinach' },
+  { id1: 'pumpkin-seeds', id2: 'almonds', title: 'Pumpkin Seeds vs Almonds' },
+  { id1: 'kimchi', id2: 'greek-yogurt', title: 'Kimchi vs Greek Yogurt' },
+  { id1: 'acai-berry', id2: 'blueberries', title: 'Acai Berry vs Blueberries' }
+];
+
+const resolvedSwaps = popularSwaps.map(s => {
+  const f1 = foodsData.find(f => f.id === s.id1);
+  const f2 = foodsData.find(f => f.id === s.id2);
+  if (!f1 || !f2) return null;
+  return {
+    path: `/swap/${f1.id}-vs-${f2.id}/`,
+    title: s.title,
+    food1: f1,
+    food2: f2
+  };
+}).filter(Boolean);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/blog/stomach-digestion-speed/">Blog</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+      <div style="text-align: center; max-width: 750px; margin: 0 auto 3rem auto;">
+        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2;">
+          🔄 Food <span style="color: var(--accent-green);">Swap Engine</span> & Comparisons
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">
+          Compare calorie densities, macro balances, and longevity micronutrients between popular foods.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        {resolvedSwaps.map((swap) => (
+          <a href={swap.path} style="text-decoration: none; color: inherit;">
+            <div class="glass-card" style="padding: 1.5rem; transition: transform 0.2s ease, border-color 0.2s ease;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <img src={swap.food1.image} alt={swap.food1.name} style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
+                  <span style="font-weight: 700; color: var(--accent-green);">VS</span>
+                  <img src={swap.food2.image} alt={swap.food2.name} style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
+                </div>
+                <span style="font-size: 0.8rem; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 0.3rem 0.6rem; border-radius: 12px; font-weight: 600;">Compare →</span>
+              </div>
+              <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">{swap.title}</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+                {swap.food1.calories} kcal vs {swap.food2.calories} kcal • {swap.food1.macros.protein}g vs {swap.food2.macros.protein}g protein
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+      <div class="container">
+        <p style="margin-bottom: 0.75rem;">© 2026 NutriVisual. Visual nutrition and longevity reference engine.</p>
+        <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="/about/" style="color: var(--accent-green); text-decoration: none;">About Us</a>
+          <a href="/privacy/" style="color: var(--accent-green); text-decoration: none;">Privacy Policy</a>
+          <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>
+          <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
+          <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      function initThemeToggle() {
+        const btn = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+        const text = document.getElementById('theme-text');
+        function syncUI(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          if (icon && text) {
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            text.textContent = theme === 'light' ? 'Light' : 'Dark';
+          }
+        }
+        syncUI(localStorage.getItem('theme') || 'light');
+        if (btn) btn.onclick = () => syncUI(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      }
+      function initMobileMenu() {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('header-nav');
+        if (menuBtn && nav) {
+          menuBtn.onclick = () => {
+            nav.classList.toggle('open');
+            menuBtn.textContent = nav.classList.contains('open') ? '✕' : '☰';
+          };
+        }
+      }
+      initThemeToggle();
+      initMobileMenu();
+    </script>
+  </body>
+</html>

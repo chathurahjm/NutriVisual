@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Outer Avocado Skin -->
+  <path d="M64 12C38 12, 22 45, 22 78 C22 105, 41 116, 64 116 C87 116, 106 105, 106 78 C106 45, 90 12, 64 12 Z" fill="#047857" />
+  
+  <!-- Inner Avocado Flesh -->
+  <path d="M64 22C43 22, 30 50, 30 78 C30 100, 45 108, 64 108 C83 108, 98 100, 98 78 C98 50, 85 22, 64 22 Z" fill="#a7f3d0" />
+  
+  <!-- Avocado Pit (Glowing green circular data node) -->
+  <circle cx="64" cy="74" r="22" fill="#059669" />
+  <circle cx="64" cy="74" r="14" fill="#10b981" />
+  
+  <!-- Tech-style inner accent line -->
+  <circle cx="64" cy="74" r="6" fill="#ffffff" opacity="0.9" />
+</svg>
