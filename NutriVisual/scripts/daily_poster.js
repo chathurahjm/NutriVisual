@@ -3,7 +3,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import OpenAI from 'openai';
 import { Jimp } from 'jimp';
 
 dotenv.config();
@@ -37,7 +36,7 @@ function loadFoods() {
 // Generate the side-by-side comparison image
 async function generateSwapImage(food1, food2) {
   console.log(`🎨 Stitching images for: ${food1.name} vs ${food2.name}...`);
-  
+
   // Create a dark template image (1200 x 630 - standard social sharing size)
   const width = 1200;
   const height = 630;
@@ -48,7 +47,7 @@ async function generateSwapImage(food1, food2) {
     // Check if there is a local file in public/images/
     const localName = `${food.id}.png`;
     const altLocalName = food.image.split('/').pop().split('?')[0];
-    
+
     const possiblePaths = [
       path.join(__dirname, '../public/images', localName),
       path.join(__dirname, '../public/images', altLocalName),
@@ -90,7 +89,7 @@ async function generateSwapImage(food1, food2) {
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
-    
+
     const outputPath = path.join(outputDir, 'last_swap_draft.png');
     await image.write(outputPath);
     console.log(`✅ Stitched image saved to: ${outputPath}`);
@@ -101,9 +100,34 @@ async function generateSwapImage(food1, food2) {
   }
 }
 
-// Call AI API (OpenAI -> Gemini -> Local Template fallback) to write social post copy
+// Helper to load pre-generated social copy dataset
+function loadSocialPosts() {
+  const postsPath = path.join(__dirname, '../src/data/social_posts.json');
+  if (fs.existsSync(postsPath)) {
+    return JSON.parse(fs.readFileSync(postsPath, 'utf-8'));
+  }
+  return {};
+}
+
+// Generate social post copy (Pre-generated dataset -> AI APIs -> Local template fallback)
 async function generatePostCopy(food1, food2) {
-  const prompt = `
+  const pairKey = `${food1.id}-vs-${food2.id}`;
+  const socialPosts = loadSocialPosts();
+
+  // 1. Primary: Use pre-generated copy from social_posts.json if available
+  if (socialPosts[pairKey]) {
+    console.log(`📖 Using pre-generated copy from dataset for ${pairKey}...`);
+    return socialPosts[pairKey];
+  }
+
+  // 2. Try Gemini API if key is available
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (apiKey) {
+    console.log(`🤖 Calling Gemini API to write copy for ${food1.name} vs ${food2.name}...`);
+    try {
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+      const prompt = `
 You are a top health copywriter for NutriVisual, a data-driven nutrition platform.
 Write two short social media posts comparing ${food1.name} and ${food2.name} as a "Longevity Swap".
 
@@ -125,39 +149,6 @@ Instructions:
 
 Format your output exactly as a JSON object with keys "linkedin" and "facebook". Do not output any markdown code blocks, just raw JSON.
 `;
-
-  const fallbackCopy = {
-    facebook: `🥗 NutriVisual Swap of the Day: ${food1.name} vs ${food2.name}!\n\nCompare side-by-side macro ratios, calories, and longevity benefits at: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=facebook&utm_medium=social`,
-    linkedin: `⚖️ NutriVisual Longevity Swap: ${food1.name} vs ${food2.name}.\n\nDeep-dive into cellular nutrition and cognitive optimization: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=linkedin&utm_medium=social`
-  };
-
-  // 1. Try OpenAI if key is present
-  const openaiKey = process.env.OPENAI_API_KEY;
-  if (openaiKey) {
-    try {
-      console.log(`🤖 Calling OpenAI API (gpt-4o-mini) to write copy for ${food1.name} vs ${food2.name}...`);
-      const openai = new OpenAI({ apiKey: openaiKey });
-      const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
-        messages: [{ role: 'user', content: prompt }],
-        response_format: { type: 'json_object' }
-      });
-      const content = response.choices[0]?.message?.content;
-      if (content) {
-        return JSON.parse(content.trim());
-      }
-    } catch (error) {
-      console.error('❌ OpenAI generation failed:', error.message);
-    }
-  }
-
-  // 2. Try Gemini as fallback if key is present
-  const geminiKey = process.env.GEMINI_API_KEY;
-  if (geminiKey) {
-    try {
-      console.log(`🤖 Calling Gemini API to write copy for ${food1.name} vs ${food2.name}...`);
-      const genAI = new GoogleGenerativeAI(geminiKey);
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
       const result = await model.generateContent(prompt);
       const responseText = result.response.text().trim();
       const cleanJsonText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
@@ -167,9 +158,12 @@ Format your output exactly as a JSON object with keys "linkedin" and "facebook".
     }
   }
 
-  // 3. Static fallback
-  console.log('⚠️ No active AI key working. Using local template copy.');
-  return fallbackCopy;
+  // 3. Fallback Template
+  console.log('⚠️ Using local fallback template copy.');
+  return {
+    facebook: `🥗 NutriVisual Swap of the Day: ${food1.name} vs ${food2.name}!\n\nCompare side-by-side macro ratios, calories, and longevity benefits at: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=facebook&utm_medium=social`,
+    linkedin: `⚖️ NutriVisual Longevity Swap: ${food1.name} vs ${food2.name}.\n\nDeep-dive into cellular nutrition and cognitive optimization: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=linkedin&utm_medium=social`
+  };
 }
 
 // Auto-publish to Facebook
@@ -239,7 +233,7 @@ async function publishToLinkedIn(text, imagePath) {
         }
       })
     });
-    
+
     const registerData = await registerResponse.json();
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadMechanism'].uploadUrl;
     const assetUrn = registerData.value.asset;
@@ -308,11 +302,11 @@ async function run() {
   }
 
   const foods = loadFoods();
-  
+
   // Select a random popular pair
   const randomIndex = Math.floor(Math.random() * POPULAR_PAIRS.length);
   const [id1, id2] = POPULAR_PAIRS[randomIndex];
-  
+
   const food1 = foods.find(f => f.id === id1);
   const food2 = foods.find(f => f.id === id2);
 
