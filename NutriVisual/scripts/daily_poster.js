@@ -62,7 +62,12 @@ async function generateSwapImage(food1, food2) {
     }
 
     console.log(`🌐 Fetching remote asset: ${food.image}`);
-    return await Jimp.read(food.image);
+    try {
+      return await Jimp.read(food.image);
+    } catch (err) {
+      console.warn(`⚠️ Could not fetch remote asset for ${food.name} (${err.message}). Generating fallback image tile...`);
+      return new Jimp({ width: 480, height: 480, color: 0x1e293bff });
+    }
   };
 
   try {
@@ -275,8 +280,13 @@ async function publishToLinkedIn(text, imagePath) {
 // Main execution function
 async function run() {
   const isDryRun = process.argv.includes('--dry-run');
+  const isFbOnly = process.argv.includes('--fb-only') || process.argv.includes('--facebook-only');
+
   if (isDryRun) {
     console.log('⚙️ Running in DRY-RUN mode. No active publishing will occur.');
+  }
+  if (isFbOnly) {
+    console.log('🎯 Target platform: Facebook ONLY.');
   }
 
   const foods = loadFoods();
@@ -308,8 +318,13 @@ async function run() {
     if (!isDryRun) {
       // 3. Publish to Facebook
       await publishToFacebook(copy.facebook, imagePath);
-      // 4. Publish to LinkedIn
-      await publishToLinkedIn(copy.linkedin, imagePath);
+
+      // 4. Publish to LinkedIn (skipped if FB-only)
+      if (!isFbOnly) {
+        await publishToLinkedIn(copy.linkedin, imagePath);
+      } else {
+        console.log('ℹ️ Skipped LinkedIn publishing (--fb-only mode active).');
+      }
     }
   } catch (err) {
     console.error('❌ Automation script failed:', err);
