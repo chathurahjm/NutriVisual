@@ -2,9 +2,24 @@
 import '../styles/global.css';
 import NutriVisualApp from '../components/NutriVisualApp.jsx';
 
+import posts from '../data/posts.json';
+
 const title = "NutriVisual - Visual Nutrition & Longevity Reference Engine";
 const description = "Explore lab-tested macro and micro-nutrient profiles for popular foods with dynamic portion sliders, SVG macro charts, and side-by-side food comparisons.";
 const canonicalUrl = "https://nutrivisual.com/";
+
+const featuredBlogs = [
+  {
+    slug: "stomach-digestion-speed",
+    title: "The Stomach Timeline: How Fast Do Different Foods Actually Digest?",
+    subtitle: "Discover how fast liquids, simple carbs, complex carbs, proteins, and healthy fats digest in the stomach, and how to structure meals for long-lasting energy.",
+    category: "Metabolic Health",
+    date: "July 21, 2026",
+    readTime: "6 min read"
+  },
+  posts[0],
+  posts[1]
+];
 ---
 
 <html lang="en">
@@ -56,7 +71,7 @@ const canonicalUrl = "https://nutrivisual.com/";
         </a>
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         <nav class="header-nav" id="header-nav">
-          <a href="/blog/stomach-digestion-speed/">Blog</a>
+          <a href="/blog/">Blog</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
           <a href="/privacy/">Privacy</a>
@@ -156,6 +171,49 @@ const canonicalUrl = "https://nutrivisual.com/";
           </div>
         </div>
       </section>
+
+      <!-- Featured Blogs Section -->
+      <section style="padding: 4rem 0; border-top: 1px solid var(--border-color);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.5px;">
+                Top Science & Longevity Insights
+              </h2>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+                Evidence-based guides to metabolic performance, portion density, and cellular wellness.
+              </p>
+            </div>
+            <a href="/blog/" style="color: var(--accent-green); font-weight: 700; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+              View All Articles →
+            </a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            {featuredBlogs.map(blog => (
+              <a href={`/blog/${blog.slug}/`} style="text-decoration: none; display: flex; flex-direction: column;" class="glass-card">
+                <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; height: 100%;">
+                  <div>
+                    <span style="display: inline-block; background-color: var(--accent-green-glow); color: var(--accent-green); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                      {blog.category}
+                    </span>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.5rem; color: var(--text-main);">
+                      {blog.title}
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.45; margin-bottom: 1.25rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                      {blog.subtitle}
+                    </p>
+                  </div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.75rem; display: flex; justify-content: space-between;">
+                    <span>{blog.date}</span>
+                    <span>{blog.readTime}</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -167,7 +225,7 @@ const canonicalUrl = "https://nutrivisual.com/";
           <a href="/privacy/" style="color: var(--accent-green); text-decoration: none;">Privacy Policy</a>
           <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>
           <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
-          <a href="/blog/stomach-digestion-speed/" style="color: var(--accent-green); text-decoration: none;">Blog</a>
+          <a href="/blog/" style="color: var(--accent-green); text-decoration: none;">Blog</a>
           <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
         </div>
       </div>

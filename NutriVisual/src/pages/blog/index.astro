@@ -1,0 +1,155 @@
+---
+import '../../styles/global.css';
+import posts from '../../data/posts.json';
+
+const title = "NutriVisual Blog - Science-Backed Longevity & Nutrition Insights";
+const description = "Read our latest articles on gastric emptying speeds, healthy fats, macro balancing, cognitive performance, and science-backed nutrition guidance.";
+const canonicalUrl = "https://nutrivisual.com/blog/";
+
+// Include our custom static article as the first/featured one
+const allPosts = [
+  {
+    slug: "stomach-digestion-speed",
+    title: "The Stomach Timeline: How Fast Do Different Foods Actually Digest?",
+    subtitle: "Discover how fast liquids, simple carbs, complex carbs, proteins, and healthy fats digest in the stomach, and how to structure meals for long-lasting energy.",
+    category: "Metabolic Health",
+    date: "July 21, 2026",
+    readTime: "6 min read"
+  },
+  ...posts
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <!-- Early Theme Script to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main);">
+          <span style="font-size: 1.6rem;">🥑</span>
+          <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">Nutri<span style="color: var(--accent-green);">Visual</span></span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/blog/" style="color: var(--accent-green); font-weight: 700; border-bottom: 2px solid var(--accent-green);">Blog</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; font-weight: 600; box-shadow: var(--shadow-card); transition: all 0.2s ease;">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-main); letter-spacing: -0.5px;">
+          NutriVisual <span style="color: var(--accent-green);">Blog</span>
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem; line-height: 1.6;">
+          Science-backed deep-dives into gastric emptying timelines, micronutrient density, portion dynamics, and metabolic health.
+        </p>
+
+        <!-- Articles Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+          {allPosts.map(post => (
+            <a href={`/blog/${post.slug}/`} style="text-decoration: none; display: flex; flex-direction: column;" class="glass-card">
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; height: 100%;">
+                <div>
+                  <span style="display: inline-block; background-color: var(--accent-green-glow); color: var(--accent-green); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                    {post.category}
+                  </span>
+                  
+                  <h2 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.75rem; color: var(--text-main); transition: color 0.2s ease;">
+                    {post.title}
+                  </h2>
+                  
+                  <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                    {post.subtitle}
+                  </p>
+                </div>
+
+                <div style="font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                  <span>{post.date}</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding: 2rem 0; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+      <div class="container">
+        <p>&copy; 2026 NutriVisual. All rights reserved.</p>
+        <div style="margin-top: 0.5rem; display: flex; justify-content: center; gap: 1rem;">
+          <a href="/privacy/" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a>
+          <a href="/terms/" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a>
+          <a href="/disclaimer/" style="color: var(--text-muted); text-decoration: none;">Medical Disclaimer</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Hamburger Toggle Script -->
+    <script is:inline>
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const nav = document.getElementById('header-nav');
+      if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          menuBtn.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+      }
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const themeText = document.getElementById('theme-text');
+
+      function updateThemeUI(theme) {
+        if (themeIcon && themeText) {
+          themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+          themeText.textContent = theme === 'dark' ? 'Dark' : 'Light';
+        }
+      }
+
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      updateThemeUI(currentTheme);
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+          localStorage.setItem('theme', t);
+          updateThemeUI(t);
+        });
+      }
+    </script>
+  </body>
+</html>
