@@ -44,25 +44,40 @@ async function generateSwapImage(food1, food2) {
 
   // Load food images (check local folder public/images first, otherwise fall back to unsplash url)
   const getFoodImage = async (food) => {
-    // Check if there is a local file in public/images/
-    const localName = `${food.id}.png`;
-    const altLocalName = food.image.split('/').pop().split('?')[0];
-    
-    const possiblePaths = [
-      path.join(__dirname, '../public/images', localName),
-      path.join(__dirname, '../public/images', altLocalName),
-      path.join(__dirname, '../public/images', `${food.id.replace(/-/g, '_')}.png`)
-    ];
-
-    for (const p of possiblePaths) {
-      if (fs.existsSync(p)) {
-        console.log(`📍 Found local asset: ${p}`);
-        return await Jimp.read(p);
+    // If the food.image already points to a local file
+    if (food.image.startsWith('/images/') || food.image.startsWith('images/')) {
+      const localPath = path.join(__dirname, '../public', food.image);
+      if (fs.existsSync(localPath)) {
+        console.log(`📍 Found configured local asset: ${localPath}`);
+        return await Jimp.read(localPath);
       }
     }
 
-    console.log(`🌐 Fetching remote asset: ${food.image}`);
-    return await Jimp.read(food.image);
+    // Scan public/images directory for any file containing the food ID
+    const imagesDir = path.join(__dirname, '../public/images');
+    if (fs.existsSync(imagesDir)) {
+      const dirFiles = fs.readdirSync(imagesDir);
+      const matchedFile = dirFiles.find(f => {
+        const nameWithoutExt = path.basename(f, path.extname(f)).toLowerCase();
+        const searchId = food.id.toLowerCase().replace(/-/g, '');
+        const cleanName = nameWithoutExt.replace(/[-_]/g, '');
+        return cleanName.includes(searchId) || searchId.includes(cleanName);
+      });
+
+      if (matchedFile) {
+        const matchedPath = path.join(imagesDir, matchedFile);
+        console.log(`📍 Found matched local asset for ${food.id}: ${matchedPath}`);
+        return await Jimp.read(matchedPath);
+      }
+    }
+
+    // Fallback to remote URL
+    if (food.image.startsWith('http')) {
+      console.log(`🌐 Fetching remote asset: ${food.image}`);
+      return await Jimp.read(food.image);
+    }
+
+    throw new Error(`No image found for food: ${food.id}`);
   };
 
   try {
@@ -160,21 +175,19 @@ async function publishToFacebook(text, imagePath) {
   }
 
   console.log('🚀 Uploading and publishing to Facebook Page...');
-  // Note: Standard multipart form-data upload for local files
-  // In a real serverless or Actions runner, we use fetch with FormData
-  // To keep dependencies clean, we use a simple fetch script
-  const FormData = (await import('form-data')).default;
-  const form = new FormData();
-  form.append('source', fs.createReadStream(imagePath));
-  form.append('message', text);
-  form.append('access_token', pageAccessToken);
-
+  
   try {
+    const form = new FormData();
+    const fileBlob = new Blob([fs.readFileSync(imagePath)], { type: 'image/png' });
+    form.append('source', fileBlob, path.basename(imagePath));
+    form.append('message', text);
+    form.append('access_token', pageAccessToken);
+
     const response = await fetch(`https://graph.facebook.com/v19.0/${pageId}/photos`, {
       method: 'POST',
-      body: form,
-      headers: form.getHeaders()
+      body: form
     });
+    
     const result = await response.json();
     if (result.error) {
       console.error('❌ Facebook API Error:', result.error);

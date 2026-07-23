@@ -138,7 +138,7 @@
     "id": "organic-tofu-firm",
     "name": "Organic Tofu (Firm)",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 76,
     "macros": {
@@ -160,7 +160,7 @@
     "id": "fermented-tempeh",
     "name": "Fermented Tempeh",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 193,
     "macros": {
@@ -250,7 +250,7 @@
     "id": "macadamia-nuts",
     "name": "Macadamia Nuts",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 718,
     "macros": {
@@ -272,7 +272,7 @@
     "id": "raw-walnuts",
     "name": "Raw Walnuts",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 654,
     "macros": {
@@ -317,7 +317,7 @@
     "id": "flaxseeds-ground",
     "name": "Flaxseeds (Ground)",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 534,
     "macros": {
@@ -339,7 +339,7 @@
     "id": "grass-fed-ghee",
     "name": "Grass-Fed Ghee",
     "category": "Healthy Fats",
-    "image": "/images/grass-fed-ghee.png",
+    "image": "/images/grass-fed-ghee.jpg",
     "servingBaseGrams": 100,
     "calories": 897,
     "macros": {
@@ -383,7 +383,7 @@
     "id": "hemp-seeds",
     "name": "Hemp Seeds",
     "category": "Healthy Fats",
-    "image": "/images/hemp-seeds.png",
+    "image": "/images/hemp-seeds.jpg",
     "servingBaseGrams": 100,
     "calories": 553,
     "macros": {
@@ -427,7 +427,7 @@
     "id": "85-cocoa-dark-chocolate",
     "name": "85% Cocoa Dark Chocolate",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 598,
     "macros": {
@@ -449,7 +449,7 @@
     "id": "organic-spirulina-powder",
     "name": "Organic Spirulina Powder",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 290,
     "macros": {
@@ -494,7 +494,7 @@
     "id": "turmeric-root-curcumin",
     "name": "Turmeric Root (Curcumin)",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 312,
     "macros": {
@@ -516,7 +516,7 @@
     "id": "fresh-ginger-root",
     "name": "Fresh Ginger Root",
     "category": "Superfoods",
-    "image": "/images/ginger-root.png",
+    "image": "/images/ginger-root.jpg",
     "servingBaseGrams": 100,
     "calories": 80,
     "macros": {
@@ -538,7 +538,7 @@
     "id": "acai-berry-puree",
     "name": "Acai Berry Puree",
     "category": "Superfoods",
-    "image": "/images/acai-puree.png",
+    "image": "/images/acai-puree.jpg",
     "servingBaseGrams": 100,
     "calories": 70,
     "macros": {
@@ -560,7 +560,7 @@
     "id": "goji-berries-dried",
     "name": "Goji Berries (Dried)",
     "category": "Superfoods",
-    "image": "/images/goji-berries.png",
+    "image": "/images/goji-berries.jpg",
     "servingBaseGrams": 100,
     "calories": 349,
     "macros": {
@@ -897,7 +897,7 @@
     "id": "organic-tofu-vol-1",
     "name": "Organic Tofu Vol.1",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 79,
     "macros": {
@@ -920,7 +920,7 @@
     "id": "organic-tempeh-vol-1",
     "name": "Organic Tempeh Vol.1",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 214,
     "macros": {
@@ -989,7 +989,7 @@
     "id": "raw-walnuts-vol-1",
     "name": "Raw Walnuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 639,
     "macros": {
@@ -1035,7 +1035,7 @@
     "id": "organic-flaxseed-vol-1",
     "name": "Organic Flaxseed Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 589,
     "macros": {
@@ -1081,7 +1081,7 @@
     "id": "roasted-macadamia-nuts-vol-1",
     "name": "Roasted Macadamia Nuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 740,
     "macros": {
@@ -1127,7 +1127,7 @@
     "id": "artisanal-dark-chocolate-vol-1",
     "name": "Artisanal Dark Chocolate Vol.1",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 544,
     "macros": {
@@ -1173,7 +1173,7 @@
     "id": "organic-turmeric-vol-1",
     "name": "Organic Turmeric Vol.1",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 338,
     "macros": {
@@ -1242,7 +1242,7 @@
     "id": "organic-spirulina-vol-1",
     "name": "Organic Spirulina Vol.1",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 409,
     "macros": {
@@ -1564,7 +1564,7 @@
     "id": "steamed-tofu-vol-1",
     "name": "Steamed Tofu Vol.1",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 76,
     "macros": {
@@ -1587,7 +1587,7 @@
     "id": "fresh-tempeh-vol-1",
     "name": "Fresh Tempeh Vol.1",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 205,
     "macros": {
@@ -1656,7 +1656,7 @@
     "id": "roasted-walnuts-vol-1",
     "name": "Roasted Walnuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 771,
     "macros": {
@@ -1702,7 +1702,7 @@
     "id": "raw-flaxseed-vol-1",
     "name": "Raw Flaxseed Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 551,
     "macros": {
@@ -1748,7 +1748,7 @@
     "id": "raw-macadamia-nuts-vol-1",
     "name": "Raw Macadamia Nuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 731,
     "macros": {
@@ -1794,7 +1794,7 @@
     "id": "organic-dark-chocolate-vol-1",
     "name": "Organic Dark Chocolate Vol.1",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 553,
     "macros": {
@@ -1840,7 +1840,7 @@
     "id": "fresh-turmeric-vol-1",
     "name": "Fresh Turmeric Vol.1",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 286,
     "macros": {
@@ -1909,7 +1909,7 @@
     "id": "raw-spirulina-vol-1",
     "name": "Raw Spirulina Vol.1",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 377,
     "macros": {
@@ -2231,7 +2231,7 @@
     "id": "fresh-tofu-vol-1",
     "name": "Fresh Tofu Vol.1",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 82,
     "macros": {
@@ -2254,7 +2254,7 @@
     "id": "steamed-tempeh-vol-1",
     "name": "Steamed Tempeh Vol.1",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 215,
     "macros": {
@@ -2323,7 +2323,7 @@
     "id": "organic-walnuts-vol-1",
     "name": "Organic Walnuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 743,
     "macros": {
@@ -2369,7 +2369,7 @@
     "id": "fresh-flaxseed-vol-1",
     "name": "Fresh Flaxseed Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 548,
     "macros": {
@@ -2415,7 +2415,7 @@
     "id": "organic-macadamia-nuts-vol-1",
     "name": "Organic Macadamia Nuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 796,
     "macros": {
@@ -2461,7 +2461,7 @@
     "id": "raw-dark-chocolate-vol-1",
     "name": "Raw Dark Chocolate Vol.1",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 570,
     "macros": {
@@ -2507,7 +2507,7 @@
     "id": "raw-turmeric-vol-1",
     "name": "Raw Turmeric Vol.1",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 300,
     "macros": {
@@ -2576,7 +2576,7 @@
     "id": "fresh-spirulina-vol-1",
     "name": "Fresh Spirulina Vol.1",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 401,
     "macros": {
@@ -2898,7 +2898,7 @@
     "id": "silken-tofu-vol-1",
     "name": "Silken Tofu Vol.1",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 87,
     "macros": {
@@ -2921,7 +2921,7 @@
     "id": "roasted-tempeh-vol-1",
     "name": "Roasted Tempeh Vol.1",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 190,
     "macros": {
@@ -2990,7 +2990,7 @@
     "id": "toasted-walnuts-vol-1",
     "name": "Toasted Walnuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 730,
     "macros": {
@@ -3036,7 +3036,7 @@
     "id": "ground-flaxseed-vol-1",
     "name": "Ground Flaxseed Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 575,
     "macros": {
@@ -3082,7 +3082,7 @@
     "id": "toasted-macadamia-nuts-vol-1",
     "name": "Toasted Macadamia Nuts Vol.1",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 785,
     "macros": {
@@ -3128,7 +3128,7 @@
     "id": "single-origin-dark-chocolate-vol-1",
     "name": "Single-Origin Dark Chocolate Vol.1",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 585,
     "macros": {
@@ -3174,7 +3174,7 @@
     "id": "dried-turmeric-vol-1",
     "name": "Dried Turmeric Vol.1",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 265,
     "macros": {
@@ -3243,7 +3243,7 @@
     "id": "organic-spirulina-vol-2",
     "name": "Organic Spirulina Vol.2",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 359,
     "macros": {
@@ -3565,7 +3565,7 @@
     "id": "organic-tofu-vol-2",
     "name": "Organic Tofu Vol.2",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 79,
     "macros": {
@@ -3588,7 +3588,7 @@
     "id": "organic-tempeh-vol-2",
     "name": "Organic Tempeh Vol.2",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 197,
     "macros": {
@@ -3657,7 +3657,7 @@
     "id": "raw-walnuts-vol-2",
     "name": "Raw Walnuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 700,
     "macros": {
@@ -3703,7 +3703,7 @@
     "id": "organic-flaxseed-vol-2",
     "name": "Organic Flaxseed Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 530,
     "macros": {
@@ -3749,7 +3749,7 @@
     "id": "roasted-macadamia-nuts-vol-2",
     "name": "Roasted Macadamia Nuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 844,
     "macros": {
@@ -3795,7 +3795,7 @@
     "id": "artisanal-dark-chocolate-vol-2",
     "name": "Artisanal Dark Chocolate Vol.2",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 609,
     "macros": {
@@ -3841,7 +3841,7 @@
     "id": "organic-turmeric-vol-2",
     "name": "Organic Turmeric Vol.2",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 326,
     "macros": {
@@ -3910,7 +3910,7 @@
     "id": "raw-spirulina-vol-2",
     "name": "Raw Spirulina Vol.2",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 409,
     "macros": {
@@ -4232,7 +4232,7 @@
     "id": "steamed-tofu-vol-2",
     "name": "Steamed Tofu Vol.2",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 76,
     "macros": {
@@ -4255,7 +4255,7 @@
     "id": "fresh-tempeh-vol-2",
     "name": "Fresh Tempeh Vol.2",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 229,
     "macros": {
@@ -4324,7 +4324,7 @@
     "id": "roasted-walnuts-vol-2",
     "name": "Roasted Walnuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 787,
     "macros": {
@@ -4370,7 +4370,7 @@
     "id": "raw-flaxseed-vol-2",
     "name": "Raw Flaxseed Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 612,
     "macros": {
@@ -4416,7 +4416,7 @@
     "id": "raw-macadamia-nuts-vol-2",
     "name": "Raw Macadamia Nuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 845,
     "macros": {
@@ -4462,7 +4462,7 @@
     "id": "organic-dark-chocolate-vol-2",
     "name": "Organic Dark Chocolate Vol.2",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 555,
     "macros": {
@@ -4508,7 +4508,7 @@
     "id": "fresh-turmeric-vol-2",
     "name": "Fresh Turmeric Vol.2",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 339,
     "macros": {
@@ -4577,7 +4577,7 @@
     "id": "fresh-spirulina-vol-2",
     "name": "Fresh Spirulina Vol.2",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 423,
     "macros": {
@@ -4899,7 +4899,7 @@
     "id": "fresh-tofu-vol-2",
     "name": "Fresh Tofu Vol.2",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 85,
     "macros": {
@@ -4922,7 +4922,7 @@
     "id": "steamed-tempeh-vol-2",
     "name": "Steamed Tempeh Vol.2",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 219,
     "macros": {
@@ -4991,7 +4991,7 @@
     "id": "organic-walnuts-vol-2",
     "name": "Organic Walnuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 670,
     "macros": {
@@ -5037,7 +5037,7 @@
     "id": "fresh-flaxseed-vol-2",
     "name": "Fresh Flaxseed Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 596,
     "macros": {
@@ -5083,7 +5083,7 @@
     "id": "organic-macadamia-nuts-vol-2",
     "name": "Organic Macadamia Nuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 745,
     "macros": {
@@ -5129,7 +5129,7 @@
     "id": "raw-dark-chocolate-vol-2",
     "name": "Raw Dark Chocolate Vol.2",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 542,
     "macros": {
@@ -5175,7 +5175,7 @@
     "id": "raw-turmeric-vol-2",
     "name": "Raw Turmeric Vol.2",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 296,
     "macros": {
@@ -5244,7 +5244,7 @@
     "id": "organic-spirulina-vol-3",
     "name": "Organic Spirulina Vol.3",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 412,
     "macros": {
@@ -5566,7 +5566,7 @@
     "id": "silken-tofu-vol-2",
     "name": "Silken Tofu Vol.2",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 91,
     "macros": {
@@ -5589,7 +5589,7 @@
     "id": "roasted-tempeh-vol-2",
     "name": "Roasted Tempeh Vol.2",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 209,
     "macros": {
@@ -5658,7 +5658,7 @@
     "id": "toasted-walnuts-vol-2",
     "name": "Toasted Walnuts Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 668,
     "macros": {
@@ -5704,7 +5704,7 @@
     "id": "ground-flaxseed-vol-2",
     "name": "Ground Flaxseed Vol.2",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 539,
     "macros": {

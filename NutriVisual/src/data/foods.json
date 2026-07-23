@@ -171,7 +171,7 @@
     "id": "tofu",
     "name": "Tofu",
     "category": "Proteins",
-    "image": "/images/organic-tofu-firm.png",
+    "image": "/images/organic-tofu-firm.jpg",
     "servingBaseGrams": 100,
     "calories": 76,
     "macros": {
@@ -199,7 +199,7 @@
     "id": "tempeh",
     "name": "Tempeh",
     "category": "Proteins",
-    "image": "/images/fermented-tempeh.png",
+    "image": "/images/fermented-tempeh.jpg",
     "servingBaseGrams": 100,
     "calories": 193,
     "macros": {
@@ -311,7 +311,7 @@
     "id": "lentils",
     "name": "Lentils",
     "category": "Proteins",
-    "image": "/images/red-lentils.png",
+    "image": "/images/red-lentils.jpg",
     "servingBaseGrams": 100,
     "calories": 116,
     "macros": {
@@ -339,7 +339,7 @@
     "id": "edamame",
     "name": "Edamame",
     "category": "Proteins",
-    "image": "/images/fresh-edamame.png",
+    "image": "/images/fresh-edamame.jpg",
     "servingBaseGrams": 100,
     "calories": 122,
     "macros": {
@@ -367,7 +367,7 @@
     "id": "sardines",
     "name": "Sardines",
     "category": "Proteins",
-    "image": "/images/wild-sardines.png",
+    "image": "/images/wild-sardines.jpg",
     "servingBaseGrams": 100,
     "calories": 208,
     "macros": {
@@ -451,7 +451,7 @@
     "id": "almonds",
     "name": "Almonds",
     "category": "Healthy Fats",
-    "image": "/images/roasted-almonds.png",
+    "image": "/images/roasted-almonds.jpg",
     "servingBaseGrams": 100,
     "calories": 579,
     "macros": {
@@ -479,7 +479,7 @@
     "id": "walnuts",
     "name": "Walnuts",
     "category": "Healthy Fats",
-    "image": "/images/raw-walnuts.png",
+    "image": "/images/raw-walnuts.jpg",
     "servingBaseGrams": 100,
     "calories": 654,
     "macros": {
@@ -535,7 +535,7 @@
     "id": "flaxseed",
     "name": "Flaxseed",
     "category": "Healthy Fats",
-    "image": "/images/ground-flaxseeds.png",
+    "image": "/images/ground-flaxseeds.jpg",
     "servingBaseGrams": 100,
     "calories": 534,
     "macros": {
@@ -591,7 +591,7 @@
     "id": "macadamia-nuts",
     "name": "Macadamia Nuts",
     "category": "Healthy Fats",
-    "image": "/images/macadamia-nuts.png",
+    "image": "/images/macadamia-nuts.jpg",
     "servingBaseGrams": 100,
     "calories": 718,
     "macros": {
@@ -619,7 +619,7 @@
     "id": "pecans",
     "name": "Pecans",
     "category": "Healthy Fats",
-    "image": "/images/raw-pecans.png",
+    "image": "/images/raw-pecans.jpg",
     "servingBaseGrams": 100,
     "calories": 691,
     "macros": {
@@ -647,7 +647,7 @@
     "id": "pistachios",
     "name": "Pistachios",
     "category": "Healthy Fats",
-    "image": "/images/roasted-pistachios.png",
+    "image": "/images/roasted-pistachios.jpg",
     "servingBaseGrams": 100,
     "calories": 560,
     "macros": {
@@ -675,7 +675,7 @@
     "id": "cashews",
     "name": "Cashews",
     "category": "Healthy Fats",
-    "image": "/images/raw-cashews.png",
+    "image": "/images/raw-cashews.jpg",
     "servingBaseGrams": 100,
     "calories": 553,
     "macros": {
@@ -703,7 +703,7 @@
     "id": "pumpkin-seeds",
     "name": "Pumpkin Seeds",
     "category": "Healthy Fats",
-    "image": "/images/pumpkin-seeds.png",
+    "image": "/images/pumpkin-seeds.jpg",
     "servingBaseGrams": 100,
     "calories": 559,
     "macros": {
@@ -731,7 +731,7 @@
     "id": "sunflower-seeds",
     "name": "Sunflower Seeds",
     "category": "Healthy Fats",
-    "image": "/images/sunflower-seeds.png",
+    "image": "/images/sunflower-seeds.jpg",
     "servingBaseGrams": 100,
     "calories": 584,
     "macros": {
@@ -787,7 +787,7 @@
     "id": "coconut-oil",
     "name": "Coconut Oil",
     "category": "Healthy Fats",
-    "image": "/images/virgin-coconut-oil.png",
+    "image": "/images/virgin-coconut-oil.jpg",
     "servingBaseGrams": 100,
     "calories": 862,
     "macros": {
@@ -843,7 +843,7 @@
     "id": "dark-chocolate",
     "name": "Dark Chocolate",
     "category": "Superfoods",
-    "image": "/images/dark-chocolate.png",
+    "image": "/images/dark-chocolate.jpg",
     "servingBaseGrams": 100,
     "calories": 598,
     "macros": {
@@ -899,7 +899,7 @@
     "id": "turmeric",
     "name": "Turmeric",
     "category": "Superfoods",
-    "image": "/images/turmeric-root.png",
+    "image": "/images/turmeric-root.jpg",
     "servingBaseGrams": 100,
     "calories": 312,
     "macros": {
@@ -983,7 +983,7 @@
     "id": "spirulina",
     "name": "Spirulina",
     "category": "Superfoods",
-    "image": "/images/spirulina-powder.png",
+    "image": "/images/spirulina-powder.jpg",
     "servingBaseGrams": 100,
     "calories": 290,
     "macros": {
@@ -1011,7 +1011,7 @@
     "id": "acai-berry",
     "name": "Acai Berry",
     "category": "Superfoods",
-    "image": "/images/acai-puree.png",
+    "image": "/images/acai-puree.jpg",
     "servingBaseGrams": 100,
     "calories": 70,
     "macros": {
@@ -1039,7 +1039,7 @@
     "id": "goji-berries",
     "name": "Goji Berries",
     "category": "Superfoods",
-    "image": "/images/goji-berries.png",
+    "image": "/images/goji-berries.jpg",
     "servingBaseGrams": 100,
     "calories": 349,
     "macros": {
@@ -1067,7 +1067,7 @@
     "id": "ginger-root",
     "name": "Ginger Root",
     "category": "Superfoods",
-    "image": "/images/ginger-root.png",
+    "image": "/images/ginger-root.jpg",
     "servingBaseGrams": 100,
     "calories": 80,
     "macros": {
@@ -1095,7 +1095,7 @@
     "id": "pomegranate",
     "name": "Pomegranate",
     "category": "Superfoods",
-    "image": "/images/fresh-pomegranate.png",
+    "image": "/images/fresh-pomegranate.jpg",
     "servingBaseGrams": 100,
     "calories": 83,
     "macros": {
@@ -1599,7 +1599,7 @@
     "id": "artichoke",
     "name": "Artichoke",
     "category": "Vegetables",
-    "image": "/images/steamed-artichoke.png",
+    "image": "/images/steamed-artichoke.jpg",
     "servingBaseGrams": 100,
     "calories": 47,
     "macros": {
