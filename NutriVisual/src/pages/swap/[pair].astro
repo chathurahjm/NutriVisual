@@ -184,7 +184,7 @@ const higherCalFood = food1.calories > food2.calories ? food1 : food2;
       <div class="layout-swap-cards">
         {/* Food 1 Card */}
         <div class="glass-card" style="padding: 2rem;">
-          <div style="border-radius: 12px; overflow: hidden; height: 220px; margin-bottom: 1.25rem;">
+          <div style="border-radius: 12px; overflow: hidden; height: 220px; margin-bottom: 1.25rem; border: 1px solid var(--border-color);">
             <img src={food1.image} alt={food1.name} style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
           <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem;">{food1.name}</h3>
@@ -225,7 +225,7 @@ const higherCalFood = food1.calories > food2.calories ? food1 : food2;
 
         {/* Food 2 Card */}
         <div class="glass-card" style="padding: 2rem;">
-          <div style="border-radius: 12px; overflow: hidden; height: 220px; margin-bottom: 1.25rem;">
+          <div style="border-radius: 12px; overflow: hidden; height: 220px; margin-bottom: 1.25rem; border: 1px solid var(--border-color);">
             <img src={food2.image} alt={food2.name} style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
           <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem;">{food2.name}</h3>
