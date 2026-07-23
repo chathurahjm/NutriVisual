@@ -110,66 +110,190 @@ async function generateSwapImage(food1, food2) {
   }
 }
 
+// Helper to convert standard text to Unicode Math Sans-Serif Bold (renders bold on FB/LinkedIn)
+function toBold(str) {
+  return str.split('').map(char => {
+    const code = char.charCodeAt(0);
+    // Uppercase A-Z
+    if (code >= 65 && code <= 90) {
+      return String.fromCodePoint(0x1d5d4 + (code - 65));
+    }
+    // Lowercase a-z
+    if (code >= 97 && code <= 122) {
+      return String.fromCodePoint(0x1d5ee + (code - 97));
+    }
+    // Numbers 0-9
+    if (code >= 48 && code <= 57) {
+      return String.fromCodePoint(0x1d7ec + (code - 48));
+    }
+    return char;
+  }).join('');
+}
+
 // Rule-based local template generator for post copy
 async function generatePostCopy(food1, food2) {
   console.log(`📝 Generating local template copy for ${food1.name} vs ${food2.name}...`);
 
   const fbTemplates = [
-    (f1, f2) => `🥗 **Longevity Swap of the Day: ${f1.name} vs. ${f2.name}** 🥗
+    // Format 1: Longevity Swap (Standard)
+    (f1, f2) => `🥗 ${toBold("Longevity Swap of the Day: " + f1.name + " vs. " + f2.name)} 🥗
 
 Looking to optimize your diet? Making simple swaps can transform your energy! Let's compare:
 
-🟢 **${f1.name}**: ${f1.calories} kcal | P: ${f1.macros.protein}g | C: ${f1.macros.carbs}g | F: ${f1.macros.fat}g
+🟢 ${toBold(f1.name)}: ${f1.calories} kcal | P: ${f1.macros.protein}g | C: ${f1.macros.carbs}g | F: ${f1.macros.fat}g
 Benefits: ${f1.benefits.slice(0, 2).join(' & ')}
 
-🔴 **${f2.name}**: ${f2.calories} kcal | P: ${f2.macros.protein}g | C: ${f2.macros.carbs}g | F: ${f2.macros.fat}g
+🔴 ${toBold(f2.name)}: ${f2.calories} kcal | P: ${f2.macros.protein}g | C: ${f2.macros.carbs}g | F: ${f2.macros.fat}g
 Benefits: ${f2.benefits.slice(0, 2).join(' & ')}
 
 Compare full macro breakdowns & portion guides:
 👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`,
 
-    (f1, f2) => `⚖️ **Food Matchup: ${f1.name} vs. ${f2.name}** ⚖️
+    // Format 2: Food Matchup (Standard)
+    (f1, f2) => `⚖️ ${toBold("Food Matchup: " + f1.name + " vs. " + f2.name)} ⚖️
 
 How do these nutrition powerhouses stack up side-by-side? 
 
-• **${f1.name}** offers ${f1.calories} kcal per serving, packed with benefits like ${f1.benefits.join(', ')}.
-• **${f2.name}** delivers ${f2.calories} kcal, supporting ${f2.benefits.join(', ')}.
+• ${toBold(f1.name)} offers ${f1.calories} kcal per serving, packed with benefits like ${f1.benefits.join(', ')}.
+• ${toBold(f2.name)} delivers ${f2.calories} kcal, supporting ${f2.benefits.join(', ')}.
 
 Which one fits your goals today? Check out our dynamic visual swap engine to compare portion sizes:
+👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`,
+
+    // Format 3: Portion Math
+    (f1, f2) => {
+      const multiplier = Math.max(1, Math.round(f2.calories / f1.calories));
+      return `🧮 ${toBold("Nutrition Math: " + f1.name + " vs. " + f2.name)} 🧮
+
+Did you know? To get the same calories as a single standard portion of ${f2.name} (${f2.calories} kcal), you would need to eat about ${multiplier} servings of ${f1.name}!
+
+🟢 ${toBold(f1.name)}: ${f1.calories} kcal per serving
+🔴 ${toBold(f2.name)}: ${f2.calories} kcal per serving
+
+Scale portions and visualize nutrition weight:
+👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`;
+    },
+
+    // Format 4: Cellular Deep-Dive
+    (f1, f2) => `🧬 ${toBold("Cellular Nutrition: " + f1.name + " vs. " + f2.name)} 🧬
+
+Let's look past the calories and focus on how these foods support your longevity pathways at a cellular level!
+
+🟢 ${toBold(f1.name)} helps with: ${f1.benefits.join(', ')}
+🔴 ${toBold(f2.name)} helps with: ${f2.benefits.join(', ')}
+
+Fuel your body with intention. Compare micronutrient profiles:
+👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`,
+
+    // Format 5: Myth Busters
+    (f1, f2) => `🔍 ${toBold("Dietary Myth Busters: " + f1.name + " vs. " + f2.name)} 🔍
+
+Outdated nutrition advice tells us to only count calories. But all calories are NOT created equal!
+
+• ${toBold(f1.name)} is ${f1.calories} kcal but packed with value for ${f1.benefits[0]}.
+• ${toBold(f2.name)} is ${f2.calories} kcal but delivers massive support for ${f2.benefits[0]}.
+
+See how they compare visually:
+👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`,
+
+    // Format 6: Habit Swap
+    (f1, f2) => `⚡ ${toBold("Simple Longevity Swap")} ⚡
+
+Upgrading your health doesn't mean eating boring meals. Try this swap today:
+
+Instead of over-consuming high-calorie options, try adding ${toBold(f1.name)} to support your ${f1.benefits[0].toLowerCase()}.
+
+🟢 ${toBold(f1.name)}: ${f1.calories} kcal per 100g
+🔴 ${toBold(f2.name)}: ${f2.calories} kcal per 100g
+
+Start swapping smart:
 👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`
   ];
 
   const liTemplates = [
-    (f1, f2) => `⚖️ **NutriVisual Longevity Swap: ${f1.name} vs. ${f2.name}** ⚖️
+    // Format 1: Longevity Swap (Standard)
+    (f1, f2) => `⚖️ ${toBold("NutriVisual Longevity Swap: " + f1.name + " vs. " + f2.name)} ⚖️
 
 Dietary decisions directly impact mitochondrial health, metabolic flexibility, and daily cognitive performance.
 
 Let's analyze the nutrient profiles:
 
-📈 **${f1.name}** (${f1.calories} kcal)
+📈 ${toBold(f1.name)} (${f1.calories} kcal)
 - Macros: Protein ${f1.macros.protein}g | Carbs ${f1.macros.carbs}g | Fat ${f1.macros.fat}g
 - Functional Benefits: ${f1.benefits.join(', ')}
 
-📉 **${f2.name}** (${f2.calories} kcal)
+📉 ${toBold(f2.name)} (${f2.calories} kcal)
 - Macros: Protein ${f2.macros.protein}g | Carbs ${f2.macros.carbs}g | Fat ${f2.macros.fat}g
 - Functional Benefits: ${f2.benefits.join(', ')}
 
 Deep-dive into cellular density metrics and portion scaling ratios:
 🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`,
 
-    (f1, f2) => `🧠 **Executive Health: Optimizing Nutrition with ${f1.name} vs. ${f2.name}** 🧠
+    // Format 2: Executive Health (Standard)
+    (f1, f2) => `🧠 ${toBold("Executive Health: Optimizing Nutrition with " + f1.name + " vs. " + f2.name)} 🧠
 
 High-performance leadership requires clean fuel. When structuring meals for sustained energy, compare these values:
 
-💼 **${f1.name}**
+💼 ${toBold(f1.name)}
 - Calories: ${f1.calories} kcal
 - Key Biomarkers: ${f1.benefits.slice(0, 2).join(' & ')}
 
-💼 **${f2.name}**
+💼 ${toBold(f2.name)}
 - Calories: ${f2.calories} kcal
 - Key Biomarkers: ${f2.benefits.slice(0, 2).join(' & ')}
 
 Explore side-by-side data visualization and swap metrics:
+🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`,
+
+    // Format 3: Portion Math
+    (f1, f2) => {
+      const multiplier = Math.max(1, Math.round(f2.calories / f1.calories));
+      return `🧮 ${toBold("Metabolic Efficiency: Portion Volume Ratios")} 🧮
+
+When optimizing for satiety and calorie efficiency, portion math matters. 
+
+Compare the energy densities:
+- 1 portion of ${toBold(f2.name)}: ${f2.calories} kcal
+- 1 portion of ${toBold(f1.name)}: ${f1.calories} kcal
+
+You would need to consume ${multiplier}x the volume of ${f1.name} to match the caloric load of ${f2.name}.
+
+Explore side-by-side data visualization:
+🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`;
+    },
+
+    // Format 4: Cellular Deep-Dive
+    (f1, f2) => `🧬 ${toBold("Biomarker Optimization: Cellular Pathways")} 🧬
+
+Effective biohacking requires selecting foods that target specific functional pathways.
+
+- ${toBold(f1.name)} targets: ${f1.benefits.join(' & ')}
+- ${toBold(f2.name)} targets: ${f2.benefits.join(' & ')}
+
+Maximize your biological longevity. Compare the clean datasets:
+🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`,
+
+    // Format 5: Myth Busters
+    (f1, f2) => `🔍 ${toBold("Deconstructing Nutritional Dogma")} 🔍
+
+Simplistic caloric models fail to capture systemic impact. A macro-only view neglects micronutrient density.
+
+- ${toBold(f1.name)} (${f1.calories} kcal) targets: ${f1.benefits.slice(0,2).join(', ')}
+- ${toBold(f2.name)} (${f2.calories} kcal) targets: ${f2.benefits.slice(0,2).join(', ')}
+
+Review the data-driven comparison:
+🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`,
+
+    // Format 6: Habit Swap
+    (f1, f2) => `⚡ ${toBold("Micro-Habit Upgrades for Executive Longevity")} ⚡
+
+Small, compounding changes in nutrition yield outsized gains in daily cognitive output.
+
+Consider swapping or balancing:
+- ${toBold(f1.name)}: Targets ${f1.benefits[0]}
+- ${toBold(f2.name)}: Targets ${f2.benefits[0]}
+
+Analyze the portion weight ratios:
 🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`
   ];
 
