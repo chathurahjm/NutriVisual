@@ -453,6 +453,25 @@ input[type=range]::-webkit-slider-thumb:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Keep comparison cards side-by-side on mobile */
+  .layout-swap-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .layout-swap-cards .glass-card {
+    padding: 1rem !important;
+  }
+
+  .layout-swap-cards div[style*="height: 220px"] {
+    height: 140px !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .layout-swap-cards h3 {
+    font-size: 1.25rem !important;
+  }
+
   /* Glass card padding reduction */
   .glass-card {
     border-radius: 12px;
@@ -490,6 +509,19 @@ input[type=range]::-webkit-slider-thumb:hover {
   .layout-swap-macros {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
+  }
+
+  /* Compact settings for tiny screens */
+  .layout-swap-cards div[style*="height: 220px"] {
+    height: 100px !important;
+  }
+
+  .layout-swap-cards h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .layout-swap-cards .layout-swap-macros div {
+    padding: 0.45rem 0.25rem !important;
   }
 
   .layout-plate-totals {
