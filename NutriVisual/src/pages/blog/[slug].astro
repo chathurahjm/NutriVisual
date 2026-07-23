@@ -1,19 +1,25 @@
 ---
 import '../../styles/global.css';
-import posts from '../../data/posts.json';
+import { getCollection, render } from 'astro:content';
+import foodsData from '../../data/foods.json';
 
 export async function getStaticPaths() {
+  const posts = await getCollection('blog');
   return posts.map(post => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post }
   }));
 }
 
 const { post } = Astro.props;
+const { Content } = await render(post);
 
-const title = `${post.title} - NutriVisual Blog`;
-const description = post.subtitle;
-const canonicalUrl = `https://nutrivisual.com/blog/${post.slug}/`;
+const title = `${post.data.title} - NutriVisual Blog`;
+const description = post.data.subtitle;
+const canonicalUrl = `https://nutrivisual.com/blog/${post.id}/`;
+
+const relatedFoodIds = post.data.relatedFoods || [];
+const relatedFoods = foodsData.filter(f => relatedFoodIds.includes(f.id));
 ---
 
 <html lang="en">
@@ -49,8 +55,8 @@ const canonicalUrl = `https://nutrivisual.com/blog/${post.slug}/`;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": post.title,
-      "description": post.subtitle,
+      "headline": post.data.title,
+      "description": post.data.subtitle,
       "datePublished": "2026-07-22",
       "author": {
         "@type": "Person",
@@ -97,40 +103,114 @@ const canonicalUrl = `https://nutrivisual.com/blog/${post.slug}/`;
       <article>
         <!-- Breadcrumb Navigation -->
         <nav style="font-size: 0.85rem; margin-bottom: 1.5rem; color: var(--text-muted);" aria-label="Breadcrumb">
-          <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <a href="/blog/" style="color: var(--text-muted); text-decoration: none;">Blog</a> / <span style="color: var(--accent-green);">{post.title}</span>
+          <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <a href="/blog/" style="color: var(--text-muted); text-decoration: none;">Blog</a> / <span style="color: var(--accent-green);">{post.data.title}</span>
         </nav>
 
         <!-- Category Badge -->
         <span style="display: inline-block; background-color: var(--accent-green-glow); color: var(--accent-green); font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
-          {post.category}
+          {post.data.category}
         </span>
 
         <h1 style="font-size: 2.2rem; font-weight: 700; line-height: 1.25; margin-bottom: 0.5rem; color: var(--text-main);">
-          {post.title}
+          {post.data.title}
         </h1>
 
         <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; font-style: italic; line-height: 1.5;">
-          {post.subtitle}
+          {post.data.subtitle}
         </p>
 
         <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-          Published on {post.date} • Written by John & Mary • {post.readTime}
+          Published on {post.data.date} • Written by John & Mary • {post.data.readTime}
         </div>
 
-        <div style="font-size: 1.05rem; color: var(--text-main); display: flex; flex-direction: column; gap: 2rem;">
-          {post.sections.map(section => (
-            <div>
-              <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
-                {section.heading}
-              </h2>
-              {section.paragraphs.map(p => (
-                <p style="margin-bottom: 1.25rem; color: var(--text-main);">
-                  {p}
-                </p>
-              ))}
-            </div>
-          ))}
+        <div class="markdown-body" style="font-size: 1.05rem; color: var(--text-main); display: flex; flex-direction: column; gap: 1.5rem;">
+          <Content />
         </div>
+
+        {relatedFoods.length > 0 && (
+          <div class="glass-card" style="margin-top: 3.5rem; padding: 2rem; background-color: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+              📊 Interactive Portion & Macro Visualizer
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; text-align: center; margin-bottom: 1.5rem;">
+              Adjust the slider to see how calories and macros scale in real-time for the foods discussed in this article.
+            </p>
+
+            {relatedFoods.length > 1 && (
+              <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.8rem; flex-wrap: wrap;">
+                {relatedFoods.map((food, idx) => (
+                  <button 
+                    class="food-tab-btn"
+                    data-food-id={food.id}
+                    style={idx === 0 
+                      ? "background: var(--accent-green); border: 1px solid var(--accent-green); color: white; padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s ease;" 
+                      : "background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-muted); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s ease;"
+                    }
+                  >
+                    {food.name}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {relatedFoods.map((food, idx) => (
+              <div class="food-visualizer-section" id={`viz-${food.id}`} style={idx === 0 ? "display: block;" : "display: none;"}>
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                  <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">Portion Size:</span>
+                  <span id={`weight-val-${food.id}`} style="font-size: 1.4rem; font-weight: 800; color: var(--accent-green); margin-left: 0.3rem;">100g</span>
+                </div>
+
+                <input 
+                  type="range" 
+                  min="10" 
+                  max="300" 
+                  value="100" 
+                  class="portion-slider" 
+                  data-food-id={food.id}
+                  data-base-calories={food.calories}
+                  data-base-protein={food.macros.protein}
+                  data-base-carbs={food.macros.carbs}
+                  data-base-fat={food.macros.fat}
+                  style="width: 100%; margin-bottom: 2rem; accent-color: var(--accent-green); cursor: pointer;"
+                />
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                  <div style="background: var(--bg-surface); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Calories</div>
+                    <div id={`calories-${food.id}`} style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-top: 0.25rem;">{food.calories}</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">kcal</div>
+                  </div>
+                  <div style="background: var(--bg-surface); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Protein</div>
+                    <div id={`protein-${food.id}`} style="font-size: 1.6rem; font-weight: 800; color: var(--accent-green); margin-top: 0.25rem;">{food.macros.protein}g</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">build & repair</div>
+                  </div>
+                  <div style="background: var(--bg-surface); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Carbs</div>
+                    <div id={`carbs-${food.id}`} style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-top: 0.25rem;">{food.macros.carbs}g</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">energy fuel</div>
+                  </div>
+                  <div style="background: var(--bg-surface); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Fat</div>
+                    <div id={`fat-${food.id}`} style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-top: 0.25rem;">{food.macros.fat}g</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">cellular health</div>
+                  </div>
+                </div>
+
+                <div style="background: var(--bg-surface); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); margin-top: 1rem;">
+                  <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; text-align: center;">Target Longevity Pathways</div>
+                  <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                    {food.benefits.map(benefit => (
+                      <span style="font-size: 0.78rem; background-color: var(--accent-green-glow); color: var(--accent-green); padding: 0.25rem 0.65rem; border-radius: 12px; font-weight: 600;">
+                        🛡️ {benefit}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <!-- High-Contrast Call to Action Card -->
         <div class="glass-card" style="margin-top: 4rem; padding: 2rem; border-left: 5px solid var(--accent-green); background-color: var(--bg-card);">
@@ -138,9 +218,9 @@ const canonicalUrl = `https://nutrivisual.com/blog/${post.slug}/`;
             📊 Run the Visual Analytics for this Article
           </h3>
           <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;">
-            {post.cta.text}
+            {post.data.cta.text}
           </p>
-          <a href={post.cta.url} style="display: inline-block; background-color: var(--accent-green); color: white; padding: 0.65rem 1.35rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: opacity 0.2s ease;">
+          <a href={post.data.cta.url} style="display: inline-block; background-color: var(--accent-green); color: white; padding: 0.65rem 1.35rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: opacity 0.2s ease;">
             Interactive Engine Dashboard →
           </a>
         </div>
@@ -193,6 +273,49 @@ const canonicalUrl = `https://nutrivisual.com/blog/${post.slug}/`;
           updateThemeUI(t);
         });
       }
+
+      // Tab selector logic for food visualizer
+      const tabButtons = document.querySelectorAll('.food-tab-btn');
+      const sections = document.querySelectorAll('.food-visualizer-section');
+      
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach(b => {
+            b.style.background = 'var(--bg-surface)';
+            b.style.borderColor = 'var(--border-color)';
+            b.style.color = 'var(--text-muted)';
+          });
+          btn.style.background = 'var(--accent-green)';
+          btn.style.borderColor = 'var(--accent-green)';
+          btn.style.color = 'white';
+
+          const foodId = btn.getAttribute('data-food-id');
+          sections.forEach(sec => {
+            sec.style.display = sec.id === `viz-${foodId}` ? 'block' : 'none';
+          });
+        });
+      });
+
+      // Portion slider logic
+      const sliders = document.querySelectorAll('.portion-slider');
+      sliders.forEach(slider => {
+        slider.addEventListener('input', (e) => {
+          const val = parseInt(e.target.value);
+          const foodId = e.target.getAttribute('data-food-id');
+          const ratio = val / 100;
+
+          const baseCal = parseFloat(e.target.getAttribute('data-base-calories'));
+          const baseProt = parseFloat(e.target.getAttribute('data-base-protein'));
+          const baseCarbs = parseFloat(e.target.getAttribute('data-base-carbs'));
+          const baseFat = parseFloat(e.target.getAttribute('data-base-fat'));
+
+          document.getElementById(`weight-val-${foodId}`).textContent = `${val}g`;
+          document.getElementById(`calories-${foodId}`).textContent = Math.round(baseCal * ratio);
+          document.getElementById(`protein-${foodId}`).textContent = `${(baseProt * ratio).toFixed(1)}g`;
+          document.getElementById(`carbs-${foodId}`).textContent = `${(baseCarbs * ratio).toFixed(1)}g`;
+          document.getElementById(`fat-${foodId}`).textContent = `${(baseFat * ratio).toFixed(1)}g`;
+        });
+      });
     </script>
   </body>
 </html>

@@ -258,5 +258,145 @@
       "text": "Explore our food library to see the key longevity micronutrients listed for every food.",
       "url": "/"
     }
+  },
+  {
+    "slug": "sodium-potassium-pump-balance",
+    "title": "The Sodium-Potassium Pump: Balancing Minerals for Cellular Energy",
+    "subtitle": "How optimizing your daily mineral ratio drives cellular hydration, reduces bloating, and regulates blood pressure.",
+    "category": "Cellular Longevity",
+    "date": "July 23, 2026",
+    "readTime": "5 min read",
+    "sections": [
+      {
+        "heading": "The Engine of Your Cells",
+        "paragraphs": [
+          "Every single cell in your body contains thousands of microscopic engines called sodium-potassium pumps. This pump actively moves sodium out of the cell and pulls potassium in, creating an electrical gradient.",
+          "This gradient is responsible for nerve transmission, muscle contraction, and cellular hydration. Without sufficient potassium, your cells accumulate excess sodium, leading to intracellular bloating, chronic fatigue, and elevated blood pressure."
+        ]
+      },
+      {
+        "heading": "The Modern Dietary Imbalance",
+        "paragraphs": [
+          "Our ancestors consumed roughly 4 times more potassium than sodium. Today, the modern diet has flipped this ratio, containing up to 3 times more sodium than potassium.",
+          "To restore metabolic harmony, you should focus on adding potassium-rich whole foods like Avocado and Spinach to buffer the sodium content in your diet and relax blood vessels."
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Check out the potassium density metrics on our Avocado page.",
+      "url": "/food/avocado/"
+    }
+  },
+  {
+    "slug": "matcha-vs-coffee",
+    "title": "Matcha vs. Coffee: The Chemistry of Sustained Alertness",
+    "subtitle": "Why matcha provides stable alpha brain waves and focus without the classic caffeine jitters and crash.",
+    "category": "Cognitive Performance",
+    "date": "July 23, 2026",
+    "readTime": "4 min read",
+    "sections": [
+      {
+        "heading": "The Caffeine Rollercoaster",
+        "paragraphs": [
+          "Coffee delivers a rapid spike of caffeine into the bloodstream, causing a quick increase in cortisol and adrenaline. While this boosts focus temporarily, it often triggers jitters and leads to a cognitive crash as adenosine receptors flood your brain.",
+          "Matcha tea contains a similar amount of caffeine but behaves completely differently due to a unique amino acid: L-Theanine."
+        ]
+      },
+      {
+        "heading": "The L-Theanine Synergy",
+        "paragraphs": [
+          "L-Theanine crosses the blood-brain barrier to promote alpha brainwave activity, which is associated with relaxed alertness and deep focus. It binds with caffeine to slow down its absorption rate, providing a smooth, sustained release of mental energy over 4 to 6 hours.",
+          "Additionally, matcha contains high levels of EGCG (epigallocatechin gallate), a powerful antioxidant that supports neuroprotection and metabolic health."
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Explore macro and antioxidant profiles of Matcha in our index.",
+      "url": "/food/matcha/"
+    }
+  },
+  {
+    "slug": "fiber-soluble-vs-insoluble",
+    "title": "Fiber Ratios: Soluble vs. Insoluble Fiber for Metabolic Health",
+    "subtitle": "Understanding how different plant fibers feed your gut microbiome and stabilize blood sugar spikes.",
+    "category": "Metabolic Health",
+    "date": "July 23, 2026",
+    "readTime": "4 min read",
+    "sections": [
+      {
+        "heading": "Soluble Fiber: The Blood Sugar Buffer",
+        "paragraphs": [
+          "Soluble fiber dissolves in water to form a gel-like substance in your digestive tract. This gel slows down the digestion of starch and simple sugars, preventing rapid insulin spikes and promoting stable energy.",
+          "Foods rich in soluble fiber include Chia Seeds, Flaxseed, and Lentils. They actively bind to bile acids, helping to lower LDL cholesterol levels."
+        ]
+      },
+      {
+        "heading": "Insoluble Fiber: The Microbiome Scaffold",
+        "paragraphs": [
+          "Insoluble fiber does not dissolve in water. It acts as a sweep in your intestines, supporting bowel regularity and physical motility.",
+          "Moreover, both types of fiber undergo fermentation by your gut bacteria to produce short-chain fatty acids (SCFAs) like acetate, propionate, and butyrate, which act as metabolic signaling molecules to reduce systemic inflammation."
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Compare Chia Seeds vs. Flaxseed to see their total fiber ratios side-by-side.",
+      "url": "/swap/chia-seeds-vs-flaxseed/"
+    }
+  },
+  {
+    "slug": "leucine-muscle-protein-synthesis",
+    "title": "Leucine and Muscle Synthesis: The Secret to Aging Gracefully",
+    "subtitle": "Why leucine is the trigger for muscle protein synthesis, and how to hit your threshold.",
+    "category": "Longevity Swaps",
+    "date": "July 23, 2026",
+    "readTime": "5 min read",
+    "sections": [
+      {
+        "heading": "Sarcopenia and Aging",
+        "paragraphs": [
+          "Sarcopenia—the age-related loss of muscle mass and strength—is one of the primary drivers of metabolic decline and fragility in later life. To prevent this, physical training must be paired with adequate protein intake.",
+          "However, simply eating protein is not enough; you must consume enough of the amino acid Leucine to turn on the cellular pathway responsible for building muscle (mTORC1)."
+        ]
+      },
+      {
+        "heading": "The Leucine Threshold",
+        "paragraphs": [
+          "Research shows you need roughly 2.5 to 3 grams of Leucine per meal to trigger muscle protein synthesis. This is known as the 'leucine trigger.'",
+          "Whey protein, Greek Yogurt, Eggs, and Chicken Breast are highly bioavailable sources rich in leucine. For plant-based diets, tofu and tempeh must be consumed in larger portions or combined with other amino acids to hit the same trigger."
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Compare the protein and calorie density of Greek Yogurt vs. Tofu.",
+      "url": "/swap/tofu-vs-greek-yogurt/"
+    }
+  },
+  {
+    "slug": "nitric-oxide-vascular-health",
+    "title": "The Nitric Oxide Booster: Enhancing Vascular Longevity",
+    "subtitle": "How dietary nitrates relax blood vessels, increase oxygen delivery, and defend against arterial stiffness.",
+    "category": "Cardiovascular Health",
+    "date": "July 23, 2026",
+    "readTime": "4 min read",
+    "sections": [
+      {
+        "heading": "What is Nitric Oxide?",
+        "paragraphs": [
+          "Nitric oxide is a gas produced naturally in the body that signals blood vessels to relax, dilate, and expand. This process, known as vasodilation, is essential for maintaining optimal blood flow, reducing blood pressure, and delivering oxygen to active tissues.",
+          "As we age, our natural production of nitric oxide drops significantly, leading to arterial stiffness and cardiovascular risk."
+        ]
+      },
+      {
+        "heading": "Boosting Nitric Oxide with Food",
+        "paragraphs": [
+          "You can increase your nitric oxide levels by eating foods rich in inorganic nitrates. In your mouth, symbiotic bacteria convert these nitrates into nitrites, which are then converted to nitric oxide in your stomach.",
+          "Red Beets, Spinach, Pomegranate, and dark leafy greens are excellent nitrate boosters. Eating them raw or lightly steamed preserves these compounds for maximum cardiovascular support."
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Check out the nutritional values for Red Beets in our food index.",
+      "url": "/food/red-beets/"
+    }
   }
 ]
