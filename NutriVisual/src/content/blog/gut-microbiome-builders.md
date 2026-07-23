@@ -3,15 +3,29 @@ title: "The Gut Microbiome Builders: Fermented Tempeh vs. Raw Garlic"
 subtitle: "The difference between prebiotics and probiotics, and why your gut needs both."
 category: "Gut Health"
 date: "July 22, 2026"
-readTime: "4 min read"
+readTime: "6 min read"
 relatedFoods: ["tempeh","garlic"]
 cta:
   text: "Add Tempeh and Garlic to your Visual Plate builder to track your gut-healthy targets."
   url: "/"
 ---
 
-## Prebiotics vs. Probiotics
+## The Microbiome Ecosystem
 
-Your gut microbiome contains trillions of bacteria that regulate immunity, mood, and digestion. To support them, you need two things: Probiotics (live beneficial bacteria) and Prebiotics (the fiber fuel that feeds those bacteria).
+Your gut microbiome contains trillions of bacterial cells that influence everything from immune defense to neurotransmitter synthesis (90% of serotonin is made in the gut). To build a healthy microbiome, you must supply two distinct components: **Probiotics** and **Prebiotics**.
 
-Tempeh is a fermented soy product packed with live active probiotics. Garlic contains high levels of prebiotic inulin fiber, which feeds the healthy Bifidobacteria in your gut.
+* **Probiotics**: Live, beneficial bacteria that colonize the gut.
+* **Prebiotics**: Non-digestible plant fibers that feed these beneficial bacteria.
+
+---
+
+## Synergistic Gut Protection
+
+Tempeh (fermented soybeans) is rich in live probiotics and digestive enzymes. Garlic contains high levels of **inulin** and fructooligosaccharides (FOS)—prebiotic fibers that selectively feed Bifidobacteria.
+
+| Food | Category | Key Compound | Microbiome Action |
+| :--- | :--- | :--- | :--- |
+| **Tempeh** | Probiotic | Live Cultures | Re-populates gut flora |
+| **Garlic** | Prebiotic | Inulin & Allicin | Feeds beneficial bacteria |
+
+Consuming probiotics (tempeh) alongside prebiotic fuel (garlic) creates a symbiotic environment, optimizing digestion and strengthening the gut barrier.

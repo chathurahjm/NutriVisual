@@ -3,7 +3,7 @@ title: "Volume Eating: How to Feel Full on Fewer Calories"
 subtitle: "The secret to sustainable dieting by choosing foods with high physical density and water volume."
 category: "Portion Density"
 date: "July 22, 2026"
-readTime: "4 min read"
+readTime: "5 min read"
 relatedFoods: ["broccoli","spinach"]
 cta:
   text: "Try the portion scale on the Broccoli page to see how much food you can eat for 50 calories."
@@ -12,6 +12,18 @@ cta:
 
 ## Stretch Receptors and Satiety
 
-Your stomach contains physical stretch receptors. When they are triggered by a large volume of food, they send signals to your brain to release leptin, the fullness hormone.
+Your stomach contains mechanical sensors called **stretch receptors**. When your stomach expands physically from food volume, these receptors signal your vagus nerve to release leptin, the hormone responsible for feeling full.
 
-If you eat calorie-dense foods like oils and nuts, you can consume 500 calories in a tiny volume that fails to stretch your stomach. Conversely, eating water-rich vegetables like Broccoli and Spinach fills your stomach physical capacity for a fraction of the calories.
+If you eat calorie-dense foods (oils, cheeses, nuts), you can consume 500 calories in a tiny volume that fails to trigger these stretch receptors. By contrast, eating water-rich, high-fiber vegetables like broccoli and spinach fills your stomach physical capacity for a fraction of the calories.
+
+---
+
+## Caloric Density Comparisons
+
+| Food | Grams (For 100 kcal) | Volume | Stretch Receptor Activation |
+| :--- | :--- | :--- | :--- |
+| **Olive Oil** | ~11g | ~1 Tablespoon | None |
+| **Raw Broccoli** | ~294g | ~3.5 Cups | Very High |
+| **Raw Spinach** | ~430g | ~10 Cups | Maximum |
+
+By structuring meals around high-volume, low-density vegetables, you can trigger deep satiety and maintain a caloric deficit without experiencing hunger.

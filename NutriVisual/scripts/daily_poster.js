@@ -36,7 +36,7 @@ function loadFoods() {
 // Generate the side-by-side comparison image
 async function generateSwapImage(food1, food2) {
   console.log(`🎨 Stitching images for: ${food1.name} vs ${food2.name}...`);
-  
+
   // Create a dark template image (1200 x 630 - standard social sharing size)
   const width = 1200;
   const height = 630;
@@ -99,7 +99,7 @@ async function generateSwapImage(food1, food2) {
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
-    
+
     const outputPath = path.join(outputDir, 'last_swap_draft.png');
     await image.write(outputPath);
     console.log(`✅ Stitched image saved to: ${outputPath}`);
@@ -278,8 +278,8 @@ Maximize your biological longevity. Compare the clean datasets:
 
 Simplistic caloric models fail to capture systemic impact. A macro-only view neglects micronutrient density.
 
-- ${toBold(f1.name)} (${f1.calories} kcal) targets: ${f1.benefits.slice(0,2).join(', ')}
-- ${toBold(f2.name)} (${f2.calories} kcal) targets: ${f2.benefits.slice(0,2).join(', ')}
+- ${toBold(f1.name)} (${f1.calories} kcal) targets: ${f1.benefits.slice(0, 2).join(', ')}
+- ${toBold(f2.name)} (${f2.calories} kcal) targets: ${f2.benefits.slice(0, 2).join(', ')}
 
 Review the data-driven comparison:
 🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`,
@@ -317,7 +317,7 @@ async function publishToFacebook(text, imagePath) {
   }
 
   console.log('🚀 Uploading and publishing to Facebook Page...');
-  
+
   try {
     const form = new FormData();
     const fileBlob = new Blob([fs.readFileSync(imagePath)], { type: 'image/png' });
@@ -329,7 +329,7 @@ async function publishToFacebook(text, imagePath) {
       method: 'POST',
       body: form
     });
-    
+
     const result = await response.json();
     if (result.error) {
       console.error('❌ Facebook API Error:', result.error);
@@ -371,7 +371,7 @@ async function publishToLinkedIn(text, imagePath) {
         }
       })
     });
-    
+
     const registerData = await registerResponse.json();
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadMechanism'].uploadUrl;
     const assetUrn = registerData.value.asset;
@@ -435,11 +435,11 @@ async function run() {
   }
 
   const foods = loadFoods();
-  
+
   // Select a random popular pair
   const randomIndex = Math.floor(Math.random() * POPULAR_PAIRS.length);
   const [id1, id2] = POPULAR_PAIRS[randomIndex];
-  
+
   const food1 = foods.find(f => f.id === id1);
   const food2 = foods.find(f => f.id === id2);
 
