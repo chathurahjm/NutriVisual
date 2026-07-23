@@ -1291,7 +1291,7 @@
     "id": "kale",
     "name": "Kale",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1524179091863-177ab548f070?auto=format&fit=crop&w=600&q=80",
+    "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 49,
     "macros": {
@@ -1319,7 +1319,7 @@
     "id": "asparagus",
     "name": "Asparagus",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1515471209610-e3f15d480839?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/green-asparagus.jpg",
     "servingBaseGrams": 100,
     "calories": 53,
     "macros": {
@@ -1375,7 +1375,7 @@
     "id": "garlic",
     "name": "Garlic",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/fresh-garlic.jpg",
     "servingBaseGrams": 100,
     "calories": 149,
     "macros": {
@@ -1459,7 +1459,7 @@
     "id": "brussels-sprouts",
     "name": "Brussels Sprouts",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1438118991616-0e5d0337c7e5?auto=format&fit=crop&w=600&q=80",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 43,
     "macros": {
@@ -1515,7 +1515,7 @@
     "id": "carrots",
     "name": "Carrots",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1598170845058-12f6a6a5ce87?auto=format&fit=crop&w=600&q=80",
+    "image": "https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 41,
     "macros": {
