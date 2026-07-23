@@ -110,58 +110,76 @@ async function generateSwapImage(food1, food2) {
   }
 }
 
-// Call Gemini API to write social post copy
+// Rule-based local template generator for post copy
 async function generatePostCopy(food1, food2) {
-  console.log(`🤖 Calling Gemini API to write copy for ${food1.name} vs ${food2.name}...`);
-  
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    console.log('⚠️ No GEMINI_API_KEY found. Using local template copy.');
-    return {
-      facebook: `🥗 NutriVisual Swap of the Day: ${food1.name} vs ${food2.name}!\n\nCompare side-by-side macro ratios, calories, and longevity benefits at: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=facebook&utm_medium=social`,
-      linkedin: `⚖️ NutriVisual Longevity Swap: ${food1.name} vs ${food2.name}.\n\nDeep-dive into cellular nutrition and cognitive optimization: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=linkedin&utm_medium=social`
-    };
-  }
+  console.log(`📝 Generating local template copy for ${food1.name} vs ${food2.name}...`);
 
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  const fbTemplates = [
+    (f1, f2) => `🥗 **Longevity Swap of the Day: ${f1.name} vs. ${f2.name}** 🥗
 
-  const prompt = `
-You are a top health copywriter for NutriVisual, a data-driven nutrition platform.
-Write two short social media posts comparing ${food1.name} and ${food2.name} as a "Longevity Swap".
+Looking to optimize your diet? Making simple swaps can transform your energy! Let's compare:
 
-Food #1 (${food1.name}):
-- Calories: ${food1.calories} kcal
-- Macros: Protein ${food1.macros.protein}g, Carbs ${food1.macros.carbs}g, Fat ${food1.macros.fat}g
-- Key Benefits: ${food1.benefits.join(', ')}
+🟢 **${f1.name}**: ${f1.calories} kcal | P: ${f1.macros.protein}g | C: ${f1.macros.carbs}g | F: ${f1.macros.fat}g
+Benefits: ${f1.benefits.slice(0, 2).join(' & ')}
 
-Food #2 (${food2.name}):
-- Calories: ${food2.calories} kcal
-- Macros: Protein ${food2.macros.protein}g, Carbs ${food2.macros.carbs}g, Fat ${food2.macros.fat}g
-- Key Benefits: ${food2.benefits.join(', ')}
+🔴 **${f2.name}**: ${f2.calories} kcal | P: ${f2.macros.protein}g | C: ${f2.macros.carbs}g | F: ${f2.macros.fat}g
+Benefits: ${f2.benefits.slice(0, 2).join(' & ')}
 
-The swap URL is: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/
+Compare full macro breakdowns & portion guides:
+👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`,
 
-Instructions:
-1. "LinkedIn Post": Write in a professional, performance-driven tone. Target entrepreneurs, executives, and biohackers. Explain the impact on cognitive energy, metabolism, and cellular longevity. Include the swap URL with "?utm_source=linkedin&utm_medium=social" at the end. Keep it under 150 words.
-2. "Facebook Post": Write in a warm, engaging, lifestyle-oriented tone. Target families, everyday health enthusiasts, and cooking fans. Explain why making this simple food swap is a win for longevity. Include the swap URL with "?utm_source=facebook&utm_medium=social" at the end. Keep it under 120 words.
+    (f1, f2) => `⚖️ **Food Matchup: ${f1.name} vs. ${f2.name}** ⚖️
 
-Format your output exactly as a JSON object with keys "linkedin" and "facebook". Do not output any markdown code blocks, just raw JSON.
-`;
+How do these nutrition powerhouses stack up side-by-side? 
 
-  try {
-    const result = await model.generateContent(prompt);
-    const responseText = result.response.text().trim();
-    // Parse JSON safely
-    const cleanJsonText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
-    return JSON.parse(cleanJsonText);
-  } catch (error) {
-    console.error('❌ Gemini generation failed:', error);
-    return {
-      facebook: `🥗 NutriVisual Swap of the Day: ${food1.name} vs ${food2.name}!\n\nCompare side-by-side macro ratios, calories, and longevity benefits at: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=facebook&utm_medium=social`,
-      linkedin: `⚖️ NutriVisual Longevity Swap: ${food1.name} vs ${food2.name}.\n\nDeep-dive into cellular nutrition and cognitive optimization: https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/?utm_source=linkedin&utm_medium=social`
-    };
-  }
+• **${f1.name}** offers ${f1.calories} kcal per serving, packed with benefits like ${f1.benefits.join(', ')}.
+• **${f2.name}** delivers ${f2.calories} kcal, supporting ${f2.benefits.join(', ')}.
+
+Which one fits your goals today? Check out our dynamic visual swap engine to compare portion sizes:
+👉 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=facebook&utm_medium=social`
+  ];
+
+  const liTemplates = [
+    (f1, f2) => `⚖️ **NutriVisual Longevity Swap: ${f1.name} vs. ${f2.name}** ⚖️
+
+Dietary decisions directly impact mitochondrial health, metabolic flexibility, and daily cognitive performance.
+
+Let's analyze the nutrient profiles:
+
+📈 **${f1.name}** (${f1.calories} kcal)
+- Macros: Protein ${f1.macros.protein}g | Carbs ${f1.macros.carbs}g | Fat ${f1.macros.fat}g
+- Functional Benefits: ${f1.benefits.join(', ')}
+
+📉 **${f2.name}** (${f2.calories} kcal)
+- Macros: Protein ${f2.macros.protein}g | Carbs ${f2.macros.carbs}g | Fat ${f2.macros.fat}g
+- Functional Benefits: ${f2.benefits.join(', ')}
+
+Deep-dive into cellular density metrics and portion scaling ratios:
+🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`,
+
+    (f1, f2) => `🧠 **Executive Health: Optimizing Nutrition with ${f1.name} vs. ${f2.name}** 🧠
+
+High-performance leadership requires clean fuel. When structuring meals for sustained energy, compare these values:
+
+💼 **${f1.name}**
+- Calories: ${f1.calories} kcal
+- Key Biomarkers: ${f1.benefits.slice(0, 2).join(' & ')}
+
+💼 **${f2.name}**
+- Calories: ${f2.calories} kcal
+- Key Biomarkers: ${f2.benefits.slice(0, 2).join(' & ')}
+
+Explore side-by-side data visualization and swap metrics:
+🔗 https://nutrivisual.com/swap/${f1.id}-vs-${f2.id}/?utm_source=linkedin&utm_medium=social`
+  ];
+
+  // Select a template index randomly
+  const templateIndex = Math.floor(Math.random() * fbTemplates.length);
+
+  return {
+    facebook: fbTemplates[templateIndex](food1, food2),
+    linkedin: liTemplates[templateIndex](food1, food2)
+  };
 }
 
 // Auto-publish to Facebook
