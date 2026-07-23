@@ -54,8 +54,8 @@ export async function getStaticPaths() {
 
 const { food1, food2 } = Astro.props;
 
-const title = `${food1.name} vs ${food2.name}: Nutrition Comparison & Swap Analysis - NutriVisual`;
-const description = `Compare ${food1.name} (${food1.calories} kcal) vs ${food2.name} (${food2.calories} kcal). Side-by-side macro ratios, micronutrients, and calorie swap metrics.`;
+const title = `${food1.name} vs ${food2.name} Comparison: Macros & Longevity Pathways`;
+const description = `Compare ${food1.name} vs ${food2.name} calories (${food1.calories} vs ${food2.calories} kcal) and macros. Targets pathways: ${food1.benefits.slice(0, 2).join(', ')} vs ${food2.benefits.slice(0, 2).join(', ')}.`;
 const canonicalUrl = `https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/`;
 
 // Swap Ratio Calculation (How much Food 2 equals 100g of Food 1)
@@ -88,6 +88,42 @@ const higherCalFood = food1.calories > food2.calories ? food1 : food2;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={food1.image} />
     <meta property="og:type" content="article" />
+
+    <!-- Google Rich Snippet Nutrition Schema for Comparison -->
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": food1.name,
+        "image": food1.image,
+        "description": `${food1.name} nutrition profile details.`,
+        "category": food1.category,
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "servingSize": `${food1.servingBaseGrams} grams`,
+          "calories": `${food1.calories} calories`,
+          "fatContent": `${food1.macros.fat} g`,
+          "carbohydrateContent": `${food1.macros.carbs} g`,
+          "proteinContent": `${food1.macros.protein} g`
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": food2.name,
+        "image": food2.image,
+        "description": `${food2.name} nutrition profile details.`,
+        "category": food2.category,
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "servingSize": `${food2.servingBaseGrams} grams`,
+          "calories": `${food2.calories} calories`,
+          "fatContent": `${food2.macros.fat} g`,
+          "carbohydrateContent": `${food2.macros.carbs} g`,
+          "proteinContent": `${food2.macros.protein} g`
+        }
+      }
+    ])} />
 
     <!-- Early Theme Script -->
     <script is:inline>
