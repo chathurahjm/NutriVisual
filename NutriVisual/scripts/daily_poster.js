@@ -313,7 +313,7 @@ async function publishToFacebook(text, imagePath) {
 
   if (!pageId || !pageAccessToken) {
     console.log('⚠️ Facebook credentials not configured. Skipping active publishing.');
-    return;
+    return false;
   }
 
   console.log('🚀 Uploading and publishing to Facebook Page...');
@@ -333,11 +333,14 @@ async function publishToFacebook(text, imagePath) {
     const result = await response.json();
     if (result.error) {
       console.error('❌ Facebook API Error:', result.error);
+      return false;
     } else {
       console.log(`✅ Posted successfully to Facebook! Post ID: ${result.post_id || result.id}`);
+      return true;
     }
   } catch (err) {
     console.error('❌ Failed posting to Facebook:', err);
+    return false;
   }
 }
 
@@ -348,12 +351,10 @@ async function publishToLinkedIn(text, imagePath) {
 
   if (!accessToken || !orgId) {
     console.log('⚠️ LinkedIn credentials not configured. Skipping active publishing.');
-    return;
+    return false;
   }
 
   console.log('🚀 Publishing to LinkedIn...');
-  // Note: LinkedIn API requires registering upload, PUTting the image, and then creating the share post.
-  // We'll output the steps. Since this runs on auto-pilot, we provide the full implementation:
   try {
     // Step 1: Register an image upload
     const registerResponse = await fetch('https://api.linkedin.com/v2/assets?action=registerUpload', {
@@ -373,6 +374,11 @@ async function publishToLinkedIn(text, imagePath) {
     });
 
     const registerData = await registerResponse.json();
+    if (!registerResponse.ok || !registerData || !registerData.value || !registerData.value.uploadMechanism) {
+      console.error('❌ LinkedIn Register Upload API Error:', registerData);
+      return false;
+    }
+
     const uploadUrl = registerData.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadMechanism'].uploadUrl;
     const assetUrn = registerData.value.asset;
 
@@ -418,12 +424,15 @@ async function publishToLinkedIn(text, imagePath) {
 
     if (postResponse.status === 201) {
       console.log('✅ Posted successfully to LinkedIn!');
+      return true;
     } else {
       const errBody = await postResponse.text();
       console.error('❌ LinkedIn API Error:', errBody);
+      return false;
     }
   } catch (err) {
     console.error('❌ Failed posting to LinkedIn:', err);
+    return false;
   }
 }
 
@@ -462,9 +471,14 @@ async function run() {
 
     if (!isDryRun) {
       // 3. Publish to Facebook
-      await publishToFacebook(copy.facebook, imagePath);
+      const fbSuccess = await publishToFacebook(copy.facebook, imagePath);
       // 4. Publish to LinkedIn
-      await publishToLinkedIn(copy.linkedin, imagePath);
+      const liSuccess = await publishToLinkedIn(copy.linkedin, imagePath);
+
+      if (!fbSuccess && !liSuccess) {
+        console.error('❌ Social media posting failed for all configured platforms.');
+        process.exit(1);
+      }
     }
   } catch (err) {
     console.error('❌ Automation script failed:', err);
