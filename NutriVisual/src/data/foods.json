@@ -1622,5 +1622,257 @@
       "Lab Tested",
       "Clean Foods"
     ]
+  },
+  {
+    "id": "wild-salmon",
+    "name": "Wild Sockeye Salmon",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 168,
+    "macros": {
+      "fat": 6.8,
+      "carbs": 0,
+      "protein": 24.6
+    },
+    "micros": {
+      "potassium": "439 mg",
+      "magnesium": "30 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "High EPA/DHA Omega-3",
+      "Astaxanthin Anti-Oxidant",
+      "Muscle Recovery"
+    ],
+    "tags": [
+      "High Protein",
+      "Wild Caught",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "farmed-salmon",
+    "name": "Farmed Atlantic Salmon",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 208,
+    "macros": {
+      "fat": 13.4,
+      "carbs": 0,
+      "protein": 20.4
+    },
+    "micros": {
+      "potassium": "363 mg",
+      "magnesium": "27 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Caloric Energy",
+      "Omega-6 & Omega-3 Mix",
+      "Muscle Synthesis"
+    ],
+    "tags": [
+      "High Protein",
+      "Aquaculture",
+      "Energy Dense"
+    ]
+  },
+  {
+    "id": "white-rice",
+    "name": "Cooked White Rice",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 130,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 28.2,
+      "protein": 2.7
+    },
+    "micros": {
+      "potassium": "35 mg",
+      "magnesium": "12 mg",
+      "fiber": "0.4 g"
+    },
+    "benefits": [
+      "Rapid Glycogen Replenishment",
+      "Low FODMAP Gut Comfort",
+      "Quick Energy"
+    ],
+    "tags": [
+      "High Glycemic",
+      "Fast Carbs",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "cauliflower-rice",
+    "name": "Cauliflower Rice",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 25,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 5.0,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "299 mg",
+      "magnesium": "15 mg",
+      "fiber": "2.0 g"
+    },
+    "benefits": [
+      "Ultra Low Calorie Volume",
+      "Glucosinolates & Detox",
+      "Keto Friendly"
+    ],
+    "tags": [
+      "Low Calorie",
+      "High Fiber",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "ribeye",
+    "name": "Grass-Fed Ribeye Steak",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 291,
+    "macros": {
+      "fat": 22.0,
+      "carbs": 0,
+      "protein": 24.0
+    },
+    "micros": {
+      "potassium": "315 mg",
+      "magnesium": "21 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Satiating Lipid Density",
+      "Heme Iron & Zinc",
+      "Carnivore Staple"
+    ],
+    "tags": [
+      "High Fat",
+      "High Protein",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "sirloin",
+    "name": "Top Sirloin Steak",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 183,
+    "macros": {
+      "fat": 8.0,
+      "carbs": 0,
+      "protein": 27.0
+    },
+    "micros": {
+      "potassium": "355 mg",
+      "magnesium": "24 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "High Protein-to-Fat Ratio",
+      "Creatine & B12 Focus",
+      "Lean Muscle Growth"
+    ],
+    "tags": [
+      "High Protein",
+      "Lean Meat",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "avocado-oil",
+    "name": "Extra Virgin Avocado Oil",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 884,
+    "macros": {
+      "fat": 100.0,
+      "carbs": 0,
+      "protein": 0
+    },
+    "micros": {
+      "potassium": "0 mg",
+      "magnesium": "0 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Ultra High Smoke Point (520°F)",
+      "High Oleic Monounsaturated Fat",
+      "Thermal Cooking Stability"
+    ],
+    "tags": [
+      "Healthy Lipids",
+      "High Smoke Point",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "regular-butter",
+    "name": "Conventional Creamery Butter",
+    "category": "Healthy Fats",
+    "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 717,
+    "macros": {
+      "fat": 81.1,
+      "carbs": 0.1,
+      "protein": 0.9
+    },
+    "micros": {
+      "potassium": "24 mg",
+      "magnesium": "2 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Rich Culinary Emulsion",
+      "Fat Soluble Vitamins",
+      "Baking Texture"
+    ],
+    "tags": [
+      "Culinary Fat",
+      "Conventional",
+      "Baking Staple"
+    ]
+  },
+  {
+    "id": "beef-liver",
+    "name": "Grass-Fed Beef Liver",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 135,
+    "macros": {
+      "fat": 3.6,
+      "carbs": 3.9,
+      "protein": 20.4
+    },
+    "micros": {
+      "potassium": "380 mg",
+      "magnesium": "18 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Ultimate Retinol Vitamin A",
+      "Bioavailable Heme Iron",
+      "Active CoQ10 & B12"
+    ],
+    "tags": [
+      "Nutrient Dense",
+      "Superfood",
+      "High Protein"
+    ]
   }
 ]
