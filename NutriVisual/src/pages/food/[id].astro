@@ -1,7 +1,7 @@
 ---
 import '../../styles/global.css';
 import foodsData from '../../data/foods.json';
-import { buildNutritionProductSchema } from '../../utils/schemaBuilder';
+import { buildNutritionProductSchema, buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
 
 export async function getStaticPaths() {
   return foodsData.map((food) => ({
@@ -15,7 +15,23 @@ const { food } = Astro.props;
 const title = `${food.name} Food Portion Visualizer, Macros & Nutrient Density | NutriVisual`;
 const description = `${food.name} food portion visualizer & nutrient density breakdown: ${food.calories} kcal, ${food.macros.protein}g protein, ${food.macros.fat}g fat, macro comparison charts, and satiety ranking.`;
 const canonicalUrl = `https://nutrivisual.com/food/${food.id}/`;
+
 const nutritionSchema = buildNutritionProductSchema(food, canonicalUrl);
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Database', url: 'https://nutrivisual.com/#foods' },
+  { name: food.name, url: canonicalUrl }
+]);
+const faqSchema = buildFAQPageSchema([
+  {
+    question: `How many calories are in 100g of ${food.name}?`,
+    answer: `100 grams of ${food.name} contains approximately ${food.calories} calories, ${food.macros.protein}g of protein, ${food.macros.carbs}g of carbohydrates, and ${food.macros.fat}g of fat.`
+  },
+  {
+    question: `Is ${food.name} high in protein?`,
+    answer: `${food.name} provides ${food.macros.protein}g of protein per 100g serving, making it a key component of visual macro tracking on NutriVisual.`
+  }
+]);
 
 // Find 3 related items in the same category
 const relatedFoods = foodsData.filter((f) => f.category === food.category && f.id !== food.id).slice(0, 3);
@@ -67,8 +83,10 @@ const comparisons = [
     <meta property="og:image" content={food.image} />
     <meta property="og:type" content="article" />
 
-    <!-- Google Rich Snippet Nutrition Schema -->
+    <!-- Google Rich Snippet Schemas (Nutrition, Breadcrumbs, FAQs) -->
     <script type="application/ld+json" set:html={JSON.stringify(nutritionSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>

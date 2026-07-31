@@ -2,6 +2,7 @@
 import '../../styles/global.css';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
+import { buildNutritionProductSchema, buildBreadcrumbSchema, buildHowToSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -70,6 +71,33 @@ const swapGramsFood2 = Math.round((food1.calories / food2.calories) * 100);
 const calDiff = Math.abs(food1.calories - food2.calories);
 const lowerCalFood = food1.calories <= food2.calories ? food1 : food2;
 const higherCalFood = food1.calories > food2.calories ? food1 : food2;
+
+// Build Schema Suite
+const food1Schema = buildNutritionProductSchema(food1, `https://nutrivisual.com/food/${food1.id}/`);
+const food2Schema = buildNutritionProductSchema(food2, `https://nutrivisual.com/food/${food2.id}/`);
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Swaps', url: 'https://nutrivisual.com/swap/' },
+  { name: `${food1.name} vs ${food2.name}`, url: canonicalUrl }
+]);
+const howToSchema = buildHowToSchema(
+  `How to Swap ${food1.name} for ${food2.name}`,
+  `Step-by-step visual portion calculation to match calories between ${food1.name} and ${food2.name}.`,
+  [
+    { name: `Measure 100g of ${food1.name}`, text: `100g of ${food1.name} provides ${food1.calories} kcal (${food1.macros.protein}g protein, ${food1.macros.fat}g fat).` },
+    { name: `Calculate Swap Quantity`, text: `To match ${food1.calories} kcal of ${food1.name}, serve exactly ${swapGramsFood2}g of ${food2.name}.` }
+  ]
+);
+const faqSchema = buildFAQPageSchema([
+  {
+    question: `How much ${food2.name} equals 100g of ${food1.name}?`,
+    answer: `Exactly ${swapGramsFood2} grams of ${food2.name} equals the total caloric value of 100g of ${food1.name} (${food1.calories} kcal).`
+  },
+  {
+    question: `Which food is lower in calories: ${food1.name} or ${food2.name}?`,
+    answer: `${lowerCalFood.name} is lower in calories with ${lowerCalFood.calories} kcal per 100g compared to ${higherCalFood.name} with ${higherCalFood.calories} kcal per 100g.`
+  }
+]);
 ---
 
 <html lang="en">
@@ -96,41 +124,11 @@ const higherCalFood = food1.calories > food2.calories ? food1 : food2;
     <meta property="og:image" content={food1.image} />
     <meta property="og:type" content="article" />
 
-    <!-- Google Rich Snippet Nutrition Schema for Comparison -->
-    <script type="application/ld+json" set:html={JSON.stringify([
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": food1.name,
-        "image": food1.image,
-        "description": `${food1.name} nutrition profile details.`,
-        "category": food1.category,
-        "nutrition": {
-          "@type": "NutritionInformation",
-          "servingSize": `${food1.servingBaseGrams} grams`,
-          "calories": `${food1.calories} calories`,
-          "fatContent": `${food1.macros.fat} g`,
-          "carbohydrateContent": `${food1.macros.carbs} g`,
-          "proteinContent": `${food1.macros.protein} g`
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": food2.name,
-        "image": food2.image,
-        "description": `${food2.name} nutrition profile details.`,
-        "category": food2.category,
-        "nutrition": {
-          "@type": "NutritionInformation",
-          "servingSize": `${food2.servingBaseGrams} grams`,
-          "calories": `${food2.calories} calories`,
-          "fatContent": `${food2.macros.fat} g`,
-          "carbohydrateContent": `${food2.macros.carbs} g`,
-          "proteinContent": `${food2.macros.protein} g`
-        }
-      }
-    ])} />
+    <!-- Google Rich Snippet Schemas (Nutrition, Breadcrumbs, HowTo, FAQs) -->
+    <script type="application/ld+json" set:html={JSON.stringify([food1Schema, food2Schema])} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <!-- Early Theme Script -->
     <script is:inline>

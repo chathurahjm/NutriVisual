@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import NutriVisualApp from '../components/NutriVisualApp.jsx';
-import { buildWebApplicationSchema } from '../utils/schemaBuilder';
+import { buildWebApplicationSchema, buildFAQPageSchema } from '../utils/schemaBuilder';
 
 import posts from '../data/posts.json';
 
@@ -9,6 +9,20 @@ const title = "Visual Nutrition Guide & Food Portion Visualizer | NutriVisual";
 const description = "Visual nutrition guide & food portion visualizer. Interactive macro comparison chart, nutrient density chart, satiety index food list, calorie density visualizer, and volume eating foods.";
 const canonicalUrl = "https://nutrivisual.com/";
 const webAppSchema = buildWebApplicationSchema(canonicalUrl);
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "What is NutriVisual?",
+    answer: "NutriVisual is an interactive visual nutrition guide and food portion calculator that allows users to visually compare macros, calorie density, satiety rankings, and equivalent food portions."
+  },
+  {
+    question: "How does the Food Portion Visualizer work?",
+    answer: "NutriVisual calculates exact gram-for-gram portion ratios between foods to show you how much of one food equals the calories, protein, or carbs of another food item."
+  },
+  {
+    question: "Is NutriVisual free to use?",
+    answer: "Yes, NutriVisual is 100% free with no sign-up or download required."
+  }
+]);
 
 const featuredBlogs = [
   {
@@ -64,6 +78,7 @@ const featuredSwaps = [
 
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>
       (function() {
