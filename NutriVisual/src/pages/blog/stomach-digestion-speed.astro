@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import SocialShare from '../../components/SocialShare.astro';
 
 const title = "The Stomach Timeline: How Fast Do Different Foods Actually Digest? - NutriVisual";
 const description = "Discover how fast liquids, simple carbs, complex carbs, proteins, and healthy fats digest in the stomach, and how to structure meals for long-lasting energy.";
@@ -48,6 +49,7 @@ const canonicalUrl = "https://nutrivisual.com/blog/stomach-digestion-speed/";
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         <nav class="header-nav" id="header-nav">
           <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/swap/">Food Swaps</a>
           <a href="/blog/" style="color: var(--accent-green); font-weight: 600;">Blog</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
@@ -470,6 +472,8 @@ const canonicalUrl = "https://nutrivisual.com/blog/stomach-digestion-speed/";
               Open NutriVisual Engine →
             </a>
           </div>
+
+          <SocialShare title={title} url={canonicalUrl} description={description} />
         </div>
       </article>
     </main>

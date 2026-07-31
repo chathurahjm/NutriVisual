@@ -12,7 +12,7 @@ cta:
 
 ## The Electrical Gradient of Life
 
-Every cell in your body runs on electricity. To generate this energy, cell membranes contain thousands of active enzymes called **sodium-potassium pumps ($Na^+/K^+-ATPase$)**.
+Every cell in your body runs on electricity. To generate this energy, cell membranes contain thousands of active enzymes called **sodium-potassium pumps (Na<sup>+</sup>/K<sup>+</sup>-ATPase)**.
 
 For every cycle, this pump moves **3 sodium ions out** of the cell and pulls **2 potassium ions in**. This uneven exchange creates an electrical gradient that controls:
 1. Nerve impulse transmission.

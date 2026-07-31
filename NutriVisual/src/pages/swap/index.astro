@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import foodsData from '../../data/foods.json';
+import SocialShare from '../../components/SocialShare.astro';
 
 const title = "Food Swap Engine & Nutrition Comparisons - NutriVisual";
 const description = "Discover nutritional food swaps and side-by-side macro comparisons for healthy eating, keto diets, muscle building, and longevity.";
@@ -72,6 +73,7 @@ const resolvedSwaps = popularSwaps.map(s => {
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         <nav class="header-nav" id="header-nav">
           <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/swap/" style="color: var(--accent-green); font-weight: 700; border-bottom: 2px solid var(--accent-green);">Food Swaps</a>
           <a href="/blog/">Blog</a>
           <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
             <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
@@ -110,6 +112,8 @@ const resolvedSwaps = popularSwaps.map(s => {
           </a>
         ))}
       </div>
+
+      <SocialShare title={title} url="https://nutrivisual.com/swap/" description={description} />
     </main>
 
     <footer style="border-top: 1px solid var(--border-color); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">

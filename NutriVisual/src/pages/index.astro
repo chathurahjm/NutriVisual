@@ -22,6 +22,15 @@ const featuredBlogs = [
   posts[0],
   posts[1]
 ];
+
+const featuredSwaps = [
+  { path: '/swap/avocado-vs-olive-oil/', title: 'Avocado vs. Olive Oil', subtitle: 'Whole food fiber vs. concentrated polyphenols.', icon: '🥑 vs 🫒', tag: 'Healthy Fats' },
+  { path: '/swap/atlantic-salmon-vs-chicken-breast/', title: 'Wild Salmon vs. Chicken Breast', subtitle: 'EPA/DHA omega-3 vs. ultra-lean protein.', icon: '🐟 vs 🍗', tag: 'High Protein' },
+  { path: '/swap/matcha-vs-spirulina/', title: 'Matcha vs. Spirulina', subtitle: 'L-Theanine & EGCG vs. phycocyanin & B-vitamins.', icon: '🍵 vs 🧪', tag: 'Antioxidants' },
+  { path: '/swap/blueberries-vs-dark-chocolate/', title: 'Blueberries vs. Dark Chocolate', subtitle: 'Anthocyanins vs. flavanols & magnesium.', icon: '🫐 vs 🍫', tag: 'Flavonoids' },
+  { path: '/swap/broccoli-vs-spinach/', title: 'Broccoli vs. Spinach', subtitle: 'Sulforaphane vs. iron, lutein, & folate.', icon: '🥦 vs 🥬', tag: 'Micronutrients' },
+  { path: '/swap/tofu-vs-tempeh/', title: 'Tofu vs. Tempeh', subtitle: 'Isoflavones vs. gut-friendly fermented protein.', icon: '🫘 vs 🧀', tag: 'Plant Protein' }
+];
 ---
 
 <html lang="en">
@@ -73,6 +82,7 @@ const featuredBlogs = [
         </a>
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         <nav class="header-nav" id="header-nav">
+          <a href="/swap/" style="color: var(--accent-green); font-weight: 700;">🔄 Food Swaps</a>
           <a href="/blog/">Blog</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
@@ -100,6 +110,47 @@ const featuredBlogs = [
 
       {/* Astro Island: Interactive NutriVisual React App */}
       <NutriVisualApp client:load />
+
+      {/* Interactive Food Swaps & Comparisons Showcase */}
+      <section id="swaps" style="margin-top: 5rem; padding: 3rem 0; border-top: 1px solid var(--border-color);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="display: inline-block; background-color: var(--accent-green-glow); color: var(--accent-green); font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
+              Smart Nutritional Alternatives
+            </span>
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0;">
+              🔄 Popular Food Swaps & Side-by-Side Comparisons
+            </h2>
+          </div>
+          <a href="/swap/" style="color: var(--accent-green); font-weight: 700; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.3rem;">
+            Explore All 25+ Food Swaps →
+          </a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          {featuredSwaps.map(swap => (
+            <a href={swap.path} class="glass-card" style="padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <span style="font-size: 1.5rem;">{swap.icon}</span>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-green); background: var(--accent-green-glow); padding: 0.2rem 0.55rem; border-radius: 12px; text-transform: uppercase;">
+                    {swap.tag}
+                  </span>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">
+                  {swap.title}
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.45; margin: 0;">
+                  {swap.subtitle}
+                </p>
+              </div>
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-green); display: flex; align-items: center; gap: 0.3rem;">
+                Compare Macros & Bioavailability →
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* Pre-rendered Longevity Science Articles */}
       <section id="science" style="margin-top: 6rem;">
@@ -223,6 +274,7 @@ const featuredBlogs = [
       <div class="container">
         <p style="margin-bottom: 0.75rem;">© 2026 NutriVisual. Visual nutrition and longevity reference engine.</p>
         <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+          <a href="/swap/" style="color: var(--accent-green); text-decoration: none; font-weight: 600;">Food Swaps</a>
           <a href="/about/" style="color: var(--accent-green); text-decoration: none;">About Us</a>
           <a href="/privacy/" style="color: var(--accent-green); text-decoration: none;">Privacy Policy</a>
           <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>

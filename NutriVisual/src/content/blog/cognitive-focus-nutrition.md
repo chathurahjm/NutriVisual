@@ -20,16 +20,16 @@ To maintain calm, steady focus during intense cognitive sessions without caffein
 
 ## Matcha, L-Theanine & Caffeine Ratio for Deep Work
 
-Coffee provides a rapid spike in central nervous system stimulation by blocking adenosine $A_1$ and $A_{2A}$ receptors. However, this often triggers cortisol secretion, vasoconstriction, and an abrupt energy crash.
+Coffee provides a rapid spike in central nervous system stimulation by blocking adenosine A<sub>1</sub> and A<sub>2A</sub> receptors. However, this often triggers cortisol secretion, vasoconstriction, and an abrupt energy crash.
 
 Matcha green tea offers the optimal Nootropic ratio:
 
-$$\text{L-Theanine to Caffeine Synergy Ratio} \approx 2:1$$
+> **L-Theanine to Caffeine Synergy Ratio ≈ 2:1**
 
 | Component | Biological Action in Brain | Cognitive Payout |
 | :--- | :--- | :--- |
 | **Caffeine (30mg – 50mg)** | Blocks adenosine binding, increases dopamine receptor sensitivity | Sustained alertness and reaction speed |
-| **L-Theanine (50mg – 100mg)** | Crosses blood-brain barrier; stimulates $\alpha$-1 brainwaves (8–12 Hz) | Calm, relaxed focus without drowsiness |
+| **L-Theanine (50mg – 100mg)** | Crosses blood-brain barrier; stimulates α-1 (alpha) brainwaves (8–12 Hz) | Calm, relaxed focus without drowsiness |
 | **EGCG Catechins** | Potent antioxidant, protects neuronal lipofuscin accumulation | Neuroprotection and brain cellular defense |
 
 The combination of L-theanine and caffeine induces **alpha brainwave activity**, creating a state of relaxed flow ideal for deep analytical work.
@@ -50,7 +50,7 @@ The **Blood-Brain Barrier (BBB)** is a selective endothelial membrane that preve
 
 Cerebral blood flow delivers oxygen and glucose to active neurons. **Nitric Oxide (NO)** acts as an endothelial vasodilator:
 
-* **Nitrate-Rich Foods**: Beets, spinach, and arugula contain inorganic nitrates ($\text{NO}_3^-$) converted by oral bacteria into nitrites ($\text{NO}_2^-$) and systemic Nitric Oxide ($\text{NO}$).
+* **Nitrate-Rich Foods**: Beets, spinach, and arugula contain inorganic nitrates (NO<sub>3</sub><sup>-</sup>) converted by oral bacteria into nitrites (NO<sub>2</sub><sup>-</sup>) and systemic Nitric Oxide (NO).
 * **Dark Chocolate Polyphenols**: Flavols stimulate Endothelial Nitric Oxide Synthase (eNOS), widening cerebral arteries and boosting cognitive processing speed.
 
 ---

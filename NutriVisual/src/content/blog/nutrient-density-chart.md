@@ -16,7 +16,7 @@ Nutrient density measures the concentration of essential micronutrients (vitamin
 
 Formulaically:
 
-$$\text{Nutrient Density Ratio} = \frac{\text{Micronutrients (Vitamins, Minerals, Polyphenols)}}{\text{Total Energy (Calories)}}$$
+> **Nutrient Density Ratio = Micronutrients (Vitamins, Minerals, Polyphenols) / Total Energy (Calories)**
 
 A food high in calories but devoid of micronutrients (such as refined sugar or synthetic oils) is considered **nutrient poor** or "empty calories." Conversely, foods rich in folate, magnesium, potassium, vitamin K1, and polyphenols per calorie top the **Nutrient Density Index**.
 

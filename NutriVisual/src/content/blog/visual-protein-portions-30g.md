@@ -36,7 +36,7 @@ However, estimating what 30 grams of protein actually looks like on a plate can 
 
 When selecting protein sources for weight management or lean muscle building, the **protein-to-calorie ratio** is a critical metric:
 
-$$\text{Protein Ratio} = \frac{\text{Protein Grams} \times 4 \text{ kcal}}{\text{Total Calories}}$$
+> **Protein Ratio = (Protein Grams × 4 kcal) / Total Calories**
 
 ```
 [ Ultra Lean (80-90% Protein Ratio) ]

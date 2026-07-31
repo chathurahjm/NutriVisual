@@ -24,10 +24,10 @@ Iron exists in two distinct biochemical forms in human food:
 
 | Metric | Non-Heme Iron (Spinach, Legumes) | Heme Iron (Grass-Fed Beef Liver) |
 | :--- | :--- | :--- |
-| **Chemical Form** | Ferric Iron ($\text{Fe}^{3+}$) | Porphyrin Ring Bound Ferrous ($\text{Fe}^{2+}$) |
+| **Chemical Form** | Ferric Iron (Fe<sup>3+</sup>) | Porphyrin Ring Bound Ferrous (Fe<sup>2+</sup>) |
 | **Systemic Absorption Rate** | **2% – 10%** (Low) | **15% – 35%** (High) |
 | **Inhibitor Sensitivity** | Heavily blocked by Oxalates, Phytates, Polyphenols | Unaffected by dietary chelators or stomach pH |
-| **Conversion Requirement** | Must be reduced to $\text{Fe}^{2+}$ via duodenal cytochrome b | Absorbed directly intact via HCP1 transporters |
+| **Conversion Requirement** | Must be reduced to Fe<sup>2+</sup> via duodenal cytochrome b | Absorbed directly intact via HCP1 transporters |
 
 ---
 
@@ -38,12 +38,12 @@ Let's compare 100 grams of raw spinach to 100 grams of cooked grass-fed beef liv
 ### 1. Raw Spinach (100g)
 * **Listed Total Iron**: ~2.7 mg
 * **Oxalate Inhibitor**: Spinach contains high levels of **oxalic acid**, which binds to iron and calcium, forming insoluble salts.
-* **Net Absorbed Iron**: $\approx 2.7\text{ mg} \times 3\% = \mathbf{0.08\text{ mg}}$ usable iron.
+* **Net Absorbed Iron**: ≈ 2.7 mg × 3% = **0.08 mg** usable iron.
 
 ### 2. Grass-Fed Beef Liver (100g)
 * **Listed Total Iron**: ~6.5 mg (Heme Iron)
 * **Retinol & Copper Matrix**: Liver provides bioavailable **Copper (Ceruloplasmin)** and active **Retinol Vitamin A**, essential co-factors for iron transport and hemoglobin synthesis.
-* **Net Absorbed Iron**: $\approx 6.5\text{ mg} \times 25\% = \mathbf{1.625\text{ mg}}$ usable iron.
+* **Net Absorbed Iron**: ≈ 6.5 mg × 25% = **1.625 mg** usable iron.
 
 **Takeaway**: You would need to consume over **2.0 kilograms of raw spinach** to absorb the equivalent net iron provided by just 100 grams of beef liver!
 

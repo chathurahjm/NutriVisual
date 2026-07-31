@@ -2,6 +2,7 @@
 import '../../styles/global.css';
 import { getCollection, render } from 'astro:content';
 import foodsData from '../../data/foods.json';
+import SocialShare from '../../components/SocialShare.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -102,6 +103,7 @@ const relatedFoods = foodsData.filter(f => relatedFoodIds.includes(f.id));
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         <nav class="header-nav" id="header-nav">
           <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
+          <a href="/swap/">Food Swaps</a>
           <a href="/blog/" style="color: var(--accent-green); font-weight: 600;">Blog</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
@@ -152,6 +154,8 @@ const relatedFoods = foodsData.filter(f => relatedFoodIds.includes(f.id));
         <div class="markdown-body" style="font-size: 1.05rem; color: var(--text-main); display: flex; flex-direction: column; gap: 1.5rem;">
           <Content />
         </div>
+
+        <SocialShare title={post.data.title} url={canonicalUrl} description={post.data.subtitle} />
 
         {relatedFoods.length > 0 && (
           <div class="glass-card" style="margin-top: 3.5rem; padding: 2rem; background-color: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-color);">

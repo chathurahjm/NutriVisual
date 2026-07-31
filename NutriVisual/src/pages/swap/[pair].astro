@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import foodsData from '../../data/foods.json';
+import SocialShare from '../../components/SocialShare.astro';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -150,7 +151,7 @@ const higherCalFood = food1.calories > food2.calories ? food1 : food2;
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         <nav class="header-nav" id="header-nav">
           <a href="/" style="color: var(--accent-green); font-weight: 600;">← Home</a>
-          <a href="/swap/" style="color: var(--accent-green); font-weight: 600;">Swap Directory</a>
+          <a href="/swap/" style="color: var(--accent-green); font-weight: 600;">Food Swaps</a>
           <a href="/blog/">Blog</a>
           <button id="theme-toggle" aria-label="Toggle theme" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.45rem 0.9rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
             <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
@@ -270,6 +271,8 @@ const higherCalFood = food1.calories > food2.calories ? food1 : food2;
           </a>
         </div>
       </div>
+
+      <SocialShare title={`${food1.name} vs ${food2.name} - Nutrition Comparison`} url={canonicalUrl} description={description} />
     </main>
 
     <footer style="border-top: 1px solid var(--border-color); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">

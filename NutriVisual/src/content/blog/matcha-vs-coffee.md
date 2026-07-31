@@ -24,7 +24,7 @@ Matcha green tea offers a completely different biochemical mechanism for cogniti
 
 Matcha is made by grinding shade-grown green tea leaves into a fine powder. Because you consume the entire leaf, you absorb a concentrated dose of active compounds. 
 
-The standout compound in matcha is L-Theanine ($N$-ethyl-L-glutamine). L-Theanine is a structurally unique amino acid that crosses the blood-brain barrier. In the brain, L-Theanine promotes the generation of **alpha brainwaves** (8–12 Hz), which are associated with a state of "relaxed alertness"—similar to the mental state achieved during deep meditation.
+The standout compound in matcha is L-Theanine (*N*-ethyl-L-glutamine). L-Theanine is a structurally unique amino acid that crosses the blood-brain barrier. In the brain, L-Theanine promotes the generation of **alpha brainwaves** (8–12 Hz), which are associated with a state of "relaxed alertness"—similar to the mental state achieved during deep meditation.
 
 | Dimension | Standard Coffee | Matcha Green Tea |
 | :--- | :--- | :--- |

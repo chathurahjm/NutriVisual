@@ -14,7 +14,7 @@ cta:
 
 The rate at which food leaves the stomach—known as the **gastric emptying rate**—governs everything from post-prandial energy, blood glucose spikes, and exercise performance to gastrointestinal comfort. 
 
-When you swallow food, the stomach acts as a biological holding vessel, churning solids with hydrochloric acid ($\text{HCl}$) and pepsin until they reach a liquefied state called **chyme**. The pyloric sphincter valve then regulates the flow of chyme into the duodenum in small, measured bursts.
+When you swallow food, the stomach acts as a biological holding vessel, churning solids with hydrochloric acid (HCl) and pepsin until they reach a liquefied state called **chyme**. The pyloric sphincter valve then regulates the flow of chyme into the duodenum in small, measured bursts.
 
 ---
 
