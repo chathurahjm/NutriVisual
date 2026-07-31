@@ -230,6 +230,35 @@ const encodedDesc = encodeURIComponent(description);
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
+    // Popup window opener for social share links
+    const shareLinks = document.querySelectorAll('.share-btn:not(.copy-share-btn)');
+    shareLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        const width = 600;
+        const height = 540;
+        const left = Math.max(0, (window.innerWidth - width) / 2 + window.screenX);
+        const top = Math.max(0, (window.innerHeight - height) / 2 + window.screenY);
+
+        try {
+          const popup = window.open(
+            href,
+            'SocialShareWindow',
+            `width=${width},height=${height},top=${top},left=${left},toolbar=no,menubar=no,scrollbars=yes,resizable=yes`
+          );
+          if (popup && !popup.closed) {
+            e.preventDefault();
+            popup.focus();
+          }
+        } catch (err) {
+          // Allow default anchor navigation if popup is blocked
+        }
+      });
+    });
+
+    // Copy link & Web Share API handler
     const copyBtns = document.querySelectorAll('.copy-share-btn');
     
     copyBtns.forEach(btn => {
