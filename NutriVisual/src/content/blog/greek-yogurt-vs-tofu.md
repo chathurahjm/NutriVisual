@@ -4,6 +4,7 @@ subtitle: "A side-by-side comparison of plant protein vs. dairy snacks for optim
 category: "Longevity Swaps"
 date: "July 22, 2026"
 readTime: "6 min read"
+youtubeId: "kllRGM4bLnU" # Add your YouTube Video ID here (e.g. "dQw4w9WgXcQ")
 relatedFoods: ["greek-yogurt","tofu"]
 cta:
   text: "Compare Tofu vs. Greek Yogurt in our directory to evaluate the protein density."

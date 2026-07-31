@@ -1,12 +1,14 @@
 ---
 import '../styles/global.css';
 import NutriVisualApp from '../components/NutriVisualApp.jsx';
+import { buildWebApplicationSchema } from '../utils/schemaBuilder';
 
 import posts from '../data/posts.json';
 
 const title = "NutriVisual - Visual Nutrition & Longevity Reference Engine";
 const description = "Explore lab-tested macro and micro-nutrient profiles for popular foods with dynamic portion sliders, SVG macro charts, and side-by-side food comparisons.";
 const canonicalUrl = "https://nutrivisual.com/";
+const webAppSchema = buildWebApplicationSchema(canonicalUrl);
 
 const featuredBlogs = [
   {
@@ -52,16 +54,7 @@ const featuredBlogs = [
     <meta name="twitter:description" content={description} />
 
     <!-- JSON-LD Structured Data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "NutriVisual",
-        "url": "https://nutrivisual.com",
-        "description": "Visual Nutrition and Longevity Reference Engine",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "All"
-      }
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>
       (function() {
