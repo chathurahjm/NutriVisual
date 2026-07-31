@@ -1,6 +1,6 @@
 ---
-title: "Understanding Macronutrients: The Complete Visual Guide to Carbs, Fats, and Proteins"
-subtitle: "Demystifying macro ratios, energetic yields per gram, and optimal split strategies for metabolic health."
+title: "Macro Comparison Chart & Complete Visual Macronutrient Guide"
+subtitle: "Demystifying macro comparison charts, energetic yields per gram, and optimal splits for protein, carbs, and fats."
 category: "Macronutrients"
 date: "July 30, 2026"
 readTime: "7 min read"

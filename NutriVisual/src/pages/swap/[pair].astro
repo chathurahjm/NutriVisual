@@ -61,8 +61,8 @@ export async function getStaticPaths() {
 
 const { food1, food2 } = Astro.props;
 
-const title = `${food1.name} vs ${food2.name} Comparison: Macros & Longevity Pathways`;
-const description = `Compare ${food1.name} vs ${food2.name} calories (${food1.calories} vs ${food2.calories} kcal) and macros. Targets pathways: ${food1.benefits.slice(0, 2).join(', ')} vs ${food2.benefits.slice(0, 2).join(', ')}.`;
+const title = `${food1.name} vs ${food2.name} Macro Comparison Chart & Food Swap | NutriVisual`;
+const description = `${food1.name} vs ${food2.name} macro comparison chart & satiety index breakdown (${food1.calories} vs ${food2.calories} kcal). Volume eating food swap guide and portion visualizer metrics.`;
 const canonicalUrl = `https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/`;
 
 // Swap Ratio Calculation (How much Food 2 equals 100g of Food 1)

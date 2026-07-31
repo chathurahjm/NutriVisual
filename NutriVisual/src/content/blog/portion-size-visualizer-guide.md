@@ -1,6 +1,6 @@
 ---
-title: "Master Portion Control with Visual Sliders: Stop Counting Calories, Start Seeing Volume"
-subtitle: "How to use hand anchors, dynamic serving sliders, and volumetric visualizers for effortless portion precision."
+title: "Food Portion Visualizer Guide: See Real Serving Sizes & Grams"
+subtitle: "Master portion control with our interactive food portion visualizer, hand anchors, and dynamic volume sliders."
 category: "Portion Control"
 date: "July 30, 2026"
 readTime: "6 min read"

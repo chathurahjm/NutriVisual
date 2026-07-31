@@ -1,6 +1,6 @@
 ---
-title: "Why Visual Nutrition Trumps Calorie Counting: The Visualizer Guide"
-subtitle: "How visual food comparison activates intuitive portion control and transforms daily nutrition habits."
+title: "Visual Nutrition Guide: Interactive Food Portion & Macro Visualizer"
+subtitle: "A complete visual nutrition guide for intuitive portion control, calorie density comparison, and macro tracking."
 category: "Nutrition Science"
 date: "July 30, 2026"
 readTime: "6 min read"

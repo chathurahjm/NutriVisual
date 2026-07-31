@@ -1,6 +1,6 @@
 ---
-title: "The Ultimate Nutrient Density Chart: Measuring Micronutrients Per Calorie"
-subtitle: "How to maximize vitamins, minerals, and polyphenols per calorie for cellular longevity."
+title: "Nutrient Density Chart: Visual Ranking of Micronutrients Per Calorie"
+subtitle: "Comprehensive nutrient density chart measuring essential vitamins, minerals, and antioxidants per calorie."
 category: "Micronutrients"
 date: "July 30, 2026"
 readTime: "7 min read"

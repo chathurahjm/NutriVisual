@@ -1,6 +1,6 @@
 ---
-title: "Volume Eating: How to Feel Full on Fewer Calories"
-subtitle: "The secret to sustainable dieting by choosing foods with high physical density and water volume."
+title: "Volume Eating Foods & Calorie Density Visualizer Guide"
+subtitle: "Master volume eating foods and calorie density visualizer strategies to maximize fullness on fewer calories."
 category: "Portion Density"
 date: "July 22, 2026"
 readTime: "5 min read"

@@ -1,6 +1,6 @@
 ---
-title: "The Satiety Index Chart: Foods That Keep You Fullest Per Calorie"
-subtitle: "How protein leverage, water volume, and viscous fiber regulate appetite hormones GLP-1, PYY, and Ghrelin."
+title: "Satiety Index Food List: Foods That Keep You Fullest Per Calorie"
+subtitle: "Complete satiety index food list ranking protein leverage, water volume, and appetite suppression."
 category: "Appetite & Longevity"
 date: "July 30, 2026"
 readTime: "7 min read"

@@ -155,21 +155,21 @@ export default function NutriVisualApp() {
             className={`tab-btn ${activeTab === 'explorer' ? 'active' : ''}`}
             style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
           >
-            <span>🥗</span> Food Explorer
+            <span>🥗</span> Food Portion Visualizer
           </button>
           <button
             onClick={() => setActiveTab('compare')}
             className={`tab-btn ${activeTab === 'compare' ? 'active' : ''}`}
             style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
           >
-            <span>⚖️</span> Side-by-Side
+            <span>⚖️</span> Macro Comparison Chart
           </button>
           <button
             onClick={() => setActiveTab('plate')}
             className={`tab-btn ${activeTab === 'plate' ? 'active' : ''}`}
             style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
           >
-            <span>🍽️</span> Visual Meal Builder ({plateItems.length})
+            <span>🍽️</span> Calorie Density & Meal Builder ({plateItems.length})
           </button>
         </div>
 

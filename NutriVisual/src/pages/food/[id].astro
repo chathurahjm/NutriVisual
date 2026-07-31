@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 
 const { food } = Astro.props;
 
-const title = `${food.name} Calories, Macros, & Longevity Pathways - NutriVisual`;
-const description = `${food.name} nutrition profile: ${food.calories} kcal, ${food.macros.protein}g protein, ${food.macros.fat}g fat. Targets cellular pathways: ${food.benefits.slice(0, 2).join(', ')}.`;
+const title = `${food.name} Food Portion Visualizer, Macros & Nutrient Density | NutriVisual`;
+const description = `${food.name} food portion visualizer & nutrient density breakdown: ${food.calories} kcal, ${food.macros.protein}g protein, ${food.macros.fat}g fat, macro comparison charts, and satiety ranking.`;
 const canonicalUrl = `https://nutrivisual.com/food/${food.id}/`;
 const nutritionSchema = buildNutritionProductSchema(food, canonicalUrl);
 
