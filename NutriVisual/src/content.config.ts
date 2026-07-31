@@ -9,6 +9,7 @@ const blog = defineCollection({
     category: z.string(),
     date: z.string(),
     readTime: z.string(),
+    youtubeId: z.string().optional(),
     relatedFoods: z.array(z.string()).default([]),
     cta: z.object({
       text: z.string(),
