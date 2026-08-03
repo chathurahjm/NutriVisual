@@ -3,6 +3,7 @@ import foodsData from '../data/foods.json';
 import BiohackRadarChart from './BiohackRadarChart.jsx';
 import SatietyMatrix from './SatietyMatrix.jsx';
 import InfographicGeneratorModal from './InfographicGeneratorModal.jsx';
+import { getBiohackData } from '../data/biohackData.js';
 
 export default function NutriVisualApp() {
   const [activeTab, setActiveTab] = useState('explorer'); // 'explorer' | 'compare' | 'biohack' | 'satiety' | 'plate'
@@ -70,14 +71,10 @@ export default function NutriVisualApp() {
   const carbsPct = Math.round((scaledCarbs / totalMacroGrams) * 100);
   const proteinPct = Math.round((scaledProtein / totalMacroGrams) * 100);
 
-  // Biohack Radar Scores for active food (0 to 100)
-  const biohackScores = {
-    brain: Math.min(95, Math.round((parseNum(activeFood.micros.magnesium) / 60) * 50 + (activeFood.macros.fat > 8 ? 40 : 15))),
-    muscle: Math.min(98, Math.round((activeFood.macros.protein / 30) * 85 + 10)),
-    gut: Math.min(95, Math.round((parseNum(activeFood.micros.fiber) / 5) * 80 + 15)),
-    heart: Math.min(95, Math.round((parseNum(activeFood.micros.potassium) / 400) * 70 + (activeFood.macros.fat < 15 ? 25 : 10))),
-    metabolism: Math.min(95, Math.round(Math.max(10, (1 - (activeFood.macros.carbs / 50)) * 60 + (activeFood.macros.protein > 15 ? 30 : 10))))
-  };
+  // Evidence-Based Biohack Data for active food
+  const biohackData = getBiohackData(activeFood);
+  const biohackScores = biohackData.scores;
+  const biohackReasons = biohackData.reasons;
 
   // Meal Plate Totals calculation
   const rawPlateTotals = plateItems.reduce(
@@ -562,35 +559,35 @@ export default function NutriVisualApp() {
               <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#38bdf8' }}>🧠 Cognitive Vitality: {biohackScores.brain}/100</h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
-                  Magnesium ({activeFood.micros.magnesium}) & essential fatty acids support neurotransmitter synthesis and brain cell fluidity.
+                  {biohackReasons.brain}
                 </p>
               </div>
 
               <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#f59e0b' }}>💪 Lean Muscle Recovery: {biohackScores.muscle}/100</h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
-                  Delivers {activeFood.macros.protein}g of complete protein per 100g to fuel mTOR activation and muscle tissue repair.
+                  {biohackReasons.muscle}
                 </p>
               </div>
 
               <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#10b981' }}>🌿 Gut Microbiome: {biohackScores.gut}/100</h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
-                  Dietary fiber ({activeFood.micros.fiber}) feeds beneficial gut microbiota to produce short-chain fatty acids.
+                  {biohackReasons.gut}
                 </p>
               </div>
 
               <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#ec4899' }}>🛡️ Heart & Circulation: {biohackScores.heart}/100</h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
-                  Potassium ({activeFood.micros.potassium}) regulates intracellular fluid balance and supports arterial elasticity.
+                  {biohackReasons.heart}
                 </p>
               </div>
 
               <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#a855f7' }}>⚡ Metabolic Flexibility: {biohackScores.metabolism}/100</h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
-                  Optimal carbohydrate-to-protein ratio keeps postprandial insulin stable and promotes mitochondrial energy output.
+                  {biohackReasons.metabolism}
                 </p>
               </div>
             </div>
