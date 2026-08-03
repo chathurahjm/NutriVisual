@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import foodsData from '../data/foods.json';
+import BiohackRadarChart from './BiohackRadarChart.jsx';
+import SatietyMatrix from './SatietyMatrix.jsx';
+import InfographicGeneratorModal from './InfographicGeneratorModal.jsx';
 
 export default function NutriVisualApp() {
-  const [activeTab, setActiveTab] = useState('explorer'); // 'explorer' | 'compare' | 'plate'
+  const [activeTab, setActiveTab] = useState('explorer'); // 'explorer' | 'compare' | 'biohack' | 'satiety' | 'plate'
   const [searchQuery, setSearchQuery] = useState('');
   const [outcomeFilter, setOutcomeFilter] = useState(''); // 'bp' | 'brain' | 'gut' | 'muscle' | 'keto'
   const [selectedFoodId, setSelectedFoodId] = useState('avocado');
@@ -13,12 +16,15 @@ export default function NutriVisualApp() {
   const [compareFoodId2, setCompareFoodId2] = useState('atlantic-salmon');
   const [comparePortionGrams, setComparePortionGrams] = useState(100);
 
-  // Meal Plate State (Move 3)
+  // Meal Plate State
   const [plateItems, setPlateItems] = useState([
     { foodId: 'atlantic-salmon', grams: 150 },
     { foodId: 'avocado', grams: 100 },
     { foodId: 'broccoli', grams: 120 }
   ]);
+
+  // Infographic Modal State
+  const [isInfographicOpen, setIsInfographicOpen] = useState(false);
 
   // Helper to parse numeric values from micro strings (e.g. "363 mg" -> 363)
   const parseNum = (str) => {
@@ -32,7 +38,6 @@ export default function NutriVisualApp() {
 
   // Filtered foods for search and outcome filters
   const filteredFoods = sortedFoods.filter((f) => {
-    // Search match
     const matchesSearch =
       f.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       f.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -40,7 +45,6 @@ export default function NutriVisualApp() {
 
     if (!matchesSearch) return false;
 
-    // Biohack outcome filters (Move 2)
     if (outcomeFilter === 'bp') return parseNum(f.micros.potassium) >= 300;
     if (outcomeFilter === 'brain') return parseNum(f.micros.magnesium) >= 50 || f.tags.some(t => t.includes('Omega-3') || t.includes('Brain'));
     if (outcomeFilter === 'gut') return parseNum(f.micros.fiber) >= 3.0;
@@ -65,6 +69,15 @@ export default function NutriVisualApp() {
   const fatPct = Math.round((scaledFat / totalMacroGrams) * 100);
   const carbsPct = Math.round((scaledCarbs / totalMacroGrams) * 100);
   const proteinPct = Math.round((scaledProtein / totalMacroGrams) * 100);
+
+  // Biohack Radar Scores for active food (0 to 100)
+  const biohackScores = {
+    brain: Math.min(95, Math.round((parseNum(activeFood.micros.magnesium) / 60) * 50 + (activeFood.macros.fat > 8 ? 40 : 15))),
+    muscle: Math.min(98, Math.round((activeFood.macros.protein / 30) * 85 + 10)),
+    gut: Math.min(95, Math.round((parseNum(activeFood.micros.fiber) / 5) * 80 + 15)),
+    heart: Math.min(95, Math.round((parseNum(activeFood.micros.potassium) / 400) * 70 + (activeFood.macros.fat < 15 ? 25 : 10))),
+    metabolism: Math.min(95, Math.round(Math.max(10, (1 - (activeFood.macros.carbs / 50)) * 60 + (activeFood.macros.protein > 15 ? 30 : 10))))
+  };
 
   // Meal Plate Totals calculation
   const rawPlateTotals = plateItems.reduce(
@@ -103,7 +116,7 @@ export default function NutriVisualApp() {
     const foodName = food ? food.name : 'Food item';
 
     if (!plateItems.some((item) => item.foodId === foodId)) {
-      setPlateItems([...plateItems, { foodId, grams: 100 }]);
+      setPlateItems([...plateItems, { foodId, grams: portionGrams }]);
       setToastMessage(`✓ ${foodName} added to your Visual Meal Stack!`);
     } else {
       setToastMessage(`ℹ️ ${foodName} is already on your Meal Stack.`);
@@ -147,6 +160,14 @@ export default function NutriVisualApp() {
         </div>
       )}
 
+      {/* Social Graphic Exporter Modal */}
+      <InfographicGeneratorModal
+        isOpen={isInfographicOpen}
+        onClose={() => setIsInfographicOpen(false)}
+        food1Id={compareFoodId1}
+        food2Id={compareFoodId2}
+      />
+
       {/* Mode Controls */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div className="tab-container">
@@ -165,6 +186,14 @@ export default function NutriVisualApp() {
             <span>⚖️</span> Macro Comparison Chart
           </button>
           <button
+            onClick={() => setActiveTab('biohack')}
+            className={`tab-btn ${activeTab === 'biohack' ? 'active' : ''}`}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+          >
+            <span>🧬</span> Biohack Blueprint
+          </button>
+
+          <button
             onClick={() => setActiveTab('plate')}
             className={`tab-btn ${activeTab === 'plate' ? 'active' : ''}`}
             style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
@@ -173,31 +202,27 @@ export default function NutriVisualApp() {
           </button>
         </div>
 
-        {/* Category Pills */}
-        <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '0.25rem' }}>
-          {['All', 'Proteins', 'Healthy Fats', 'Superfoods', 'Vegetables'].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setSearchQuery(cat === 'All' ? '' : cat);
-                setOutcomeFilter('');
-              }}
-              style={{
-                fontSize: '0.8rem',
-                padding: '0.35rem 0.75rem',
-                borderRadius: '20px',
-                backgroundColor: searchQuery === cat || (cat === 'All' && !searchQuery && !outcomeFilter) ? 'var(--accent-green)' : 'var(--bg-card)',
-                color: searchQuery === cat || (cat === 'All' && !searchQuery && !outcomeFilter) ? '#ffffff' : 'var(--text-muted)',
-                border: '1px solid var(--border-color)',
-                cursor: 'pointer',
-                fontWeight: 600,
-                transition: 'all 0.2s ease',
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        {/* Action Button: One-Click Social Infographic Exporter */}
+        <button
+          onClick={() => setIsInfographicOpen(true)}
+          style={{
+            backgroundColor: 'var(--accent-green-glow)',
+            color: 'var(--accent-green)',
+            border: '1px solid var(--accent-green)',
+            padding: '0.55rem 1.1rem',
+            borderRadius: '20px',
+            cursor: 'pointer',
+            fontWeight: 700,
+            fontSize: '0.85rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            boxShadow: 'var(--shadow-card)',
+            transition: 'all 0.2s ease'
+          }}
+        >
+          <span>📸</span> Export Social Graphic
+        </button>
       </div>
 
       {/* MOVE 2: Biohack & Longevity Target Outcome Filter Bar */}
@@ -237,7 +262,7 @@ export default function NutriVisualApp() {
         </div>
       </div>
 
-      {/* VIEW 1: SINGLE FOOD EXPLORER VIEW */}
+      {/* VIEW 1: SINGLE FOOD EXPLORER VIEW (ORIGINAL COMPLETE DESIGN RESTORED) */}
       {activeTab === 'explorer' && (
         <div className="layout-explorer">
           <div>
@@ -330,7 +355,7 @@ export default function NutriVisualApp() {
                 </div>
               </div>
 
-              {/* Bottom Micronutrients */}
+              {/* Bottom Micronutrients & Donut Ring */}
               <div className="layout-micro-section">
                 <div style={{ textAlign: 'center' }}>
                   <svg viewBox="0 0 36 36" style={{ width: '130px', height: '130px', transform: 'rotate(-90deg)' }}>
@@ -363,7 +388,7 @@ export default function NutriVisualApp() {
             </div>
           </div>
 
-          {/* Sidebar */}
+          {/* Right Sidebar: Quick Select Food */}
           <div>
             <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem' }}>🥦 Quick Select Food</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '520px', overflowY: 'auto' }}>
@@ -385,8 +410,8 @@ export default function NutriVisualApp() {
                 >
                   <img src={food.image} alt={food.name} style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }} />
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: food.id === selectedFoodId ? 'var(--accent-green)' : 'var(--text-main)' }}>{food.name}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal / 100g</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)' }}>{food.name}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal/100g</div>
                   </div>
                 </div>
               ))}
@@ -395,92 +420,192 @@ export default function NutriVisualApp() {
         </div>
       )}
 
-      {/* VIEW 2: SIDE BY SIDE COMPARE */}
+      {/* VIEW 2: MACRO COMPARISON VIEW */}
       {activeTab === 'compare' && (
-        <div>
-          {/* Portion Scale Slider Header */}
-          <div className="glass-card" style={{ padding: '1.25rem 1.5rem', marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                ⚖️ Comparison Serving Scale:
-              </span>
-              <span style={{ color: 'var(--accent-green)', fontWeight: 700, fontFamily: 'var(--font-mono)', fontSize: '1.05rem' }}>
-                {comparePortionGrams} grams per item
-              </span>
-            </div>
-            <input
-              type="range"
-              min="50"
-              max="300"
-              step="10"
-              value={comparePortionGrams}
-              onChange={(e) => setComparePortionGrams(Number(e.target.value))}
-              aria-label="Adjust comparison portion in grams"
-            />
-          </div>
+        <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '2rem', boxShadow: 'var(--shadow-card)' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-main)' }}>Side-by-Side Macro Comparison Chart</h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '2rem' }}>
+            Compare macro ratios, calorie density, and micronutrient totals between any two whole foods.
+          </p>
 
-          <div className="layout-compare-selects">
-            <div className="glass-card" style={{ padding: '1.25rem' }}>
-              <label htmlFor="compare-select-1" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.5rem' }}>Food Item #1</label>
-              <select id="compare-select-1" value={compareFoodId1} onChange={(e) => setCompareFoodId1(e.target.value)} style={{ width: '100%', padding: '0.75rem', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '8px', color: 'var(--text-main)', outline: 'none', fontWeight: 600 }}>
-                {sortedFoods.map((f) => (<option key={f.id} value={f.id}>{f.name} ({Math.round(f.calories * (comparePortionGrams / 100))} kcal)</option>))}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {/* Food 1 */}
+            <div>
+              <label style={{ fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.5rem', display: 'block', color: 'var(--text-main)' }}>Select Food A:</label>
+              <select
+                value={compareFoodId1}
+                onChange={(e) => setCompareFoodId1(e.target.value)}
+                style={{ width: '100%', padding: '0.65rem', borderRadius: '10px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-surface)', color: 'var(--text-main)', fontWeight: 600, marginBottom: '1rem' }}
+              >
+                {sortedFoods.map((f) => (
+                  <option key={f.id} value={f.id}>{f.name}</option>
+                ))}
               </select>
-            </div>
-            <div className="glass-card" style={{ padding: '1.25rem' }}>
-              <label htmlFor="compare-select-2" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.5rem' }}>Food Item #2</label>
-              <select id="compare-select-2" value={compareFoodId2} onChange={(e) => setCompareFoodId2(e.target.value)} style={{ width: '100%', padding: '0.75rem', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '8px', color: 'var(--text-main)', outline: 'none', fontWeight: 600 }}>
-                {sortedFoods.map((f) => (<option key={f.id} value={f.id}>{f.name} ({Math.round(f.calories * (comparePortionGrams / 100))} kcal)</option>))}
-              </select>
-            </div>
-          </div>
 
-          <div className="layout-compare-cards">
-            {[compareFood1, compareFood2].map((food, idx) => {
-              const compScale = comparePortionGrams / 100;
-              const scaledCal = Math.round(food.calories * compScale);
-              const scaledProt = Math.round(food.macros.protein * compScale * 10) / 10;
-              const scaledCarb = Math.round(food.macros.carbs * compScale * 10) / 10;
-              const scaledFat = Math.round(food.macros.fat * compScale * 10) / 10;
-
-              return (
-                <div key={idx} className="glass-card compare-card">
-                  <img src={food.image} alt={food.name} className="compare-card-image" />
-                  <h2 className="compare-card-title">{food.name}</h2>
-                  <div style={{ color: 'var(--accent-green)', fontSize: '0.85rem', marginBottom: '0.75rem', fontWeight: 600 }}>
-                    {food.category} • <span style={{ color: 'var(--text-muted)' }}>{comparePortionGrams}g portion</span>
-                  </div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: '0.25rem' }}><span>Calories</span><span style={{ fontFamily: 'var(--font-mono)' }}>{scaledCal} kcal</span></div>
-                      <div style={{ width: '100%', height: '6px', backgroundColor: 'var(--bg-surface)', borderRadius: '4px' }}><div style={{ width: `${Math.min(100, (scaledCal / 600) * 100)}%`, height: '100%', backgroundColor: 'var(--text-main)', borderRadius: '4px' }} /></div>
-                    </div>
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: '0.25rem' }}><span>Protein</span><span style={{ color: 'var(--accent-amber)', fontFamily: 'var(--font-mono)' }}>{scaledProt}g</span></div>
-                      <div style={{ width: '100%', height: '6px', backgroundColor: 'var(--bg-surface)', borderRadius: '4px' }}><div style={{ width: `${Math.min(100, (scaledProt / 30) * 100)}%`, height: '100%', backgroundColor: 'var(--accent-amber)', borderRadius: '4px' }} /></div>
-                    </div>
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: '0.25rem' }}><span>Carbs</span><span style={{ color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)' }}>{scaledCarb}g</span></div>
-                      <div style={{ width: '100%', height: '6px', backgroundColor: 'var(--bg-surface)', borderRadius: '4px' }}><div style={{ width: `${Math.min(100, (scaledCarb / 40) * 100)}%`, height: '100%', backgroundColor: 'var(--accent-cyan)', borderRadius: '4px' }} /></div>
-                    </div>
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: '0.25rem' }}><span>Fat</span><span style={{ color: 'var(--accent-green)', fontFamily: 'var(--font-mono)' }}>{scaledFat}g</span></div>
-                      <div style={{ width: '100%', height: '6px', backgroundColor: 'var(--bg-surface)', borderRadius: '4px' }}><div style={{ width: `${Math.min(100, (scaledFat / 50) * 100)}%`, height: '100%', backgroundColor: 'var(--accent-green)', borderRadius: '4px' }} /></div>
-                    </div>
-                  </div>
+              <div style={{ border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1.25rem', backgroundColor: 'var(--bg-surface)' }}>
+                <img src={compareFood1.image} alt={compareFood1.name} style={{ width: '100%', height: '140px', borderRadius: '8px', objectFit: 'cover', marginBottom: '1rem' }} />
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>{compareFood1.name}</h3>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-green)', fontFamily: 'var(--font-mono)', marginBottom: '1rem' }}>{compareFood1.calories} kcal/100g</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem' }}>
+                  <div>🥩 Protein: <strong>{compareFood1.macros.protein}g</strong></div>
+                  <div>🥑 Fat: <strong>{compareFood1.macros.fat}g</strong></div>
+                  <div>🍚 Carbs: <strong>{compareFood1.macros.carbs}g</strong></div>
+                  <div>⚡ Potassium: <strong>{compareFood1.micros.potassium}</strong></div>
                 </div>
-              );
-            })}
+              </div>
+            </div>
+
+            {/* Food 2 */}
+            <div>
+              <label style={{ fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.5rem', display: 'block', color: 'var(--text-main)' }}>Select Food B:</label>
+              <select
+                value={compareFoodId2}
+                onChange={(e) => setCompareFoodId2(e.target.value)}
+                style={{ width: '100%', padding: '0.65rem', borderRadius: '10px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-surface)', color: 'var(--text-main)', fontWeight: 600, marginBottom: '1rem' }}
+              >
+                {sortedFoods.map((f) => (
+                  <option key={f.id} value={f.id}>{f.name}</option>
+                ))}
+              </select>
+
+              <div style={{ border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1.25rem', backgroundColor: 'var(--bg-surface)' }}>
+                <img src={compareFood2.image} alt={compareFood2.name} style={{ width: '100%', height: '140px', borderRadius: '8px', objectFit: 'cover', marginBottom: '1rem' }} />
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>{compareFood2.name}</h3>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)', marginBottom: '1rem' }}>{compareFood2.calories} kcal/100g</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem' }}>
+                  <div>🥩 Protein: <strong>{compareFood2.macros.protein}g</strong></div>
+                  <div>🥑 Fat: <strong>{compareFood2.macros.fat}g</strong></div>
+                  <div>🍚 Carbs: <strong>{compareFood2.macros.carbs}g</strong></div>
+                  <div>⚡ Potassium: <strong>{compareFood2.micros.potassium}</strong></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
 
-      {/* MOVE 3: VISUAL MEAL STACK BUILDER VIEW */}
+      {/* VIEW 3: BIOHACK BLUEPRINT RADAR VIEW */}
+      {activeTab === 'biohack' && (
+        <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '2rem', boxShadow: 'var(--shadow-card)' }}>
+          <div style={{ textAlign: 'center', maxWidth: '650px', margin: '0 auto 2rem auto' }}>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 0.5rem 0' }}>
+              🧬 Biohack Health & Longevity Radar
+            </h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', margin: '0 0 1.25rem 0' }}>
+              Real-time nutrient synergy breakdown mapping 5 health dimensions for <strong>{activeFood.name}</strong>.
+            </p>
+
+            {/* Food Selector Dropdown & Quick Food Pills */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', width: '100%', maxWidth: '380px' }}>
+                <label htmlFor="biohack-food-select" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', whiteSpace: 'nowrap' }}>
+                  🥑 Select Food:
+                </label>
+                <select
+                  id="biohack-food-select"
+                  value={selectedFoodId}
+                  onChange={(e) => setSelectedFoodId(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '0.65rem 1rem',
+                    borderRadius: '12px',
+                    border: '1px solid var(--border-color)',
+                    backgroundColor: 'var(--bg-surface)',
+                    color: 'var(--text-main)',
+                    fontSize: '0.9rem',
+                    fontWeight: 700,
+                    cursor: 'pointer'
+                  }}
+                >
+                  {sortedFoods.map((f) => (
+                    <option key={f.id} value={f.id}>
+                      {f.name} ({f.category})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Quick Preset Buttons for Top Biohack Foods */}
+              <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {['atlantic-salmon', 'avocado', 'blueberries', 'eggs', 'broccoli', 'beef-liver', 'matcha', 'dark-chocolate'].map((id) => {
+                  const foodItem = foodsData.find((f) => f.id === id);
+                  if (!foodItem) return null;
+                  const isSel = selectedFoodId === id;
+                  return (
+                    <button
+                      key={id}
+                      onClick={() => setSelectedFoodId(id)}
+                      style={{
+                        fontSize: '0.78rem',
+                        padding: '0.3rem 0.65rem',
+                        borderRadius: '16px',
+                        backgroundColor: isSel ? 'var(--accent-green)' : 'var(--bg-surface)',
+                        color: isSel ? '#ffffff' : 'var(--text-muted)',
+                        border: `1px solid ${isSel ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      {foodItem.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'center' }}>
+            <BiohackRadarChart scores={biohackScores} />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#38bdf8' }}>🧠 Cognitive Vitality: {biohackScores.brain}/100</h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                  Magnesium ({activeFood.micros.magnesium}) & essential fatty acids support neurotransmitter synthesis and brain cell fluidity.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#f59e0b' }}>💪 Lean Muscle Recovery: {biohackScores.muscle}/100</h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                  Delivers {activeFood.macros.protein}g of complete protein per 100g to fuel mTOR activation and muscle tissue repair.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#10b981' }}>🌿 Gut Microbiome: {biohackScores.gut}/100</h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                  Dietary fiber ({activeFood.micros.fiber}) feeds beneficial gut microbiota to produce short-chain fatty acids.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#ec4899' }}>🛡️ Heart & Circulation: {biohackScores.heart}/100</h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                  Potassium ({activeFood.micros.potassium}) regulates intracellular fluid balance and supports arterial elasticity.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: 'var(--bg-surface)', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, margin: '0 0 0.3rem 0', color: '#a855f7' }}>⚡ Metabolic Flexibility: {biohackScores.metabolism}/100</h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                  Optimal carbohydrate-to-protein ratio keeps postprandial insulin stable and promotes mitochondrial energy output.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+
+
+      {/* VIEW 5: MEAL PLATE BUILDER VIEW */}
       {activeTab === 'plate' && (
-        <div className="layout-plate">
-          <div className="glass-card" style={{ padding: '2rem' }}>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              🍽️ Your Custom Visual Meal Stack
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
+              🍽️ Visual Calorie Density & Meal Stack Builder
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '2rem' }}>
               Combine multiple food ingredients to view accumulated macro balances and total longevity micronutrients in real time.
