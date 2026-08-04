@@ -1,0 +1,11 @@
+# NutriVisual
+> Visual Nutrition, Portion Reference Engine, and Side-by-Side Food Swaps.
+
+## Main Features & Pages
+- [Food Swaps Engine](https://nutrivisual.com/swap/): Side-by-side macro and calorie density comparison visualizer.
+- [Visual Portion Guides](https://nutrivisual.com/blog/): Visual reference guides for 30g protein portions, 200-calorie volume eating, and satiety index rankings.
+- [Food Database](https://nutrivisual.com/food/): Whole-food nutrition profiles per 100g.
+
+## Key Nutritional Metrics
+- Standard reference portion: 100 grams
+- Core data points: Calories (kcal), Protein (g), Fat (g), Carbohydrates (g), Fiber (g), Micronutrients, Satiety Index Score, Gastric Emptying Digestion Rate.

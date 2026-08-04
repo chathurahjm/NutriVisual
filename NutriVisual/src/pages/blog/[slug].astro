@@ -134,8 +134,11 @@ const articleSchema = buildArticleSchema({
           {post.data.subtitle}
         </p>
 
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-          Published on {post.data.date} • Written by John & Mary • {post.data.readTime}
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span>Published on <strong>{post.data.date}</strong></span> • 
+          <span>Written by <a href="/about/" style="color: var(--accent-green); text-decoration: none; font-weight: 600;">NutriVisual Clinical Research Team</a></span> • 
+          <span>Medically Verified</span> • 
+          <span>{post.data.readTime}</span>
         </div>
 
         {post.data.youtubeId && (

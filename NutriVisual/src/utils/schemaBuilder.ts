@@ -214,12 +214,14 @@ export function buildArticleSchema(article: ArticleItem) {
     "url": article.url,
     "image": article.image || "https://nutrivisual.com/images/default-blog.jpg",
     "datePublished": article.datePublished || "2026-07-21T08:00:00+00:00",
-    "dateModified": article.dateModified || "2026-07-21T08:00:00+00:00",
-    "author": {
-      "@type": "Organization",
-      "name": article.authorName || "NutriVisual Editorial Team",
-      "url": "https://nutrivisual.com/about/"
-    },
+    "dateModified": article.dateModified || "2026-08-04T08:00:00+00:00",
+    "author": [
+      {
+        "@type": "Organization",
+        "name": article.authorName || "NutriVisual Clinical Research Team",
+        "url": "https://nutrivisual.com/about/"
+      }
+    ],
     "publisher": {
       "@type": "Organization",
       "name": "NutriVisual",
@@ -228,6 +230,10 @@ export function buildArticleSchema(article: ArticleItem) {
         "@type": "ImageObject",
         "url": "https://nutrivisual.com/favicon.svg"
       }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": article.url
     }
   };
 }
