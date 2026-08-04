@@ -26,7 +26,14 @@ export async function getStaticPaths() {
     ['wild-salmon', 'farmed-salmon'],
     ['white-rice', 'cauliflower-rice'],
     ['avocado-oil', 'olive-oil'],
-    ['spinach', 'beef-liver']
+    ['spinach', 'beef-liver'],
+    ['greek-yogurt', 'cottage-cheese'],
+    ['oat-milk', 'almond-milk'],
+    ['egg-whites', 'eggs'],
+    ['quinoa', 'brown-rice'],
+    ['sweet-potato', 'regular-potato'],
+    ['quinoa', 'white-rice'],
+    ['tofu', 'chicken-breast']
   ];
 
   // Generate paths for popular predefined pairs
@@ -183,6 +190,49 @@ const faqSchema = buildFAQPageSchema([
           Eating <strong>100g of {food1.name}</strong> ({food1.calories} kcal) provides the same calorie intake as eating <strong>{swapGramsFood2}g of {food2.name}</strong>.
           {calDiff > 0 ? ` ${lowerCalFood.name} is ${calDiff} kcal lighter per 100g than ${higherCalFood.name}.` : ' Both foods have identical calorie densities.'}
         </p>
+      </div>
+
+      {/* Structured Comparison Data Table for GEO & Search Engines */}
+      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 3rem; overflow-x: auto;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
+          📊 Nutritional Matrix (Per 100g Reference Portion)
+        </h3>
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-surface);">
+              <th style="padding: 0.75rem 1rem; color: var(--text-main);">Nutritional Metric</th>
+              <th style="padding: 0.75rem 1rem; color: var(--accent-green);">{food1.name}</th>
+              <th style="padding: 0.75rem 1rem; color: var(--accent-cyan);">{food2.name}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">Calories (kcal)</td>
+              <td style="padding: 0.75rem 1rem;">{food1.calories} kcal</td>
+              <td style="padding: 0.75rem 1rem;">{food2.calories} kcal</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">Protein (g)</td>
+              <td style="padding: 0.75rem 1rem;">{food1.macros.protein} g</td>
+              <td style="padding: 0.75rem 1rem;">{food2.macros.protein} g</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">Total Fat (g)</td>
+              <td style="padding: 0.75rem 1rem;">{food1.macros.fat} g</td>
+              <td style="padding: 0.75rem 1rem;">{food2.macros.fat} g</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">Carbohydrates (g)</td>
+              <td style="padding: 0.75rem 1rem;">{food1.macros.carbs} g</td>
+              <td style="padding: 0.75rem 1rem;">{food2.macros.carbs} g</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">Primary Category</td>
+              <td style="padding: 0.75rem 1rem;">{food1.category}</td>
+              <td style="padding: 0.75rem 1rem;">{food2.category}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       {/* Side by Side Comparison Grid */}

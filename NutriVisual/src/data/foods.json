@@ -1874,5 +1874,145 @@
       "Superfood",
       "High Protein"
     ]
+  },
+  {
+    "id": "egg-whites",
+    "name": "Egg Whites",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1587486913049-53fc88980cfc?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 52,
+    "macros": {
+      "fat": 0.2,
+      "carbs": 0.7,
+      "protein": 11.0
+    },
+    "micros": {
+      "potassium": "163 mg",
+      "magnesium": "11 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Pure Protein Source",
+      "Zero Saturated Fat",
+      "Volume Eating Staple"
+    ],
+    "tags": [
+      "High Protein",
+      "Low Calorie",
+      "Lean Muscle"
+    ]
+  },
+  {
+    "id": "oat-milk",
+    "name": "Oat Milk (Unsweetened)",
+    "category": "Beverages",
+    "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 45,
+    "macros": {
+      "fat": 1.5,
+      "carbs": 7.0,
+      "protein": 1.0
+    },
+    "micros": {
+      "potassium": "150 mg",
+      "magnesium": "8 mg",
+      "fiber": "0.8 g"
+    },
+    "benefits": [
+      "Creamy Dairy Substitute",
+      "Heart Healthy Beta-Glucan",
+      "Plant Based"
+    ],
+    "tags": [
+      "Plant Based",
+      "Dairy Free",
+      "Beverage"
+    ]
+  },
+  {
+    "id": "almond-milk",
+    "name": "Almond Milk (Unsweetened)",
+    "category": "Beverages",
+    "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 15,
+    "macros": {
+      "fat": 1.1,
+      "carbs": 0.3,
+      "protein": 0.6
+    },
+    "micros": {
+      "potassium": "65 mg",
+      "magnesium": "5 mg",
+      "fiber": "0.2 g"
+    },
+    "benefits": [
+      "Ultra Low Calorie",
+      "Keto Friendly Milk Swap",
+      "Vitamin E Source"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Keto",
+      "Dairy Free"
+    ]
+  },
+  {
+    "id": "regular-potato",
+    "name": "White Potato (Boiled)",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 87,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 20.1,
+      "protein": 1.9
+    },
+    "micros": {
+      "potassium": "379 mg",
+      "magnesium": "22 mg",
+      "fiber": "1.8 g"
+    },
+    "benefits": [
+      "Highest Satiety Index Score",
+      "Rich Electrolyte Potassium",
+      "Complex Starch Energy"
+    ],
+    "tags": [
+      "High Satiety",
+      "Complex Carbs",
+      "Whole Foods"
+    ]
+  },
+  {
+    "id": "brown-rice",
+    "name": "Brown Rice (Cooked)",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 123,
+    "macros": {
+      "fat": 1.0,
+      "carbs": 25.6,
+      "protein": 2.7
+    },
+    "micros": {
+      "potassium": "86 mg",
+      "magnesium": "43 mg",
+      "fiber": "1.6 g"
+    },
+    "benefits": [
+      "Whole Grain Fiber",
+      "Sustained Energy Release",
+      "Magnesium Mineral Boost"
+    ],
+    "tags": [
+      "Whole Grain",
+      "High Fiber",
+      "Complex Carbs"
+    ]
   }
 ]
