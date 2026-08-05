@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import CookieConsent from '../../components/CookieConsent.astro';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
 
@@ -130,9 +131,12 @@ const resolvedSwaps = popularSwaps.map(s => {
           <a href="/terms/" style="color: var(--accent-green); text-decoration: none;">Terms of Service</a>
           <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
           <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
+          <button type="button" onclick="window.openCookieConsent && window.openCookieConsent()" style="background: none; border: none; color: var(--accent-green); cursor: pointer; text-decoration: underline; font-size: inherit; font-family: inherit; padding: 0;">Cookie Settings</button>
         </div>
       </div>
     </footer>
+
+    <CookieConsent />
 
     <script is:inline>
       function initThemeToggle() {

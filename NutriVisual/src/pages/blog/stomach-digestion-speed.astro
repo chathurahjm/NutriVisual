@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import CookieConsent from '../../components/CookieConsent.astro';
 import SocialShare from '../../components/SocialShare.astro';
 
 const title = "The Stomach Timeline: How Fast Do Different Foods Actually Digest? - NutriVisual";
@@ -481,9 +482,11 @@ const canonicalUrl = "https://nutrivisual.com/blog/stomach-digestion-speed/";
     <!-- Footer -->
     <footer style="border-top: 1px solid var(--border-color); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
       <div class="container">
-        <p>© 2026 NutriVisual. All rights reserved. <a href="/privacy/" style="color: var(--accent-green);">Privacy Policy</a> | <a href="/terms/" style="color: var(--accent-green);">Terms</a> | <a href="/about/" style="color: var(--accent-green);">About</a> | <a href="/contact/" style="color: var(--accent-green);">Contact</a></p>
+        <p>© 2026 NutriVisual. All rights reserved. <a href="/privacy/" style="color: var(--accent-green);">Privacy Policy</a> | <a href="/terms/" style="color: var(--accent-green);">Terms</a> | <a href="/about/" style="color: var(--accent-green);">About</a> | <a href="/contact/" style="color: var(--accent-green);">Contact</a> | <button type="button" onclick="window.openCookieConsent && window.openCookieConsent()" style="background: none; border: none; color: var(--accent-green); cursor: pointer; text-decoration: underline; font-size: inherit; font-family: inherit; padding: 0;">Cookie Settings</button></p>
       </div>
     </footer>
+
+    <CookieConsent />
 
     <script is:inline>
       function initThemeToggle() {

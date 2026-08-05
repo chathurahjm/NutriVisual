@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const title = "Terms of Service - NutriVisual";
 const description = "Terms of Service governing the use of NutriVisual visual nutrition reference engine.";
@@ -83,9 +84,11 @@ const description = "Terms of Service governing the use of NutriVisual visual nu
 
     <footer style="border-top: 1px solid var(--border-color); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
       <div class="container">
-        <p>© 2026 NutriVisual. All rights reserved. <a href="/blog/" style="color: var(--accent-green);">Blog</a> | <a href="/terms/" style="color: var(--accent-green);">Terms</a> | <a href="/disclaimer/" style="color: var(--accent-green);">Disclaimer</a></p>
+        <p>© 2026 NutriVisual. All rights reserved. <a href="/blog/" style="color: var(--accent-green);">Blog</a> | <a href="/terms/" style="color: var(--accent-green);">Terms</a> | <a href="/disclaimer/" style="color: var(--accent-green);">Disclaimer</a> | <button type="button" onclick="window.openCookieConsent && window.openCookieConsent()" style="background: none; border: none; color: var(--accent-green); cursor: pointer; text-decoration: underline; font-size: inherit; font-family: inherit; padding: 0;">Cookie Settings</button></p>
       </div>
     </footer>
+
+    <CookieConsent />
 
     <script is:inline>
       function initThemeToggle() {

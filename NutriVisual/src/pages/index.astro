@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import NutriVisualApp from '../components/NutriVisualApp.jsx';
+import CookieConsent from '../components/CookieConsent.astro';
 import { buildWebApplicationSchema, buildFAQPageSchema } from '../utils/schemaBuilder';
 
 import posts from '../data/posts.json';
@@ -296,9 +297,12 @@ const featuredSwaps = [
           <a href="/disclaimer/" style="color: var(--accent-green); text-decoration: none;">Medical Disclaimer</a>
           <a href="/blog/" style="color: var(--accent-green); text-decoration: none;">Blog</a>
           <a href="/contact/" style="color: var(--accent-green); text-decoration: none;">Contact Us</a>
+          <button type="button" onclick="window.openCookieConsent && window.openCookieConsent()" style="background: none; border: none; color: var(--accent-green); cursor: pointer; text-decoration: underline; font-size: inherit; font-family: inherit; padding: 0;">Cookie Settings</button>
         </div>
       </div>
     </footer>
+
+    <CookieConsent />
 
     <script is:inline>
       function initThemeToggle() {
