@@ -2,10 +2,34 @@
 import '../../styles/global.css';
 import CookieConsent from '../../components/CookieConsent.astro';
 import SocialShare from '../../components/SocialShare.astro';
+import { buildArticleSchema, buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
 
 const title = "The Stomach Timeline: How Fast Do Different Foods Actually Digest? - NutriVisual";
 const description = "Discover how fast liquids, simple carbs, complex carbs, proteins, and healthy fats digest in the stomach, and how to structure meals for long-lasting energy.";
 const canonicalUrl = "https://nutrivisual.com/blog/stomach-digestion-speed/";
+
+const articleSchema = buildArticleSchema({
+  title: title,
+  description: description,
+  url: canonicalUrl,
+  datePublished: "2026-07-21T08:00:00+00:00",
+  dateModified: "2026-08-04T08:00:00+00:00"
+});
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Blog', url: 'https://nutrivisual.com/blog/' },
+  { name: 'Stomach Digestion Timeline', url: canonicalUrl }
+]);
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "How long does it take for food to leave the stomach?",
+    answer: "Liquids leave in 10-20 minutes, simple carbs in 30-60 minutes, complex carbs in 1-2 hours, lean protein in 2-3 hours, and dense fats/heavy meats in 4-6 hours."
+  },
+  {
+    question: "Which macronutrient stays in the stomach the longest?",
+    answer: "Dietary fats and high-density proteins stay in the stomach longest (up to 4-6 hours) because fat triggers gastric motility deceleration (cholecystokinin release)."
+  }
+]);
 ---
 
 <html lang="en">
@@ -25,6 +49,11 @@ const canonicalUrl = "https://nutrivisual.com/blog/stomach-digestion-speed/";
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Google Rich Snippet Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

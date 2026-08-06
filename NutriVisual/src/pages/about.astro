@@ -1,9 +1,17 @@
 ---
 import '../styles/global.css';
 import CookieConsent from '../components/CookieConsent.astro';
+import { buildOrganizationSchema, buildBreadcrumbSchema } from '../utils/schemaBuilder';
 
 const title = "About Us - NutriVisual";
 const description = "Learn about NutriVisual's mission to bring high-precision visual nutrition and longevity reference data to everyone.";
+const canonicalUrl = "https://nutrivisual.com/about/";
+
+const orgSchema = buildOrganizationSchema();
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'About Us', url: canonicalUrl }
+]);
 ---
 
 <html lang="en">
@@ -22,6 +30,11 @@ const description = "Learn about NutriVisual's mission to bring high-precision v
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Google Rich Snippet Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
     <script is:inline>
       (function() {

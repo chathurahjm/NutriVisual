@@ -276,3 +276,57 @@ export function buildHowToSchema(title: string, description: string, steps: HowT
   };
 }
 
+/**
+ * Builds Organization JSON-LD schema for brand authority & About/Contact pages.
+ */
+export function buildOrganizationSchema(siteUrl = "https://nutrivisual.com") {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NutriVisual",
+    "url": siteUrl,
+    "logo": `${siteUrl}/favicon.svg`,
+    "description": "Visual Nutrition and Longevity Reference Engine with dynamic portion sliders and SVG macro charts.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "support@nutrivisual.com",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "https://github.com/nutrivisual"
+    ]
+  };
+}
+
+/**
+ * Builds CollectionPage JSON-LD schema for category/directory hubs (Swaps, Blog).
+ */
+export function buildCollectionPageSchema(title: string, description: string, url: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": title,
+    "description": description,
+    "url": url,
+    "publisher": {
+      "@type": "Organization",
+      "name": "NutriVisual",
+      "url": "https://nutrivisual.com"
+    }
+  };
+}
+
+/**
+ * Builds WebPage JSON-LD schema for policy, contact, and legal pages.
+ */
+export function buildWebPageSchema(title: string, description: string, url: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": url
+  };
+}
+

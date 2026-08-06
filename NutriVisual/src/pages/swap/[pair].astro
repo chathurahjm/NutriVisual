@@ -4,38 +4,10 @@ import CookieConsent from '../../components/CookieConsent.astro';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
 import { buildNutritionProductSchema, buildBreadcrumbSchema, buildHowToSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
+import { popularPairs } from '../../utils/popularPairs';
 
 export async function getStaticPaths() {
   const paths = [];
-  const popularPairs = [
-    ['avocado', 'olive-oil'],
-    ['atlantic-salmon', 'chicken-breast'],
-    ['walnuts', 'macadamia-nuts'],
-    ['chia-seeds', 'flaxseed'],
-    ['blueberries', 'dark-chocolate'],
-    ['broccoli', 'spinach'],
-    ['chicken-breast', 'beef'],
-    ['tofu', 'tempeh'],
-    ['matcha', 'spirulina'],
-    ['garlic', 'turmeric'],
-    ['avocado', 'macadamia-nuts'],
-    ['atlantic-salmon', 'tuna'],
-    ['kale', 'broccoli'],
-    ['grass-fed-butter', 'regular-butter'],
-    ['grass-fed-butter', 'grass-fed-ghee'],
-    ['ribeye', 'sirloin'],
-    ['wild-salmon', 'farmed-salmon'],
-    ['white-rice', 'cauliflower-rice'],
-    ['avocado-oil', 'olive-oil'],
-    ['spinach', 'beef-liver'],
-    ['greek-yogurt', 'cottage-cheese'],
-    ['oat-milk', 'almond-milk'],
-    ['egg-whites', 'eggs'],
-    ['quinoa', 'brown-rice'],
-    ['sweet-potato', 'regular-potato'],
-    ['quinoa', 'white-rice'],
-    ['tofu', 'chicken-breast']
-  ];
 
   // Generate paths for popular predefined pairs
   popularPairs.forEach(([id1, id2]) => {
@@ -70,9 +42,38 @@ export async function getStaticPaths() {
 
 const { food1, food2 } = Astro.props;
 
-const title = `${food1.name} vs ${food2.name} Macro Comparison Chart & Food Swap | NutriVisual`;
-const description = `${food1.name} vs ${food2.name} macro comparison chart & satiety index breakdown (${food1.calories} vs ${food2.calories} kcal). Volume eating food swap guide and portion visualizer metrics.`;
-const canonicalUrl = `https://nutrivisual.com/swap/${food1.id}-vs-${food2.id}/`;
+// Quick-win target custom metadata overrides for high-impression search terms
+const pairSlug = `${food1.id}-vs-${food2.id}`;
+const customMeta: Record<string, { title: string; description: string }> = {
+  'avocado-vs-chia-seeds': {
+    title: 'Avocado vs Chia Seeds: Calories, Fiber & Healthy Fats | NutriVisual',
+    description: 'Avocado vs chia seeds nutrition & macro comparison (160 kcal vs 486 kcal per 100g). Compare fiber content, monounsaturated vs omega-3 fats, and portion swap ratios.'
+  },
+  'avocado-oil-vs-olive-oil': {
+    title: 'Avocado Oil vs Olive Oil: Macros, Calories & Smoke Point | NutriVisual',
+    description: 'Extra virgin avocado oil vs olive oil macro comparison chart. Analyze calories, smoke points, oleic acid, and healthy fat swap ratios per tablespoon & 100g.'
+  },
+  'macadamia-nuts-vs-olive-oil': {
+    title: 'Macadamia Nuts vs Olive Oil: Calories, Fat & Nutrition | NutriVisual',
+    description: 'Is macadamia oil healthier than olive oil? Compare calories, healthy monounsaturated fat profiles, and portion swap ratios for macadamia nuts vs olive oil.'
+  },
+  'flaxseed-vs-olive-oil': {
+    title: 'Flaxseed vs Olive Oil: Healthy Fats, Fiber & Macro Swap | NutriVisual',
+    description: 'Flaxseed vs olive oil nutrition breakdown. Compare omega-3 ALA, dietary fiber, calorie density, and portion swap metrics.'
+  },
+  'avocado-vs-walnuts': {
+    title: 'Avocado vs Walnuts: Calories, Healthy Fats & Macro Swap | NutriVisual',
+    description: 'Avocado vs walnuts macro comparison chart (160 vs 654 kcal per 100g). Compare monounsaturated vs polyunsaturated fats, fiber, and volume eating swap ratios.'
+  },
+  'greek-yogurt-vs-tofu': {
+    title: 'Greek Yogurt vs Tofu: High Protein & Calorie Comparison | NutriVisual',
+    description: 'Greek yogurt vs tofu protein & macro comparison. See exact portion visualizer metrics, calories, amino acid profiles, and dietary swap ratios.'
+  }
+};
+
+const title = customMeta[pairSlug]?.title || `${food1.name} vs ${food2.name}: Calories, Macros & Food Swap | NutriVisual`;
+const description = customMeta[pairSlug]?.description || `${food1.name} vs ${food2.name} macro & calorie comparison (${food1.calories} vs ${food2.calories} kcal per 100g). Portion visualizer metrics, protein, fats, and volume eating swap ratios.`;
+const canonicalUrl = `https://nutrivisual.com/swap/${pairSlug}/`;
 
 // Swap Ratio Calculation (How much Food 2 equals 100g of Food 1)
 const swapGramsFood2 = Math.round((food1.calories / food2.calories) * 100);
@@ -104,8 +105,26 @@ const faqSchema = buildFAQPageSchema([
   {
     question: `Which food is lower in calories: ${food1.name} or ${food2.name}?`,
     answer: `${lowerCalFood.name} is lower in calories with ${lowerCalFood.calories} kcal per 100g compared to ${higherCalFood.name} with ${higherCalFood.calories} kcal per 100g.`
+  },
+  {
+    question: `Which has more protein: ${food1.name} or ${food2.name}?`,
+    answer: `${food1.macros.protein >= food2.macros.protein ? food1.name : food2.name} provides more protein per 100g (${Math.max(food1.macros.protein, food2.macros.protein)}g vs ${Math.min(food1.macros.protein, food2.macros.protein)}g).`
   }
 ]);
+
+// Find related food swaps involving food1 or food2 for internal link silos
+const relatedSwaps = popularPairs
+  .filter(([id1, id2]) => (id1 === food1.id || id2 === food1.id || id1 === food2.id || id2 === food2.id) && `${id1}-vs-${id2}` !== pairSlug)
+  .map(([id1, id2]) => {
+    const f1 = foodsData.find(f => f.id === id1);
+    const f2 = foodsData.find(f => f.id === id2);
+    return {
+      pairSlug: `${id1}-vs-${id2}`,
+      title: `${f1?.name || id1} vs ${f2?.name || id2}`,
+      img1: f1?.image || food1.image,
+      img2: f2?.image || food2.image
+    };
+  }).slice(0, 4);
 ---
 
 <html lang="en">
@@ -320,6 +339,67 @@ const faqSchema = buildFAQPageSchema([
           </a>
         </div>
       </div>
+
+      {/* Frequently Asked Questions (FAQ) Section for SERPs & Voice Search */}
+      <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          ❓ Frequently Asked Questions ({food1.name} vs {food2.name})
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.5rem 0;">
+              How much {food2.name} equals 100g of {food1.name}?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              Exactly <strong>{swapGramsFood2} grams of {food2.name}</strong> equals the total caloric value of 100g of {food1.name} ({food1.calories} kcal).
+            </p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.5rem 0;">
+              Which food is lower in calories: {food1.name} or {food2.name}?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              <strong>{lowerCalFood.name}</strong> is lower in calories with {lowerCalFood.calories} kcal per 100g compared to {higherCalFood.name} with {higherCalFood.calories} kcal per 100g.
+            </p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.5rem 0;">
+              Which has more protein: {food1.name} or {food2.name}?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              <strong>{food1.macros.protein >= food2.macros.protein ? food1.name : food2.name}</strong> provides more protein per 100g ({Math.max(food1.macros.protein, food2.macros.protein)}g vs {Math.min(food1.macros.protein, food2.macros.protein)}g).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Link Silo: Related Food Swaps Section */}
+      {relatedSwaps.length > 0 && (
+        <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            🔄 Related Food Swaps & Macro Comparisons
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Explore related calorie and macro comparisons for <strong>{food1.name}</strong> and <strong>{food2.name}</strong>:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+            {relatedSwaps.map((swap) => (
+              <a href={`/swap/${swap.pairSlug}/`} style="text-decoration: none; color: inherit;">
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s ease, transform 0.2s ease;">
+                  <div style="display: flex; align-items: center; gap: 0;">
+                    <img src={swap.img1} alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-card);" />
+                    <img src={swap.img2} alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-card); margin-left: -14px;" />
+                  </div>
+                  <div>
+                    <h3 style="font-weight: 700; font-size: 0.95rem; color: var(--accent-green); margin: 0 0 0.25rem 0;">{swap.title}</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">View portion swap analysis →</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <SocialShare title={`${food1.name} vs ${food2.name} - Nutrition Comparison`} url={canonicalUrl} description={description} />
     </main>

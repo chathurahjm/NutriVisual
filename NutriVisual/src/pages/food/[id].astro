@@ -13,8 +13,36 @@ export async function getStaticPaths() {
 
 const { food } = Astro.props;
 
-const title = `${food.name} Food Portion Visualizer, Macros & Nutrient Density | NutriVisual`;
-const description = `${food.name} food portion visualizer & nutrient density breakdown: ${food.calories} kcal, ${food.macros.protein}g protein, ${food.macros.fat}g fat, macro comparison charts, and satiety ranking.`;
+// Quick-win target custom metadata overrides for high-impression search terms
+const foodMetaOverrides: Record<string, { title: string; description: string }> = {
+  'goji-berries': {
+    title: 'Goji Berries Macros, Calories & Nutrition per 100g | NutriVisual',
+    description: 'Detailed goji berries macros & nutrition facts: calories, carbs, fiber, protein, and fat per 100g serving. Interactive visual portion size calculator.'
+  },
+  'carrots': {
+    title: 'Carrot Nutrition Facts, Calories & Macros per 100g | NutriVisual',
+    description: 'Carrot nutrition facts, calories, and macros per 100g raw & cooked. Fiber, vitamin A, sugar breakdown, and interactive visual portion size guide.'
+  },
+  'sweet-potato': {
+    title: 'Sweet Potato Calories, Macros & Calorie Content | NutriVisual',
+    description: 'Calorie content of sweet potato & macro breakdown: calories per 100g, fiber, net carbs, potassium, and visual portion size comparison charts.'
+  },
+  'macadamia-nuts': {
+    title: 'Macadamia Nuts Calories, Fat & Nutrition per 100g | NutriVisual',
+    description: 'Macadamia nuts calories & macro breakdown: 718 kcal per 100g, monounsaturated fats, protein, and visual portion size calculator.'
+  },
+  'pumpkin-seeds': {
+    title: 'Pumpkin Seeds Calories, Protein & Nutrition Facts | NutriVisual',
+    description: 'Calories in pumpkin seeds & macro breakdown: protein per serving, zinc, magnesium, healthy fats, and interactive portion visualizer.'
+  },
+  'beef-liver': {
+    title: 'Beef Liver Nutrition Facts, Macros & Calories per 100g | NutriVisual',
+    description: 'Grass-fed beef liver nutrition facts, calories, protein, micronutrients, iron, vitamin A, and visual portion size breakdown.'
+  }
+};
+
+const title = foodMetaOverrides[food.id]?.title || `${food.name} Nutrition Facts, Calories & Macros | NutriVisual`;
+const description = foodMetaOverrides[food.id]?.description || `${food.name} nutrition facts, calories & macros: ${food.calories} kcal, ${food.macros.protein}g protein, ${food.macros.carbs}g carbs, ${food.macros.fat}g fat per 100g. Visual portion size guide.`;
 const canonicalUrl = `https://nutrivisual.com/food/${food.id}/`;
 
 const nutritionSchema = buildNutritionProductSchema(food, canonicalUrl);
@@ -29,6 +57,10 @@ const faqSchema = buildFAQPageSchema([
     answer: `100 grams of ${food.name} contains approximately ${food.calories} calories, ${food.macros.protein}g of protein, ${food.macros.carbs}g of carbohydrates, and ${food.macros.fat}g of fat.`
   },
   {
+    question: `What are the macros for ${food.name}?`,
+    answer: `Per 100g serving, ${food.name} provides ${food.macros.protein}g protein, ${food.macros.carbs}g carbs (${food.macros.fiber}g fiber), and ${food.macros.fat}g fat for a total of ${food.calories} kcal.`
+  },
+  {
     question: `Is ${food.name} high in protein?`,
     answer: `${food.name} provides ${food.macros.protein}g of protein per 100g serving, making it a key component of visual macro tracking on NutriVisual.`
   }
@@ -36,6 +68,37 @@ const faqSchema = buildFAQPageSchema([
 
 // Find 3 related items in the same category
 const relatedFoods = foodsData.filter((f) => f.category === food.category && f.id !== food.id).slice(0, 3);
+
+// Popular predefined swap pairs for internal link silos
+import { popularPairs } from '../../utils/popularPairs';
+
+// Match pairs containing food.id
+let relevantSwaps = popularPairs
+  .filter(([id1, id2]) => id1 === food.id || id2 === food.id)
+  .map(([id1, id2]) => {
+    const otherId = id1 === food.id ? id2 : id1;
+    const otherFood = foodsData.find(f => f.id === otherId);
+    return {
+      pairSlug: `${id1}-vs-${id2}`,
+      title: `${food.name} vs ${otherFood?.name || otherId}`,
+      otherName: otherFood?.name || otherId,
+      otherImage: otherFood?.image || food.image,
+      otherCalories: otherFood?.calories || 0
+    };
+  });
+
+// Fallback: If no direct popular swap pair found, create 3 cross-category swaps with top items
+if (relevantSwaps.length === 0) {
+  const fallbackFoods = foodsData.filter(f => f.id !== food.id && (f.category === food.category || f.calories > 100)).slice(0, 3);
+  relevantSwaps = fallbackFoods.map(f => ({
+    pairSlug: `${food.id}-vs-${f.id}`,
+    title: `${food.name} vs ${f.name}`,
+    otherName: f.name,
+    otherImage: f.image,
+    otherCalories: f.calories
+  }));
+}
+relevantSwaps = relevantSwaps.slice(0, 4);
 
 // Dynamic Portion Equivalents
 const targetCal = food.calories;
@@ -183,6 +246,30 @@ const comparisons = [
         </div>
       </div>
 
+      {/* Featured Snippet Quick Summary Box */}
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 3rem; border-left: 4px solid var(--accent-green);">
+        <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+          📋 Quick Summary: {food.name} Nutrition Facts (Per 100g)
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;">
+          A standard 100g serving of <strong>{food.name}</strong> provides <strong>{food.calories} calories</strong>, <strong>{food.macros.protein}g protein</strong>, <strong>{food.macros.carbs}g carbs</strong> ({food.macros.fiber}g fiber), and <strong>{food.macros.fat}g fat</strong>.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; font-size: 0.9rem;">
+          <div style="background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <strong style="color: var(--text-main);">Caloric Density:</strong> <span style="color: var(--accent-green); font-weight: 600;">{food.calories} kcal / 100g</span>
+          </div>
+          <div style="background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <strong style="color: var(--text-main);">Protein Content:</strong> <span style="color: var(--accent-amber); font-weight: 600;">{food.macros.protein}g</span>
+          </div>
+          <div style="background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <strong style="color: var(--text-main);">Carbohydrates:</strong> <span style="color: var(--accent-cyan); font-weight: 600;">{food.macros.carbs}g</span>
+          </div>
+          <div style="background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <strong style="color: var(--text-main);">Dietary Fat:</strong> <span style="color: var(--accent-green); font-weight: 600;">{food.macros.fat}g</span>
+          </div>
+        </div>
+      </div>
+
       {/* NEW: Health Benefits ("Good For") Section */}
       {food.benefits && food.benefits.length > 0 && (
         <section class="glass-card" style="padding: 2rem; margin-bottom: 3rem;">
@@ -228,6 +315,64 @@ const comparisons = [
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Internal Link Silo: Popular Food Swaps Section */}
+      {relevantSwaps.length > 0 && (
+        <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            🔄 Popular Food Swaps & Comparisons for {food.name}
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Compare calorie density, protein ratios, and volume eating swap metrics for <strong>{food.name}</strong>:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+            {relevantSwaps.map((swap) => (
+              <a href={`/swap/${swap.pairSlug}/`} style="text-decoration: none; color: inherit;">
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s ease, transform 0.2s ease;">
+                  <img src={swap.otherImage} alt={swap.title} style="width: 54px; height: 54px; border-radius: 8px; object-fit: cover;" />
+                  <div>
+                    <h3 style="font-weight: 700; font-size: 0.98rem; color: var(--accent-green); margin: 0 0 0.25rem 0;">{swap.title}</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Compare macros & portion swap ratio →</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Frequently Asked Questions (FAQ) Section for SERPs & Voice Search */}
+      <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          ❓ Frequently Asked Questions ({food.name})
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.5rem 0;">
+              How many calories are in 100g of {food.name}?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              100 grams of {food.name} contains approximately <strong>{food.calories} calories</strong>, along with {food.macros.protein}g protein, {food.macros.carbs}g carbohydrates, and {food.macros.fat}g fat.
+            </p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.5rem 0;">
+              What are the macros for {food.name}?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              Per 100g serving, {food.name} provides <strong>{food.macros.protein}g protein</strong>, <strong>{food.macros.carbs}g carbs</strong> ({food.macros.fiber}g fiber), and <strong>{food.macros.fat}g fat</strong>.
+            </p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.5rem 0;">
+              Is {food.name} high in protein?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              {food.name} provides <strong>{food.macros.protein}g of protein per 100g serving</strong>, making it a valuable component of visual macro tracking on NutriVisual.
+            </p>
+          </div>
         </div>
       </section>
 

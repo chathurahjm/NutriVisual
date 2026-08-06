@@ -1,9 +1,17 @@
 ---
 import '../styles/global.css';
 import CookieConsent from '../components/CookieConsent.astro';
+import { buildWebPageSchema, buildBreadcrumbSchema } from '../utils/schemaBuilder';
 
 const title = "Privacy Policy - NutriVisual";
 const description = "Privacy Policy for NutriVisual including Google AdSense, cookie usage, third-party analytics, and user privacy protections.";
+const canonicalUrl = "https://nutrivisual.com/privacy/";
+
+const webPageSchema = buildWebPageSchema(title, description, canonicalUrl);
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Privacy Policy', url: canonicalUrl }
+]);
 ---
 
 <html lang="en">
@@ -22,6 +30,11 @@ const description = "Privacy Policy for NutriVisual including Google AdSense, co
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Google Rich Snippet Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
     <script is:inline>
       (function() {

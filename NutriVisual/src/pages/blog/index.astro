@@ -2,10 +2,17 @@
 import '../../styles/global.css';
 import CookieConsent from '../../components/CookieConsent.astro';
 import { getCollection } from 'astro:content';
+import { buildCollectionPageSchema, buildBreadcrumbSchema } from '../../utils/schemaBuilder';
 
 const title = "Visual Nutrition Guides & Science Articles | NutriVisual";
 const description = "Visual nutrition guide & science articles. Explore nutrient density charts, satiety index food lists, macro comparison charts, and volume eating foods.";
 const canonicalUrl = "https://nutrivisual.com/blog/";
+
+const collectionSchema = buildCollectionPageSchema(title, description, canonicalUrl);
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Blog', url: canonicalUrl }
+]);
 
 const collectionPosts = await getCollection('blog');
 
@@ -48,6 +55,10 @@ const allPosts = [
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+
+    <!-- Google Rich Snippet Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>

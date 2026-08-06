@@ -3,9 +3,11 @@ import '../../styles/global.css';
 import CookieConsent from '../../components/CookieConsent.astro';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
+import { buildCollectionPageSchema, buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
 
 const title = "Macro Comparison Chart & Food Swap Visualizer - NutriVisual";
 const description = "Macro comparison chart & food swap visualizer. Compare macro balances, satiety index food list, calorie density, and volume eating foods side-by-side.";
+const canonicalUrl = "https://nutrivisual.com/swap/";
 
 // List popular comparisons
 const popularSwaps = [
@@ -43,6 +45,22 @@ const resolvedSwaps = popularSwaps.map(s => {
     food2: f2
   };
 }).filter(Boolean);
+
+const collectionSchema = buildCollectionPageSchema(title, description, canonicalUrl);
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Swaps', url: canonicalUrl }
+]);
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "What is a visual food swap?",
+    answer: "A visual food swap calculates how many grams of one food equal the exact caloric value of 100g of another food, making volume eating and macro tracking intuitive."
+  },
+  {
+    question: "How do macro comparisons help with weight management?",
+    answer: "Comparing macro balances and calorie density allows you to choose higher volume, nutrient-dense foods to increase satiety while controlling total caloric intake."
+  }
+]);
 ---
 
 <html lang="en">
@@ -61,6 +79,12 @@ const resolvedSwaps = popularSwaps.map(s => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Google Rich Snippet Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <script is:inline>
       (function() {
