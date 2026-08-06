@@ -4,6 +4,7 @@ import CookieConsent from '../../components/CookieConsent.astro';
 import { getCollection, render } from 'astro:content';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
+import EmbedChartWidget from '../../components/EmbedChartWidget.astro';
 import { buildBreadcrumbSchema, buildArticleSchema } from '../../utils/schemaBuilder';
 
 export async function getStaticPaths() {
@@ -244,6 +245,15 @@ const articleSchema = buildArticleSchema({
             ))}
           </div>
         )}
+
+        <!-- Passive Viral Backlink Embed Widget -->
+        <EmbedChartWidget 
+          articleTitle={post.data.title} 
+          articleUrl={`/blog/${post.id}`} 
+          chartImage={post.data.chartImage}
+          chartAlt={post.data.chartAlt}
+          chartTitle={post.data.chartTitle}
+        />
 
         <!-- High-Contrast Call to Action Card -->
         <div class="glass-card" style="margin-top: 4rem; padding: 2rem; border-left: 5px solid var(--accent-green); background-color: var(--bg-card);">

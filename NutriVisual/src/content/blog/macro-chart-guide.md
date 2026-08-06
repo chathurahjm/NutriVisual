@@ -4,6 +4,9 @@ subtitle: "Demystifying macro comparison charts, energetic yields per gram, and 
 category: "Macronutrients"
 date: "July 30, 2026"
 readTime: "7 min read"
+chartImage: "/images/macro-comparison-chart.png"
+chartAlt: "Macronutrient Yield & Comparison Chart by NutriVisual"
+chartTitle: "Macro Comparison & Energetic Yield Chart"
 relatedFoods: ["chicken-breast", "quinoa", "olive-oil", "eggs"]
 cta:
   text: "Browse complete macro breakdowns for over 100 whole foods in NutriVisual."

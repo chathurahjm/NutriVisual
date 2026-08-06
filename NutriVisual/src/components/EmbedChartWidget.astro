@@ -1,0 +1,136 @@
+---
+interface Props {
+  articleTitle: string;
+  articleUrl: string;
+  chartImage?: string;
+  chartAlt?: string;
+  chartTitle?: string;
+}
+
+const { articleTitle, articleUrl, chartImage, chartAlt, chartTitle } = Astro.props;
+
+const displayChartTitle = chartTitle || articleTitle;
+const altText = chartAlt || `${displayChartTitle} by NutriVisual`;
+
+// Domain base URL for embed snippets
+const baseUrl = articleUrl.startsWith('http') ? articleUrl : `https://nutrivisual.com${articleUrl}`;
+const domainRoot = 'https://nutrivisual.com';
+
+const fullChartImageUrl = chartImage
+  ? (chartImage.startsWith('http') ? chartImage : `${domainRoot}${chartImage.startsWith('/') ? '' : '/'}${chartImage}`)
+  : '';
+
+// Image embed snippet with dofollow editorial attribution link
+const imageEmbedCode = `<a href="${baseUrl}">\n  <img src="${fullChartImageUrl}" alt="${altText}">\n</a>\n<p>Source: <a href="${baseUrl}">NutriVisual</a></p>`;
+
+// Interactive iFrame embed snippet fallback
+const iframeEmbedCode = `<iframe src="${baseUrl}" width="100%" height="600" style="border:1px solid #e2e8f0; border-radius:12px;" title="${displayChartTitle}"></iframe>\n<p>Source: <a href="${baseUrl}">NutriVisual</a></p>`;
+
+const defaultEmbedCode = chartImage ? imageEmbedCode : iframeEmbedCode;
+---
+
+<section class="embed-chart-card glass-card" style="margin-top: 3.5rem; padding: 2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-card);">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+    <div>
+      <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.4rem 0; display: flex; align-items: center; gap: 0.5rem;">
+        💻 Embed This Chart / Visual on Your Blog or Site
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0; line-height: 1.5;">
+        Want to use this graphic in an article, blog post, or forum? Copy the HTML snippet below to embed it with attribution link back to NutriVisual.
+      </p>
+    </div>
+    
+    <button
+      id="blog-copy-embed-btn"
+      style="background: var(--accent-green); color: #ffffff; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 0.4rem; shrink: 0;"
+    >
+      <span>Copy Embed Code</span> 📋
+    </button>
+  </div>
+
+  {chartImage && (
+    <div class="embed-tab-selector" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+      <button 
+        id="tab-img-btn" 
+        class="embed-tab-active" 
+        style="background: var(--accent-green); color: white; border: 1px solid var(--accent-green); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;"
+      >
+        🖼️ HTML Image Link Snippet
+      </button>
+      <button 
+        id="tab-iframe-btn" 
+        style="background: var(--bg-surface); color: var(--text-muted); border: 1px solid var(--border-color); padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;"
+      >
+        🖼️ Interactive iFrame Snippet
+      </button>
+    </div>
+  )}
+
+  <textarea
+    id="blog-embed-code-textarea"
+    readonly
+    rows="4"
+    aria-label="HTML Embed Code Snippet"
+    style="width: 100%; padding: 0.85rem; border-radius: 10px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-family: monospace, SFMono-Regular, Consolas; font-size: 0.82rem; resize: none; line-height: 1.45; box-sizing: border-box;"
+  >{defaultEmbedCode}</textarea>
+</section>
+
+<script is:inline define:vars={{ imageEmbedCode, iframeEmbedCode, hasChartImage: !!chartImage }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyBtn = document.getElementById('blog-copy-embed-btn');
+    const textarea = document.getElementById('blog-embed-code-textarea');
+    const tabImg = document.getElementById('tab-img-btn');
+    const tabIframe = document.getElementById('tab-iframe-btn');
+
+    if (copyBtn && textarea) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(textarea.value);
+          const origContent = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<span>Copied to Clipboard!</span> ✓';
+          copyBtn.style.background = '#10b981';
+          setTimeout(() => {
+            copyBtn.innerHTML = origContent;
+            copyBtn.style.background = 'var(--accent-green)';
+          }, 2500);
+        } catch (err) {
+          textarea.select();
+          document.execCommand('copy');
+          copyBtn.innerHTML = '<span>Copied!</span> ✓';
+          setTimeout(() => {
+            copyBtn.innerHTML = '<span>Copy Embed Code</span> 📋';
+          }, 2500);
+        }
+      });
+
+      // Highlight text when clicking inside textarea
+      textarea.addEventListener('click', () => {
+        textarea.select();
+      });
+    }
+
+    if (hasChartImage && tabImg && tabIframe && textarea) {
+      tabImg.addEventListener('click', () => {
+        textarea.value = imageEmbedCode;
+        tabImg.style.background = 'var(--accent-green)';
+        tabImg.style.borderColor = 'var(--accent-green)';
+        tabImg.style.color = 'white';
+
+        tabIframe.style.background = 'var(--bg-surface)';
+        tabIframe.style.borderColor = 'var(--border-color)';
+        tabIframe.style.color = 'var(--text-muted)';
+      });
+
+      tabIframe.addEventListener('click', () => {
+        textarea.value = iframeEmbedCode;
+        tabIframe.style.background = 'var(--accent-green)';
+        tabIframe.style.borderColor = 'var(--accent-green)';
+        tabIframe.style.color = 'white';
+
+        tabImg.style.background = 'var(--bg-surface)';
+        tabImg.style.borderColor = 'var(--border-color)';
+        tabImg.style.color = 'var(--text-muted)';
+      });
+    }
+  });
+</script>

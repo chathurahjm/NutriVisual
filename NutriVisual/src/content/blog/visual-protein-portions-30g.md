@@ -4,6 +4,9 @@ subtitle: "Comparing 30-gram muscle-building protein portions across meat, fish,
 category: "Visual Nutrition"
 date: "July 30, 2026"
 readTime: "6 min read"
+chartImage: "/images/visual-protein-portions-30g.png"
+chartAlt: "30g Protein Portion Guide by NutriVisual"
+chartTitle: "30g Protein Portion Comparison Guide"
 relatedFoods: ["chicken-breast", "sirloin", "atlantic-salmon", "eggs", "tofu", "cottage-cheese"]
 cta:
   text: "Use NutriVisual's portion sliders to scale protein targets dynamically."
