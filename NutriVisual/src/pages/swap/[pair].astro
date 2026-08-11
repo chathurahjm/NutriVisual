@@ -212,6 +212,43 @@ const relatedSwaps = popularPairs
         </p>
       </div>
 
+      {/* Dynamic Comparative Swap Analysis Guide */}
+      <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+          🔬 Comparative Analysis: {food1.name} vs. {food2.name}
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; color: var(--text-main); line-height: 1.7; font-size: 0.98rem;">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
+              1. Caloric Density & Volume Swap Mechanics
+            </h3>
+            <p style="color: var(--text-muted); margin: 0;">
+              Comparing 100g of <strong>{food1.name}</strong> ({food1.calories} kcal) to 100g of <strong>{food2.name}</strong> ({food2.calories} kcal) reveals a caloric spread of <strong>{calDiff} kcal per 100g</strong>. 
+              Swapping higher-density {higherCalFood.name} for lower-density {lowerCalFood.name} allows you to increase physical meal volume while cutting energy intake, triggering stomach stretch receptors for prolonged fullness.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
+              2. Macronutrient & Protein Quality Trade-offs
+            </h3>
+            <p style="color: var(--text-muted); margin: 0;">
+              {food1.name} provides {food1.macros.protein}g protein, {food1.macros.carbs}g carbs, and {food1.macros.fat}g fat, whereas {food2.name} offers {food2.macros.protein}g protein, {food2.macros.carbs}g carbs, and {food2.macros.fat}g fat. 
+              {food1.macros.protein > food2.macros.protein ? `${food1.name} offers a higher protein-to-calorie ratio, making it superior for muscle protein synthesis.` : `${food2.name} delivers a higher protein yield per serving, supporting metabolic recovery.`}
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
+              3. Practical Culinary Substitution & Meal Tips
+            </h3>
+            <p style="color: var(--text-muted); margin: 0;">
+              When substituting {food2.name} for {food1.name} in daily recipes, adjust serving weights to maintain your target energy balance. For exact calorie matching, serve <strong>{swapGramsFood2} grams of {food2.name}</strong> to equal 100 grams of {food1.name}.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Structured Comparison Data Table for GEO & Search Engines */}
       <div class="glass-card" style="padding: 1.5rem; margin-bottom: 3rem; overflow-x: auto;">
         <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">

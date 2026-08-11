@@ -290,6 +290,42 @@ const comparisons = [
         </section>
       )}
 
+      {/* NEW: Comprehensive Scientific & Culinary Profile Guide */}
+      <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+          📖 Clinical & Nutritional Analysis: {food.name}
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; color: var(--text-main); line-height: 1.7; font-size: 0.98rem;">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
+              1. Caloric Density & Satiety Response
+            </h3>
+            <p style="color: var(--text-muted); margin: 0;">
+              Providing <strong>{food.calories} kcal per 100g serving</strong>, {food.name} sits in the <strong>{food.calories < 100 ? 'Low Calorie Density (High Volume)' : food.calories < 250 ? 'Moderate Energy Density' : 'High Energy Density'}</strong> spectrum of whole foods. 
+              {food.macros.protein > 15 ? ` With ${food.macros.protein}g of protein per 100g, it triggers strong peptide YY (PYY) and CCK satiety signaling to protect against premature hunger.` : ` Containing ${food.macros.fiber}g of dietary fiber and ${food.macros.fat}g of healthy lipids, it provides steady, sustained energy release.`}
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
+              2. Micronutrient Synergies & Metabolic Integration
+            </h3>
+            <p style="color: var(--text-muted); margin: 0;">
+              The micronutrient matrix of {food.name} is rich in {Object.keys(food.micros).join(', ')}. These essential minerals and vitamins act as catalytic co-factors for cellular mitochondrial energy production, enzymatic antioxidant defenses, and systemic metabolic regulation.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
+              3. Preparation & Bioavailability Guidance
+            </h3>
+            <p style="color: var(--text-muted); margin: 0;">
+              To maximize the nutritional value of {food.name}, avoid over-exposure to extreme dry heat that can oxidize lipids or degrade water-soluble vitamins. {food.macros.fat > 5 ? 'Pairing with acid (lemon, vinegar) enhances palatability and digestive enzyme stimulation.' : 'Combining with a light healthy fat source (like olive oil or avocado) facilitates the absorption of fat-soluble antioxidants.'}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* NEW: Portion Equivalents Comparison Section */}
       <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
         <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">

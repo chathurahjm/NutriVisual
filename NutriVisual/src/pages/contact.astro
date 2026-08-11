@@ -69,30 +69,50 @@ const breadcrumbSchema = buildBreadcrumbSchema([
       </p>
 
       <div class="glass-card" style="padding: 2.5rem;">
-        <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been received. Our editorial team will reply within 24-48 business hours.');" style="display: flex; flex-direction: column; gap: 1.25rem;">
           <div>
-            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-main);">Your Name</label>
-            <input type="text" required placeholder="John Doe" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem;" />
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-main);">Your Full Name</label>
+            <input type="text" required placeholder="Dr. Jane Doe" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem;" />
           </div>
 
           <div>
             <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-main);">Email Address</label>
-            <input type="email" required placeholder="john@example.com" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem;" />
+            <input type="email" required placeholder="jane@example.com" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem;" />
           </div>
 
           <div>
-            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-main);">Message</label>
-            <textarea required rows="5" placeholder="How can we help you?" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem; resize: vertical;"></textarea>
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-main);">Inquiry Category</label>
+            <select style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem;">
+              <option value="general">General Feedback & Suggestions</option>
+              <option value="data">USDA Data Correction / Nutritional Update</option>
+              <option value="press">Press & Media Inquiries</option>
+              <option value="partnership">Data Licensing & Educational Integration</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-main);">Message Details</label>
+            <textarea required rows="5" placeholder="Please provide specific details regarding your question or data feedback..." style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem; resize: vertical;"></textarea>
           </div>
 
           <button type="submit" style="background: var(--accent-green); color: #fff; border: none; padding: 0.85rem; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: opacity 0.2s ease;">
-            Send Message
+            Send Inquiry
           </button>
         </form>
 
-        <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
-          <strong>Direct Email:</strong> chathurahjm@gmail.com <br/>
-          <strong>Response Time:</strong> 24–48 hours
+        <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div>
+            <strong style="color: var(--text-main);">Direct Email:</strong><br/>
+            chathurahjm@gmail.com
+          </div>
+          <div>
+            <strong style="color: var(--text-main);">Response SLA:</strong><br/>
+            24–48 Business Hours
+          </div>
+          <div>
+            <strong style="color: var(--text-main);">Publisher Organization:</strong><br/>
+            NutriVisual Publishing
+          </div>
         </div>
       </div>
     </main>
