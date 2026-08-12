@@ -45,6 +45,26 @@ const { food1, food2 } = Astro.props;
 // Quick-win target custom metadata overrides for high-impression search terms
 const pairSlug = `${food1.id}-vs-${food2.id}`;
 const customMeta: Record<string, { title: string; description: string }> = {
+  'greek-yogurt-vs-tofu': {
+    title: 'Greek Yogurt vs Tofu: Protein, Calories & Macro Swap (100g) | NutriVisual',
+    description: 'Greek yogurt vs tofu protein & calorie density comparison (59 vs 76 kcal per 100g). Compare amino acids, calcium, volume eating portion ratios, and meal swaps.'
+  },
+  'olive-oil-vs-macadamia-nuts': {
+    title: 'Olive Oil vs Macadamia Nuts: Healthy Fats & Calories | NutriVisual',
+    description: 'Extra virgin olive oil vs macadamia nuts nutrition breakdown. Compare monounsaturated oleic & palmitoleic fats, calorie density, and portion swap metrics.'
+  },
+  'chia-seeds-vs-macadamia-nuts': {
+    title: 'Chia Seeds vs Macadamia Nuts: Calories, Fiber & Omega Fats | NutriVisual',
+    description: 'Chia seeds vs macadamia nuts nutrition comparison (486 vs 718 kcal per 100g). Analyze dietary fiber, omega-3 ALA vs monounsaturated fats, and portion ratios.'
+  },
+  'walnuts-vs-flaxseed': {
+    title: 'Walnuts vs Flaxseed: Omega-3 ALA, Fiber & Healthy Fats | NutriVisual',
+    description: 'Walnuts vs flaxseed macro comparison chart (654 vs 534 kcal per 100g). Compare omega-3 ALA content, lignans, dietary fiber, and healthy fat swap ratios.'
+  },
+  'cod-fillet-vs-tofu': {
+    title: 'Cod Fillet vs Tofu: Lean Protein, Calories & Macro Swap | NutriVisual',
+    description: 'Cod fillet vs tofu macro & protein comparison (82 vs 76 kcal per 100g). Compare complete animal protein vs plant isoflavones, fat content, and portion visualizer metrics.'
+  },
   'avocado-vs-chia-seeds': {
     title: 'Avocado vs Chia Seeds: Calories, Fiber & Healthy Fats | NutriVisual',
     description: 'Avocado vs chia seeds nutrition & macro comparison (160 kcal vs 486 kcal per 100g). Compare fiber content, monounsaturated vs omega-3 fats, and portion swap ratios.'
@@ -64,10 +84,6 @@ const customMeta: Record<string, { title: string; description: string }> = {
   'avocado-vs-walnuts': {
     title: 'Avocado vs Walnuts: Calories, Healthy Fats & Macro Swap | NutriVisual',
     description: 'Avocado vs walnuts macro comparison chart (160 vs 654 kcal per 100g). Compare monounsaturated vs polyunsaturated fats, fiber, and volume eating swap ratios.'
-  },
-  'greek-yogurt-vs-tofu': {
-    title: 'Greek Yogurt vs Tofu: High Protein & Calorie Comparison | NutriVisual',
-    description: 'Greek yogurt vs tofu protein & macro comparison. See exact portion visualizer metrics, calories, amino acid profiles, and dietary swap ratios.'
   }
 };
 
@@ -148,8 +164,16 @@ const relatedSwaps = popularPairs
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="NutriVisual" />
     <meta property="og:image" content={food1.image} />
     <meta property="og:type" content="article" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={food1.image} />
 
     <!-- Google Rich Snippet Schemas (Nutrition, Breadcrumbs, HowTo, FAQs) -->
     <script type="application/ld+json" set:html={JSON.stringify([food1Schema, food2Schema])} />

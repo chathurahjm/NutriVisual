@@ -144,8 +144,16 @@ const comparisons = [
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="NutriVisual" />
     <meta property="og:image" content={food.image} />
     <meta property="og:type" content="article" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={food.image} />
 
     <!-- Google Rich Snippet Schemas (Nutrition, Breadcrumbs, FAQs) -->
     <script type="application/ld+json" set:html={JSON.stringify(nutritionSchema)} />

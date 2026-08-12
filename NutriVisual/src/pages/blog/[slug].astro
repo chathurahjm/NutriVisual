@@ -61,11 +61,14 @@ const articleSchema = buildArticleSchema({
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="NutriVisual" />
+    <meta property="og:image" content="https://nutrivisual.com/favicon.svg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://nutrivisual.com/favicon.svg" />
 
     <!-- JSON-LD Structured Data for Blog Post & Breadcrumb -->
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

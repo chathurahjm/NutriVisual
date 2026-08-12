@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import NutriVisualApp from '../components/NutriVisualApp.jsx';
 import CookieConsent from '../components/CookieConsent.astro';
-import { buildWebApplicationSchema, buildFAQPageSchema } from '../utils/schemaBuilder';
+import { buildWebApplicationSchema, buildFAQPageSchema, buildOrganizationSchema } from '../utils/schemaBuilder';
 
 import posts from '../data/posts.json';
 
@@ -10,6 +10,7 @@ const title = "Visual Nutrition Guide & Food Portion Visualizer | NutriVisual";
 const description = "Visual nutrition guide & food portion visualizer. Interactive macro comparison chart, nutrient density chart, satiety index food list, calorie density visualizer, and volume eating foods.";
 const canonicalUrl = "https://nutrivisual.com/";
 const webAppSchema = buildWebApplicationSchema(canonicalUrl);
+const orgSchema = buildOrganizationSchema(canonicalUrl);
 const faqSchema = buildFAQPageSchema([
   {
     question: "What is NutriVisual?",
@@ -71,14 +72,18 @@ const featuredSwaps = [
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="NutriVisual" />
+    <meta property="og:image" content="https://nutrivisual.com/favicon.svg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://nutrivisual.com/favicon.svg" />
 
     <!-- JSON-LD Structured Data for SEO -->
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>
