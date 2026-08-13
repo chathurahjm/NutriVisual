@@ -1,11 +1,17 @@
-# NutriVisual
-> Visual Nutrition, Portion Reference Engine, and Side-by-Side Food Swaps.
+# NutriVisual: Visual Nutrition & Food Swap Engine
 
-## Main Features & Pages
-- [Food Swaps Engine](https://nutrivisual.com/swap/): Side-by-side macro and calorie density comparison visualizer.
-- [Visual Portion Guides](https://nutrivisual.com/blog/): Visual reference guides for 30g protein portions, 200-calorie volume eating, and satiety index rankings.
-- [Food Database](https://nutrivisual.com/food/): Whole-food nutrition profiles per 100g.
+> NutriVisual is an evidence-based visual nutrition engine and interactive food portion calculator. All nutritional data is verified against USDA FoodData Central standards. NutriVisual specializes in visual macro comparisons, calorie density guides, volume eating calculators, and therapeutic diet food swaps.
 
-## Key Nutritional Metrics
-- Standard reference portion: 100 grams
-- Core data points: Calories (kcal), Protein (g), Fat (g), Carbohydrates (g), Fiber (g), Micronutrients, Satiety Index Score, Gastric Emptying Digestion Rate.
+## Primary Interactive Tools & Calculators
+
+- [100g Protein Visual Calculator](https://nutrivisual.com/food/100g-protein-visual-calculator/): Calculates exact food weight in grams, serving counts, calories, and protein density required to hit 100g protein daily across meats, dairy, seafood, and plant-based foods.
+- [GLP-1 & Ozempic High Protein Guide](https://nutrivisual.com/food/glp1-high-protein-swaps/): Small-portion, high-density food swap calculator designed for patients on GLP-1 medications (Ozempic, Wegovy, Mounjaro) to preserve lean muscle mass (1.2g–1.6g/kg) during appetite suppression.
+- [Low Potassium Food Swaps](https://nutrivisual.com/food/low-potassium-food-swaps/): Renal diet food substitution engine and step-by-step potato leaching simulator to maintain daily potassium intake under 2,000mg/day.
+- [Volume Eating & Calorie Density Visual Guide](https://nutrivisual.com/food/volume-eating-visual-guide/): Volumetrics visual slider comparing physical food volume differences (e.g. 500 kcal of broccoli vs 500 kcal of peanut butter) for satiety and weight management.
+- [Food Swap & Macro Visualizer Hub](https://nutrivisual.com/swap/): Side-by-side macro comparisons (Avocado vs Olive Oil, Salmon vs Chicken Breast, Greek Yogurt vs Cottage Cheese).
+
+## Key Nutritional References & Standards
+
+- **Protein Synthesis Threshold:** 1.2g to 1.6g per kg of body weight for muscle preservation during calorie deficit.
+- **Low Potassium Threshold:** Foods under 200mg potassium per serving (e.g. cauliflower, apples, cabbage, cucumbers).
+- **Leaching Method:** Soaking and boiling sliced potatoes reduces potassium by up to 50%.

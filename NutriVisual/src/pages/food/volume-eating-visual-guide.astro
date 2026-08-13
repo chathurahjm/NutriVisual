@@ -1,0 +1,157 @@
+---
+import '../../styles/global.css';
+import CookieConsent from '../../components/CookieConsent.astro';
+import SocialShare from '../../components/SocialShare.astro';
+import VolumeEatingCalculator from '../../components/VolumeEatingCalculator.jsx';
+import { buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
+
+const title = "Volume Eating Foods: Ultimate Low Calorie High Volume Visual Guide";
+const description = "Discover how volume eating works with our interactive 500-calorie portion visual calculator. Compare high-volume vegetables, fruits, and lean protein.";
+const canonicalUrl = "https://nutrivisual.com/food/volume-eating-visual-guide/";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Tools', url: 'https://nutrivisual.com/swap/' },
+  { name: 'Volume Eating Visual Guide', url: canonicalUrl }
+]);
+
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "What is volume eating?",
+    answer: "Volume eating is a nutrition strategy focused on eating high-volume, low-calorie-density foods (foods rich in water, fiber, and air like vegetables, fruits, and popcorn) so you stay full while maintaining a calorie deficit."
+  },
+  {
+    question: "What are the best low calorie high volume foods?",
+    answer: "Top high-volume foods include fresh broccoli, strawberries, liquid egg whites, non-fat Greek yogurt, green cabbage, air-popped popcorn, cucumbers, and broth-based soups."
+  },
+  {
+    question: "How does 500 calories of broccoli compare to 500 calories of peanut butter?",
+    answer: "500 calories of fresh broccoli equals roughly 1,470 grams (over 3.2 lbs of broccoli!), whereas 500 calories of peanut butter is less than 5 tablespoons (~85g)."
+  }
+]);
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Volume Eating & Calorie Density Visual Calculator",
+  "url": canonicalUrl,
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": description
+};
+---
+
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MPE6XWC1E"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8MPE6XWC1E');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script is:inline type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "y14bl1l18k");
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="NutriVisual" />
+    <meta property="og:image" content="https://nutrivisual.com/favicon.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+  </head>
+  <body className="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      {/* Breadcrumb Navigation */}
+      <nav className="text-sm text-slate-400 mb-6" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-2">
+          <li><a href="/" className="hover:text-emerald-400 transition">Home</a></li>
+          <li><span>/</span></li>
+          <li><a href="/swap/" className="hover:text-emerald-400 transition">Food Tools</a></li>
+          <li><span>/</span></li>
+          <li className="text-slate-200 font-medium">Volume Eating Visual Guide</li>
+        </ol>
+      </nav>
+
+      {/* Hero Header */}
+      <header className="mb-10 text-center max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+          Volume Eating Foods: <span className="text-emerald-400">Visual Portion Guide</span>
+        </h1>
+        <p className="text-lg text-slate-300 leading-relaxed">
+          Stay full while losing weight! Use our interactive calorie density slider to visually see how much physical food volume you get across different food choices for the exact same calorie budget.
+        </p>
+      </header>
+
+      {/* Embedded Interactive Visual Component */}
+      <section className="my-8">
+        <VolumeEatingCalculator client:load />
+      </section>
+
+      {/* Social Share Buttons */}
+      <div className="my-8 flex justify-center">
+        <SocialShare title={title} url={canonicalUrl} />
+      </div>
+
+      {/* Educational Article & Content Architecture */}
+      <article className="mt-16 space-y-12 text-slate-300 leading-relaxed max-w-4xl mx-auto">
+        
+        {/* Section 1 */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">The Science of Calorie Density & Volumetrics</h2>
+          <p className="mb-4">
+            Stomach stretch receptors signal fullness to your brain based on the <strong>physical volume of food</strong> in your stomach, not the number of calories. By choosing foods high in water, fiber, and air, you can eat full plates of food while remaining in a calorie deficit.
+          </p>
+        </section>
+
+        {/* Section 2: FAQ Accordion */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((item, idx) => (
+              <div key={idx} className="bg-slate-950 p-5 rounded-xl border border-slate-800">
+                <h3 className="text-lg font-bold text-emerald-400 mb-2">{item.name}</h3>
+                <p className="text-slate-300 text-sm">{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </article>
+
+      {/* Footer */}
+      <footer className="mt-20 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>© 2026 NutriVisual. Medical & Nutritional Disclaimer: Content is for educational purposes only. Always consult a physician or registered dietitian before starting a new diet plan.</p>
+      </footer>
+    </div>
+
+    <CookieConsent />
+  </body>
+</html>

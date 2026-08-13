@@ -1,0 +1,192 @@
+---
+import '../../styles/global.css';
+import CookieConsent from '../../components/CookieConsent.astro';
+import SocialShare from '../../components/SocialShare.astro';
+import ProteinVisualCalculator from '../../components/ProteinVisualCalculator.jsx';
+import { buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
+
+const title = "What Does 100g of Protein Look Like? (Visual Calculator & Meals)";
+const description = "Discover what 100g of protein looks like in real food with our interactive visual calculator. Compare portions, calories, and high-protein meal plans.";
+const canonicalUrl = "https://nutrivisual.com/food/100g-protein-visual-calculator/";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Tools', url: 'https://nutrivisual.com/swap/' },
+  { name: '100g Protein Visual Calculator', url: canonicalUrl }
+]);
+
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "What does 100g of protein look like in real food?",
+    answer: "100g of protein equals approximately 320g of cooked skinless chicken breast (~1.5 breasts), 15 large eggs, 430g of wild salmon, 830g of non-fat Greek yogurt, or about 4 scoops of whey protein isolate."
+  },
+  {
+    question: "Can your body absorb 100g of protein in a single meal?",
+    answer: "Yes! Recent 2023 scientific studies demonstrate that the human body can digest and utilize large doses of protein (100g+) over an extended period. Digestion simply slows down to feed muscle protein synthesis over 12+ hours."
+  },
+  {
+    question: "How do you eat 100g of protein a day on a budget?",
+    answer: "Focus on cost-effective whole food staples like liquid egg whites, canned tuna, cottage cheese, canned black beans, extra-firm tofu, and bulk whey protein powder."
+  },
+  {
+    question: "How can I get 100g of protein under 500 calories?",
+    answer: "Combine ultra-lean protein sources: for example, 250g of skinless chicken breast (~77g protein, 410 kcal) plus 200g of liquid egg whites (~22g protein, 100 kcal) gives you ~99g of protein for just ~510 total calories."
+  }
+]);
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NutriVisual 100g Protein Portion Visualizer",
+  "url": canonicalUrl,
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": description
+};
+---
+
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MPE6XWC1E"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8MPE6XWC1E');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script is:inline type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "y14bl1l18k");
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="NutriVisual" />
+    <meta property="og:image" content="https://nutrivisual.com/favicon.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+  </head>
+  <body className="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      {/* Breadcrumb Navigation */}
+      <nav className="text-sm text-slate-400 mb-6" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-2">
+          <li><a href="/" className="hover:text-emerald-400 transition">Home</a></li>
+          <li><span>/</span></li>
+          <li><a href="/swap/" className="hover:text-emerald-400 transition">Food Tools</a></li>
+          <li><span>/</span></li>
+          <li className="text-slate-200 font-medium">100g Protein Visual Calculator</li>
+        </ol>
+      </nav>
+
+      {/* Hero Header */}
+      <header className="mb-10 text-center max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+          What Does <span className="text-emerald-400">100g of Protein</span> Look Like?
+        </h1>
+        <p className="text-lg text-slate-300 leading-relaxed">
+          Hitting 100g of protein is the ultimate goal for volume eating, muscle recovery, and satiety. Use our interactive visual calculator below to compare food portion sizes, total calories, and macro density.
+        </p>
+      </header>
+
+      {/* Embedded Interactive Visual Component */}
+      <section className="my-8">
+        <ProteinVisualCalculator client:load />
+      </section>
+
+      {/* Social Share Buttons */}
+      <div className="my-8 flex justify-center">
+        <SocialShare title={title} url={canonicalUrl} />
+      </div>
+
+      {/* Educational Article & Content Architecture */}
+      <article className="mt-16 space-y-12 text-slate-300 leading-relaxed max-w-4xl mx-auto">
+        
+        {/* Section 1: Whole Food Comparisons */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">What Does 100g of Protein Look Like in Whole Foods?</h2>
+          <p className="mb-4">
+            Protein density varies wildly depending on your food source. While 100g of protein from <strong>skinless chicken breast</strong> takes up less than 1.5 cooked breasts (~320g total), getting 100g of protein from <strong>whole eggs</strong> requires roughly 15 to 16 eggs—adding over 1,200 calories in dietary fats!
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+              <h3 className="font-bold text-emerald-400 mb-1">🍗 Lean Meats & Seafood</h3>
+              <p className="text-sm text-slate-400">322g Chicken Breast (531 kcal)</p>
+              <p className="text-sm text-slate-400">385g Canned Tuna (446 kcal)</p>
+              <p className="text-sm text-slate-400">452g Atlantic Salmon (931 kcal)</p>
+            </div>
+            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+              <h3 className="font-bold text-emerald-400 mb-1">🥛 Dairy & Egg Whites</h3>
+              <p className="text-sm text-slate-400">909g Liquid Egg Whites (472 kcal)</p>
+              <p className="text-sm text-slate-400">970g Non-Fat Greek Yogurt (572 kcal)</p>
+              <p className="text-sm text-slate-400">847g Low-Fat Cottage Cheese (686 kcal)</p>
+            </div>
+            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+              <h3 className="font-bold text-emerald-400 mb-1">🌱 Plant-Based Sources</h3>
+              <p className="text-sm text-slate-400">133g Seitan / Gluten (493 kcal)</p>
+              <p className="text-sm text-slate-400">826g Extra Firm Tofu (776 kcal)</p>
+              <p className="text-sm text-slate-400">840g Cooked Edamame (1,024 kcal)</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Can Your Body Absorb 100g in One Sitting? */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">Can Your Body Absorb 100g of Protein in One Meal?</h2>
+          <p className="mb-4">
+            For decades, gym folklore claimed that the human body could only absorb 20g to 30g of protein per sitting, with any excess "wasted" or converted into glucose. 
+          </p>
+          <p className="mb-4">
+            <strong>Modern Science Debunks the Myth:</strong> A landmark 2023 study by <em>Trommelen et al.</em> published in <em>Cell Reports Medicine</em> demonstrated that eating 100g of protein in a single meal results in a prolonged, sustained anabolic response lasting over 12 hours. The gut simply slows gut motility and amino acid release, ensuring near-complete utilization of the ingested protein.
+          </p>
+        </section>
+
+        {/* Section 3: FAQ Accordion */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((item, idx) => (
+              <div key={idx} className="bg-slate-950 p-5 rounded-xl border border-slate-800">
+                <h3 className="text-lg font-bold text-emerald-400 mb-2">{item.name}</h3>
+                <p className="text-slate-300 text-sm">{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </article>
+
+      {/* Footer */}
+      <footer className="mt-20 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>© 2026 NutriVisual. Medical & Nutritional Disclaimer: Content is for educational purposes only. Always consult a physician or registered dietitian before making drastic dietary changes.</p>
+      </footer>
+    </div>
+
+    <CookieConsent />
+  </body>
+</html>

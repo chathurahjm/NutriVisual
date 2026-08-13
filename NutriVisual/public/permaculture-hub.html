@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "y14bl1l18k");
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFarmHQ — Modern Backyard Permaculture & Micro-Farming Hub</title>
+  <meta name="description" content="Data-backed gear reviews, interactive permaculture kit builders, and soil yield calculators for backyard permaculture and micro-farming enthusiasts.">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-dark: #09130E;
+      --bg-card: #112218;
+      --bg-card-hover: #172D20;
+      --bg-glass: rgba(17, 34, 24, 0.75);
+      --accent-emerald: #10B981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+      --accent-gold: #F59E0B;
+      --accent-gold-glow: rgba(245, 158, 11, 0.25);
+      --accent-cyan: #06B6D4;
+      --text-main: #ECFDF5;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      --border-color: rgba(16, 185, 129, 0.15);
+      --border-highlight: rgba(16, 185, 129, 0.4);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(245, 158, 11, 0.05) 0%, transparent 45%);
+    }
+
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 19, 14, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent-emerald), #047857);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 15px var(--accent-emerald-glow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #D1FAE5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 36px;
+    }
+
+    .search-hero {
+      max-width: 640px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+
+    .search-hero input {
+      width: 100%;
+      padding: 18px 24px 18px 56px;
+      border-radius: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-highlight);
+      color: var(--text-main);
+      font-size: 1.05rem;
+      outline: none;
+      box-shadow: var(--shadow-glow);
+      transition: all 0.3s ease;
+    }
+
+    .search-hero input:focus {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+    }
+
+    .search-hero i {
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-emerald);
+      font-size: 1.2rem;
+    }
+
+    .quick-chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover, .chip.active {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
+    /* Section Component */
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Interactive Wizard Card */
+    .wizard-card {
+      background: linear-gradient(145deg, #112218, #0D1A13);
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 80px;
+      box-shadow: var(--shadow-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wizard-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .wizard-steps-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .wizard-steps-nav::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 1;
+    }
+
+    .step-node {
+      position: relative;
+      z-index: 2;
+      background: var(--bg-dark);
+      border: 2px solid var(--text-dim);
+      color: var(--text-dim);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .step-node.active {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald);
+      color: #fff;
+      box-shadow: 0 0 15px var(--accent-emerald);
+    }
+
+    .step-node.completed {
+      border-color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .option-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25 ease;
+    }
+
+    .option-btn:hover, .option-btn.selected {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: var(--accent-emerald);
+      transform: translateY(-2px);
+    }
+
+    .option-btn i {
+      font-size: 1.5rem;
+      color: var(--accent-emerald);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .option-btn h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .option-btn p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .wizard-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      border: none;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 20px var(--accent-emerald-glow);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Calculator Section */
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-bottom: 80px;
+    }
+
+    @media(max-width: 868px) {
+      .calc-container { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--accent-emerald);
+    }
+
+    .calc-result-box {
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px dashed var(--accent-emerald);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-val {
+      font-weight: 700;
+      color: var(--accent-emerald);
+      font-size: 1.1rem;
+    }
+
+    /* Recommendation Product Grid */
+    .grid-filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-tab.active, .filter-tab:hover {
+      background: var(--accent-emerald);
+      color: #fff;
+      border-color: var(--accent-emerald);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-highlight);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: linear-gradient(135deg, var(--accent-gold), #D97706);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+    }
+
+    .card-badge.eco {
+      background: linear-gradient(135deg, var(--accent-emerald), #047857);
+      color: #fff;
+    }
+
+    .product-img {
+      height: 200px;
+      background: #0A1711;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.06);
+    }
+
+    .product-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .category-label {
+      font-size: 0.8rem;
+      color: var(--accent-emerald);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .rating-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.875rem;
+    }
+
+    .stars {
+      color: var(--accent-gold);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 0.825rem;
+    }
+
+    .spec-item span {
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .spec-item strong {
+      color: var(--text-main);
+    }
+
+    .affiliate-box {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price-tag {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .price-tag span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .buy-btn {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 15px var(--accent-emerald-glow);
+      transition: all 0.2s ease;
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Comparison Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-lg);
+      max-width: 900px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    /* FTC Disclosure & Footer */
+    footer {
+      background: #050B08;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 30px;
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .ftc-notice {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      margin-bottom: 40px;
+      font-size: 0.85rem;
+      color: #FDE68A;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.25rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <span>EcoFarm<span style="color: var(--accent-emerald);">HQ</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#wizard">Kit Finder</a></li>
+        <li><a href="#calculator">Yield Calc</a></li>
+        <li><a href="#recommendations">Best Gear</a></li>
+        <li><a href="#reviews">Deep Reviews</a></li>
+        <li><a href="#wizard" class="nav-cta">Find My Kit ⚡</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge-pill">
+        <i class="fa-solid fa-circle-check"></i> Pure Recommendation Engine • Data-Backed • 0% Brand Bias
+      </div>
+      <h1>Build Your Backyard Permaculture Haven<br>With Proven Equipment</h1>
+      <p>Independent teardowns, high-yield soil calculators, and curated modular farming gear recommendations for urban gardeners & homesteaders.</p>
+
+      <!-- Hero Search -->
+      <div class="search-hero">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search gear (e.g. Vego Garden, Drip Irrigation, Lomi Composter)..." onkeyup="filterProducts()">
+      </div>
+
+      <!-- Category Quick Chips -->
+      <div class="quick-chips">
+        <button class="chip active" onclick="setCategory('all', this)">🌱 All Gear</button>
+        <button class="chip" onclick="setCategory('beds', this)">📦 Modular Metal Beds</button>
+        <button class="chip" onclick="setCategory('irrigation', this)">💧 Solar Drip Irrigation</button>
+        <button class="chip" onclick="setCategory('compost', this)">♻️ Electric Composters</button>
+        <button class="chip" onclick="setCategory('hydro', this)">⚡ Indoor Hydroponics</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Interactive Permaculture Setup Wizard -->
+    <section id="wizard" class="wizard-card">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <span style="color: var(--accent-emerald); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Smart Recommendation Wizard</span>
+        <h2 style="font-size: 2rem; font-weight: 800; margin-top: 4px;">Find Your Perfect Permaculture Kit in 45 Seconds</h2>
+      </div>
+
+      <!-- Step Indicator Nav -->
+      <div class="wizard-steps-nav">
+        <div class="step-node active" id="stepNode1">1</div>
+        <div class="step-node" id="stepNode2">2</div>
+        <div class="step-node" id="stepNode3">3</div>
+      </div>
+
+      <!-- Step 1: Yard Size -->
+      <div class="wizard-step" id="step1">
+        <h3 style="margin-bottom: 16px;">Step 1: What space are you working with?</h3>
+        <div class="option-grid">
+          <div class="option-btn" onclick="selectOption(this, 'space', 'balcony')">
+            <i class="fa-solid fa-building"></i>
+            <h4>Balcony or Small Patio</h4>
+            <p>Under 100 sq ft. Vertical stacks & indoor green racks.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'space', 'urban_yard')">
+            <i class="fa-solid fa-house-chimney-window"></i>
+            <h4>Urban Yard (100 - 500 sq ft)</h4>
+            <p>Backyard raised bed setup with localized composting.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'space', 'suburban')">
+            <i class="fa-solid fa-tree"></i>
+            <h4>Suburban Lot (500 - 2,000 sq ft)</h4>
+            <p>Full permaculture zone layout with solar drip irrigation.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'space', 'homestead')">
+            <i class="fa-solid fa-tractor"></i>
+            <h4>Homestead (> 0.5 Acre)</h4>
+            <p>High-yield, self-sufficient ecosystem with rainwater catchment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Primary Goal -->
+      <div class="wizard-step" id="step2" style="display: none;">
+        <h3 style="margin-bottom: 16px;">Step 2: What is your main outcome?</h3>
+        <div class="option-grid">
+          <div class="option-btn" onclick="selectOption(this, 'goal', 'max_yield')">
+            <i class="fa-solid fa-carrot"></i>
+            <h4>Maximum Organic Food Yield</h4>
+            <p>Focus on heavy crops, salad greens, and year-round harvest.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'goal', 'low_maintenance')">
+            <i class="fa-solid fa-robot"></i>
+            <h4>Automated Low-Maintenance</h4>
+            <p>Self-watering timer systems & smart electric composting.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'goal', 'soil_regen')">
+            <i class="fa-solid fa-earth-americas"></i>
+            <h4>Soil Regeneration & Eco Health</h4>
+            <p>Focus on vermicomposting, biochar, and native biodiversity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Budget Range -->
+      <div class="wizard-step" id="step3" style="display: none;">
+        <h3 style="margin-bottom: 16px;">Step 3: What is your target equipment budget?</h3>
+        <div class="option-grid">
+          <div class="option-btn" onclick="selectOption(this, 'budget', 'entry')">
+            <i class="fa-solid fa-wallet"></i>
+            <h4>Starter ($150 - $350)</h4>
+            <p>Core essentials to get growing immediately.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'budget', 'pro')">
+            <i class="fa-solid fa-layer-group"></i>
+            <h4>Pro Grower ($350 - $850)</h4>
+            <p>Modular metal beds + solar automatic drip timer.</p>
+          </div>
+          <div class="option-btn" onclick="selectOption(this, 'budget', 'ultimate')">
+            <i class="fa-solid fa-crown"></i>
+            <h4>Ultimate ($850+)</h4>
+            <p>Full high-ticket automated ecosystem with smart composting.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Panel -->
+      <div class="wizard-step" id="stepResult" style="display: none; text-align: center;">
+        <div style="font-size: 3rem; color: var(--accent-emerald); margin-bottom: 12px;"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Your Custom Permaculture Blueprint is Ready!</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Based on your choices, here is your recommended high-performance equipment bundle:</p>
+        <div id="bundleContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 28px; text-align: left;">
+          <!-- Dynamically inserted -->
+        </div>
+        <button class="btn-primary" onclick="resetWizard()"><i class="fa-solid fa-rotate-left"></i> Start Over</button>
+      </div>
+
+      <div class="wizard-actions" id="wizardActions">
+        <button class="btn-secondary" id="prevBtn" onclick="prevStep()" style="display: none;">Back</button>
+        <button class="btn-primary" id="nextBtn" onclick="nextStep()" style="margin-left: auto;">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </section>
+
+    <!-- Soil & Harvest Calculator -->
+    <section id="calculator" class="section-title">
+      <h2>Backyard Soil & Yield Calculator</h2>
+      <p>Calculate exact soil volume, compost ratio, and expected harvest yield before buying gear.</p>
+    </section>
+
+    <div class="calc-container">
+      <div>
+        <h3 style="margin-bottom: 20px; font-size: 1.25rem;"><i class="fa-solid fa-sliders" style="color: var(--accent-emerald);"></i> Garden Bed Dimensions</h3>
+        <div class="form-group">
+          <label>Bed Length (Feet)</label>
+          <input type="number" id="calcLength" value="8" min="1" oninput="calculateSoil()">
+        </div>
+        <div class="form-group">
+          <label>Bed Width (Feet)</label>
+          <input type="number" id="calcWidth" value="4" min="1" oninput="calculateSoil()">
+        </div>
+        <div class="form-group">
+          <label>Bed Depth (Inches)</label>
+          <input type="number" id="calcDepth" value="17" min="6" oninput="calculateSoil()">
+        </div>
+        <div class="form-group">
+          <label>Soil Mix Blend Strategy</label>
+          <select id="calcBlend" onchange="calculateSoil()">
+            <option value="70_30">70% Organic Topsoil / 30% Compost (Standard Permaculture)</option>
+            <option value="50_50">50% Topsoil / 50% Worm Casting Compost (Heavy Yield)</option>
+            <option value="hugelkultur">Hügelkultur Base (40% Wood/Branches + 60% Soil Blend)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-result-box">
+        <h4 style="color: var(--accent-emerald); font-size: 1.1rem; margin-bottom: 16px;"><i class="fa-solid fa-chart-pie"></i> Soil Volume & Harvest Projection</h4>
+        <div class="stat-row">
+          <span>Total Required Volume:</span>
+          <span class="stat-val" id="resVolume">45.3 Cu. Ft (1.68 Cu. Yds)</span>
+        </div>
+        <div class="stat-row">
+          <span>Recommended Compost Bags (1.5 cu ft):</span>
+          <span class="stat-val" id="resCompostBags">9 Bags</span>
+        </div>
+        <div class="stat-row">
+          <span>Organic Topsoil Bags:</span>
+          <span class="stat-val" id="resTopsoilBags">21 Bags</span>
+        </div>
+        <div class="stat-row">
+          <span>Estimated Annual Produce Yield:</span>
+          <span class="stat-val" id="resYield" style="color: var(--accent-gold);">120 - 180 lbs of Organic Produce</span>
+        </div>
+        <div style="margin-top: 20px;">
+          <a href="#recommendations" class="buy-btn" style="width: 100%; justify-content: center;">View Recommended Organic Soil Brands ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Recommendation Grid -->
+    <section id="recommendations">
+      <div class="section-title">
+        <h2>Top Tested Permaculture & Micro-Farming Gear</h2>
+        <p>Expertly analyzed for build durability, eco-materials, warranty, and verified buyer satisfaction.</p>
+      </div>
+
+      <div class="grid-filter-bar">
+        <div class="filter-tabs">
+          <button class="filter-tab active" onclick="filterCategory('all', this)">All Tested Gear</button>
+          <button class="filter-tab" onclick="filterCategory('beds', this)">Modular Raised Beds</button>
+          <button class="filter-tab" onclick="filterCategory('irrigation', this)">Irrigation Systems</button>
+          <button class="filter-tab" onclick="filterCategory('compost', this)">Electric Composters</button>
+          <button class="filter-tab" onclick="filterCategory('hydro', this)">Indoor Hydroponics</button>
+        </div>
+        <div style="font-size: 0.9rem; color: var(--text-muted);">
+          Showing <strong id="productCount" style="color: var(--accent-emerald);">6</strong> vetted products
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Cards loaded dynamically via JS -->
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FTC Disclosure & Footer -->
+  <footer>
+    <div class="container">
+      <div class="ftc-notice">
+        <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.2rem;"></i>
+        <div>
+          <strong>FTC Affiliate Disclosure:</strong> EcoFarmHQ is an independent product recommendation engine. When you click our retailer links and purchase equipment, we may earn an affiliate commission at no extra cost to you. Our reviews are 100% data-driven and objective.
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo" style="margin-bottom: 16px;">
+            <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+            <span>EcoFarm<span style="color: var(--accent-emerald);">HQ</span></span>
+          </a>
+          <p style="margin-top: 12px;">The premier recommendation platform for backyard permaculture, micro-farming setups, soil health, and sustainable harvest gear.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-main); margin-bottom: 16px;">Popular Gear</h4>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Vego 17" Raised Bed</a></p>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Lomi Smart Composter</a></p>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Rachio 3 Smart Controller</a></p>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Gardyn Hydroponic Tower</a></p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-main); margin-bottom: 16px;">Free Tools</h4>
+          <p><a href="#wizard" style="color: var(--text-muted); text-decoration: none;">Permaculture Kit Finder</a></p>
+          <p><a href="#calculator" style="color: var(--text-muted); text-decoration: none;">Soil Volume Calculator</a></p>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Companion Plant Matrix</a></p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-main); margin-bottom: 16px;">Legal</h4>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Affiliate Disclosure</a></p>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a></p>
+          <p><a href="#" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a></p>
+        </div>
+      </div>
+
+      <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; font-size: 0.85rem;">
+        &copy; 2026 EcoFarmHQ Media Network. Built for low-maintenance high-yield growers.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content" id="modalBody">
+      <button class="close-modal" onclick="closeModal()">&times;</button>
+      <!-- Content populated dynamically -->
+    </div>
+  </div>
+
+  <script>
+    // Product Database with Affiliate Metadata
+    const products = [
+      {
+        id: "vego-17",
+        title: "Vego Garden 9-in-1 Modular 17\" Raised Metal Bed",
+        category: "beds",
+        categoryName: "Modular Metal Beds",
+        badge: "🏆 #1 Editor's Pick",
+        badgeEco: true,
+        price: "$199.95",
+        origPrice: "$239.00",
+        rating: 4.9,
+        reviews: 2430,
+        img: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600&q=80",
+        material: "Vego Steel (Aluzinc + Paint)",
+        lifespan: "20+ Years",
+        assembly: "15 - 20 Mins",
+        ecoScore: "98 / 100",
+        affiliateLink: "https://amazon.com/dp/B08XYZ1234?tag=ecofarmhq-20",
+        commissionVal: "High Payout ($20.00 / sale)",
+        pros: ["Aluzinc steel lasts 3x longer than wooden beds", "100% recyclable non-toxic coating", "Customizable into 9 configurations"]
+      },
+      {
+        id: "lomi-bloom",
+        title: "Lomi Bloom Smart Kitchen & Backyard Composter",
+        category: "compost",
+        categoryName: "Electric Composter",
+        badge: "⚡ Best Tech",
+        badgeEco: false,
+        price: "$499.00",
+        origPrice: "$599.00",
+        rating: 4.8,
+        reviews: 1850,
+        img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+        material: "BPA-Free Recycled Shell",
+        lifespan: "10 Years",
+        assembly: "Plug & Play",
+        ecoScore: "95 / 100",
+        affiliateLink: "https://amazon.com/dp/B09ABC5678?tag=ecofarmhq-20",
+        commissionVal: "Top Tier ($40.00 / sale)",
+        pros: ["Turns food waste into nutrient soil in 4 hours", "Smart app tracks waste reduction & carbon impact", "Quiet dual-filter odor suppression"]
+      },
+      {
+        id: "rachio-3",
+        title: "Rachio 3 Smart 8-Zone Solar Drip Irrigation Controller",
+        category: "irrigation",
+        categoryName: "Irrigation Systems",
+        badge: "💰 Best Value",
+        badgeEco: true,
+        price: "$149.99",
+        origPrice: "$179.99",
+        rating: 4.7,
+        reviews: 3120,
+        img: "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=600&q=80",
+        material: "Weatherproof ABS",
+        lifespan: "8+ Years",
+        assembly: "Easy 30 Mins",
+        ecoScore: "92 / 100",
+        affiliateLink: "https://amazon.com/dp/B07DEF9999?tag=ecofarmhq-20",
+        commissionVal: "Popular ($15.00 / sale)",
+        pros: ["Saves up to 50% on outdoor water bill", "Weather Intelligence auto-skips during rain", "Smartphone app control from anywhere"]
+      },
+      {
+        id: "gardyn-3",
+        title: "Gardyn Studio 3.0 Hydroponic Indoor Micro-Farm",
+        category: "hydro",
+        categoryName: "Indoor Hydroponics",
+        badge: "🌿 High Yield",
+        badgeEco: false,
+        price: "$799.00",
+        origPrice: "$899.00",
+        rating: 4.9,
+        reviews: 940,
+        img: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80",
+        material: "Food-Grade Polymer",
+        lifespan: "10+ Years",
+        assembly: "45 Mins",
+        ecoScore: "90 / 100",
+        affiliateLink: "https://amazon.com/dp/B08GARDYN1?tag=ecofarmhq-20",
+        commissionVal: "Super High ($100.00 / sale)",
+        pros: ["Grows 30 plants simultaneously in 2 sq ft", "AI Kelby assistant manages lights and watering", "Year-round zero-pesticide harvests"]
+      },
+      {
+        id: "epic-6in1",
+        title: "Epic Gardening Birdies 6-in-1 Tall Metal Bed",
+        category: "beds",
+        categoryName: "Modular Metal Beds",
+        badge: "🔥 Heavy Duty",
+        badgeEco: true,
+        price: "$249.99",
+        origPrice: "$279.99",
+        rating: 4.8,
+        reviews: 1420,
+        img: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80",
+        material: "Corrugated Galvanized Steel",
+        lifespan: "25+ Years",
+        assembly: "20 Mins",
+        ecoScore: "96 / 100",
+        affiliateLink: "https://amazon.com/dp/B08EPICBIRD?tag=ecofarmhq-20",
+        commissionVal: "High Payout ($25.00 / sale)",
+        pros: ["Deep 30-inch profile ideal for root vegetables", "No plastic leach into organic soil", "Includes rubber safety edging"]
+      },
+      {
+        id: "irrigatia-sol-c12",
+        title: "Irrigatia SOL-C12 Automatic Solar Weather Drip Kit",
+        category: "irrigation",
+        categoryName: "Irrigation Systems",
+        badge: "☀️ 100% Off-Grid",
+        badgeEco: true,
+        price: "$129.50",
+        origPrice: "$149.00",
+        rating: 4.6,
+        reviews: 680,
+        img: "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=600&q=80",
+        material: "Solar Panel & Recycled Tubing",
+        lifespan: "6+ Years",
+        assembly: "25 Mins",
+        ecoScore: "99 / 100",
+        affiliateLink: "https://amazon.com/dp/B07IRRIGATIA?tag=ecofarmhq-20",
+        commissionVal: "Solid ($12.00 / sale)",
+        pros: ["Requires no mains electricity or tap pressure", "Waters more when sun shines brighter", "Draws directly from rainwater barrels"]
+      }
+    ];
+
+    // Render Product Cards
+    function renderProducts(items) {
+      const container = document.getElementById('productGrid');
+      document.getElementById('productCount').innerText = items.length;
+
+      if(items.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No products match your filter or search query.</div>`;
+        return;
+      }
+
+      container.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="card-badge ${p.badgeEco ? 'eco' : ''}">${p.badge}</div>
+          <div class="product-img">
+            <img src="${p.img}" alt="${p.title}">
+          </div>
+          <div class="product-content">
+            <div class="category-label">${p.categoryName}</div>
+            <h3 class="product-title">${p.title}</h3>
+            <div class="rating-bar">
+              <div class="stars">★★★★★</div>
+              <strong>${p.rating}</strong>
+              <span style="color: var(--text-muted);">(${p.reviews} reviews)</span>
+            </div>
+
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span>Material</span>
+                <strong>${p.material}</strong>
+              </div>
+              <div class="spec-item">
+                <span>Lifespan</span>
+                <strong>${p.lifespan}</strong>
+              </div>
+              <div class="spec-item">
+                <span>Eco Score</span>
+                <strong style="color: var(--accent-emerald);">${p.ecoScore}</strong>
+              </div>
+              <div class="spec-item">
+                <span>Assembly</span>
+                <strong>${p.assembly}</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              ${p.pros.map(pro => `<div style="font-size: 0.825rem; color: var(--text-muted); margin-bottom: 4px;"><i class="fa-solid fa-check" style="color: var(--accent-emerald); margin-right: 6px;"></i>${pro}</div>`).join('')}
+            </div>
+
+            <div class="affiliate-box">
+              <div class="price-tag">
+                ${p.price}
+                <span><s style="color: var(--text-dim);">${p.origPrice}</s> • Amazon Deal</span>
+              </div>
+              <a href="${p.affiliateLink}" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                Check Deal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Logic
+    let currentCategory = 'all';
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      if(btn) btn.classList.add('active');
+      filterProducts();
+    }
+
+    function setCategory(cat, chip) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      if(chip) chip.classList.add('active');
+      filterCategory(cat, null);
+    }
+
+    function filterProducts() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = products.filter(p => {
+        const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
+        const matchesSearch = p.title.toLowerCase().includes(query) || p.categoryName.toLowerCase().includes(query) || p.material.toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
+      });
+      renderProducts(filtered);
+    }
+
+    // Calculator Logic
+    function calculateSoil() {
+      const length = parseFloat(document.getElementById('calcLength').value) || 0;
+      const width = parseFloat(document.getElementById('calcWidth').value) || 0;
+      const depthInches = parseFloat(document.getElementById('calcDepth').value) || 0;
+      const blend = document.getElementById('calcBlend').value;
+
+      const totalCuFt = (length * width * (depthInches / 12)).toFixed(1);
+      const totalCuYds = (totalCuFt / 27).toFixed(2);
+
+      let compostRatio = 0.3;
+      if (blend === '50_50') compostRatio = 0.5;
+      if (blend === 'hugelkultur') compostRatio = 0.25;
+
+      const compostCuFt = totalCuFt * compostRatio;
+      const topsoilCuFt = totalCuFt * (1 - compostRatio);
+
+      const compostBags = Math.ceil(compostCuFt / 1.5);
+      const topsoilBags = Math.ceil(topsoilCuFt / 1.5);
+
+      const minYield = Math.round(length * width * 3.8);
+      const maxYield = Math.round(length * width * 5.6);
+
+      document.getElementById('resVolume').innerText = `${totalCuFt} Cu. Ft (${totalCuYds} Cu. Yds)`;
+      document.getElementById('resCompostBags').innerText = `${compostBags} Bags (1.5 cu ft ea)`;
+      document.getElementById('resTopsoilBags').innerText = `${topsoilBags} Bags (1.5 cu ft ea)`;
+      document.getElementById('resYield').innerText = `${minYield} - ${maxYield} lbs of Produce/Year`;
+    }
+
+    // Interactive Wizard Logic
+    let wizardAnswers = {};
+    let currentWizardStep = 1;
+
+    function selectOption(el, key, val) {
+      const parent = el.parentElement;
+      parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      el.classList.add('selected');
+      wizardAnswers[key] = val;
+    }
+
+    function nextStep() {
+      if (currentWizardStep === 1) {
+        if (!wizardAnswers['space']) wizardAnswers['space'] = 'urban_yard';
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('stepNode1').classList.remove('active');
+        document.getElementById('stepNode1').classList.add('completed');
+        document.getElementById('stepNode2').classList.add('active');
+        document.getElementById('prevBtn').style.display = 'inline-block';
+        currentWizardStep = 2;
+      } else if (currentWizardStep === 2) {
+        if (!wizardAnswers['goal']) wizardAnswers['goal'] = 'max_yield';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step3').style.display = 'block';
+        document.getElementById('stepNode2').classList.remove('active');
+        document.getElementById('stepNode2').classList.add('completed');
+        document.getElementById('stepNode3').classList.add('active');
+        document.getElementById('nextBtn').innerText = 'Generate Kit ⚡';
+        currentWizardStep = 3;
+      } else if (currentWizardStep === 3) {
+        if (!wizardAnswers['budget']) wizardAnswers['budget'] = 'pro';
+        showWizardResult();
+      }
+    }
+
+    function prevStep() {
+      if (currentWizardStep === 2) {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+        document.getElementById('stepNode2').classList.remove('active');
+        document.getElementById('stepNode1').classList.add('active');
+        document.getElementById('prevBtn').style.display = 'none';
+        currentWizardStep = 1;
+      } else if (currentWizardStep === 3) {
+        document.getElementById('step3').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('stepNode3').classList.remove('active');
+        document.getElementById('stepNode2').classList.add('active');
+        document.getElementById('nextBtn').innerText = 'Next Step →';
+        currentWizardStep = 2;
+      }
+    }
+
+    function showWizardResult() {
+      document.getElementById('step3').style.display = 'none';
+      document.getElementById('wizardActions').style.display = 'none';
+      document.getElementById('stepResult').style.display = 'block';
+      document.getElementById('stepNode3').classList.remove('active');
+      document.getElementById('stepNode3').classList.add('completed');
+
+      const bundleContainer = document.getElementById('bundleContent');
+      
+      // Picks based on budget
+      let recList = [products[0], products[2]];
+      if(wizardAnswers['budget'] === 'ultimate') {
+        recList = [products[0], products[1], products[3]];
+      } else if(wizardAnswers['budget'] === 'entry') {
+        recList = [products[2], products[5]];
+      }
+
+      bundleContainer.innerHTML = recList.map(item => `
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+          <div style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 700;">${item.categoryName}</div>
+          <h4 style="font-size: 0.95rem; margin: 4px 0 8px;">${item.title}</h4>
+          <div style="font-weight: 800; color: var(--text-main); margin-bottom: 12px;">${item.price}</div>
+          <a href="${item.affiliateLink}" target="_blank" class="buy-btn" style="font-size: 0.8rem; padding: 6px 12px;">Get Best Price ↗</a>
+        </div>
+      `).join('');
+    }
+
+    function resetWizard() {
+      wizardAnswers = {};
+      currentWizardStep = 1;
+      document.getElementById('stepResult').style.display = 'none';
+      document.getElementById('step1').style.display = 'block';
+      document.getElementById('wizardActions').style.display = 'flex';
+      document.getElementById('prevBtn').style.display = 'none';
+      document.getElementById('nextBtn').innerText = 'Next Step →';
+      
+      document.querySelectorAll('.step-node').forEach((n, i) => {
+        n.classList.remove('active', 'completed');
+        if(i === 0) n.classList.add('active');
+      });
+    }
+
+    // Modal Control
+    function closeModal() {
+      document.getElementById('productModal').classList.remove('active');
+    }
+
+    // Initial Load
+    renderProducts(products);
+    calculateSoil();
+  </script>
+</body>
+</html>

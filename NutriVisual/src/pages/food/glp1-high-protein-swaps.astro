@@ -1,0 +1,160 @@
+---
+import '../../styles/global.css';
+import CookieConsent from '../../components/CookieConsent.astro';
+import SocialShare from '../../components/SocialShare.astro';
+import Glp1ProteinCalculator from '../../components/Glp1ProteinCalculator.jsx';
+import { buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
+
+const title = "GLP-1 & Ozempic High Protein Guide: Preventing Muscle Loss";
+const description = "Learn how to hit your daily protein targets on Ozempic or Wegovy without feeling nauseous. Use our small-portion GLP-1 visual food calculator & meal plan.";
+const canonicalUrl = "https://nutrivisual.com/food/glp1-high-protein-swaps/";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Tools', url: 'https://nutrivisual.com/swap/' },
+  { name: 'GLP-1 High Protein Swaps', url: canonicalUrl }
+]);
+
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "Why is high protein crucial when taking Ozempic or Wegovy?",
+    answer: "GLP-1 medications cause rapid weight loss, which often includes up to 40% lean muscle mass loss if protein intake and resistance training are neglected. Eating 1.2g–1.6g of protein per kg of body weight preserves muscle tissue and maintains metabolic rate."
+  },
+  {
+    question: "How do I eat enough protein on GLP-1 when I have zero appetite?",
+    answer: "Prioritize liquid and soft high-density foods (liquid egg whites, non-fat Greek yogurt, whey isolate in water, bone broth) and space your protein into 4 mini-meals every 3 hours rather than 3 large meals."
+  },
+  {
+    question: "Should I eat protein before or after carbs on GLP-1?",
+    answer: "Always eat your protein source first! Because GLP-1 drugs cause rapid fullness, eating protein at the start of your meal ensures you meet your amino acid requirements before feeling full."
+  }
+]);
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GLP-1 Muscle Protection & Small-Portion Calculator",
+  "url": canonicalUrl,
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": description
+};
+---
+
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MPE6XWC1E"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8MPE6XWC1E');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script is:inline type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "y14bl1l18k");
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="NutriVisual" />
+    <meta property="og:image" content="https://nutrivisual.com/favicon.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+  </head>
+  <body className="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      {/* Breadcrumb Navigation */}
+      <nav className="text-sm text-slate-400 mb-6" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-2">
+          <li><a href="/" className="hover:text-sky-400 transition">Home</a></li>
+          <li><span>/</span></li>
+          <li><a href="/swap/" className="hover:text-sky-400 transition">Food Tools</a></li>
+          <li><span>/</span></li>
+          <li className="text-slate-200 font-medium">GLP-1 High Protein Swaps</li>
+        </ol>
+      </nav>
+
+      {/* Hero Header */}
+      <header className="mb-10 text-center max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+          GLP-1 Protein Guide: <span className="text-sky-400">Preventing Muscle Loss</span>
+        </h1>
+        <p className="text-lg text-slate-300 leading-relaxed">
+          GLP-1 medications like Ozempic, Wegovy, and Mounjaro significantly suppress appetite. Use our interactive small-portion tool to calculate your target protein and select easy-to-digest high-density foods!
+        </p>
+      </header>
+
+      {/* Embedded Interactive Visual Component */}
+      <section className="my-8">
+        <Glp1ProteinCalculator client:load />
+      </section>
+
+      {/* Social Share Buttons */}
+      <div className="my-8 flex justify-center">
+        <SocialShare title={title} url={canonicalUrl} />
+      </div>
+
+      {/* Educational Article & Content Architecture */}
+      <article className="mt-16 space-y-12 text-slate-300 leading-relaxed max-w-4xl mx-auto">
+        
+        {/* Medical Section 1 */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">Why Protein is Non-Negotiable on GLP-1 Medications</h2>
+          <p className="mb-4">
+            While GLP-1 receptor agonists are extraordinarily effective for body weight reduction, clinical trials indicate that without deliberate nutrition and strength training, <strong>25% to 40% of the total weight lost can come from lean muscle tissue</strong> rather than fat mass.
+          </p>
+          <p className="mb-4">
+            <strong>Target Protein Guidelines:</strong> Sports nutritionists and endocrinologists recommend aiming for <strong>1.2g to 1.6g of protein per kilogram of body weight per day</strong> (approx. 0.55g to 0.73g per pound) to signal muscle protein synthesis during negative energy balance.
+          </p>
+        </section>
+
+        {/* Section 2: FAQ Accordion */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((item, idx) => (
+              <div key={idx} className="bg-slate-950 p-5 rounded-xl border border-slate-800">
+                <h3 className="text-lg font-bold text-sky-400 mb-2">{item.name}</h3>
+                <p className="text-slate-300 text-sm">{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </article>
+
+      {/* Footer */}
+      <footer className="mt-20 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>© 2026 NutriVisual. Medical Disclaimer: This page is for educational purposes only. Always consult your prescribing physician or registered dietitian before changing your nutritional regimen on GLP-1 therapy.</p>
+      </footer>
+    </div>
+
+    <CookieConsent />
+  </body>
+</html>

@@ -1,0 +1,164 @@
+---
+import '../../styles/global.css';
+import CookieConsent from '../../components/CookieConsent.astro';
+import SocialShare from '../../components/SocialShare.astro';
+import RenalPotassiumCalculator from '../../components/RenalPotassiumCalculator.jsx';
+import { buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
+
+const title = "Low Potassium Food Swaps: Renal Diet Visual Portion Guide";
+const description = "Discover kidney-friendly low-potassium food swaps for potatoes, bananas, spinach, and avocados. Use our interactive visual calculator and potato leaching guide.";
+const canonicalUrl = "https://nutrivisual.com/food/low-potassium-food-swaps/";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://nutrivisual.com/' },
+  { name: 'Food Tools', url: 'https://nutrivisual.com/swap/' },
+  { name: 'Low Potassium Food Swaps', url: canonicalUrl }
+]);
+
+const faqSchema = buildFAQPageSchema([
+  {
+    question: "What is considered a low potassium food for a renal diet?",
+    answer: "A food is generally classified as low-potassium if it contains less than 150mg to 200mg of potassium per serving. Examples include cauliflower, green cabbage, apples, blueberries, cucumbers, white rice, and egg whites."
+  },
+  {
+    question: "How do you leach potassium out of potatoes?",
+    answer: "To leach potatoes: 1) Peel and cut them into small, thin slices. 2) Soak them in warm water for at least 2 to 4 hours. 3) Drain and boil them in a large volume of fresh water. 4) Always discard the cooking water completely."
+  },
+  {
+    question: "Why should renal diet patients avoid salt substitutes?",
+    answer: "Many commercial salt substitutes (like NoSalt or NuSalt) replace sodium with potassium chloride. Consuming salt substitutes can dangerously spike blood potassium levels (hyperkalemia) for individuals with compromised kidney function."
+  }
+]);
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Renal Diet Low Potassium Visual Calculator",
+  "url": canonicalUrl,
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": description
+};
+---
+
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MPE6XWC1E"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8MPE6XWC1E');
+    </script>
+    <!-- Microsoft Clarity -->
+    <script is:inline type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "y14bl1l18k");
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="NutriVisual" />
+    <meta property="og:image" content="https://nutrivisual.com/favicon.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+  </head>
+  <body className="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      {/* Breadcrumb Navigation */}
+      <nav className="text-sm text-slate-400 mb-6" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-2">
+          <li><a href="/" className="hover:text-emerald-400 transition">Home</a></li>
+          <li><span>/</span></li>
+          <li><a href="/swap/" className="hover:text-emerald-400 transition">Food Tools</a></li>
+          <li><span>/</span></li>
+          <li className="text-slate-200 font-medium">Low Potassium Food Swaps</li>
+        </ol>
+      </nav>
+
+      {/* Hero Header */}
+      <header className="mb-10 text-center max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+          Low Potassium Food Swaps: <span className="text-emerald-400">Renal Diet Guide</span>
+        </h1>
+        <p className="text-lg text-slate-300 leading-relaxed">
+          Managing Chronic Kidney Disease (CKD) or dialysis requires keeping daily potassium levels under control. Use our interactive tool below to swap high-potassium staples for delicious, renal-friendly alternatives!
+        </p>
+      </header>
+
+      {/* Embedded Interactive Visual Component */}
+      <section className="my-8">
+        <RenalPotassiumCalculator client:load />
+      </section>
+
+      {/* Social Share Buttons */}
+      <div className="my-8 flex justify-center">
+        <SocialShare title={title} url={canonicalUrl} />
+      </div>
+
+      {/* Educational Article & Content Architecture */}
+      <article className="mt-16 space-y-12 text-slate-300 leading-relaxed max-w-4xl mx-auto">
+        
+        {/* Section 1: Leaching Guide */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">How to Leach Potassium from Potatoes (Step-by-Step)</h2>
+          <p className="mb-4">
+            Potatoes are naturally high in potassium (~900mg per potato), but you can reduce their potassium content by up to 50% using the leaching process recommended by renal dietitians:
+          </p>
+          <ol className="list-decimal list-inside space-y-2 text-slate-300 my-4">
+            <li><strong>Peel & Thinly Slice:</strong> Peel the potatoes and cut them into thin 1/8-inch slices or small cubes to maximize surface area.</li>
+            <li><strong>Cold Water Soak:</strong> Submerge the potato pieces in a large bowl of warm water for at least 2 to 4 hours.</li>
+            <li><strong>Rinse & Drain:</strong> Drain the soaking water and thoroughly rinse the potatoes with cold running water.</li>
+            <li><strong>Boil in Large Volume:</strong> Boil the potatoes in 5 times their volume of fresh water until tender.</li>
+            <li><strong>Discard All Boiling Water:</strong> Never consume the cooking water or use it in soups or gravies, as it is saturated with leached potassium.</li>
+          </ol>
+        </section>
+
+        {/* Section 2: FAQ Accordion */}
+        <section className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((item, idx) => (
+              <div key={idx} className="bg-slate-950 p-5 rounded-xl border border-slate-800">
+                <h3 className="text-lg font-bold text-emerald-400 mb-2">{item.name}</h3>
+                <p className="text-slate-300 text-sm">{item.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </article>
+
+      {/* Footer */}
+      <footer className="mt-20 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>© 2026 NutriVisual. Medical Disclaimer: This page is for educational purposes only. Always consult your nephrologist or registered renal dietitian before making changes to your therapeutic diet.</p>
+      </footer>
+    </div>
+
+    <CookieConsent />
+  </body>
+</html>
