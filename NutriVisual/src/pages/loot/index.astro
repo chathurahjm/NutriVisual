@@ -1,0 +1,52 @@
+---
+import '../../styles/global.css';
+import LootPasteApp from '../../components/loot/LootPasteApp';
+
+const title = "LootPaste - Dedicated Telegram & WhatsApp Deals Engine | JustPasteIt";
+const description = "Convert raw Amazon, Flipkart & store links into high-converting mobile deal walls with instant affiliate tag replacement and live flash sale timers.";
+const canonicalUrl = "https://justpasteit.in/loot/";
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "LootPaste",
+  "url": canonicalUrl,
+  "description": description,
+  "applicationCategory": "ShoppingApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+};
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Telegram Card Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content="🔥 HOT LOOT DEALS (Up to 85% OFF)" />
+    <meta property="og:description" content="Check out live festive discounts & flash sales. Limited time deals!" />
+    <meta property="og:image" content="https://m.media-amazon.com/images/I/61Io5-gZs-L._SL1500_.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🔥 HOT LOOT DEALS (Up to 85% OFF)" />
+    <meta name="twitter:description" content="Check out live festive discounts & flash sales. Limited time deals!" />
+    <meta name="twitter:image" content="https://m.media-amazon.com/images/I/61Io5-gZs-L._SL1500_.jpg" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <LootPasteApp client:only="react" />
+  </body>
+</html>

@@ -2,4 +2,5 @@
 tv_scraper/venv
 venv
 .agent/
+.agents/
 _bmad-output/

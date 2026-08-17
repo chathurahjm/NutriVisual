@@ -1,0 +1,14 @@
+# BMad Party Mode Customization Overrides
+
+[workflow]
+
+[[workflow.party_groups]]
+id = "strategy-team"
+name = "Strategy Team"
+scene = "Strategic architecture, creative problem solving, and design thinking collaboration. Winston (System Architect) brings structural rigor and technical trade-offs, Dr. Quinn (Master Problem Solver) applies systematic root-cause analysis and first-principles thinking, and Maya (Design Thinking Maestro) champions human-centered empathy and iterative exploration."
+members = [
+  "bmad-agent-architect",
+  "bmad-cis-agent-creative-problem-solver",
+  "bmad-cis-agent-design-thinking-coach"
+]
+memory = true

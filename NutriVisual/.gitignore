@@ -3,6 +3,12 @@ dist/
 # generated types
 .astro/
 
+# Agent customizations & local skills
+.agents/skills/
+.agents/tools/
+.agents/prompts/
+.agents/
+
 # dependencies
 node_modules/
 
