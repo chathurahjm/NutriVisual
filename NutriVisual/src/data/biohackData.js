@@ -687,6 +687,56 @@ export const biohackDatabase = {
       heart: 'Cynarin active compound stimulates bile flow and actively lowers LDL cholesterol.',
       metabolism: 'Inulin fiber prevents postprandial blood sugar spikes.'
     }
+  },
+  'sweet-milk-tea': {
+    scores: { brain: 40, muscle: 20, gut: 25, heart: 35, metabolism: 20 },
+    reasons: {
+      brain: 'Provides quick glucose and mild caffeine for brief alertness, but can trigger an insulin rebound slump.',
+      muscle: 'Minimal protein content provides limited amino acid support for muscle protein synthesis.',
+      gut: 'Refined sugar and dairy additives may disrupt microbial balance in sensitive individuals.',
+      heart: 'Excess added sugars can elevate systemic inflammation and long-term lipid markers.',
+      metabolism: 'Rapid glycemic spike stimulates high insulin release and shifts metabolism toward fat storage.'
+    }
+  },
+  'iced-matcha': {
+    scores: { brain: 95, muscle: 45, gut: 82, heart: 88, metabolism: 92 },
+    reasons: {
+      brain: 'Synergy of caffeine and L-theanine stimulates alpha brain waves, creating sustained calm focus without jitters.',
+      muscle: 'Provides modest plant amino acids and catechins that assist in post-exercise oxidative stress recovery.',
+      gut: 'Rich in polyphenols and catechins that promote beneficial Bifidobacterium growth in the microbiome.',
+      heart: 'EGCG catechins improve endothelial vasodilation and protect vascular lipids from oxidative damage.',
+      metabolism: 'Green tea catechins stimulate thermogenesis and improve cellular fatty acid oxidation.'
+    }
+  },
+  'french-fries': {
+    scores: { brain: 35, muscle: 30, gut: 45, heart: 30, metabolism: 25 },
+    reasons: {
+      brain: 'High glycemic index causes swift blood sugar spikes followed by post-prandial mental fatigue.',
+      muscle: 'Low protein content offers limited support for recovery despite providing fast glycogen energy.',
+      gut: 'Contains resistant starch if cooled, though deep-frying oils can irritate mucosal barriers.',
+      heart: 'High sodium and heated oxidized frying oils negatively impact arterial elasticity and endothelial health.',
+      metabolism: 'Combination of refined carbohydrates and fats creates a high hyperpalatability index and promotes overeating.'
+    }
+  },
+  'double-burger': {
+    scores: { brain: 65, muscle: 88, gut: 35, heart: 45, metabolism: 55 },
+    reasons: {
+      brain: 'Rich in bioavailable zinc, choline, and vitamin B12 for cognitive function and neurotransmitter synthesis.',
+      muscle: 'Delivers 16.5g complete protein per 100g with rich leucine and creatine for muscle hypertrophy.',
+      gut: 'Low in dietary fiber, requiring digestive enzymes and bile for heavy lipid breakdown.',
+      heart: 'High saturated fat and sodium load can acutely increase arterial stiffness and ApoB.',
+      metabolism: 'High protein provides substantial satiety, but caloric density requires balanced energy budgeting.'
+    }
+  },
+  'grilled-chicken-wrap': {
+    scores: { brain: 75, muscle: 85, gut: 65, heart: 78, metabolism: 84 },
+    reasons: {
+      brain: 'Provides vitamin B6, niacin, and tyrosine to fuel cognitive focus and neurotransmitter synthesis.',
+      muscle: 'High bioavailable lean protein (14.5g/100g) stimulates muscle protein synthesis and nitrogen balance.',
+      gut: 'Contains dietary fiber from whole-wheat wrap and vegetables supporting prebiotic transit.',
+      heart: 'Low saturated fat profile with lean poultry preserves healthy cardiovascular lipid biomarkers.',
+      metabolism: 'Balanced carbohydrate-to-protein ratio ensures a steady, non-erratic postprandial glucose curve.'
+    }
   }
 };
 

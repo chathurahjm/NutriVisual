@@ -39,5 +39,8 @@ export const popularPairs: Array<[string, string]> = [
   ['sweet-potato', 'white-rice'],
   ['carrots', 'sweet-potato'],
   ['quinoa', 'white-rice'],
-  ['tofu', 'chicken-breast']
+  ['tofu', 'chicken-breast'],
+  ['sweet-milk-tea', 'iced-matcha'],
+  ['double-burger', 'grilled-chicken-wrap'],
+  ['french-fries', 'sweet-potato']
 ];
