@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import foodsData from '../data/foods.json';
+import { trackMissedSearch } from '../utils/trackMissedSearch.js';
 
 /**
  * Helper to parse numeric micro values like "363 mg" -> 363
@@ -34,6 +35,26 @@ export default function SatietyMatrix({ onSelectFood }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFoodId, setSelectedFoodId] = useState('atlantic-salmon');
   const [showGuide, setShowGuide] = useState(true);
+
+  // Silent background tracking for unlisted food searches in Satiety Matrix
+  useEffect(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (q.length < 3) return;
+
+    const hasMatch = foodsData.some(
+      (f) =>
+        f.name.toLowerCase().includes(q) ||
+        f.category.toLowerCase().includes(q) ||
+        (f.tags && f.tags.some((t) => t.toLowerCase().includes(q)))
+    );
+
+    if (!hasMatch) {
+      const timer = setTimeout(() => {
+        trackMissedSearch(q, 'Satiety Matrix Search Bar');
+      }, 1800);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery]);
 
   // Process all foods with satiety scores and matrix coordinates
   const processedFoods = useMemo(() => {

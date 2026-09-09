@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import foodsData from '../data/foods.json';
 import BiohackRadarChart from './BiohackRadarChart.jsx';
 import SatietyMatrix from './SatietyMatrix.jsx';
 import InfographicGeneratorModal from './InfographicGeneratorModal.jsx';
 import { getBiohackData } from '../data/biohackData.js';
+import { trackMissedSearch } from '../utils/trackMissedSearch.js';
 
 export default function NutriVisualApp() {
   const [activeTab, setActiveTab] = useState('explorer'); // 'explorer' | 'compare' | 'biohack' | 'satiety' | 'plate'
@@ -11,6 +12,28 @@ export default function NutriVisualApp() {
   const [outcomeFilter, setOutcomeFilter] = useState(''); // 'bp' | 'brain' | 'gut' | 'muscle' | 'keto'
   const [selectedFoodId, setSelectedFoodId] = useState('avocado');
   const [portionGrams, setPortionGrams] = useState(100);
+
+  // Silent background tracking for unlisted food searches
+  useEffect(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (q.length < 3) return;
+
+    // Check if any food matches the raw query across name, category, or tags
+    const hasMatch = foodsData.some(
+      (f) =>
+        f.name.toLowerCase().includes(q) ||
+        f.category.toLowerCase().includes(q) ||
+        (f.tags && f.tags.some((t) => t.toLowerCase().includes(q)))
+    );
+
+    if (!hasMatch) {
+      // 1.8s debounce so user finishes typing before dispatching silent background notification
+      const timer = setTimeout(() => {
+        trackMissedSearch(q, 'Main Explorer Search Bar');
+      }, 1800);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery]);
 
   // Comparison State
   const [compareFoodId1, setCompareFoodId1] = useState('avocado');
