@@ -930,37 +930,71 @@ export default function NutriVisualApp() {
                 padding: '2px'
               }}>
                 {sortedFoods.map((food) => {
-                  const isAdded = addedFoodId === food.id;
+                  const isOnPlate = plateItems.some((item) => item.foodId === food.id);
                   return (
                     <div
                       key={food.id}
                       onClick={() => addToPlate(food.id)}
+                      title={isOnPlate ? `${food.name} is in your Visual Meal Stack` : `Add ${food.name} to plate`}
                       style={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         textAlign: 'center',
-                        backgroundColor: 'var(--bg-card)',
-                        border: `1px solid ${isAdded ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        backgroundColor: isOnPlate ? 'var(--accent-green-glow)' : 'var(--bg-card)',
+                        border: `1.5px solid ${isOnPlate ? 'var(--accent-green)' : 'var(--border-color)'}`,
                         padding: '0.75rem 0.5rem',
                         borderRadius: '12px',
                         cursor: 'pointer',
-                        boxShadow: 'var(--shadow-card)',
-                        transition: 'transform 0.15s ease, border-color 0.15s ease',
+                        boxShadow: isOnPlate ? '0 4px 14px rgba(16, 185, 129, 0.2)' : 'var(--shadow-card)',
+                        transition: 'transform 0.15s ease, border-color 0.15s ease, background-color 0.2s ease',
+                        position: 'relative',
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.borderColor = 'var(--accent-green)';
+                        if (!isOnPlate) e.currentTarget.style.borderColor = 'var(--accent-green)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'none';
-                        if (!isAdded) e.currentTarget.style.borderColor = 'var(--border-color)';
+                        if (!isOnPlate) e.currentTarget.style.borderColor = 'var(--border-color)';
                       }}
                     >
+                      {/* Floating Checkmark Badge for Added Items */}
+                      {isOnPlate && (
+                        <span
+                          style={{
+                            position: 'absolute',
+                            top: '6px',
+                            right: '6px',
+                            width: '18px',
+                            height: '18px',
+                            borderRadius: '50%',
+                            backgroundColor: 'var(--accent-green)',
+                            color: '#ffffff',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '10px',
+                            fontWeight: 800,
+                            boxShadow: '0 2px 5px rgba(0,0,0,0.25)'
+                          }}
+                        >
+                          ✓
+                        </span>
+                      )}
+
                       <img
                         src={food.image}
                         alt={food.name}
-                        style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', marginBottom: '0.45rem' }}
+                        style={{
+                          width: '48px',
+                          height: '48px',
+                          borderRadius: '10px',
+                          objectFit: 'cover',
+                          marginBottom: '0.45rem',
+                          border: `2px solid ${isOnPlate ? 'var(--accent-green)' : 'transparent'}`,
+                          transition: 'border-color 0.2s ease'
+                        }}
                       />
                       <div style={{ fontWeight: 600, fontSize: '0.8rem', color: 'var(--text-main)', marginBottom: '0.2rem', lineHeight: 1.25, minHeight: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         {food.name}
@@ -971,18 +1005,19 @@ export default function NutriVisualApp() {
                       <span
                         style={{
                           fontSize: '0.75rem',
-                          color: isAdded ? '#10b981' : 'var(--accent-green)',
+                          color: isOnPlate ? '#ffffff' : 'var(--text-muted)',
                           fontWeight: 700,
-                          backgroundColor: isAdded ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-surface)',
-                          border: `1px solid ${isAdded ? '#10b981' : 'var(--border-color)'}`,
+                          backgroundColor: isOnPlate ? 'var(--accent-green)' : 'var(--bg-surface)',
+                          border: `1px solid ${isOnPlate ? 'var(--accent-green)' : 'var(--border-color)'}`,
                           padding: '0.25rem 0.5rem',
                           borderRadius: '6px',
                           width: '100%',
                           boxSizing: 'border-box',
-                          textAlign: 'center'
+                          textAlign: 'center',
+                          transition: 'all 0.2s ease'
                         }}
                       >
-                        {isAdded ? 'Added ✓' : '+ Add'}
+                        {isOnPlate ? 'Added ✓' : '+ Add'}
                       </span>
                     </div>
                   );
@@ -991,35 +1026,65 @@ export default function NutriVisualApp() {
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '520px', overflowY: 'auto', padding: '2px' }}>
                 {sortedFoods.map((food) => {
-                  const isAdded = addedFoodId === food.id;
+                  const isOnPlate = plateItems.some((item) => item.foodId === food.id);
                   return (
                     <div
                       key={food.id}
                       onClick={() => addToPlate(food.id)}
+                      title={isOnPlate ? `${food.name} is in your Visual Meal Stack` : `Add ${food.name} to plate`}
                       style={{
                         display: 'flex',
                         alignItems: 'center',
-                        justify: 'space-between',
-                        backgroundColor: 'var(--bg-card)',
-                        border: `1px solid ${isAdded ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        justifyContent: 'space-between',
+                        backgroundColor: isOnPlate ? 'var(--accent-green-glow)' : 'var(--bg-card)',
+                        border: `1.5px solid ${isOnPlate ? 'var(--accent-green)' : 'var(--border-color)'}`,
                         padding: '0.75rem',
                         borderRadius: '12px',
                         cursor: 'pointer',
-                        boxShadow: 'var(--shadow-card)',
-                        transition: 'border-color 0.15s ease',
+                        boxShadow: isOnPlate ? '0 4px 14px rgba(16, 185, 129, 0.15)' : 'var(--shadow-card)',
+                        transition: 'border-color 0.15s ease, background-color 0.2s ease',
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-green)'; }}
-                      onMouseLeave={(e) => { if (!isAdded) e.currentTarget.style.borderColor = 'var(--border-color)'; }}
+                      onMouseEnter={(e) => {
+                        if (!isOnPlate) e.currentTarget.style.borderColor = 'var(--accent-green)';
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isOnPlate) e.currentTarget.style.borderColor = 'var(--border-color)';
+                      }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <img src={food.image} alt={food.name} style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} />
+                        <img
+                          src={food.image}
+                          alt={food.name}
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '8px',
+                            objectFit: 'cover',
+                            border: `2px solid ${isOnPlate ? 'var(--accent-green)' : 'transparent'}`,
+                            transition: 'border-color 0.2s ease'
+                          }}
+                        />
                         <div>
                           <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-main)' }}>{food.name}</div>
                           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal</div>
                         </div>
                       </div>
-                      <span style={{ fontSize: '0.8rem', color: isAdded ? '#10b981' : 'var(--accent-green)', fontWeight: 700 }}>
-                        {isAdded ? 'Added ✓' : '+ Add'}
+                      <span
+                        style={{
+                          fontSize: '0.78rem',
+                          color: isOnPlate ? '#ffffff' : 'var(--text-muted)',
+                          fontWeight: 700,
+                          backgroundColor: isOnPlate ? 'var(--accent-green)' : 'var(--bg-surface)',
+                          border: `1px solid ${isOnPlate ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                          padding: '0.25rem 0.65rem',
+                          borderRadius: '20px',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '3px',
+                          transition: 'all 0.2s ease'
+                        }}
+                      >
+                        {isOnPlate ? 'Added ✓' : '+ Add'}
                       </span>
                     </div>
                   );
