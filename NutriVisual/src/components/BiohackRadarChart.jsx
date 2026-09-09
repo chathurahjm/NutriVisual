@@ -52,13 +52,6 @@ export default function BiohackRadarChart({ scores = {} }) {
             <stop offset="0%" stopColor="var(--accent-green)" stopOpacity="0.35" />
             <stop offset="100%" stopColor="var(--accent-green)" stopOpacity="0.05" />
           </radialGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
         </defs>
 
         {/* Background Grid Rings */}
@@ -103,7 +96,6 @@ export default function BiohackRadarChart({ scores = {} }) {
           fill="url(#radarGlow)"
           stroke="var(--accent-green)"
           strokeWidth="2.8"
-          filter="url(#glow)"
           style={{ transition: 'all 0.4s ease' }}
         />
 

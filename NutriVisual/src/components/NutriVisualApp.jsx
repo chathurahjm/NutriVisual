@@ -46,6 +46,7 @@ export default function NutriVisualApp() {
     { foodId: 'avocado', grams: 100 },
     { foodId: 'broccoli', grams: 120 }
   ]);
+  const [plateViewMode, setPlateViewMode] = useState('list'); // 'list' | 'grid'
 
   // Infographic Modal State
   const [isInfographicOpen, setIsInfographicOpen] = useState(false);
@@ -642,7 +643,7 @@ export default function NutriVisualApp() {
         <div style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '2rem', boxShadow: 'var(--shadow-card)' }}>
           <div style={{ textAlign: 'center', maxWidth: '650px', margin: '0 auto 2rem auto' }}>
             <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 0.5rem 0' }}>
-              🧬 Biohack Health & Longevity Radar
+              Biohack Health & Longevity Radar
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', margin: '0 0 1.25rem 0' }}>
               Real-time nutrient synergy breakdown mapping 5 health dimensions for <strong>{activeFood.name}</strong>.
@@ -844,37 +845,187 @@ export default function NutriVisualApp() {
 
           {/* Sidebar to add ingredients */}
           <div>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem' }}>+ Add Food to Plate</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '520px', overflowY: 'auto' }}>
-              {sortedFoods.map((food) => (
-                <div
-                  key={food.id}
-                  onClick={() => addToPlate(food.id)}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <h2 style={{ fontSize: '1.1rem', fontWeight: 600, margin: 0, color: 'var(--text-main)' }}>+ Add Food to Plate</h2>
+              <div
+                role="group"
+                aria-label="View layout"
+                style={{
+                  display: 'inline-flex',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '8px',
+                  padding: '2px',
+                  gap: '2px'
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setPlateViewMode('grid')}
+                  title="Grid View"
+                  aria-pressed={plateViewMode === 'grid'}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justify: 'space-between',
-                    backgroundColor: 'var(--bg-card)',
-                    border: '1px solid var(--border-color)',
-                    padding: '0.75rem',
-                    borderRadius: '12px',
+                    gap: '4px',
+                    padding: '0.35rem 0.65rem',
+                    borderRadius: '6px',
+                    border: 'none',
                     cursor: 'pointer',
-                    boxShadow: 'var(--shadow-card)',
+                    fontSize: '0.78rem',
+                    fontWeight: 600,
+                    backgroundColor: plateViewMode === 'grid' ? 'var(--accent-green)' : 'transparent',
+                    color: plateViewMode === 'grid' ? '#ffffff' : 'var(--text-muted)',
+                    transition: 'all 0.2s ease',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <img src={food.image} alt={food.name} style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} />
-                    <div>
-                      <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-main)' }}>{food.name}</div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal</div>
-                    </div>
-                  </div>
-                  <span style={{ fontSize: '0.8rem', color: addedFoodId === food.id ? '#10b981' : 'var(--accent-green)', fontWeight: 700 }}>
-                    {addedFoodId === food.id ? 'Added ✓' : '+ Add'}
-                  </span>
-                </div>
-              ))}
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  Grid
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPlateViewMode('list')}
+                  title="List View"
+                  aria-pressed={plateViewMode === 'list'}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    padding: '0.35rem 0.65rem',
+                    borderRadius: '6px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontSize: '0.78rem',
+                    fontWeight: 600,
+                    backgroundColor: plateViewMode === 'list' ? 'var(--accent-green)' : 'transparent',
+                    color: plateViewMode === 'list' ? '#ffffff' : 'var(--text-muted)',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                  List
+                </button>
+              </div>
             </div>
+
+            {plateViewMode === 'grid' ? (
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
+                gap: '0.75rem',
+                maxHeight: '520px',
+                overflowY: 'auto',
+                padding: '2px'
+              }}>
+                {sortedFoods.map((food) => {
+                  const isAdded = addedFoodId === food.id;
+                  return (
+                    <div
+                      key={food.id}
+                      onClick={() => addToPlate(food.id)}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        backgroundColor: 'var(--bg-card)',
+                        border: `1px solid ${isAdded ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        padding: '0.75rem 0.5rem',
+                        borderRadius: '12px',
+                        cursor: 'pointer',
+                        boxShadow: 'var(--shadow-card)',
+                        transition: 'transform 0.15s ease, border-color 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.borderColor = 'var(--accent-green)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'none';
+                        if (!isAdded) e.currentTarget.style.borderColor = 'var(--border-color)';
+                      }}
+                    >
+                      <img
+                        src={food.image}
+                        alt={food.name}
+                        style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', marginBottom: '0.45rem' }}
+                      />
+                      <div style={{ fontWeight: 600, fontSize: '0.8rem', color: 'var(--text-main)', marginBottom: '0.2rem', lineHeight: 1.25, minHeight: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        {food.name}
+                      </div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                        {food.calories} kcal
+                      </div>
+                      <span
+                        style={{
+                          fontSize: '0.75rem',
+                          color: isAdded ? '#10b981' : 'var(--accent-green)',
+                          fontWeight: 700,
+                          backgroundColor: isAdded ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-surface)',
+                          border: `1px solid ${isAdded ? '#10b981' : 'var(--border-color)'}`,
+                          padding: '0.25rem 0.5rem',
+                          borderRadius: '6px',
+                          width: '100%',
+                          boxSizing: 'border-box',
+                          textAlign: 'center'
+                        }}
+                      >
+                        {isAdded ? 'Added ✓' : '+ Add'}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '520px', overflowY: 'auto', padding: '2px' }}>
+                {sortedFoods.map((food) => {
+                  const isAdded = addedFoodId === food.id;
+                  return (
+                    <div
+                      key={food.id}
+                      onClick={() => addToPlate(food.id)}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justify: 'space-between',
+                        backgroundColor: 'var(--bg-card)',
+                        border: `1px solid ${isAdded ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        padding: '0.75rem',
+                        borderRadius: '12px',
+                        cursor: 'pointer',
+                        boxShadow: 'var(--shadow-card)',
+                        transition: 'border-color 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-green)'; }}
+                      onMouseLeave={(e) => { if (!isAdded) e.currentTarget.style.borderColor = 'var(--border-color)'; }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <img src={food.image} alt={food.name} style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} />
+                        <div>
+                          <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-main)' }}>{food.name}</div>
+                          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal</div>
+                        </div>
+                      </div>
+                      <span style={{ fontSize: '0.8rem', color: isAdded ? '#10b981' : 'var(--accent-green)', fontWeight: 700 }}>
+                        {isAdded ? 'Added ✓' : '+ Add'}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       )}
