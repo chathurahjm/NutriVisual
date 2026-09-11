@@ -41,11 +41,19 @@ export default function SatietyMatrix({ onSelectFood }) {
     const q = searchQuery.trim().toLowerCase();
     if (q.length < 3) return;
 
+    const targetQ = {
+      'tomatoe': 'tomato', 'tomatos': 'tomato', 'tomatoes': 'tomato', 'tamato': 'tomato',
+      'avacado': 'avocado', 'avacados': 'avocado', 'avocados': 'avocado',
+      'salman': 'salmon', 'potatos': 'potato', 'potatoe': 'potato',
+      'brocoli': 'broccoli', 'brocolli': 'broccoli', 'bluebery': 'blueberries',
+      'yogert': 'yogurt', 'yoghurt': 'yogurt', 'spinich': 'spinach'
+    }[q] || q;
+
     const hasMatch = foodsData.some(
       (f) =>
-        f.name.toLowerCase().includes(q) ||
-        f.category.toLowerCase().includes(q) ||
-        (f.tags && f.tags.some((t) => t.toLowerCase().includes(q)))
+        f.name.toLowerCase().includes(targetQ) ||
+        f.category.toLowerCase().includes(targetQ) ||
+        (f.tags && f.tags.some((t) => t.toLowerCase().includes(targetQ)))
     );
 
     if (!hasMatch) {
@@ -95,12 +103,27 @@ export default function SatietyMatrix({ onSelectFood }) {
     });
   }, []);
 
+  const SATIETY_ALIASES = {
+    'tomatoe': 'tomato', 'tomatos': 'tomato', 'tomatoes': 'tomato', 'tamato': 'tomato',
+    'avacado': 'avocado', 'avacados': 'avocado', 'avocados': 'avocado',
+    'salman': 'salmon', 'potatos': 'potato', 'potatoe': 'potato',
+    'brocoli': 'broccoli', 'brocolli': 'broccoli', 'bluebery': 'blueberries',
+    'yogert': 'yogurt', 'yoghurt': 'yogurt', 'spinich': 'spinach'
+  };
+
+  const normalizedSatietyQ = searchQuery.trim().toLowerCase();
+  const satietySuggestion = SATIETY_ALIASES[normalizedSatietyQ] || null;
+
   // Filtered dataset based on user controls
   const filteredFoods = processedFoods.filter((f) => {
     if (selectedQuadrant !== 'All' && f.quadrant !== selectedQuadrant) return false;
     if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      const match = f.name.toLowerCase().includes(q) || f.category.toLowerCase().includes(q);
+      const q = normalizedSatietyQ;
+      const target = satietySuggestion || q;
+      const match =
+        f.name.toLowerCase().includes(q) ||
+        f.category.toLowerCase().includes(q) ||
+        (satietySuggestion && (f.name.toLowerCase().includes(target) || f.category.toLowerCase().includes(target)));
       if (!match) return false;
     }
     return true;

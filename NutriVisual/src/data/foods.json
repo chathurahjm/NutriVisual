@@ -3555,5 +3555,35 @@
       "Potassium Rich",
       "Energy Dense"
     ]
+  },
+  {
+    "id": "tomato",
+    "name": "Fresh Red Tomato",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 18,
+    "macros": {
+      "fat": 0.2,
+      "carbs": 3.9,
+      "protein": 0.9
+    },
+    "micros": {
+      "potassium": "237 mg",
+      "magnesium": "11 mg",
+      "fiber": "1.2 g"
+    },
+    "benefits": [
+      "Potent Lycopene Antioxidant",
+      "Heart & Endothelial Shield",
+      "Skin Photoprotection"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Clean Foods",
+      "Lab Tested",
+      "Lycopene Rich",
+      "Hydration"
+    ]
   }
 ]

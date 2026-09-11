@@ -737,6 +737,16 @@ export const biohackDatabase = {
       heart: 'Low saturated fat profile with lean poultry preserves healthy cardiovascular lipid biomarkers.',
       metabolism: 'Balanced carbohydrate-to-protein ratio ensures a steady, non-erratic postprandial glucose curve.'
     }
+  },
+  'tomato': {
+    scores: { brain: 82, muscle: 55, gut: 78, heart: 96, metabolism: 90 },
+    reasons: {
+      brain: 'Potent carotenoid lycopene protects cerebral microvasculature and neuro-membrane lipids from oxidative stress.',
+      muscle: 'Provides hydration (94% water) and potassium (237mg) to support cellular electrolyte balance during exercise.',
+      gut: 'Soluble and insoluble fiber alongside naringenin flavonoid nourish beneficial gut microflora.',
+      heart: 'Clinical trials demonstrate high lycopene intake reduces LDL oxidation and enhances vascular nitric oxide availability.',
+      metabolism: 'Extremely low glycemic load and high volume density promote fullness with negligible impact on blood sugar.'
+    }
   }
 };
 

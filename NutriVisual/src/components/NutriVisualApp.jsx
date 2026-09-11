@@ -6,6 +6,11 @@ import InfographicGeneratorModal from './InfographicGeneratorModal.jsx';
 import { getBiohackData } from '../data/biohackData.js';
 import { trackMissedSearch } from '../utils/trackMissedSearch.js';
 
+const RIBBON_COLORS = [
+  '#10b981', '#06b6d4', '#f59e0b', '#ec4899', '#8b5cf6',
+  '#3b82f6', '#14b8a6', '#f97316', '#84cc16', '#e11d48'
+];
+
 export default function NutriVisualApp() {
   const [activeTab, setActiveTab] = useState('explorer'); // 'explorer' | 'compare' | 'biohack' | 'satiety' | 'plate'
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,12 +23,22 @@ export default function NutriVisualApp() {
     const q = searchQuery.trim().toLowerCase();
     if (q.length < 3) return;
 
-    // Check if any food matches the raw query across name, category, or tags
+    // Check if any food matches the raw query (or its alias) across name, category, or tags
+    const targetQ = {
+      'tomatoe': 'tomato', 'tomatos': 'tomato', 'tomatoes': 'tomato', 'tamato': 'tomato', 'tamatoe': 'tomato',
+      'avacado': 'avocado', 'avacados': 'avocado', 'avocados': 'avocado',
+      'salman': 'salmon', 'salmons': 'salmon',
+      'potatos': 'potato', 'potatoe': 'potato', 'potatoes': 'potato',
+      'brocoli': 'broccoli', 'brocolli': 'broccoli',
+      'bluebery': 'blueberries', 'blueberry': 'blueberries',
+      'yogert': 'yogurt', 'yoghurt': 'yogurt', 'spinich': 'spinach'
+    }[q] || q;
+
     const hasMatch = foodsData.some(
       (f) =>
-        f.name.toLowerCase().includes(q) ||
-        f.category.toLowerCase().includes(q) ||
-        (f.tags && f.tags.some((t) => t.toLowerCase().includes(q)))
+        f.name.toLowerCase().includes(targetQ) ||
+        f.category.toLowerCase().includes(targetQ) ||
+        (f.tags && f.tags.some((t) => t.toLowerCase().includes(targetQ)))
     );
 
     if (!hasMatch) {
@@ -58,15 +73,51 @@ export default function NutriVisualApp() {
     return match ? parseFloat(match[0]) : 0;
   };
 
+  // Common typo and variant alias map for fuzzy matching & suggestions
+  const SEARCH_ALIASES = {
+    'tomatoe': 'tomato',
+    'tomatos': 'tomato',
+    'tomatoes': 'tomato',
+    'tamato': 'tomato',
+    'tamatoe': 'tomato',
+    'avacado': 'avocado',
+    'avacados': 'avocado',
+    'avocados': 'avocado',
+    'salman': 'salmon',
+    'salmons': 'salmon',
+    'potatos': 'potato',
+    'potatoe': 'potato',
+    'potatoes': 'potato',
+    'brocoli': 'broccoli',
+    'brocolli': 'broccoli',
+    'bluebery': 'blueberries',
+    'blueberry': 'blueberries',
+    'yogert': 'yogurt',
+    'yoghurt': 'yogurt',
+    'spinich': 'spinach'
+  };
+
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const suggestionTerm = SEARCH_ALIASES[normalizedQuery] || null;
+
   // Alphabetically sorted food list for select dropdowns
   const sortedFoods = [...foodsData].sort((a, b) => a.name.localeCompare(b.name));
 
-  // Filtered foods for search and outcome filters
+  // Filtered foods for search and outcome filters (with alias resolution)
   const filteredFoods = sortedFoods.filter((f) => {
+    const q = normalizedQuery;
+    const resolvedQ = suggestionTerm || q;
+
     const matchesSearch =
-      f.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      f.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      f.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+      !q ||
+      f.name.toLowerCase().includes(q) ||
+      f.category.toLowerCase().includes(q) ||
+      f.tags.some((t) => t.toLowerCase().includes(q)) ||
+      (suggestionTerm && (
+        f.name.toLowerCase().includes(suggestionTerm) ||
+        f.category.toLowerCase().includes(suggestionTerm) ||
+        f.tags.some((t) => t.toLowerCase().includes(suggestionTerm))
+      ));
 
     if (!matchesSearch) return false;
 
@@ -154,6 +205,24 @@ export default function NutriVisualApp() {
 
   const updatePlateGrams = (foodId, grams) => {
     setPlateItems(plateItems.map((item) => (item.foodId === foodId ? { ...item, grams: Number(grams) } : item)));
+  };
+
+  const clearPlate = () => {
+    if (plateItems.length === 0) return;
+    setPlateItems([]);
+    setToastMessage('Cleared all ingredients from your plate.');
+    setTimeout(() => setToastMessage(''), 3000);
+  };
+
+  const stepPlateGrams = (foodId, delta) => {
+    setPlateItems((prev) =>
+      prev.map((item) => {
+        if (item.foodId !== foodId) return item;
+        const current = Number(item.grams) || 0;
+        const next = Math.max(10, Math.min(1000, current + delta));
+        return { ...item, grams: next };
+      })
+    );
   };
 
   return (
@@ -298,7 +367,7 @@ export default function NutriVisualApp() {
                   setSearchQuery(e.target.value);
                   setOutcomeFilter('');
                 }}
-                placeholder="Search food, macro, or tag (e.g. Avocado, Omega-3, Potassium)..."
+                placeholder="Search food, macro, or tag (e.g. Avocado, Tomato, Omega-3)..."
                 style={{
                   width: '100%',
                   backgroundColor: 'var(--bg-card)',
@@ -311,6 +380,63 @@ export default function NutriVisualApp() {
                   boxShadow: 'var(--shadow-card)',
                 }}
               />
+
+              {/* "Did you mean..." intelligent typo suggestion bar */}
+              {suggestionTerm && (
+                <div
+                  style={{
+                    marginTop: '0.5rem',
+                    padding: '0.55rem 0.9rem',
+                    backgroundColor: 'var(--accent-green-glow)',
+                    border: '1px solid var(--accent-green)',
+                    borderRadius: '8px',
+                    fontSize: '0.86rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '0.5rem',
+                    animation: 'fadeIn 0.2s ease-out'
+                  }}
+                >
+                  <div style={{ color: 'var(--text-main)' }}>
+                    <span>💡 Did you mean </span>
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery(suggestionTerm)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'var(--accent-green)',
+                        fontWeight: 700,
+                        textDecoration: 'underline',
+                        cursor: 'pointer',
+                        padding: 0,
+                        fontSize: '0.88rem'
+                      }}
+                    >
+                      {suggestionTerm}
+                    </button>
+                    <span>? Showing matching whole foods below.</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery(suggestionTerm)}
+                    style={{
+                      backgroundColor: 'var(--accent-green)',
+                      color: '#ffffff',
+                      border: 'none',
+                      borderRadius: '6px',
+                      padding: '0.25rem 0.6rem',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Search {suggestionTerm} →
+                  </button>
+                </div>
+              )}
             </div>
 
             <div className="glass-card" style={{ padding: '2rem' }}>
@@ -798,49 +924,366 @@ export default function NutriVisualApp() {
               </div>
             </div>
 
-            {/* Plate Items List */}
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>Ingredients on Plate ({plateItems.length})</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {plateItems.map((item) => {
-                const food = foodsData.find((f) => f.id === item.foodId);
-                if (!food) return null;
-                const s = item.grams / 100;
-                return (
-                  <div key={item.foodId} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-color)', padding: '1rem', borderRadius: '12px', gap: '1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <img src={food.image} alt={food.name} style={{ width: '56px', height: '56px', borderRadius: '8px', objectFit: 'cover' }} />
-                      <div>
-                        <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-main)' }}>{food.name}</div>
-                        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                          {Math.round(food.calories * s)} kcal • {Math.round(food.macros.protein * s * 10) / 10}g protein
-                        </div>
-                      </div>
-                    </div>
+            {/* Ingredients on Plate Header & Actions */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                <h2 style={{ fontSize: '1.15rem', fontWeight: 700, margin: 0, color: 'var(--text-main)' }}>
+                  Ingredients on Plate ({plateItems.length})
+                </h2>
+                {plateItems.length > 0 && (
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-green)', backgroundColor: 'var(--accent-green-glow)', padding: '0.2rem 0.55rem', borderRadius: '12px' }}>
+                    {plateTotals.calories} kcal total
+                  </span>
+                )}
+              </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        <input
-                          type="number"
-                          min="10"
-                          max="500"
-                          value={item.grams}
-                          onChange={(e) => updatePlateGrams(item.foodId, e.target.value)}
-                          aria-label="Portion grams for this food item"
-                          style={{ width: '70px', padding: '0.4rem', borderRadius: '6px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-card)', color: 'var(--text-main)', textAlign: 'center', fontWeight: 600 }}
-                        />
-                        <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>g</span>
-                      </div>
-                      <button
-                        onClick={() => removeFromPlate(item.foodId)}
-                        style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', border: '1px solid #ef4444', padding: '0.4rem 0.75rem', borderRadius: '6px', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem' }}
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+              {plateItems.length > 0 && (
+                <button
+                  type="button"
+                  onClick={clearPlate}
+                  title="Remove all ingredients from plate"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    padding: '0.3rem 0.65rem',
+                    borderRadius: '6px',
+                    border: '1px solid var(--border-color)',
+                    backgroundColor: 'var(--bg-card)',
+                    color: 'var(--text-muted)',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#ef4444';
+                    e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+                    e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--text-muted)';
+                    e.currentTarget.style.borderColor = 'var(--border-color)';
+                    e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+                  }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                  </svg>
+                  Clear Plate
+                </button>
+              )}
             </div>
+
+            {/* Proportional Calorie Stack (Segmented Ribbon Bar) */}
+            {plateItems.length > 0 && (
+              <div style={{ marginBottom: '1.25rem' }}>
+                <div
+                  title="Proportional Calorie Stack"
+                  style={{
+                    display: 'flex',
+                    width: '100%',
+                    height: '14px',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    backgroundColor: 'var(--bg-surface)',
+                    border: '1px solid var(--border-color)',
+                    marginBottom: '0.5rem',
+                    boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.1)'
+                  }}
+                >
+                  {plateItems.map((item, index) => {
+                    const food = foodsData.find((f) => f.id === item.foodId);
+                    if (!food) return null;
+                    const itemCalories = Math.round(food.calories * (item.grams / 100));
+                    const pct = plateTotals.calories > 0 ? Math.round((itemCalories / plateTotals.calories) * 100) : 0;
+                    return (
+                      <div
+                        key={item.foodId}
+                        title={`${food.name}: ${itemCalories} kcal (${pct}% of meal)`}
+                        style={{
+                          width: `${(itemCalories / (plateTotals.calories || 1)) * 100}%`,
+                          backgroundColor: RIBBON_COLORS[index % RIBBON_COLORS.length],
+                          transition: 'width 0.3s ease',
+                          minWidth: itemCalories > 0 ? '4px' : '0'
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+
+                {/* Calorie Proportion Legend Chips */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', alignItems: 'center' }}>
+                  {plateItems.map((item, index) => {
+                    const food = foodsData.find((f) => f.id === item.foodId);
+                    if (!food) return null;
+                    const itemCalories = Math.round(food.calories * (item.grams / 100));
+                    const pct = plateTotals.calories > 0 ? Math.round((itemCalories / plateTotals.calories) * 100) : 0;
+                    return (
+                      <div
+                        key={item.foodId}
+                        title={`${food.name}: ${item.grams}g, ${itemCalories} kcal`}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          fontSize: '0.72rem',
+                          color: 'var(--text-main)',
+                          backgroundColor: 'var(--bg-card)',
+                          padding: '0.2rem 0.55rem',
+                          borderRadius: '6px',
+                          border: '1px solid var(--border-color)',
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            backgroundColor: RIBBON_COLORS[index % RIBBON_COLORS.length],
+                            flexShrink: 0
+                          }}
+                        />
+                        <span style={{ fontWeight: 600 }}>{food.name}</span>
+                        <span style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>{pct}%</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Empty State */}
+            {plateItems.length === 0 ? (
+              <div
+                style={{
+                  textAlign: 'center',
+                  padding: '3rem 1.5rem',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '2px dashed var(--border-color)',
+                  borderRadius: '16px',
+                  color: 'var(--text-muted)'
+                }}
+              >
+                <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🍽️</div>
+                <div style={{ fontWeight: 700, fontSize: '1.05rem', color: 'var(--text-main)', marginBottom: '0.25rem' }}>
+                  Your Meal Plate is Empty
+                </div>
+                <p style={{ fontSize: '0.85rem', margin: '0 auto', maxWidth: '300px', lineHeight: 1.4 }}>
+                  Choose ingredients from <strong>+ Add Food to Plate</strong> on the right to build your visual stack and track macro synergies.
+                </p>
+              </div>
+            ) : (
+              /* Compact 2-Column Responsive Card Grid */
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                  gap: '0.75rem',
+                  maxHeight: '560px',
+                  overflowY: 'auto',
+                  padding: '2px'
+                }}
+              >
+                {plateItems.map((item, index) => {
+                  const food = foodsData.find((f) => f.id === item.foodId);
+                  if (!food) return null;
+                  const s = item.grams / 100;
+                  const itemCalories = Math.round(food.calories * s);
+                  const pct = plateTotals.calories > 0 ? Math.round((itemCalories / plateTotals.calories) * 100) : 0;
+
+                  return (
+                    <div
+                      key={item.foodId}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        backgroundColor: 'var(--bg-surface)',
+                        border: '1px solid var(--border-color)',
+                        padding: '0.75rem',
+                        borderRadius: '12px',
+                        boxShadow: 'var(--shadow-card)',
+                        gap: '0.65rem',
+                        position: 'relative',
+                        transition: 'border-color 0.2s ease, transform 0.15s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--accent-green)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--border-color)';
+                      }}
+                    >
+                      {/* Top Row: Thumbnail, Details, and Delete Icon */}
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', overflow: 'hidden' }}>
+                          <img
+                            src={food.image}
+                            alt={food.name}
+                            style={{
+                              width: '44px',
+                              height: '44px',
+                              borderRadius: '8px',
+                              objectFit: 'cover',
+                              flexShrink: 0,
+                              border: `2px solid ${RIBBON_COLORS[index % RIBBON_COLORS.length]}`
+                            }}
+                          />
+                          <div style={{ overflow: 'hidden' }}>
+                            <div
+                              style={{
+                                fontWeight: 700,
+                                fontSize: '0.88rem',
+                                color: 'var(--text-main)',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis'
+                              }}
+                            >
+                              {food.name}
+                            </div>
+                            <div style={{ fontSize: '0.75rem', color: 'var(--accent-green)', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>
+                              {itemCalories} kcal <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>({pct}%)</span>
+                            </div>
+                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                              {Math.round(food.macros.protein * s * 10) / 10}g P • {Math.round(food.macros.fat * s * 10) / 10}g F
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Quick Dismiss Button */}
+                        <button
+                          type="button"
+                          onClick={() => removeFromPlate(item.foodId)}
+                          title={`Remove ${food.name} from plate`}
+                          aria-label={`Remove ${food.name}`}
+                          style={{
+                            width: '28px',
+                            height: '28px',
+                            borderRadius: '6px',
+                            border: '1px solid transparent',
+                            backgroundColor: 'transparent',
+                            color: 'var(--text-muted)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            flexShrink: 0,
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.color = '#ef4444';
+                            e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.12)';
+                            e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.color = 'var(--text-muted)';
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                            e.currentTarget.style.borderColor = 'transparent';
+                          }}
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                          </svg>
+                        </button>
+                      </div>
+
+                      {/* Bottom Row: Quick Portion Steppers */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          backgroundColor: 'var(--bg-card)',
+                          border: '1px solid var(--border-color)',
+                          borderRadius: '8px',
+                          padding: '2px 4px'
+                        }}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => stepPlateGrams(item.foodId, -25)}
+                          title="Decrease portion (-25g)"
+                          aria-label="Decrease portion 25g"
+                          style={{
+                            width: '26px',
+                            height: '26px',
+                            borderRadius: '6px',
+                            border: 'none',
+                            backgroundColor: 'var(--bg-surface)',
+                            color: 'var(--text-main)',
+                            cursor: 'pointer',
+                            fontWeight: 800,
+                            fontSize: '0.95rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'background-color 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--border-color)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-surface)'; }}
+                        >
+                          -
+                        </button>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                          <input
+                            type="number"
+                            min="10"
+                            max="1000"
+                            step="5"
+                            value={item.grams}
+                            onChange={(e) => updatePlateGrams(item.foodId, e.target.value)}
+                            aria-label={`Portion grams for ${food.name}`}
+                            style={{
+                              width: '56px',
+                              padding: '0.2rem 0.1rem',
+                              border: 'none',
+                              backgroundColor: 'transparent',
+                              color: 'var(--text-main)',
+                              textAlign: 'center',
+                              fontWeight: 700,
+                              fontSize: '0.88rem',
+                              fontFamily: 'var(--font-mono)'
+                            }}
+                          />
+                          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>g</span>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => stepPlateGrams(item.foodId, 25)}
+                          title="Increase portion (+25g)"
+                          aria-label="Increase portion 25g"
+                          style={{
+                            width: '26px',
+                            height: '26px',
+                            borderRadius: '6px',
+                            border: 'none',
+                            backgroundColor: 'var(--bg-surface)',
+                            color: 'var(--text-main)',
+                            cursor: 'pointer',
+                            fontWeight: 800,
+                            fontSize: '0.95rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'background-color 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--border-color)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-surface)'; }}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Sidebar to add ingredients */}
