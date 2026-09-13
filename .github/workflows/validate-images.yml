@@ -5,16 +5,16 @@ on:
     branches:
       - main
     paths:
-      - 'src/data/foods.json'
-      - 'scripts/validate-images.mjs'
-      - 'public/images/**'
+      - 'NutriVisual/src/data/foods.json'
+      - 'NutriVisual/scripts/validate-images.mjs'
+      - 'NutriVisual/public/images/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'src/data/foods.json'
-      - 'scripts/validate-images.mjs'
-      - 'public/images/**'
+      - 'NutriVisual/src/data/foods.json'
+      - 'NutriVisual/scripts/validate-images.mjs'
+      - 'NutriVisual/public/images/**'
   schedule:
     - cron: '0 4 * * 1' # Every Monday at 4:00 AM UTC (regular link-rot audit)
   workflow_dispatch:
@@ -53,11 +53,14 @@ jobs:
         with:
           node-version: 22.x
           cache: 'npm'
+          cache-dependency-path: NutriVisual/package-lock.json
 
       - name: Install dependencies
+        working-directory: NutriVisual
         run: npm ci
 
       - name: Run image verification
+        working-directory: NutriVisual
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
