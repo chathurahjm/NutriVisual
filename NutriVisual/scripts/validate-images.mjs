@@ -18,6 +18,9 @@
  *   node scripts/validate-images.mjs --quick     # Tier 1 only (instant, 0 cost)
  *   node scripts/validate-images.mjs --food=eggplant # Check single food
  *   node scripts/validate-images.mjs --all       # Force re-verify all bypassing cache
+ * 
+ * GitHub Actions Workflow:
+ *   .github/workflows/validate-images.yml
  */
 
 import fs from 'fs';
