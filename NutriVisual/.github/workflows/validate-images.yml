@@ -1,0 +1,86 @@
+name: Food Image Verification
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/data/foods.json'
+      - 'scripts/validate-images.mjs'
+      - 'public/images/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/data/foods.json'
+      - 'scripts/validate-images.mjs'
+      - 'public/images/**'
+  schedule:
+    - cron: '0 4 * * 1' # Every Monday at 4:00 AM UTC (regular link-rot audit)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Audit mode'
+        required: true
+        type: choice
+        default: 'quick'
+        options:
+          - 'quick'
+          - 'full'
+          - 'food'
+      food_id:
+        description: 'Specific food ID to audit (if mode is "food")'
+        required: false
+        type: string
+        default: ''
+      strict:
+        description: 'Strict mode (fail on shared image collisions)'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  validate-images:
+    name: Verify Food Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run image verification
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          FLAGS=""
+          
+          # Handle workflow_dispatch manual options
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.mode }}" = "quick" ]; then
+              FLAGS="$FLAGS --quick"
+            elif [ "${{ inputs.mode }}" = "food" ] && [ -n "${{ inputs.food_id }}" ]; then
+              FLAGS="$FLAGS --food=${{ inputs.food_id }}"
+            fi
+            
+            if [ "${{ inputs.strict }}" = "false" ]; then
+              FLAGS="$FLAGS --warn-only"
+            fi
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            # Weekly schedule checks all links for network reachability & dead URLs
+            FLAGS="--quick --warn-only"
+          else
+            # Default for push / pull_request: fast Tier 1 network check with collision warnings
+            FLAGS="--quick --warn-only"
+          fi
+
+          echo "Running image audit with flags: $FLAGS"
+          node scripts/validate-images.mjs $FLAGS

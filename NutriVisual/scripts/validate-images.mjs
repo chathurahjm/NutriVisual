@@ -390,6 +390,66 @@ async function runImageValidation() {
 
   const hasFatalFailures = networkFailures.length > 0 || (!WARN_ONLY && duplicateCollisions.length > 0) || semanticFailures.length > 0;
 
+  // --- GITHUB STEP SUMMARY ---
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    try {
+      let md = `## 🥑 NutriVisual Food Image Verification Report\n\n`;
+      if (hasFatalFailures) {
+        md += `> **Status**: ❌ **Failed** - Issues detected that require attention.\n\n`;
+      } else if (duplicateCollisions.length > 0) {
+        md += `> **Status**: ⚠️ **Passed with Warnings** - Reachability & semantic health verified, but image collisions were detected.\n\n`;
+      } else {
+        md += `> **Status**: ✅ **All Checks Passed** - Food images are reachable, distinct, and verified.\n\n`;
+      }
+
+      md += `| Metric | Value |\n`;
+      md += `| :--- | :--- |\n`;
+      md += `| **Total Foods Audited** | \`${foods.length}\` |\n`;
+      md += `| **Reachable URLs (200 OK)** | \`${networkResults.length - networkFailures.length}/${networkResults.length}\` |\n`;
+      md += `| **Unauthorized Image Collisions** | \`${duplicateCollisions.length}\` |\n`;
+      if (canRunAI) {
+        md += `| **AI Semantic Matches** | \`${aiVerifiedCount}\` |\n`;
+        md += `| **AI Semantic Mismatches** | \`${aiFailedCount}\` |\n`;
+      }
+      md += `\n`;
+
+      if (networkFailures.length > 0) {
+        md += `### ❌ Unreachable / Invalid URLs\n\n`;
+        md += `| Food | ID | Image URL | Error |\n| :--- | :--- | :--- | :--- |\n`;
+        for (const f of networkFailures) {
+          md += `| **${f.food.name}** | \`${f.food.id}\` | [Link](${f.food.image}) | ${f.reason} |\n`;
+        }
+        md += `\n`;
+      }
+
+      if (duplicateCollisions.length > 0) {
+        md += `### ⚠️ Shared Image Collisions\n\n`;
+        for (const col of duplicateCollisions) {
+          const foodNames = col.foods.map(name => `\`${name}\``).join(' ↔ ');
+          md += `- **Foods**: ${foodNames} ([Image](${col.url}))\n`;
+          for (const pair of col.pairs) {
+            md += `  - ⚠️ \`${pair}\`\n`;
+          }
+        }
+        md += `\n`;
+      }
+
+      if (semanticFailures.length > 0) {
+        md += `### ❌ AI Semantic Mismatches\n\n`;
+        md += `| Food | ID | Detected Subject | Reason |\n| :--- | :--- | :--- | :--- |\n`;
+        for (const sf of semanticFailures) {
+          md += `| **${sf.food.name}** | \`${sf.food.id}\` | ${sf.result.detectedFood} | ${sf.result.reason} |\n`;
+        }
+        md += `\n`;
+      }
+
+      fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md, 'utf8');
+    } catch (err) {
+      console.warn('Could not write GitHub step summary:', err.message);
+    }
+  }
+
+  // --- EXIT CODE ---
   if (hasFatalFailures) {
     console.log('\n❌ AUDIT FAILED! Please resolve the issues listed above before deploying.\n');
     process.exit(1);
