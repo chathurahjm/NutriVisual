@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import foodsData from '../data/foods.json';
 import { trackMissedSearch } from '../utils/trackMissedSearch.js';
+import { findSmartMatch, parseSearchQuery } from '../utils/foodSearch.js';
 
 /**
  * Helper to parse numeric micro values like "363 mg" -> 363
@@ -41,24 +42,22 @@ export default function SatietyMatrix({ onSelectFood }) {
     const q = searchQuery.trim().toLowerCase();
     if (q.length < 3) return;
 
-    const targetQ = {
-      'tomatoe': 'tomato', 'tomatos': 'tomato', 'tomatoes': 'tomato', 'tamato': 'tomato',
-      'avacado': 'avocado', 'avacados': 'avocado', 'avocados': 'avocado',
-      'salman': 'salmon', 'potatos': 'potato', 'potatoe': 'potato',
-      'brocoli': 'broccoli', 'brocolli': 'broccoli', 'bluebery': 'blueberries',
-      'yogert': 'yogurt', 'yoghurt': 'yogurt', 'spinich': 'spinach'
-    }[q] || q;
+    const smart = findSmartMatch(q, foodsData);
+    const { cleanQuery } = parseSearchQuery(q);
+    const cleanQ = cleanQuery.toLowerCase();
 
-    const hasMatch = foodsData.some(
-      (f) =>
-        f.name.toLowerCase().includes(targetQ) ||
-        f.category.toLowerCase().includes(targetQ) ||
-        (f.tags && f.tags.some((t) => t.toLowerCase().includes(targetQ)))
-    );
+    const hasMatch =
+      Boolean(smart) ||
+      foodsData.some(
+        (f) =>
+          f.name.toLowerCase().includes(cleanQ) ||
+          f.category.toLowerCase().includes(cleanQ) ||
+          (f.tags && f.tags.some((t) => t.toLowerCase().includes(cleanQ)))
+      );
 
     if (!hasMatch) {
       const timer = setTimeout(() => {
-        trackMissedSearch(q, 'Satiety Matrix Search Bar');
+        trackMissedSearch(cleanQ || q, 'Satiety Matrix Search Bar');
       }, 1800);
       return () => clearTimeout(timer);
     }
@@ -103,27 +102,37 @@ export default function SatietyMatrix({ onSelectFood }) {
     });
   }, []);
 
-  const SATIETY_ALIASES = {
-    'tomatoe': 'tomato', 'tomatos': 'tomato', 'tomatoes': 'tomato', 'tamato': 'tomato',
-    'avacado': 'avocado', 'avacados': 'avocado', 'avocados': 'avocado',
-    'salman': 'salmon', 'potatos': 'potato', 'potatoe': 'potato',
-    'brocoli': 'broccoli', 'brocolli': 'broccoli', 'bluebery': 'blueberries',
-    'yogert': 'yogurt', 'yoghurt': 'yogurt', 'spinich': 'spinach'
-  };
+  const smartMatch = searchQuery.trim() ? findSmartMatch(searchQuery, processedFoods) : null;
+  const { cleanQuery } = parseSearchQuery(searchQuery);
+  const cleanQ = cleanQuery.toLowerCase();
+  const suggestedNameLower = smartMatch ? smartMatch.suggestedName.toLowerCase() : '';
+  const suggestedIdLower = smartMatch ? smartMatch.suggestedId.toLowerCase() : '';
 
-  const normalizedSatietyQ = searchQuery.trim().toLowerCase();
-  const satietySuggestion = SATIETY_ALIASES[normalizedSatietyQ] || null;
+  // Whether to show suggestion pill
+  const showSuggestion = Boolean(
+    smartMatch &&
+    (smartMatch.isTypo ||
+     smartMatch.hasQuantity ||
+     smartMatch.matchType === 'synonym' ||
+     (searchQuery.trim() && !smartMatch.suggestedName.toLowerCase().startsWith(cleanQ)))
+  );
 
   // Filtered dataset based on user controls
   const filteredFoods = processedFoods.filter((f) => {
     if (selectedQuadrant !== 'All' && f.quadrant !== selectedQuadrant) return false;
-    if (searchQuery) {
-      const q = normalizedSatietyQ;
-      const target = satietySuggestion || q;
+    if (searchQuery.trim()) {
+      const nameLower = f.name.toLowerCase();
+      const catLower = f.category.toLowerCase();
+      const idLower = f.id.toLowerCase();
+      const rawQ = searchQuery.trim().toLowerCase();
+
       const match =
-        f.name.toLowerCase().includes(q) ||
-        f.category.toLowerCase().includes(q) ||
-        (satietySuggestion && (f.name.toLowerCase().includes(target) || f.category.toLowerCase().includes(target)));
+        nameLower.includes(cleanQ) ||
+        catLower.includes(cleanQ) ||
+        idLower.includes(cleanQ) ||
+        nameLower.includes(rawQ) ||
+        (smartMatch && (idLower === suggestedIdLower || nameLower.includes(suggestedNameLower)));
+
       if (!match) return false;
     }
     return true;
@@ -280,21 +289,48 @@ export default function SatietyMatrix({ onSelectFood }) {
           ))}
         </div>
 
-        <input
-          type="text"
-          placeholder="🔍 Search food..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          style={{
-            padding: '0.45rem 0.9rem',
-            borderRadius: '20px',
-            border: '1px solid var(--border-color)',
-            backgroundColor: 'var(--bg-surface)',
-            color: 'var(--text-main)',
-            fontSize: '0.85rem',
-            width: '200px'
-          }}
-        />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <input
+            type="text"
+            placeholder="🔍 Search food..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{
+              padding: '0.45rem 0.9rem',
+              borderRadius: '20px',
+              border: '1px solid var(--border-color)',
+              backgroundColor: 'var(--bg-surface)',
+              color: 'var(--text-main)',
+              fontSize: '0.85rem',
+              width: '200px'
+            }}
+          />
+          {showSuggestion && smartMatch && (
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery(smartMatch.suggestedName);
+                setSelectedFoodId(smartMatch.suggestedId);
+              }}
+              style={{
+                backgroundColor: 'var(--accent-green-glow)',
+                border: '1px solid var(--accent-green)',
+                color: 'var(--accent-green)',
+                borderRadius: '16px',
+                padding: '0.25rem 0.65rem',
+                fontSize: '0.76rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.25rem',
+                animation: 'fadeIn 0.2s ease-out'
+              }}
+            >
+              💡 Did you mean <u style={{ textUnderlineOffset: '2px' }}>{smartMatch.suggestedName}</u>?
+            </button>
+          )}
+        </div>
       </div>
 
       {/* MODE 1: VISUAL SCATTER CHART */}

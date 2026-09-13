@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import foodsData from '../data/foods.json';
 import BiohackRadarChart from './BiohackRadarChart.jsx';
 import SatietyMatrix from './SatietyMatrix.jsx';
 import InfographicGeneratorModal from './InfographicGeneratorModal.jsx';
 import { getBiohackData } from '../data/biohackData.js';
 import { trackMissedSearch } from '../utils/trackMissedSearch.js';
+import { parseSearchQuery, findSmartMatch, filterFoodsWithSmartSearch } from '../utils/foodSearch.js';
 
 const RIBBON_COLORS = [
   '#10b981', '#06b6d4', '#f59e0b', '#ec4899', '#8b5cf6',
@@ -23,28 +24,24 @@ export default function NutriVisualApp() {
     const q = searchQuery.trim().toLowerCase();
     if (q.length < 3) return;
 
-    // Check if any food matches the raw query (or its alias) across name, category, or tags
-    const targetQ = {
-      'tomatoe': 'tomato', 'tomatos': 'tomato', 'tomatoes': 'tomato', 'tamato': 'tomato', 'tamatoe': 'tomato',
-      'avacado': 'avocado', 'avacados': 'avocado', 'avocados': 'avocado',
-      'salman': 'salmon', 'salmons': 'salmon',
-      'potatos': 'potato', 'potatoe': 'potato', 'potatoes': 'potato',
-      'brocoli': 'broccoli', 'brocolli': 'broccoli',
-      'bluebery': 'blueberries', 'blueberry': 'blueberries',
-      'yogert': 'yogurt', 'yoghurt': 'yogurt', 'spinich': 'spinach'
-    }[q] || q;
+    // Check if query or its extracted food term / fuzzy match resolves to an existing whole food
+    const smart = findSmartMatch(q, foodsData);
+    const { cleanQuery } = parseSearchQuery(q);
+    const cleanQ = cleanQuery.toLowerCase();
 
-    const hasMatch = foodsData.some(
-      (f) =>
-        f.name.toLowerCase().includes(targetQ) ||
-        f.category.toLowerCase().includes(targetQ) ||
-        (f.tags && f.tags.some((t) => t.toLowerCase().includes(targetQ)))
-    );
+    const hasMatch =
+      Boolean(smart) ||
+      foodsData.some(
+        (f) =>
+          f.name.toLowerCase().includes(cleanQ) ||
+          f.category.toLowerCase().includes(cleanQ) ||
+          (f.tags && f.tags.some((t) => t.toLowerCase().includes(cleanQ)))
+      );
 
     if (!hasMatch) {
       // 1.8s debounce so user finishes typing before dispatching silent background notification
       const timer = setTimeout(() => {
-        trackMissedSearch(q, 'Main Explorer Search Bar');
+        trackMissedSearch(cleanQ || q, 'Main Explorer Search Bar');
       }, 1800);
       return () => clearTimeout(timer);
     }
@@ -73,62 +70,37 @@ export default function NutriVisualApp() {
     return match ? parseFloat(match[0]) : 0;
   };
 
-  // Common typo and variant alias map for fuzzy matching & suggestions
-  const SEARCH_ALIASES = {
-    'tomatoe': 'tomato',
-    'tomatos': 'tomato',
-    'tomatoes': 'tomato',
-    'tamato': 'tomato',
-    'tamatoe': 'tomato',
-    'avacado': 'avocado',
-    'avacados': 'avocado',
-    'avocados': 'avocado',
-    'salman': 'salmon',
-    'salmons': 'salmon',
-    'potatos': 'potato',
-    'potatoe': 'potato',
-    'potatoes': 'potato',
-    'brocoli': 'broccoli',
-    'brocolli': 'broccoli',
-    'bluebery': 'blueberries',
-    'blueberry': 'blueberries',
-    'yogert': 'yogurt',
-    'yoghurt': 'yogurt',
-    'spinich': 'spinach'
-  };
+  // Alphabetically sorted food list for select dropdowns
+  const sortedFoods = useMemo(() => {
+    return [...foodsData].sort((a, b) => a.name.localeCompare(b.name));
+  }, []);
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
-  const suggestionTerm = SEARCH_ALIASES[normalizedQuery] || null;
+  const smartMatch = searchQuery.trim() ? findSmartMatch(searchQuery, sortedFoods) : null;
 
-  // Alphabetically sorted food list for select dropdowns
-  const sortedFoods = [...foodsData].sort((a, b) => a.name.localeCompare(b.name));
+  // Whether to show the "Did you search for / Did you mean...?" suggestion bar
+  const showSuggestion = Boolean(
+    smartMatch &&
+    (smartMatch.isTypo ||
+     smartMatch.hasQuantity ||
+     smartMatch.matchType === 'synonym' ||
+     (normalizedQuery && !smartMatch.suggestedName.toLowerCase().startsWith(normalizedQuery)))
+  );
 
-  // Filtered foods for search and outcome filters (with alias resolution)
-  const filteredFoods = sortedFoods.filter((f) => {
-    const q = normalizedQuery;
-    const resolvedQ = suggestionTerm || q;
+  // Filtered foods for search and outcome filters (with smart search & typo tolerance)
+  const filteredFoods = useMemo(() => {
+    return filterFoodsWithSmartSearch(sortedFoods, searchQuery, outcomeFilter, parseNum);
+  }, [sortedFoods, searchQuery, outcomeFilter]);
 
-    const matchesSearch =
-      !q ||
-      f.name.toLowerCase().includes(q) ||
-      f.category.toLowerCase().includes(q) ||
-      f.tags.some((t) => t.toLowerCase().includes(q)) ||
-      (suggestionTerm && (
-        f.name.toLowerCase().includes(suggestionTerm) ||
-        f.category.toLowerCase().includes(suggestionTerm) ||
-        f.tags.some((t) => t.toLowerCase().includes(suggestionTerm))
-      ));
-
-    if (!matchesSearch) return false;
-
-    if (outcomeFilter === 'bp') return parseNum(f.micros.potassium) >= 300;
-    if (outcomeFilter === 'brain') return parseNum(f.micros.magnesium) >= 50 || f.tags.some(t => t.includes('Omega-3') || t.includes('Brain'));
-    if (outcomeFilter === 'gut') return parseNum(f.micros.fiber) >= 3.0;
-    if (outcomeFilter === 'muscle') return f.macros.protein >= 20;
-    if (outcomeFilter === 'keto') return f.macros.fat >= 12 && f.macros.carbs <= 5;
-
-    return true;
-  });
+  const handleApplySuggestion = (match) => {
+    if (!match) return;
+    setSearchQuery(match.suggestedName);
+    setSelectedFoodId(match.suggestedId);
+    if (match.hasQuantity && match.quantity) {
+      setPortionGrams(match.quantity);
+    }
+    setOutcomeFilter('');
+  };
 
   const activeFood = foodsData.find((f) => f.id === selectedFoodId) || foodsData[0];
   const compareFood1 = foodsData.find((f) => f.id === compareFoodId1) || foodsData[0];
@@ -381,8 +353,8 @@ export default function NutriVisualApp() {
                 }}
               />
 
-              {/* "Did you mean..." intelligent typo suggestion bar */}
-              {suggestionTerm && (
+              {/* Intelligent "Did you search for...?" suggestion bar (handles typos, quantities, and synonyms) */}
+              {showSuggestion && smartMatch && (
                 <div
                   style={{
                     marginTop: '0.5rem',
@@ -399,11 +371,11 @@ export default function NutriVisualApp() {
                     animation: 'fadeIn 0.2s ease-out'
                   }}
                 >
-                  <div style={{ color: 'var(--text-main)' }}>
-                    <span>💡 Did you mean </span>
+                  <div style={{ color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.35rem', flexWrap: 'wrap' }}>
+                    <span>💡 Did you search for </span>
                     <button
                       type="button"
-                      onClick={() => setSearchQuery(suggestionTerm)}
+                      onClick={() => handleApplySuggestion(smartMatch)}
                       style={{
                         background: 'none',
                         border: 'none',
@@ -415,13 +387,14 @@ export default function NutriVisualApp() {
                         fontSize: '0.88rem'
                       }}
                     >
-                      {suggestionTerm}
+                      {smartMatch.suggestedName}
+                      {smartMatch.hasQuantity && smartMatch.quantity ? ` (${smartMatch.quantity}g)` : ''}
                     </button>
                     <span>? Showing matching whole foods below.</span>
                   </div>
                   <button
                     type="button"
-                    onClick={() => setSearchQuery(suggestionTerm)}
+                    onClick={() => handleApplySuggestion(smartMatch)}
                     style={{
                       backgroundColor: 'var(--accent-green)',
                       color: '#ffffff',
@@ -433,7 +406,9 @@ export default function NutriVisualApp() {
                       cursor: 'pointer'
                     }}
                   >
-                    Search {suggestionTerm} →
+                    {smartMatch.hasQuantity && smartMatch.quantity
+                      ? `View ${smartMatch.suggestedName} (${smartMatch.quantity}g) →`
+                      : `Search ${smartMatch.suggestedName} →`}
                   </button>
                 </div>
               )}
@@ -672,29 +647,86 @@ export default function NutriVisualApp() {
           <div>
             <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem' }}>🥦 Quick Select Food</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '520px', overflowY: 'auto' }}>
-              {filteredFoods.map((food) => (
+              {filteredFoods.length > 0 ? (
+                filteredFoods.map((food) => {
+                  const isSelected = food.id === selectedFoodId;
+                  const isSmartMatchedFood = smartMatch && smartMatch.suggestedId === food.id;
+                  return (
+                    <div
+                      key={food.id}
+                      onClick={() => {
+                        setSelectedFoodId(food.id);
+                        if (smartMatch && smartMatch.hasQuantity && smartMatch.quantity) {
+                          setPortionGrams(smartMatch.quantity);
+                        }
+                      }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        backgroundColor: isSelected ? 'var(--bg-card-hover)' : 'var(--bg-card)',
+                        border: `1px solid ${isSelected ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        padding: '0.75rem',
+                        borderRadius: '12px',
+                        cursor: 'pointer',
+                        boxShadow: 'var(--shadow-card)',
+                        transition: 'all 0.15s ease'
+                      }}
+                    >
+                      <img src={food.image} alt={food.name} style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }} />
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.4rem', justifyContent: 'space-between' }}>
+                          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{food.name}</span>
+                          {isSmartMatchedFood && smartMatch.hasQuantity && smartMatch.quantity && (
+                            <span style={{ fontSize: '0.7rem', backgroundColor: 'var(--accent-green-glow)', color: 'var(--accent-green)', padding: '0.15rem 0.45rem', borderRadius: '6px', fontWeight: 700, flexShrink: 0 }}>
+                              {smartMatch.quantity}g
+                            </span>
+                          )}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal/100g</div>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
                 <div
-                  key={food.id}
-                  onClick={() => setSelectedFoodId(food.id)}
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    backgroundColor: food.id === selectedFoodId ? 'var(--bg-card-hover)' : 'var(--bg-card)',
-                    border: `1px solid ${food.id === selectedFoodId ? 'var(--accent-green)' : 'var(--border-color)'}`,
-                    padding: '0.75rem',
+                    textAlign: 'center',
+                    padding: '2.5rem 1.25rem',
+                    backgroundColor: 'var(--bg-card)',
                     borderRadius: '12px',
-                    cursor: 'pointer',
-                    boxShadow: 'var(--shadow-card)',
+                    border: '1px dashed var(--border-color)',
+                    color: 'var(--text-muted)'
                   }}
                 >
-                  <img src={food.image} alt={food.name} style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }} />
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)' }}>{food.name}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{food.calories} kcal/100g</div>
+                  <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🥦</div>
+                  <div style={{ fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.5rem', fontSize: '0.95rem' }}>
+                    No whole foods found
                   </div>
+                  <p style={{ fontSize: '0.8rem', lineHeight: '1.4', margin: '0 0 1.25rem 0' }}>
+                    {searchQuery ? `"${searchQuery}" is not in our database yet.` : 'No foods match this filter.'}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery('');
+                      setOutcomeFilter('');
+                    }}
+                    style={{
+                      backgroundColor: 'var(--bg-surface)',
+                      border: '1px solid var(--accent-green)',
+                      color: 'var(--accent-green)',
+                      fontWeight: 700,
+                      padding: '0.45rem 0.9rem',
+                      borderRadius: '8px',
+                      fontSize: '0.8rem',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Clear Filter / Search
+                  </button>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
