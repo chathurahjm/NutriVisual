@@ -242,6 +242,16 @@ export const biohackDatabase = {
       metabolism: 'Only 25 kcal/100g — the ultimate low-carb volume replacement for white rice.'
     }
   },
+  'marshmallow': {
+    scores: { brain: 35, muscle: 40, gut: 20, heart: 30, metabolism: 25 },
+    reasons: {
+      brain: 'Rapid-digesting sucrose provides an acute surge of glucose to neurons, but lacks neuroprotective antioxidants or sustained energy.',
+      muscle: 'High-glycemic simple carbohydrates stimulate rapid insulin release to drive glycogen replenishment post-workout, though protein content is minimal.',
+      gut: 'Contains negligible prebiotic fiber (0.1g) to nourish beneficial short-chain fatty acid-producing colonic gut microbiota.',
+      heart: 'Minimal electrolyte density (5mg potassium per 100g) and high simple sugar content offer negligible cardiovascular support.',
+      metabolism: 'Rapid postprandial glucose absorption triggers strong insulin secretion, challenging metabolic flexibility if consumed in excess.'
+    }
+  },
 
   // --- HEALTHY FATS & NUTS ---
   'avocado': {

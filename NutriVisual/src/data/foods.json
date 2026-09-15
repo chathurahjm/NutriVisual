@@ -3585,5 +3585,33 @@
       "Lycopene Rich",
       "Hydration"
     ]
+  },
+  {
+    "id": "marshmallow",
+    "name": "Marshmallow",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1518646455738-c17d10184f5e?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 318,
+    "macros": {
+      "fat": 0.2,
+      "carbs": 81.3,
+      "protein": 1.8
+    },
+    "micros": {
+      "potassium": "5 mg",
+      "magnesium": "2 mg",
+      "fiber": "0.1 g"
+    },
+    "benefits": [
+      "Rapid Glycemic Energy",
+      "Fat-Free Confectionery",
+      "Fast Glycogen Replenishment"
+    ],
+    "tags": [
+      "High Glycemic",
+      "Fast Carbs",
+      "Confectionery"
+    ]
   }
 ]
