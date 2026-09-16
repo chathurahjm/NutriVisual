@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import AdSenseHead from '../../components/AdSenseHead.astro';
 import CookieConsent from '../../components/CookieConsent.astro';
 import { getCollection } from 'astro:content';
 import { buildCollectionPageSchema, buildBreadcrumbSchema } from '../../utils/schemaBuilder';
@@ -75,6 +76,8 @@ const allPosts = [
     <!-- Google Rich Snippet Schemas -->
     <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <AdSenseHead />
 
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>

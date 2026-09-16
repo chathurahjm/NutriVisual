@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import AdSenseHead from '../../components/AdSenseHead.astro';
 import CookieConsent from '../../components/CookieConsent.astro';
 import { getCollection, render } from 'astro:content';
 import foodsData from '../../data/foods.json';
@@ -95,6 +96,8 @@ const articleSchema = buildArticleSchema({
         "uploadDate": "2026-07-22"
       })} />
     )}
+
+    <AdSenseHead />
 
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>

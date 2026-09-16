@@ -1,15 +1,17 @@
 ---
 import '../../styles/global.css';
 import CookieConsent from '../../components/CookieConsent.astro';
+import AdSenseHead from '../../components/AdSenseHead.astro';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
+import { getBiohackData } from '../../data/biohackData.js';
 import { buildNutritionProductSchema, buildBreadcrumbSchema, buildHowToSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
 import { popularPairs } from '../../utils/popularPairs';
 
 export async function getStaticPaths() {
   const paths = [];
 
-  // Generate paths for popular predefined pairs
+  // Generate paths exclusively for high-intent, curated pairs
   popularPairs.forEach(([id1, id2]) => {
     const f1 = foodsData.find(f => f.id === id1);
     const f2 = foodsData.find(f => f.id === id2);
@@ -21,26 +23,12 @@ export async function getStaticPaths() {
     }
   });
 
-  // Also auto-generate cross-category top pairs
-  const baseFoods = foodsData.slice(0, 25);
-  for (let i = 0; i < baseFoods.length; i++) {
-    for (let j = i + 1; j < Math.min(i + 4, baseFoods.length); j++) {
-      const f1 = baseFoods[i];
-      const f2 = baseFoods[j];
-      const pairKey = `${f1.id}-vs-${f2.id}`;
-      if (!paths.some(p => p.params.pair === pairKey)) {
-        paths.push({
-          params: { pair: pairKey },
-          props: { food1: f1, food2: f2 }
-        });
-      }
-    }
-  }
-
   return paths;
 }
 
 const { food1, food2 } = Astro.props;
+const biohack1 = getBiohackData(food1);
+const biohack2 = getBiohackData(food2);
 
 // Quick-win target custom metadata overrides for high-impression search terms
 const pairSlug = `${food1.id}-vs-${food2.id}`;
@@ -189,6 +177,8 @@ const relatedSwaps = popularPairs
     <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
+    <AdSenseHead />
+
     <!-- Early Theme Script -->
     <script is:inline>
       (function() {
@@ -246,17 +236,17 @@ const relatedSwaps = popularPairs
 
       {/* Dynamic Comparative Swap Analysis Guide */}
       <section class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
-        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
-          🔬 Comparative Analysis: {food1.name} vs. {food2.name}
+        <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; letter-spacing: -0.5px;">
+          🔬 Comparative Science: {food1.name} vs. {food2.name}
         </h2>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; color: var(--text-main); line-height: 1.7; font-size: 0.98rem;">
+        <div style="display: flex; flex-direction: column; gap: 1.75rem; color: var(--text-main); line-height: 1.7; font-size: 0.98rem;">
           <div>
             <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
-              1. Caloric Density & Volume Swap Mechanics
+              1. Caloric Density & Satiety Volume Mechanics
             </h3>
             <p style="color: var(--text-muted); margin: 0;">
               Comparing 100g of <strong>{food1.name}</strong> ({food1.calories} kcal) to 100g of <strong>{food2.name}</strong> ({food2.calories} kcal) reveals a caloric spread of <strong>{calDiff} kcal per 100g</strong>. 
-              Swapping higher-density {higherCalFood.name} for lower-density {lowerCalFood.name} allows you to increase physical meal volume while cutting energy intake, triggering stomach stretch receptors for prolonged fullness.
+              Swapping higher-density {higherCalFood.name} for lower-density {lowerCalFood.name} allows you to increase physical meal volume by {Math.round(((higherCalFood.calories / lowerCalFood.calories) - 1) * 100)}% for the exact same calorie expenditure, activating gastric mechanoreceptors and stimulating fullness hormones peptide YY (PYY) and GLP-1.
             </p>
           </div>
 
@@ -265,18 +255,109 @@ const relatedSwaps = popularPairs
               2. Macronutrient & Protein Quality Trade-offs
             </h3>
             <p style="color: var(--text-muted); margin: 0;">
-              {food1.name} provides {food1.macros.protein}g protein, {food1.macros.carbs}g carbs, and {food1.macros.fat}g fat, whereas {food2.name} offers {food2.macros.protein}g protein, {food2.macros.carbs}g carbs, and {food2.macros.fat}g fat. 
-              {food1.macros.protein > food2.macros.protein ? `${food1.name} offers a higher protein-to-calorie ratio, making it superior for muscle protein synthesis.` : `${food2.name} delivers a higher protein yield per serving, supporting metabolic recovery.`}
+              {food1.name} delivers {food1.macros.protein}g protein, {food1.macros.carbs}g carbs, and {food1.macros.fat}g fat, whereas {food2.name} supplies {food2.macros.protein}g protein, {food2.macros.carbs}g carbs, and {food2.macros.fat}g fat. 
+              {food1.macros.protein >= food2.macros.protein 
+                ? `${food1.name} provides ${Math.round((food1.macros.protein - food2.macros.protein) * 10) / 10}g more protein per 100g, yielding a higher thermic effect of food (TEF) and enhanced branched-chain amino acids for muscle protein synthesis.` 
+                : `${food2.name} delivers ${Math.round((food2.macros.protein - food1.macros.protein) * 10) / 10}g more protein per 100g, making it the more anabolic choice for tissue repair and nitrogen retention.`
+              }
             </p>
+          </div>
+
+          {/* 5-Dimension Biohack Comparison Matrix */}
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.75rem;">
+              3. 5-Pillar Biohack & Longevity Score Comparison
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+              {/* Brain */}
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; border-top: 3px solid #38bdf8;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem;">
+                  <span>🧠 Brain & Focus</span>
+                  <span>{food1.name}: <strong style="color: #38bdf8;">{biohack1.scores.brain}</strong> vs {food2.name}: <strong style="color: #38bdf8;">{biohack2.scores.brain}</strong></span>
+                </div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+                  <strong>{biohack1.scores.brain >= biohack2.scores.brain ? food1.name : food2.name}</strong> leads in cognitive support: {biohack1.scores.brain >= biohack2.scores.brain ? biohack1.reasons.brain : biohack2.reasons.brain}
+                </p>
+              </div>
+
+              {/* Muscle */}
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; border-top: 3px solid #f59e0b;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem;">
+                  <span>💪 Lean Muscle</span>
+                  <span>{food1.name}: <strong style="color: #f59e0b;">{biohack1.scores.muscle}</strong> vs {food2.name}: <strong style="color: #f59e0b;">{biohack2.scores.muscle}</strong></span>
+                </div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+                  <strong>{biohack1.scores.muscle >= biohack2.scores.muscle ? food1.name : food2.name}</strong> leads in muscle recovery: {biohack1.scores.muscle >= biohack2.scores.muscle ? biohack1.reasons.muscle : biohack2.reasons.muscle}
+                </p>
+              </div>
+
+              {/* Gut */}
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; border-top: 3px solid #10b981;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem;">
+                  <span>🌿 Gut Microbiome</span>
+                  <span>{food1.name}: <strong style="color: #10b981;">{biohack1.scores.gut}</strong> vs {food2.name}: <strong style="color: #10b981;">{biohack2.scores.gut}</strong></span>
+                </div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+                  <strong>{biohack1.scores.gut >= biohack2.scores.gut ? food1.name : food2.name}</strong> leads in digestive motility: {biohack1.scores.gut >= biohack2.scores.gut ? biohack1.reasons.gut : biohack2.reasons.gut}
+                </p>
+              </div>
+
+              {/* Heart */}
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; border-top: 3px solid #ec4899;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem;">
+                  <span>🛡️ Heart & Circulation</span>
+                  <span>{food1.name}: <strong style="color: #ec4899;">{biohack1.scores.heart}</strong> vs {food2.name}: <strong style="color: #ec4899;">{biohack2.scores.heart}</strong></span>
+                </div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+                  <strong>{biohack1.scores.heart >= biohack2.scores.heart ? food1.name : food2.name}</strong> leads in cardiovascular support: {biohack1.scores.heart >= biohack2.scores.heart ? biohack1.reasons.heart : biohack2.reasons.heart}
+                </p>
+              </div>
+
+              {/* Metabolism */}
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; border-top: 3px solid #a855f7;">
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem;">
+                  <span>⚡ Metabolic Flexibility</span>
+                  <span>{food1.name}: <strong style="color: #a855f7;">{biohack1.scores.metabolism}</strong> vs {food2.name}: <strong style="color: #a855f7;">{biohack2.scores.metabolism}</strong></span>
+                </div>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
+                  <strong>{biohack1.scores.metabolism >= biohack2.scores.metabolism ? food1.name : food2.name}</strong> leads in metabolic speed: {biohack1.scores.metabolism >= biohack2.scores.metabolism ? biohack1.reasons.metabolism : biohack2.reasons.metabolism}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Which Food Should You Choose Decision Guide */}
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;">
+              4. Which Food Should You Choose? Decision Matrix
+            </h3>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem;">
+              <ul style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; margin: 0; padding-left: 1.2rem;">
+                <li><strong>For Fat Loss & Caloric Deficit:</strong> Choose <strong>{lowerCalFood.name}</strong> ({lowerCalFood.calories} kcal/100g) to maximize plate volume and extend satiety without exceeding caloric allotments.</li>
+                <li><strong>For Muscle Growth & Strength:</strong> Choose <strong>{food1.macros.protein >= food2.macros.protein ? food1.name : food2.name}</strong> ({Math.max(food1.macros.protein, food2.macros.protein)}g protein/100g) to hit your essential amino acid targets efficiently.</li>
+                <li><strong>For Keto or Low-Carb Diets:</strong> Choose <strong>{food1.macros.carbs <= food2.macros.carbs ? food1.name : food2.name}</strong> ({Math.min(food1.macros.carbs, food2.macros.carbs)}g carbs/100g) to maintain low baseline insulin secretion.</li>
+                <li><strong>For Longevity & Cellular Antioxidants:</strong> Review the higher 5-pillar biohack score above to target your personal longevity priority (mitochondrial health, cognitive resilience, or endothelial nitric oxide).</li>
+              </ul>
+            </div>
           </div>
 
           <div>
             <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.4rem;">
-              3. Practical Culinary Substitution & Meal Tips
+              5. Practical Culinary Substitution Guidelines
             </h3>
             <p style="color: var(--text-muted); margin: 0;">
-              When substituting {food2.name} for {food1.name} in daily recipes, adjust serving weights to maintain your target energy balance. For exact calorie matching, serve <strong>{swapGramsFood2} grams of {food2.name}</strong> to equal 100 grams of {food1.name}.
+              When substituting <strong>{food2.name}</strong> for <strong>{food1.name}</strong> in meal prep, serve exactly <strong>{swapGramsFood2} grams of {food2.name}</strong> to match the energy yield of 100g of {food1.name}. Consider moisture, texture, and sodium content when balancing recipes.
             </p>
+          </div>
+        </div>
+
+        {/* E-E-A-T Sourcing & Medical Literature Attribution */}
+        <div style="margin-top: 2rem; padding: 1rem 1.25rem; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 10px; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem;">
+          <div>
+            <strong>Standardized Data Sourcing:</strong> USDA FoodData Central SR Legacy & Foundation Foods • Atwater Specific Energy System.
+          </div>
+          <div style="font-style: italic;">
+            Medically Reviewed by NutriVisual Editorial Board • Educational Reference Standard
           </div>
         </div>
       </section>

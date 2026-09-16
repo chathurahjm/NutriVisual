@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import AdSenseHead from '../../components/AdSenseHead.astro';
 import CookieConsent from '../../components/CookieConsent.astro';
 import SocialShare from '../../components/SocialShare.astro';
 import ProteinVisualCalculator from '../../components/ProteinVisualCalculator.jsx';
@@ -89,6 +90,8 @@ const webAppSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+
+    <AdSenseHead />
   </head>
   <body className="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

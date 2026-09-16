@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import NutriVisualApp from '../components/NutriVisualApp.jsx';
 import CookieConsent from '../components/CookieConsent.astro';
+import AdSenseHead from '../components/AdSenseHead.astro';
 import { buildWebApplicationSchema, buildFAQPageSchema, buildOrganizationSchema } from '../utils/schemaBuilder';
 
 import posts from '../data/posts.json';
@@ -35,8 +36,11 @@ const featuredBlogs = [
     date: "July 21, 2026",
     readTime: "6 min read"
   },
-  posts[0],
-  posts[1]
+  posts[0], // Ghee vs Butter
+  posts[1], // Cognitive Performance Foods
+  posts[2], // Avocado Paradox Portion Trap
+  posts[3], // Greek Yogurt vs Tofu
+  posts[4]  // Magnesium Blood Pressure Shield
 ];
 
 const featuredSwaps = [
@@ -93,6 +97,8 @@ const featuredSwaps = [
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <AdSenseHead />
+
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>
       (function() {
@@ -386,6 +392,65 @@ const featuredSwaps = [
                 </div>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- E-E-A-T Scientific Integrity & Editorial Standards Section -->
+      <section style="padding: 4rem 0; border-top: 1px solid var(--border-color); background: var(--bg-surface-glow, transparent);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+          <div class="glass-card" style="padding: 2.5rem; border-left: 4px solid var(--accent-green);">
+            <span style="display: inline-block; background-color: var(--accent-green-glow); color: var(--accent-green); font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+              🛡️ Editorial Rigor & Scientific Standards
+            </span>
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.75rem; letter-spacing: -0.5px;">
+              Laboratory-Grade Nutrition Data You Can Trust
+            </h2>
+            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">
+              NutriVisual translates clinical biochemical research and laboratory food analysis into clear, actionable visual reference tools. We adhere to rigorous publishing standards governed by peer-reviewed evidence and verified nutritional databases.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem;">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏛️</div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">
+                  USDA FoodData Central Standards
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                  All macro and micronutrient baselines originate from the U.S. Department of Agriculture (USDA) Agricultural Research Service Foundation Foods and SR Legacy databases.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem;">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔬</div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">
+                  Peer-Reviewed Clinical Evidence
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                  Our 5-pillar biohacking metrics (Brain, Muscle, Gut, Heart, Metabolism) synthesize published meta-analyses from PubMed, PubMed Central, and clinical nutrition journals.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem;">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚖️</div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">
+                  Zero Commercial Bias
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                  NutriVisual operates independently with no food company sponsorships, supplement brand endorsements, or pharmaceutical funding. Our portion ratios are purely mathematical.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 1.5rem; font-size: 0.9rem;">
+              <span style="color: var(--text-muted);">
+                Learn more about our scientific team and data collection methods:
+              </span>
+              <div style="display: flex; gap: 1rem;">
+                <a href="/about/" style="color: var(--accent-green); font-weight: 700; text-decoration: none;">About Our Team & Methodology →</a>
+                <a href="/disclaimer/" style="color: var(--accent-green); font-weight: 700; text-decoration: none;">Medical Disclaimer →</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

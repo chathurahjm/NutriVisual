@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import AdSenseHead from '../components/AdSenseHead.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { buildOrganizationSchema, buildBreadcrumbSchema } from '../utils/schemaBuilder';
 
@@ -43,6 +44,8 @@ const breadcrumbSchema = buildBreadcrumbSchema([
     <!-- Google Rich Snippet Schemas -->
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <AdSenseHead />
 
     <script is:inline>
       (function() {

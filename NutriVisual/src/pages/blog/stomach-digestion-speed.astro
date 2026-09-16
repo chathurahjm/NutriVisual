@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import AdSenseHead from '../../components/AdSenseHead.astro';
 import CookieConsent from '../../components/CookieConsent.astro';
 import SocialShare from '../../components/SocialShare.astro';
 import { buildArticleSchema, buildBreadcrumbSchema, buildFAQPageSchema } from '../../utils/schemaBuilder';
@@ -67,6 +68,8 @@ const faqSchema = buildFAQPageSchema([
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="article" />
+
+    <AdSenseHead />
 
     <!-- Early Theme Script to prevent flash -->
     <script is:inline>

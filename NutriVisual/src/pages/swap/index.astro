@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import AdSenseHead from '../../components/AdSenseHead.astro';
 import CookieConsent from '../../components/CookieConsent.astro';
 import foodsData from '../../data/foods.json';
 import SocialShare from '../../components/SocialShare.astro';
@@ -107,6 +108,8 @@ const faqSchema = buildFAQPageSchema([
     <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <AdSenseHead />
 
     <script is:inline>
       (function() {
