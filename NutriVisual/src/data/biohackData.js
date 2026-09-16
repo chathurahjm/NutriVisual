@@ -272,6 +272,106 @@ export const biohackDatabase = {
       metabolism: 'Compact extruded durum wheat matrix digests more slowly than milled flour products, stabilizing postprandial glucose curves.'
     }
   },
+  'risotto': {
+    scores: { brain: 70, muscle: 80, gut: 60, heart: 65, metabolism: 60 },
+    reasons: {
+      brain: 'High-amylose arborio starch provides rapid cerebral energy; pairs synergistically with umami glutamates from broths and aged cheeses.',
+      muscle: 'Readily digestible amylopectin matrix facilitates efficient post-exercise glycogen replenishment and muscular recovery.',
+      gut: 'Gentle on sensitive digestive tracts with very low fermentable FODMAP residues when prepared with simple bone or vegetable stocks.',
+      heart: 'Virtually cholesterol-free base whose lipid impact is determined by heart-healthy olive oil additions rather than trans fats.',
+      metabolism: 'Starch gelatinization during slow simmering creates a smooth absorption curve, supporting sustained physical output.'
+    }
+  },
+  'gnocchi': {
+    scores: { brain: 68, muscle: 82, gut: 62, heart: 72, metabolism: 65 },
+    reasons: {
+      brain: 'Potato starch supplies steady glucose to the brain along with vitamin B6 to aid neurotransmitter dopamine and serotonin synthesis.',
+      muscle: 'Delivers 185mg potassium per 100g to maintain intracellular electrolyte balance and prevent muscle cramping during exertion.',
+      gut: 'Potato-derived resistant starch acts as a prebiotic substrate for colonic microbiome fermentation and short-chain fatty acid release.',
+      heart: 'Naturally sodium-free and fat-free raw composition supports healthy blood pressure regulation through potassium balance.',
+      metabolism: 'High satiety index from boiled potato starches blunts ghrelin secretion and satisfies appetite efficiently.'
+    }
+  },
+  'parmigiano-reggiano': {
+    scores: { brain: 75, muscle: 92, gut: 78, heart: 60, metabolism: 74 },
+    reasons: {
+      brain: 'Rich in free glutamate that enhances sensory neurosignaling and bioavailable tyrosine for dopamine synthesis.',
+      muscle: 'Powerhouse of complete casein protein (35.8g/100g) and branched-chain amino acids (leucine) triggering maximal mTOR muscle protein synthesis.',
+      gut: 'Natural 24+ month aging completely consumes lactose, making it easily digestible even for lactose-sensitive gut microbiomes.',
+      heart: 'Contains bioactive ACE-inhibitory peptides produced during fermentation that help modulate arterial blood pressure.',
+      metabolism: 'Zero-carb, high-protein density stimulates peptide YY and GLP-1 for exceptional long-lasting metabolic satiety.'
+    }
+  },
+  'fresh-mozzarella': {
+    scores: { brain: 72, muscle: 85, gut: 80, heart: 68, metabolism: 72 },
+    reasons: {
+      brain: 'High in choline and bioactive dairy phospholipids that reinforce neuronal cell membranes and myelination.',
+      muscle: 'Provides 22.2g of high-biological-value whey and casein proteins per 100g to accelerate muscular tissue repair.',
+      gut: 'Traditional water-buffalo and cow milk cultures impart live lactic acid bacteria that support intestinal flora balance.',
+      heart: 'Lower in sodium than aged cheeses, offering calcium (over 500mg) and conjugated linoleic acid (CLA) without excess salinity.',
+      metabolism: 'Balanced protein-to-fat ratio flattens insulin spikes and promotes steady postprandial fat oxidation.'
+    }
+  },
+  'burrata': {
+    scores: { brain: 70, muscle: 78, gut: 72, heart: 58, metabolism: 65 },
+    reasons: {
+      brain: 'High concentration of milk fat globule membranes (MFGM) providing sphingomyelin and phospholipids for neural processing.',
+      muscle: 'Delivers 16g of muscle-building dairy protein combined with caloric density ideal for athletes in high-energy phases.',
+      gut: 'Cultured fresh curd contains mild lactic acid ferments that gently populate the upper gastrointestinal tract.',
+      heart: 'Contains fat-soluble vitamins A and K2 which aid calcium distribution into bones rather than arterial walls.',
+      metabolism: 'Rich cream lipids induce rapid cholecystokinin (CCK) release, shutting off appetite with minimal postprandial glucose impact.'
+    }
+  },
+  'prosciutto': {
+    scores: { brain: 74, muscle: 88, gut: 62, heart: 55, metabolism: 70 },
+    reasons: {
+      brain: 'High concentration of bioavailable vitamin B12 and zinc essential for cognitive processing speed and myelin integrity.',
+      muscle: 'Ultra-dense protein source (25.8g/100g) with high concentration of carnosine and creatine for explosive muscle contraction.',
+      gut: 'Naturally cured with sea salt and time only—free of synthetic nitrates or fillers that could irritate the gut lining.',
+      heart: 'Over 45% of its fat profile consists of oleic acid (the same monounsaturated fat found in olive oil), though high in sodium.',
+      metabolism: 'Zero carbohydrates and high protein content maximize the thermic effect of food (TEF) and stabilize blood glucose.'
+    }
+  },
+  'pesto-genovese': {
+    scores: { brain: 86, muscle: 65, gut: 82, heart: 90, metabolism: 84 },
+    reasons: {
+      brain: 'Basil essential oils (linalool, eugenol) and pine nut pinolenic acid exert strong neuroprotective antioxidant effects.',
+      muscle: 'Pinolenic acid stimulates CCK and GLP-1 while pine nuts deliver zinc and magnesium for muscle cellular recovery.',
+      gut: 'Rich in polyphenols from cold-pressed extra virgin olive oil and garlic allicin which exhibit prebiotic antimicrobial activity.',
+      heart: 'Monounsaturated oleic acid and polyphenols reduce LDL oxidation, improve endothelial nitric oxide, and protect arteries.',
+      metabolism: 'Healthy lipid matrix slows gastric emptying, dramatically reducing glycemic load when paired with pastas and vegetables.'
+    }
+  },
+  'focaccia': {
+    scores: { brain: 64, muscle: 78, gut: 65, heart: 68, metabolism: 60 },
+    reasons: {
+      brain: 'Rosemary carnosic acid provides potent cerebral neuroprotection against oxidative stress; clean carbs provide quick brain energy.',
+      muscle: 'Easily digestible carbohydrates replenish depleted glycogen reservoirs rapidly following exhaustive physical conditioning.',
+      gut: 'Long fermentation times pre-digest grain starches, improving tolerability and reducing abdominal bloating.',
+      heart: 'Liberally bathed in polyphenol-rich extra virgin olive oil, providing protective oleic acid along with each starch serving.',
+      metabolism: 'Olive oil lipid infusion lowers the overall glycemic index compared to standard white sandwich breads.'
+    }
+  },
+  'minestrone': {
+    scores: { brain: 82, muscle: 55, gut: 94, heart: 92, metabolism: 92 },
+    reasons: {
+      brain: 'Abundant carotenoids, flavonoids, and vitamin C protect neural synapses from microvascular and free-radical damage.',
+      muscle: 'Plant electrolytes (210mg potassium, magnesium) maintain cellular hydration and muscular contraction dynamics.',
+      gut: 'Spectacular prebiotic diversity from legumes, tomatoes, and leafy greens nourishing diverse colonic bacterial strains.',
+      heart: 'Low sodium-to-potassium ratio, high soluble fiber, and virtually zero saturated fat promote arterial flexibility and lipid clearance.',
+      metabolism: 'High water volume and dietary fiber (2.2g/100g at only 45 kcal) make it an exceptional tool for caloric dilution and longevity.'
+    }
+  },
+  'bruschetta': {
+    scores: { brain: 75, muscle: 70, gut: 80, heart: 85, metabolism: 74 },
+    reasons: {
+      brain: 'Tomato lycopene paired with extra virgin olive oil enhances lipid-soluble antioxidant absorption into brain tissues.',
+      muscle: 'Toasted whole wheat/sourdough starch delivers sustained muscular glycogen fuel for active endurance demands.',
+      gut: 'Fresh garlic supplies prebiotic inulin and allicin that foster beneficial Bifidobacteria growth while suppressing dysbiosis.',
+      heart: 'Potent combination of olive oil monounsaturated fats and raw tomato polyphenols shields coronary arteries from oxidative stress.',
+      metabolism: 'Garlic and olive oil synergistically moderate postprandial glucose absorption and support metabolic insulin sensitivity.'
+    }
+  },
 
   // --- HEALTHY FATS & NUTS ---
   'avocado': {

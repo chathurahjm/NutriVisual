@@ -44,6 +44,12 @@ export const popularPairs: Array<[string, string]> = [
   ['double-burger', 'grilled-chicken-wrap'],
   ['french-fries', 'sweet-potato'],
   ['pasta', 'cauliflower-rice'],
-  ['pasta', 'pennette']
+  ['pasta', 'pennette'],
+  ['gnocchi', 'pasta'],
+  ['risotto', 'white-rice'],
+  ['fresh-mozzarella', 'burrata'],
+  ['parmigiano-reggiano', 'cheddar-cheese'],
+  ['focaccia', 'sourdough-bread']
 ];
+
 

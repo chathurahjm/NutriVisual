@@ -3671,5 +3671,295 @@
       "Italian Cuisine",
       "Al Dente"
     ]
+  },
+  {
+    "id": "risotto",
+    "name": "Risotto (Cooked)",
+    "category": "Carbohydrates",
+    "image": "/images/risotto.jpg",
+    "servingBaseGrams": 100,
+    "calories": 130,
+    "macros": {
+      "fat": 3.2,
+      "carbs": 22.5,
+      "protein": 2.7
+    },
+    "micros": {
+      "potassium": "48 mg",
+      "magnesium": "11 mg",
+      "fiber": "0.6 g"
+    },
+    "benefits": [
+      "Creamy Satiating Starch Matrix",
+      "Quick Muscle Glycogen Absorption",
+      "Easy Gastric Comfort"
+    ],
+    "tags": [
+      "Arborio Rice",
+      "Italian Cuisine",
+      "Comfort Food",
+      "Carbohydrates"
+    ]
+  },
+  {
+    "id": "gnocchi",
+    "name": "Potato Gnocchi (Cooked)",
+    "category": "Carbohydrates",
+    "image": "/images/gnocchi.jpg",
+    "servingBaseGrams": 100,
+    "calories": 135,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 28.5,
+      "protein": 3.2
+    },
+    "micros": {
+      "potassium": "185 mg",
+      "magnesium": "14 mg",
+      "fiber": "1.5 g"
+    },
+    "benefits": [
+      "Potassium-Rich Dumpling Starch",
+      "Rapid Glycogen Priming",
+      "Soft Gastric Digestibility"
+    ],
+    "tags": [
+      "Potato Dumplings",
+      "Italian Cuisine",
+      "Complex Carbs",
+      "Low Fat"
+    ]
+  },
+  {
+    "id": "parmigiano-reggiano",
+    "name": "Parmigiano Reggiano",
+    "category": "Dairy & Alternatives",
+    "image": "/images/parmigiano-reggiano.jpg",
+    "servingBaseGrams": 100,
+    "calories": 392,
+    "macros": {
+      "fat": 25.8,
+      "carbs": 3.2,
+      "protein": 35.8
+    },
+    "micros": {
+      "potassium": "92 mg",
+      "magnesium": "44 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Ultra-Dense Bioavailable Casein Protein",
+      "Exceptionally High Calcium Density",
+      "Naturally Lactose-Free Aging"
+    ],
+    "tags": [
+      "Aged Cheese",
+      "High Protein",
+      "Calcium Rich",
+      "Italian Superfood"
+    ]
+  },
+  {
+    "id": "fresh-mozzarella",
+    "name": "Fresh Mozzarella",
+    "category": "Dairy & Alternatives",
+    "image": "/images/fresh-mozzarella.jpg",
+    "servingBaseGrams": 100,
+    "calories": 280,
+    "macros": {
+      "fat": 17,
+      "carbs": 3.1,
+      "protein": 22.2
+    },
+    "micros": {
+      "potassium": "76 mg",
+      "magnesium": "20 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "High Quality Complete Dairy Protein",
+      "Lower Sodium Than Hard Cheeses",
+      "Natural Probiotic Cultures"
+    ],
+    "tags": [
+      "Fresh Cheese",
+      "High Protein",
+      "Caprese Staple",
+      "Italian Dairy"
+    ]
+  },
+  {
+    "id": "burrata",
+    "name": "Burrata Cheese",
+    "category": "Dairy & Alternatives",
+    "image": "/images/burrata.jpg",
+    "servingBaseGrams": 100,
+    "calories": 285,
+    "macros": {
+      "fat": 23.5,
+      "carbs": 2.5,
+      "protein": 16
+    },
+    "micros": {
+      "potassium": "65 mg",
+      "magnesium": "16 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Rich Stracciatella Cream Fats",
+      "High Satiety Dairy Lipids",
+      "Essential Amino Acids"
+    ],
+    "tags": [
+      "Artisanal Cheese",
+      "Italian Delicacy",
+      "High Fat",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "prosciutto",
+    "name": "Prosciutto di Parma",
+    "category": "Proteins",
+    "image": "/images/prosciutto.jpg",
+    "servingBaseGrams": 100,
+    "calories": 269,
+    "macros": {
+      "fat": 18.3,
+      "carbs": 0.3,
+      "protein": 25.8
+    },
+    "micros": {
+      "potassium": "582 mg",
+      "magnesium": "20 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Nitrate-Free Natural Dry Curing",
+      "Dense Complete Amino Acid Profile",
+      "High Bioavailable Heme Iron & B-Vitamins"
+    ],
+    "tags": [
+      "Dry Cured",
+      "High Protein",
+      "Zero Carb",
+      "Italian Charcuterie"
+    ]
+  },
+  {
+    "id": "pesto-genovese",
+    "name": "Pesto Genovese",
+    "category": "Healthy Fats",
+    "image": "/images/pesto-genovese.jpg",
+    "servingBaseGrams": 100,
+    "calories": 420,
+    "macros": {
+      "fat": 41.5,
+      "carbs": 5.5,
+      "protein": 6.2
+    },
+    "micros": {
+      "potassium": "195 mg",
+      "magnesium": "65 mg",
+      "fiber": "2.1 g"
+    },
+    "benefits": [
+      "Monounsaturated Polyphenol Fat Matrix",
+      "Lutein and Chlorophyll Antioxidants",
+      "Heart-Healthy Pine Nut Lipids"
+    ],
+    "tags": [
+      "Basil Pesto",
+      "Healthy Fats",
+      "Mediterranean Diet",
+      "Antioxidant Rich"
+    ]
+  },
+  {
+    "id": "focaccia",
+    "name": "Focaccia Bread",
+    "category": "Carbohydrates",
+    "image": "/images/focaccia.jpg",
+    "servingBaseGrams": 100,
+    "calories": 271,
+    "macros": {
+      "fat": 7.9,
+      "carbs": 42,
+      "protein": 8.8
+    },
+    "micros": {
+      "potassium": "115 mg",
+      "magnesium": "22 mg",
+      "fiber": "2.3 g"
+    },
+    "benefits": [
+      "Extra Virgin Olive Oil Crumb Matrix",
+      "Fermented Yeast Dough Digestibility",
+      "Clean Glycogen Carbohydrate Energy"
+    ],
+    "tags": [
+      "Italian Bread",
+      "Olive Oil Infused",
+      "Complex Carbs",
+      "Energy Fuel"
+    ]
+  },
+  {
+    "id": "minestrone",
+    "name": "Minestrone Soup",
+    "category": "Superfoods",
+    "image": "/images/minestrone.jpg",
+    "servingBaseGrams": 100,
+    "calories": 45,
+    "macros": {
+      "fat": 0.8,
+      "carbs": 7.5,
+      "protein": 2.1
+    },
+    "micros": {
+      "potassium": "210 mg",
+      "magnesium": "18 mg",
+      "fiber": "2.2 g"
+    },
+    "benefits": [
+      "Diverse Plant Prebiotic Fiber Blend",
+      "Micronutrient-Dense Vegetable Broth",
+      "Exceptional Caloric Dilution Volume"
+    ],
+    "tags": [
+      "Vegetable Soup",
+      "High Fiber",
+      "Low Calorie",
+      "Longevity Food"
+    ]
+  },
+  {
+    "id": "bruschetta",
+    "name": "Tomato Bruschetta",
+    "category": "Carbohydrates",
+    "image": "/images/bruschetta.jpg",
+    "servingBaseGrams": 100,
+    "calories": 185,
+    "macros": {
+      "fat": 7.2,
+      "carbs": 24.8,
+      "protein": 5.2
+    },
+    "micros": {
+      "potassium": "240 mg",
+      "magnesium": "19 mg",
+      "fiber": "2.4 g"
+    },
+    "benefits": [
+      "Bioavailable Fat-Soluble Lycopene",
+      "Crusty Toasted Whole Starch Energy",
+      "Allicin & Polyphenol Synergism"
+    ],
+    "tags": [
+      "Antipasto",
+      "Lycopene Rich",
+      "Olive Oil",
+      "Italian Classic"
+    ]
   }
 ]
