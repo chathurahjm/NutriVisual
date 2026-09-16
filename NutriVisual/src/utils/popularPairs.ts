@@ -58,7 +58,10 @@ export const popularPairs: Array<[string, string]> = [
   ['char-kway-teow', 'hokkien-mee'],
   ['bak-kut-teh', 'beef'],
   ['singapore-chilli-crab', 'tuna'],
-  ['roti-prata', 'focaccia']
+  ['roti-prata', 'focaccia'],
+  ['basmati-rice', 'white-rice'],
+  ['basmati-rice', 'brown-rice'],
+  ['basmati-rice', 'quinoa']
 ];
 
 

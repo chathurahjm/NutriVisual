@@ -71,7 +71,7 @@ const faqSchema = buildFAQPageSchema([
   },
   {
     question: `What are the macros for ${food.name}?`,
-    answer: `Per 100g serving, ${food.name} provides ${food.macros.protein}g protein, ${food.macros.carbs}g carbs (${food.macros.fiber}g fiber), and ${food.macros.fat}g fat for a total of ${food.calories} kcal.`
+    answer: `Per 100g serving, ${food.name} provides ${food.macros.protein}g protein, ${food.macros.carbs}g carbs${food.micros?.fiber ? ` (${food.micros.fiber} fiber)` : ''}, and ${food.macros.fat}g fat for a total of ${food.calories} kcal.`
   },
   {
     question: `Is ${food.name} high in protein?`,
@@ -530,7 +530,7 @@ const comparisons = [
               What are the macros for {food.name}?
             </h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">
-              Per 100g serving, {food.name} provides <strong>{food.macros.protein}g protein</strong>, <strong>{food.macros.carbs}g carbs</strong> ({food.macros.fiber}g fiber), and <strong>{food.macros.fat}g fat</strong>.
+              Per 100g serving, {food.name} provides <strong>{food.macros.protein}g protein</strong>, <strong>{food.macros.carbs}g carbs</strong>{food.micros?.fiber ? ` (${food.micros.fiber} fiber)` : ''}, and <strong>{food.macros.fat}g fat</strong>.
             </p>
           </div>
           <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: 10px; border: 1px solid var(--border-color);">

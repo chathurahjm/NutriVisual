@@ -977,6 +977,16 @@ export const biohackDatabase = {
       heart: 'Marine potassium (210mg) and taurine from fresh squid support cardiomyocyte function and cardiovascular balance.',
       metabolism: 'Squeezed fresh calamansi lime delivers citric acid and vitamin C, improving glucose clearance and postprandial digestive efficiency.'
     }
+  },
+  'basmati-rice': {
+    scores: { brain: 68, muscle: 76, gut: 65, heart: 70, metabolism: 78 },
+    reasons: {
+      brain: 'High amylose matrix provides a smooth, gradual glucose influx to cerebral neurons, preventing reactive brain fog and post-meal drowsiness.',
+      muscle: 'Supplies 3.5g plant protein per 100g with zero fat, efficiently resynthesizing muscle glycogen post-resistance training without gastrointestinal heaviness.',
+      gut: 'Readily retrogrades into Type-3 Resistant Starch upon cooling, feeding Bifidobacteria and encouraging short-chain fatty acid (butyrate) production in the colon.',
+      heart: 'Naturally sodium-free and cholesterol-neutral; slender grains are traditionally prepared with cardioprotective spices like cumin, cardamom, and clove.',
+      metabolism: 'Features a remarkably low-to-medium glycemic index (GI 50–58) compared to standard short-grain rice (GI 70–85), maintaining stable insulin levels.'
+    }
   }
 };
 
