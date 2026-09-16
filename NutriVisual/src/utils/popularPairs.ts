@@ -49,7 +49,16 @@ export const popularPairs: Array<[string, string]> = [
   ['risotto', 'white-rice'],
   ['fresh-mozzarella', 'burrata'],
   ['parmigiano-reggiano', 'cheddar-cheese'],
-  ['focaccia', 'sourdough-bread']
+  ['focaccia', 'sourdough-bread'],
+  ['hainanese-chicken-rice', 'white-rice'],
+  ['chicken-satay', 'chicken-breast'],
+  ['singapore-laksa', 'pasta'],
+  ['nasi-lemak', 'white-rice'],
+  ['kaya-toast', 'focaccia'],
+  ['char-kway-teow', 'hokkien-mee'],
+  ['bak-kut-teh', 'beef'],
+  ['singapore-chilli-crab', 'tuna'],
+  ['roti-prata', 'focaccia']
 ];
 
 

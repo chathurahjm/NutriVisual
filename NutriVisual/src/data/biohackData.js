@@ -877,6 +877,106 @@ export const biohackDatabase = {
       heart: 'Clinical trials demonstrate high lycopene intake reduces LDL oxidation and enhances vascular nitric oxide availability.',
       metabolism: 'Extremely low glycemic load and high volume density promote fullness with negligible impact on blood sugar.'
     }
+  },
+  'hainanese-chicken-rice': {
+    scores: { brain: 74, muscle: 76, gut: 52, heart: 70, metabolism: 68 },
+    reasons: {
+      brain: 'Ginger, garlic, and scallions in the poaching stock provide gingerols and allicin, crossing the blood-brain barrier to reduce neuroinflammation.',
+      muscle: 'Poached tender chicken provides 6.8g bioavailable amino acids per 100g with an optimal leucine-to-isoleucine ratio for cellular repair.',
+      gut: 'Gingerols accelerate gastric motility and stimulate digestive enzymes, while pandan-infused rice provides soothing non-irritating starch.',
+      heart: 'Monounsaturated fats from sesame oil and ginger bioactive compounds support endothelial flexibility and vascular nitric oxide release.',
+      metabolism: 'Rice cooked in chicken broth has a marginally attenuated glycemic curve compared to pure white rice due to co-ingested poultry lipids.'
+    }
+  },
+  'singapore-laksa': {
+    scores: { brain: 76, muscle: 72, gut: 66, heart: 65, metabolism: 74 },
+    reasons: {
+      brain: 'Rich coconut medium-chain triglycerides (MCTs) yield rapid ketone precursors, while turmeric curcumins combat neuro-oxidative stress.',
+      muscle: 'Prawns, fish cake, and hard-boiled egg provide a diverse spectrum of complete marine proteins and bioavailable zinc.',
+      gut: 'Lemongrass, galangal, and laksa leaves (Polygonum odoratum) exert potent antimicrobial and prebiotic actions across the gastrointestinal tract.',
+      heart: 'While rich in saturated lauric acid from coconut milk, high potassium and marine taurine help offset sodium and support myocardial rhythm.',
+      metabolism: 'Capsaicin from sambal stimulates TRPV1 thermoreceptors, temporarily elevating postprandial basal metabolic rate and lipolysis.'
+    }
+  },
+  'chicken-satay': {
+    scores: { brain: 78, muscle: 92, gut: 60, heart: 75, metabolism: 85 },
+    reasons: {
+      brain: 'High choline from poultry combined with resveratrol and niacin from ground peanut gravy supports acetylcholine and NAD+ synthesis.',
+      muscle: 'Exceptionally dense lean protein source (18.6g/100g) delivering maximal branched-chain amino acids for myofibrillar protein synthesis.',
+      gut: 'Peanut skins and ground fibers contribute polyphenol-rich insoluble fiber that promotes Bifidobacterium proliferation.',
+      heart: 'Peanut oil is predominantly monounsaturated oleic acid, which favorably impacts HDL-to-LDL cholesterol ratios when eaten in moderation.',
+      metabolism: 'High protein-to-carbohydrate ratio yields high dietary thermogenesis and prolonged postprandial fullness, preventing insulin surges.'
+    }
+  },
+  'nasi-lemak': {
+    scores: { brain: 72, muscle: 68, gut: 62, heart: 64, metabolism: 66 },
+    reasons: {
+      brain: 'Coconut lauric acid provides alternative cerebral substrates, while pandan leaf flavonoids safeguard neuronal integrity.',
+      muscle: 'Served with fried anchovies (ikan bilis), egg, and peanuts, delivering complete amino acids along with marine calcium and phosphorus.',
+      gut: 'Chili sambal stimulates gastric acid secretion, and pandan-infused coconut fiber supports normal peristaltic transit.',
+      heart: 'Anchovies contribute bioavailable EPA and DHA omega-3s, helping modulate vascular tone alongside coconut medium-chain fats.',
+      metabolism: 'Coconut fats slow gastric emptying of the rice portion, tempering peak glucose excursion relative to plain refined rice.'
+    }
+  },
+  'kaya-toast': {
+    scores: { brain: 65, muscle: 52, gut: 48, heart: 55, metabolism: 50 },
+    reasons: {
+      brain: 'Rapid glucose availability immediately refuels brain glycogen during morning fasts, paired with choline from egg-based kaya.',
+      muscle: 'Moderate 4.6g protein per 100g; best consumed with traditional half-boiled eggs to achieve 15g+ complete protein for muscle maintenance.',
+      gut: 'Thin, toasted bread is easily digestible and low in fermentable oligosaccharides, gentle on sensitive digestive tracts.',
+      heart: 'Contains saturated butter and coconut milk fats; pairing with un-sweetened coffee (Kopi-O Kosong) provides polyphenol protection.',
+      metabolism: 'Fast-digesting carbohydrate profile causes a quick insulin rise, making it an ideal pre-workout or high-exertion fuel source.'
+    }
+  },
+  'char-kway-teow': {
+    scores: { brain: 66, muscle: 70, gut: 50, heart: 52, metabolism: 58 },
+    reasons: {
+      brain: 'Choline and iron from eggs and blood cockles support neurotransmitter synthesis and oxygen transport through cerebral capillaries.',
+      muscle: 'Prawns, Chinese sausage (lup cheong), and egg deliver 5.8g protein per 100g with balanced essential amino acids.',
+      gut: 'Bean sprouts and garlic chives supply prebiotic fiber and sulfur compounds, assisting healthy gut microbiome turnover.',
+      heart: 'High in savory fats and sodium from soy sauce; best enjoyed as an occasional high-energy feast within an active lifestyle.',
+      metabolism: 'Dense carbohydrate and dietary lipid combination creates sustained high-caloric delivery suitable for endurance athletes.'
+    }
+  },
+  'bak-kut-teh': {
+    scores: { brain: 80, muscle: 86, gut: 82, heart: 74, metabolism: 82 },
+    reasons: {
+      brain: 'Intense black and white peppercorn piperine enhances the bioavailability of key micronutrients and stimulates cognitive clarity.',
+      muscle: 'Slow-simmered pork ribs yield 12.4g protein per 100g, richly laden with collagen, glycine, and proline for tendon and muscle repair.',
+      gut: 'Simmered bone marrow collagen directly fortifies the intestinal mucosal epithelial barrier and soothes leaky gut junctions.',
+      heart: 'Heavy whole garlic cloves provide abundant allicin, proven in clinical trials to enhance arterial compliance and blood flow.',
+      metabolism: 'Extremely low carbohydrate count (1.8g/100g) results in a negligible glycemic response and stable baseline insulin levels.'
+    }
+  },
+  'singapore-chilli-crab': {
+    scores: { brain: 88, muscle: 88, gut: 64, heart: 80, metabolism: 86 },
+    reasons: {
+      brain: 'Crab meat is one of nature\'s richest sources of Vitamin B12, selenium, and copper, critical for myelin health and antioxidant enzymes.',
+      muscle: 'Lean, hyper-bioavailable crustacean protein (13.8g/100g) high in arginine and branched-chain amino acids for nitric oxide and hypertrophy.',
+      gut: 'Ginger, shallots, garlic, and egg ribbon in the chili gravy supply sulfur-rich prebiotics that feed gut commensals.',
+      heart: 'Mud crab delivers heart-healthy omega-3 fatty acids and taurine, promoting arterial vasodilation and normal blood pressure.',
+      metabolism: 'High protein density paired with thermogenic capsaicin elevates calorie expenditure via non-shivering thermogenesis.'
+    }
+  },
+  'roti-prata': {
+    scores: { brain: 62, muscle: 58, gut: 56, heart: 54, metabolism: 52 },
+    reasons: {
+      brain: 'Complex starch breakdown fuels sustained glucose delivery to neurons, enhanced by circulation-boosting curry spices.',
+      muscle: 'Provides 6.2g protein per 100g; dipping in dhal (lentil) curry substantially raises the total amino acid score and protein density.',
+      gut: 'Traditional preparation with clarified butter (ghee) supplies butyric acid, a primary short-chain fatty acid energy source for colonocytes.',
+      heart: 'Curry dipping sauce contains turmeric (curcumin), cumin, and fenugreek, offering natural anti-atherosclerotic vascular benefits.',
+      metabolism: 'High carbohydrate-to-fat energy ratio is best utilized ahead of strenuous physical labor or high-volume athletic training.'
+    }
+  },
+  'hokkien-mee': {
+    scores: { brain: 78, muscle: 78, gut: 62, heart: 72, metabolism: 72 },
+    reasons: {
+      brain: 'Astaxanthin carotenoids from prawn heads and shells protect neural membranes from lipid peroxidation and oxidative stress.',
+      muscle: 'Combination of wild-caught prawns, squid rings, and pork slices provides 7.2g multi-source protein per 100g with high biological value.',
+      gut: 'Rich prawn and pork bone reduction infuses digestible gelatin and glycosaminoglycans that lubricate the digestive tract.',
+      heart: 'Marine potassium (210mg) and taurine from fresh squid support cardiomyocyte function and cardiovascular balance.',
+      metabolism: 'Squeezed fresh calamansi lime delivers citric acid and vitamin C, improving glucose clearance and postprandial digestive efficiency.'
+    }
   }
 };
 

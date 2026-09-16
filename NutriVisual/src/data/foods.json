@@ -3961,5 +3961,295 @@
       "Olive Oil",
       "Italian Classic"
     ]
+  },
+  {
+    "id": "hainanese-chicken-rice",
+    "name": "Hainanese Chicken Rice",
+    "category": "Proteins",
+    "image": "/images/hainanese-chicken-rice.jpg",
+    "servingBaseGrams": 100,
+    "calories": 165,
+    "macros": {
+      "fat": 5.8,
+      "carbs": 21.4,
+      "protein": 6.8
+    },
+    "micros": {
+      "potassium": "160 mg",
+      "magnesium": "18 mg",
+      "fiber": "0.6 g"
+    },
+    "benefits": [
+      "Tender Poached Poultry Protein",
+      "Aromatic Ginger & Pandan Infusion",
+      "High Niacin & Vitamin B6"
+    ],
+    "tags": [
+      "Singapore National Dish",
+      "Hawker Classic",
+      "Ginger Garlic",
+      "Poached Chicken"
+    ]
+  },
+  {
+    "id": "singapore-laksa",
+    "name": "Singapore Laksa",
+    "category": "Proteins",
+    "image": "/images/singapore-laksa.jpg",
+    "servingBaseGrams": 100,
+    "calories": 135,
+    "macros": {
+      "fat": 7.8,
+      "carbs": 11.2,
+      "protein": 5.2
+    },
+    "micros": {
+      "potassium": "185 mg",
+      "magnesium": "22 mg",
+      "fiber": "1.2 g"
+    },
+    "benefits": [
+      "Rich Coconut Medium Chain Lipids",
+      "Marine Zinc & Taurine from Prawns",
+      "Metabolism-Boosting Capsaicin & Lemongrass"
+    ],
+    "tags": [
+      "Katong Laksa",
+      "Curry Broth",
+      "Prawn Noodles",
+      "Peranakan Heritage"
+    ]
+  },
+  {
+    "id": "chicken-satay",
+    "name": "Chicken Satay with Peanut Sauce",
+    "category": "Proteins",
+    "image": "/images/chicken-satay.jpg",
+    "servingBaseGrams": 100,
+    "calories": 215,
+    "macros": {
+      "fat": 11.5,
+      "carbs": 9.2,
+      "protein": 18.6
+    },
+    "micros": {
+      "potassium": "290 mg",
+      "magnesium": "42 mg",
+      "fiber": "1.8 g"
+    },
+    "benefits": [
+      "High Bioavailable Lean Poultry Protein",
+      "Monounsaturated Fats & Resveratrol from Peanuts",
+      "Turmeric & Lemongrass Marinade Antioxidants"
+    ],
+    "tags": [
+      "Hawker Skewers",
+      "Peanut Sauce",
+      "Grilled Poultry",
+      "Singapore Hawker"
+    ]
+  },
+  {
+    "id": "nasi-lemak",
+    "name": "Nasi Lemak",
+    "category": "Carbohydrates",
+    "image": "/images/nasi-lemak.jpg",
+    "servingBaseGrams": 100,
+    "calories": 195,
+    "macros": {
+      "fat": 9.2,
+      "carbs": 22.8,
+      "protein": 5.4
+    },
+    "micros": {
+      "potassium": "140 mg",
+      "magnesium": "24 mg",
+      "fiber": "1.4 g"
+    },
+    "benefits": [
+      "Medium-Chain Fatty Acids from Coconut Milk",
+      "Chili Capsaicin Thermogenic Stimulus",
+      "Pandan Leaf Antioxidants"
+    ],
+    "tags": [
+      "Coconut Rice",
+      "Sambal",
+      "Singapore Breakfast",
+      "Hawker Favourite"
+    ]
+  },
+  {
+    "id": "kaya-toast",
+    "name": "Kaya Toast",
+    "category": "Carbohydrates",
+    "image": "/images/kaya-toast.jpg",
+    "servingBaseGrams": 100,
+    "calories": 310,
+    "macros": {
+      "fat": 12.8,
+      "carbs": 44.5,
+      "protein": 4.6
+    },
+    "micros": {
+      "potassium": "110 mg",
+      "magnesium": "14 mg",
+      "fiber": "1.6 g"
+    },
+    "benefits": [
+      "Rapid Glycogen Restoration",
+      "Natural Pandan Phytonutrients",
+      "Satiety-Enhancing Coconut & Butter Lipids"
+    ],
+    "tags": [
+      "Ya Kun Classic",
+      "Breakfast Set",
+      "Pandan Kaya",
+      "Traditional Kopitiam"
+    ]
+  },
+  {
+    "id": "char-kway-teow",
+    "name": "Char Kway Teow",
+    "category": "Carbohydrates",
+    "image": "/images/char-kway-teow.jpg",
+    "servingBaseGrams": 100,
+    "calories": 210,
+    "macros": {
+      "fat": 10.4,
+      "carbs": 23.6,
+      "protein": 5.8
+    },
+    "micros": {
+      "potassium": "170 mg",
+      "magnesium": "19 mg",
+      "fiber": "1.1 g"
+    },
+    "benefits": [
+      "Quick-Release Carbohydrate Fuel",
+      "Heme Iron & Zinc from Cockles & Prawns",
+      "Sulforaphane Precursors from Bean Sprouts"
+    ],
+    "tags": [
+      "Wok Hei",
+      "Flat Rice Noodles",
+      "Hawker Staple",
+      "Stir-Fried Noodles"
+    ]
+  },
+  {
+    "id": "bak-kut-teh",
+    "name": "Bak Kut Teh",
+    "category": "Proteins",
+    "image": "/images/bak-kut-teh.jpg",
+    "servingBaseGrams": 100,
+    "calories": 115,
+    "macros": {
+      "fat": 6.5,
+      "carbs": 1.8,
+      "protein": 12.4
+    },
+    "micros": {
+      "potassium": "280 mg",
+      "magnesium": "28 mg",
+      "fiber": "0.2 g"
+    },
+    "benefits": [
+      "Rich Endogenous Collagen & Gelatin",
+      "Heavy Garlic Allicin Antimicrobial Compound",
+      "White Peppercorn Piperine Nutrient Enhancer"
+    ],
+    "tags": [
+      "Teochew Style",
+      "Herbal Pork Broth",
+      "Garlic Pepper",
+      "Hawker Heritage"
+    ]
+  },
+  {
+    "id": "singapore-chilli-crab",
+    "name": "Singapore Chilli Crab",
+    "category": "Proteins",
+    "image": "/images/singapore-chilli-crab.jpg",
+    "servingBaseGrams": 100,
+    "calories": 128,
+    "macros": {
+      "fat": 4.6,
+      "carbs": 7.8,
+      "protein": 13.8
+    },
+    "micros": {
+      "potassium": "310 mg",
+      "magnesium": "34 mg",
+      "fiber": "0.8 g"
+    },
+    "benefits": [
+      "Peak Marine Zinc, Selenium & Vitamin B12",
+      "High-Density Complete Shellfish Protein",
+      "Capsaicin & Ginger Circulatory Stimulation"
+    ],
+    "tags": [
+      "Singapore National Icon",
+      "Mud Crab",
+      "Seafood Feast",
+      "Chilli Egg Gravy"
+    ]
+  },
+  {
+    "id": "roti-prata",
+    "name": "Roti Prata",
+    "category": "Carbohydrates",
+    "image": "/images/roti-prata.jpg",
+    "servingBaseGrams": 100,
+    "calories": 325,
+    "macros": {
+      "fat": 14.2,
+      "carbs": 43.8,
+      "protein": 6.2
+    },
+    "micros": {
+      "potassium": "120 mg",
+      "magnesium": "16 mg",
+      "fiber": "1.9 g"
+    },
+    "benefits": [
+      "Crispy Multi-Layered Sustained Energy",
+      "Ghee Butyrate Gut Fuel",
+      "Turmeric & Cumin Curry Synergism"
+    ],
+    "tags": [
+      "Crispy Flatbread",
+      "Mamak Classic",
+      "Curry Dip",
+      "Singapore Hawker"
+    ]
+  },
+  {
+    "id": "hokkien-mee",
+    "name": "Singapore Hokkien Mee",
+    "category": "Carbohydrates",
+    "image": "/images/hokkien-mee.jpg",
+    "servingBaseGrams": 100,
+    "calories": 168,
+    "macros": {
+      "fat": 6.8,
+      "carbs": 19.5,
+      "protein": 7.2
+    },
+    "micros": {
+      "potassium": "210 mg",
+      "magnesium": "25 mg",
+      "fiber": "1.3 g"
+    },
+    "benefits": [
+      "Prawn Shell Glucosamine & Marine Astaxanthin",
+      "Complete Amino Acid Balance from Seafood & Pork",
+      "Vitamin C from Calamansi Lime Acidity"
+    ],
+    "tags": [
+      "Fried Prawn Noodles",
+      "Rich Stock",
+      "Hawker Masterpiece",
+      "Sambal Belacan"
+    ]
   }
 ]
