@@ -1459,7 +1459,7 @@
     "id": "brussels-sprouts",
     "name": "Brussels Sprouts",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/brussels-sprouts.jpg",
     "servingBaseGrams": 100,
     "calories": 43,
     "macros": {
@@ -1851,7 +1851,7 @@
     "id": "beef-liver",
     "name": "Grass-Fed Beef Liver",
     "category": "Proteins",
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/grass-fed-beef-liver.jpg",
     "servingBaseGrams": 100,
     "calories": 135,
     "macros": {
@@ -1907,7 +1907,7 @@
     "id": "oat-milk",
     "name": "Oat Milk (Unsweetened)",
     "category": "Beverages",
-    "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/oat-milk.jpg",
     "servingBaseGrams": 100,
     "calories": 45,
     "macros": {
@@ -2692,7 +2692,7 @@
     "id": "bok-choy",
     "name": "Bok Choy",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/bok-choy.jpg",
     "servingBaseGrams": 100,
     "calories": 12,
     "macros": {
@@ -2720,7 +2720,7 @@
     "id": "swiss-chard",
     "name": "Swiss Chard",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/swiss-chard.jpg",
     "servingBaseGrams": 100,
     "calories": 20,
     "macros": {
@@ -2972,7 +2972,7 @@
     "id": "buckwheat",
     "name": "Buckwheat (Cooked)",
     "category": "Whole Grains",
-    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/cooked-buckwheat.jpg",
     "servingBaseGrams": 100,
     "calories": 92,
     "macros": {
@@ -3000,7 +3000,7 @@
     "id": "barley",
     "name": "Pearl Barley (Cooked)",
     "category": "Whole Grains",
-    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/pearl-barley.jpg",
     "servingBaseGrams": 100,
     "calories": 123,
     "macros": {
@@ -3056,7 +3056,7 @@
     "id": "halibut",
     "name": "Pacific Halibut (Cooked)",
     "category": "Proteins",
-    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/cooked-halibut.jpg",
     "servingBaseGrams": 100,
     "calories": 111,
     "macros": {
@@ -3336,7 +3336,7 @@
     "id": "kefir",
     "name": "Low-Fat Plain Kefir",
     "category": "Dairy & Alternatives",
-    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/plain-kefir.jpg",
     "servingBaseGrams": 100,
     "calories": 43,
     "macros": {
@@ -3448,7 +3448,7 @@
     "id": "hemp-seeds",
     "name": "Hemp Hearts (Hulled)",
     "category": "Nuts & Seeds",
-    "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/hemp-seeds.jpg",
     "servingBaseGrams": 100,
     "calories": 553,
     "macros": {
@@ -3476,7 +3476,7 @@
     "id": "tahini",
     "name": "Sesame Tahini",
     "category": "Nuts & Seeds",
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/sesame-tahini.jpg",
     "servingBaseGrams": 100,
     "calories": 595,
     "macros": {
@@ -3504,7 +3504,7 @@
     "id": "ghee",
     "name": "Clarified Butter (Ghee)",
     "category": "Healthy Fats",
-    "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/grass-fed-ghee.jpg",
     "servingBaseGrams": 100,
     "calories": 900,
     "macros": {
@@ -3612,6 +3612,64 @@
       "High Glycemic",
       "Fast Carbs",
       "Confectionery"
+    ]
+  },
+  {
+    "id": "pasta",
+    "name": "Pasta (Cooked)",
+    "category": "Carbohydrates",
+    "image": "/images/pasta.jpg",
+    "servingBaseGrams": 100,
+    "calories": 158,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 30.9,
+      "protein": 5.8
+    },
+    "micros": {
+      "potassium": "44 mg",
+      "magnesium": "18 mg",
+      "fiber": "1.8 g"
+    },
+    "benefits": [
+      "Sustained Glycogen Replenishment",
+      "Low Fat Complex Energy",
+      "High Satiety Staple"
+    ],
+    "tags": [
+      "Complex Carbs",
+      "Energy Fuel",
+      "Italian Cuisine",
+      "Low Fat"
+    ]
+  },
+  {
+    "id": "pennette",
+    "name": "Pennette",
+    "category": "Carbohydrates",
+    "image": "/images/pennette.jpg",
+    "servingBaseGrams": 100,
+    "calories": 158,
+    "macros": {
+      "fat": 0.9,
+      "carbs": 31,
+      "protein": 5.8
+    },
+    "micros": {
+      "potassium": "45 mg",
+      "magnesium": "18 mg",
+      "fiber": "1.8 g"
+    },
+    "benefits": [
+      "Sauce-Gripping Ridged Starch",
+      "Even Glycemic Fuel",
+      "Versatile Al Dente Digestibility"
+    ],
+    "tags": [
+      "Tubular Pasta",
+      "Complex Carbs",
+      "Italian Cuisine",
+      "Al Dente"
     ]
   }
 ]

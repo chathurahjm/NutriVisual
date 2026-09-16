@@ -42,5 +42,8 @@ export const popularPairs: Array<[string, string]> = [
   ['tofu', 'chicken-breast'],
   ['sweet-milk-tea', 'iced-matcha'],
   ['double-burger', 'grilled-chicken-wrap'],
-  ['french-fries', 'sweet-potato']
+  ['french-fries', 'sweet-potato'],
+  ['pasta', 'cauliflower-rice'],
+  ['pasta', 'pennette']
 ];
+

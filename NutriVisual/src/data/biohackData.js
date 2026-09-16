@@ -252,6 +252,26 @@ export const biohackDatabase = {
       metabolism: 'Rapid postprandial glucose absorption triggers strong insulin secretion, challenging metabolic flexibility if consumed in excess.'
     }
   },
+  'pasta': {
+    scores: { brain: 65, muscle: 82, gut: 55, heart: 60, metabolism: 62 },
+    reasons: {
+      brain: 'Supplies steady neural glucose from complex starches; cooking al dente produces resistant starch that moderates neurotransmitter synthesis surges.',
+      muscle: 'Rich in easily accessible carbohydrates (31g per 100g) ideal for post-workout glycogen synthesis and high-intensity athletic energy replenishment.',
+      gut: 'Contains 1.8g fiber and prebiotic resistant starch (when cooled or al dente) to support microbial fermentation and butyrate production in the colon.',
+      heart: 'Virtually sodium-free and low-fat, presenting zero saturated fat or cholesterol impact on endothelial health when paired with whole food sauces.',
+      metabolism: 'Moderate glycemic index when cooked al dente; promotes steady postprandial insulin response compared to refined simple sugars.'
+    }
+  },
+  'pennette': {
+    scores: { brain: 65, muscle: 82, gut: 55, heart: 60, metabolism: 62 },
+    reasons: {
+      brain: 'Steady glucose substrate delivery fuels cognitive focus; firm tubular structure encourages slower chewing and mindful macronutrient assimilation.',
+      muscle: 'Dense complex carbohydrate profile primes muscular glycogen stores prior to aerobic training and accelerates recovery glycogen storage.',
+      gut: 'Dietary fiber and resistant starch structure provide fermentable substrates for commensal gut flora without causing heavy GI distress.',
+      heart: 'Naturally low in sodium and fat-free matrix that allows heart-healthy pairing with polyphenol-rich extra virgin olive oil and garlic.',
+      metabolism: 'Compact extruded durum wheat matrix digests more slowly than milled flour products, stabilizing postprandial glucose curves.'
+    }
+  },
 
   // --- HEALTHY FATS & NUTS ---
   'avocado': {
