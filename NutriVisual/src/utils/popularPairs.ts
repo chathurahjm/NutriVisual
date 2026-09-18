@@ -61,7 +61,10 @@ export const popularPairs: Array<[string, string]> = [
   ['roti-prata', 'focaccia'],
   ['basmati-rice', 'white-rice'],
   ['basmati-rice', 'brown-rice'],
-  ['basmati-rice', 'quinoa']
+  ['basmati-rice', 'quinoa'],
+  ['margherita-pizza', 'pepperoni-pizza'],
+  ['margherita-pizza', 'focaccia'],
+  ['pepperoni-pizza', 'double-burger']
 ];
 
 

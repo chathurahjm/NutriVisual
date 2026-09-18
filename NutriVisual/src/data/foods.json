@@ -4280,5 +4280,65 @@
       "Gluten-Free",
       "Aromatic Rice"
     ]
+  },
+  {
+    "id": "margherita-pizza",
+    "name": "Margherita Pizza",
+    "category": "Carbohydrates",
+    "image": "/images/margherita-pizza.jpg",
+    "servingBaseGrams": 100,
+    "calories": 245,
+    "macros": {
+      "fat": 8.5,
+      "carbs": 31.5,
+      "protein": 10.5
+    },
+    "micros": {
+      "potassium": "175 mg",
+      "magnesium": "18 mg",
+      "fiber": "1.8 g"
+    },
+    "benefits": [
+      "High Bioavailable Lycopene from Cooked Tomatoes",
+      "Fermented Dough Matrix Aids Digestibility & Satiety",
+      "Rich Calcium & Casein Protein from Fresh Fior di Latte"
+    ],
+    "tags": [
+      "Classic Italian",
+      "Neapolitan Style",
+      "Vegetarian",
+      "Lycopene Rich",
+      "Comfort Food"
+    ]
+  },
+  {
+    "id": "pepperoni-pizza",
+    "name": "Pepperoni Pizza",
+    "category": "Carbohydrates",
+    "image": "/images/pepperoni-pizza.jpg",
+    "servingBaseGrams": 100,
+    "calories": 298,
+    "macros": {
+      "fat": 13.8,
+      "carbs": 30.2,
+      "protein": 13.2
+    },
+    "micros": {
+      "potassium": "195 mg",
+      "magnesium": "16 mg",
+      "fiber": "1.6 g"
+    },
+    "benefits": [
+      "Dense Complete Animal Protein & B-Vitamins (B12, Niacin)",
+      "Heme Iron & Zinc from Cured Pork & Beef Pepperoni",
+      "Thermogenic Spices (Paprika, Chili, Fennel) Stimulate Circulation"
+    ],
+    "tags": [
+      "New York Classic",
+      "High Protein",
+      "Savory Feast",
+      "Crowd Favorite",
+      "Cheat Meal Fuel"
+    ]
   }
 ]

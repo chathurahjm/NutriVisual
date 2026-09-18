@@ -987,6 +987,26 @@ export const biohackDatabase = {
       heart: 'Naturally sodium-free and cholesterol-neutral; slender grains are traditionally prepared with cardioprotective spices like cumin, cardamom, and clove.',
       metabolism: 'Features a remarkably low-to-medium glycemic index (GI 50–58) compared to standard short-grain rice (GI 70–85), maintaining stable insulin levels.'
     }
+  },
+  'margherita-pizza': {
+    scores: { brain: 66, muscle: 72, gut: 68, heart: 65, metabolism: 62 },
+    reasons: {
+      brain: 'San Marzano tomatoes provide concentrated lycopene, a potent carotenoid antioxidant that traverses the blood-brain barrier to counteract neuroinflammation.',
+      muscle: 'Supplies 10.5g complete milk protein per 100g from fresh mozzarella, offering sustained leucine and amino acid release to support muscular maintenance.',
+      gut: 'Long cold-fermented dough breaks down complex starches and gluten bonds, easing gastrointestinal transit alongside prebiotic polyphenols from fresh basil.',
+      heart: 'Extra virgin olive oil brings monounsaturated oleic acid and vascular-protective polyphenols that help attenuate arterial oxidative stress.',
+      metabolism: 'The co-ingestion of dairy fats and proteins with complex carbohydrates moderates postprandial glucose spikes compared to refined starches alone.'
+    }
+  },
+  'pepperoni-pizza': {
+    scores: { brain: 60, muscle: 80, gut: 52, heart: 50, metabolism: 58 },
+    reasons: {
+      brain: 'Cured pepperoni and cheese supply essential choline, vitamin B12, and niacin necessary for myelin maintenance and acetylcholine neurotransmission.',
+      muscle: 'Delivers 13.2g robust complete protein per 100g with high biological value, creatine precursors, and bioavailable heme iron for muscle power output.',
+      gut: 'Higher lipid and cured meat density slows gastric emptying rate; benefits substantially from pairing with raw bitter greens or fiber-rich salads.',
+      heart: 'Higher sodium (680mg) and saturated fats necessitate balancing with potassium-rich vegetables to maintain optimal electrolyte equilibrium.',
+      metabolism: 'Concentrated caloric density (298 kcal/100g) acts as an efficient glycogen-refilling energy payload post-exhaustive resistance training.'
+    }
   }
 };
 
