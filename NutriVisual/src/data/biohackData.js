@@ -332,6 +332,66 @@ export const biohackDatabase = {
       metabolism: 'Zero carbohydrates and high protein content maximize the thermic effect of food (TEF) and stabilize blood glucose.'
     }
   },
+  'bacon': {
+    scores: { brain: 70, muscle: 88, gut: 25, heart: 40, metabolism: 72 },
+    reasons: {
+      brain: 'Supplies essential choline and vitamin B12 needed for acetylcholine synthesis and neural membrane integrity.',
+      muscle: 'Delivers 37g complete animal protein per 100g with dense essential amino acids to stimulate muscle protein synthesis.',
+      gut: 'Zero dietary fiber; slow gastric transit from high lipid content warrants pairing with leafy greens.',
+      heart: 'High sodium and saturated fatty acids require mindful portion control and potassium-rich whole food pairing.',
+      metabolism: 'Extremely low carbohydrate content prevents insulin surges while delivering high satiety per serving.'
+    }
+  },
+  'ham': {
+    scores: { brain: 72, muscle: 90, gut: 30, heart: 60, metabolism: 85 },
+    reasons: {
+      brain: 'Abundant in bioavailable Thiamine (Vitamin B1) and B6, vital coenzymes for cerebral glucose metabolism.',
+      muscle: 'Lean complete protein (21g/100g) with high leucine efficiency for muscle repair at modest caloric cost.',
+      gut: 'Zero dietary fiber; highly digestible animal protein with minimal fermentation residue in the GI tract.',
+      heart: 'Significantly lower saturated fat than bacon, though curing salts elevate dietary sodium intake.',
+      metabolism: 'High protein-to-calorie ratio drives thermogenesis and promotes sustained post-meal satiety.'
+    }
+  },
+  'pork-sausage': {
+    scores: { brain: 68, muscle: 82, gut: 28, heart: 48, metabolism: 70 },
+    reasons: {
+      brain: 'Provides bioavailable Zinc and Vitamin B12 supporting neural signaling and myelin maintenance.',
+      muscle: 'Delivers 18g complete protein and natural creatine precursors supporting strength adaptation.',
+      gut: 'Zero dietary fiber; high fat content delays gastric emptying rate.',
+      heart: 'Elevated saturated fatty acids and sodium necessitate balancing with potassium-dense vegetables.',
+      metabolism: 'Minimal carbohydrates minimize postprandial glucose volatility and insulin excursions.'
+    }
+  },
+  'pepperoni': {
+    scores: { brain: 65, muscle: 84, gut: 26, heart: 42, metabolism: 74 },
+    reasons: {
+      brain: 'Supplies niacin, choline, and heme iron essential for neurotransmitter synthesis and oxygen transport.',
+      muscle: 'Provides 22.7g complete protein with high amino acid density to preserve lean mass during caloric deficits.',
+      gut: 'Cured lipids slow digestion; benefits substantially from pairing with antioxidant-rich vegetables.',
+      heart: 'Curing salts and saturated lipids require moderate intake within cardiovascular nutrition targets.',
+      metabolism: 'Virtually zero carbohydrates support ketogenesis and fatty acid oxidation in low-carb protocols.'
+    }
+  },
+  'salami': {
+    scores: { brain: 67, muscle: 85, gut: 32, heart: 45, metabolism: 76 },
+    reasons: {
+      brain: 'Rich in bioavailable Vitamin B12, phosphorus, and zinc supporting central nervous system health.',
+      muscle: 'High biological value protein (21.7g/100g) rich in BCAAs for tissue repair and maintenance.',
+      gut: 'Traditional fermentation introduces lactic acid metabolites; zero dietary fiber.',
+      heart: 'Moderate saturated fat and sodium warrant pairing with high-potassium, antioxidant whole foods.',
+      metabolism: 'Low carbohydrate density provides clean ketogenic energy without triggering glycemic spikes.'
+    }
+  },
+  'hot-dog': {
+    scores: { brain: 62, muscle: 70, gut: 25, heart: 45, metabolism: 68 },
+    reasons: {
+      brain: 'Supplies bioavailable heme iron and B-vitamins supporting cellular oxygenation and energy pathways.',
+      muscle: 'Provides 11.5g complete protein supplying essential amino acids for basic tissue repair.',
+      gut: 'Zero dietary fiber; higher lipid density slows gastric emptying.',
+      heart: 'High sodium and saturated fat content suggest moderation and pairing with fresh fruits or greens.',
+      metabolism: 'Low carbohydrate content helps avoid sudden postprandial glycemic peaks.'
+    }
+  },
   'pesto-genovese': {
     scores: { brain: 86, muscle: 65, gut: 82, heart: 90, metabolism: 84 },
     reasons: {

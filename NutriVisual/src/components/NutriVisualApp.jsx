@@ -102,7 +102,13 @@ export default function NutriVisualApp() {
     setOutcomeFilter('');
   };
 
-  const activeFood = foodsData.find((f) => f.id === selectedFoodId) || foodsData[0];
+  const activeFood = useMemo(() => {
+    if (filteredFoods.some((f) => f.id === selectedFoodId)) {
+      return foodsData.find((f) => f.id === selectedFoodId) || foodsData[0];
+    }
+    return filteredFoods[0] || foodsData.find((f) => f.id === selectedFoodId) || foodsData[0];
+  }, [filteredFoods, selectedFoodId]);
+
   const compareFood1 = foodsData.find((f) => f.id === compareFoodId1) || foodsData[0];
   const compareFood2 = foodsData.find((f) => f.id === compareFoodId2) || foodsData[1];
 
@@ -336,10 +342,23 @@ export default function NutriVisualApp() {
                 aria-label="Search food"
                 value={searchQuery}
                 onChange={(e) => {
-                  setSearchQuery(e.target.value);
+                  const val = e.target.value;
+                  setSearchQuery(val);
                   setOutcomeFilter('');
+                  const match = findSmartMatch(val, sortedFoods);
+                  if (match && (match.matchType === 'exact' || match.matchType === 'synonym')) {
+                    setSelectedFoodId(match.suggestedId);
+                    if (match.hasQuantity && match.quantity) {
+                      setPortionGrams(match.quantity);
+                    }
+                  }
                 }}
-                placeholder="Search food, macro, or tag (e.g. Avocado, Tomato, Omega-3)..."
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && filteredFoods.length > 0) {
+                    setSelectedFoodId(filteredFoods[0].id);
+                  }
+                }}
+                placeholder="Search food, macro, or tag (e.g. Bacon, Avocado, Salmon, Keto)..."
                 style={{
                   width: '100%',
                   backgroundColor: 'var(--bg-card)',
@@ -352,6 +371,47 @@ export default function NutriVisualApp() {
                   boxShadow: 'var(--shadow-card)',
                 }}
               />
+
+              {/* Quick Popular Food Presets */}
+              <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
+                {[
+                  { id: 'avocado', label: '🥑 Avocado' },
+                  { id: 'bacon', label: '🥓 Bacon' },
+                  { id: 'atlantic-salmon', label: '🐟 Salmon' },
+                  { id: 'chicken-breast', label: '🍗 Chicken' },
+                  { id: 'beef', label: '🥩 Beef' },
+                  { id: 'ham', label: '🍖 Ham' },
+                  { id: 'cheddar-cheese', label: '🧀 Cheddar' },
+                  { id: 'eggs', label: '🥚 Eggs' },
+                  { id: 'broccoli', label: '🥦 Broccoli' }
+                ].map((preset) => {
+                  const isSel = activeFood.id === preset.id;
+                  return (
+                    <button
+                      key={preset.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedFoodId(preset.id);
+                        setSearchQuery('');
+                        setOutcomeFilter('');
+                      }}
+                      style={{
+                        fontSize: '0.78rem',
+                        padding: '0.3rem 0.7rem',
+                        borderRadius: '16px',
+                        backgroundColor: isSel ? 'var(--accent-green)' : 'var(--bg-surface)',
+                        color: isSel ? '#ffffff' : 'var(--text-muted)',
+                        border: `1px solid ${isSel ? 'var(--accent-green)' : 'var(--border-color)'}`,
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        transition: 'all 0.15s ease'
+                      }}
+                    >
+                      {preset.label}
+                    </button>
+                  );
+                })}
+              </div>
 
               {/* Intelligent "Did you search for...?" suggestion bar (handles typos, quantities, and synonyms) */}
               {showSuggestion && smartMatch && (
@@ -839,7 +899,7 @@ export default function NutriVisualApp() {
 
               {/* Quick Preset Buttons for Top Biohack Foods */}
               <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                {['atlantic-salmon', 'avocado', 'blueberries', 'eggs', 'broccoli', 'beef-liver', 'matcha', 'dark-chocolate'].map((id) => {
+                {['atlantic-salmon', 'avocado', 'bacon', 'blueberries', 'eggs', 'broccoli', 'beef-liver', 'matcha', 'dark-chocolate'].map((id) => {
                   const foodItem = foodsData.find((f) => f.id === id);
                   if (!foodItem) return null;
                   const isSel = selectedFoodId === id;

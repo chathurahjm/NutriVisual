@@ -64,7 +64,14 @@ export const popularPairs: Array<[string, string]> = [
   ['basmati-rice', 'quinoa'],
   ['margherita-pizza', 'pepperoni-pizza'],
   ['margherita-pizza', 'focaccia'],
-  ['pepperoni-pizza', 'double-burger']
+  ['pepperoni-pizza', 'double-burger'],
+  ['bacon', 'prosciutto'],
+  ['bacon', 'eggs'],
+  ['ham', 'turkey-breast'],
+  ['pork-sausage', 'chicken-breast'],
+  ['salami', 'prosciutto'],
+  ['pepperoni', 'salami'],
+  ['hot-dog', 'double-burger']
 ];
 
 

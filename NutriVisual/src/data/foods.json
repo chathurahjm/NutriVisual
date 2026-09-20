@@ -3392,7 +3392,7 @@
     "id": "cheddar-cheese",
     "name": "Sharp Cheddar Cheese",
     "category": "Dairy & Alternatives",
-    "image": "https://images.unsplash.com/photo-1618060932014-4deda4932554?auto=format&fit=crop&w=600&q=80",
+    "image": "/images/cheddar-cheese.jpg",
     "servingBaseGrams": 100,
     "calories": 403,
     "macros": {
@@ -4339,6 +4339,179 @@
       "Savory Feast",
       "Crowd Favorite",
       "Cheat Meal Fuel"
+    ]
+  },
+  {
+    "id": "bacon",
+    "name": "Bacon (Pan-Fried)",
+    "category": "Proteins",
+    "image": "/images/bacon.jpg",
+    "servingBaseGrams": 100,
+    "calories": 541,
+    "macros": {
+      "fat": 41.8,
+      "carbs": 1.4,
+      "protein": 37.0
+    },
+    "micros": {
+      "potassium": "565 mg",
+      "magnesium": "34 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "High Satiety & Caloric Density",
+      "Rich in Choline & B-Complex Vitamins",
+      "Dense Complete Amino Acid Profile"
+    ],
+    "tags": [
+      "Processed Meat",
+      "High Fat",
+      "Keto Friendly",
+      "High Protein"
+    ]
+  },
+  {
+    "id": "ham",
+    "name": "Cooked Deli Ham",
+    "category": "Proteins",
+    "image": "/images/ham.jpg",
+    "servingBaseGrams": 100,
+    "calories": 145,
+    "macros": {
+      "fat": 5.5,
+      "carbs": 1.5,
+      "protein": 21.0
+    },
+    "micros": {
+      "potassium": "330 mg",
+      "magnesium": "18 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Lean High-Yield Complete Protein",
+      "Abundant Bioavailable Thiamine (B1)",
+      "Low Saturated Fat Ratio"
+    ],
+    "tags": [
+      "Processed Meat",
+      "High Protein",
+      "Lean Meat",
+      "Cured"
+    ]
+  },
+  {
+    "id": "pork-sausage",
+    "name": "Pork Sausage",
+    "category": "Proteins",
+    "image": "/images/pork-sausage.jpg",
+    "servingBaseGrams": 100,
+    "calories": 339,
+    "macros": {
+      "fat": 28.4,
+      "carbs": 1.0,
+      "protein": 18.0
+    },
+    "micros": {
+      "potassium": "270 mg",
+      "magnesium": "16 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Dense Energy & Sustained Satiety",
+      "Supplies Bioavailable Zinc & B12",
+      "Complete Amino Acid Spectrum"
+    ],
+    "tags": [
+      "Processed Meat",
+      "High Fat",
+      "Keto Friendly",
+      "High Protein"
+    ]
+  },
+  {
+    "id": "pepperoni",
+    "name": "Pepperoni (Cured Slices)",
+    "category": "Proteins",
+    "image": "/images/pepperoni.jpg",
+    "servingBaseGrams": 100,
+    "calories": 494,
+    "macros": {
+      "fat": 44.0,
+      "carbs": 1.2,
+      "protein": 22.7
+    },
+    "micros": {
+      "potassium": "340 mg",
+      "magnesium": "17 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Concentrated Caloric Energy",
+      "Zero Net Carbs for Ketogenic Lifestyles",
+      "Dense Heme Iron & Selenium"
+    ],
+    "tags": [
+      "Processed Meat",
+      "Cured",
+      "High Fat",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "salami",
+    "name": "Genoa Salami",
+    "category": "Proteins",
+    "image": "/images/salami.jpg",
+    "servingBaseGrams": 100,
+    "calories": 407,
+    "macros": {
+      "fat": 34.1,
+      "carbs": 1.6,
+      "protein": 21.7
+    },
+    "micros": {
+      "potassium": "380 mg",
+      "magnesium": "20 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Traditional Fermented Cured Protein",
+      "Rich in Niacin & Vitamin B12",
+      "High Essential Mineral Density"
+    ],
+    "tags": [
+      "Processed Meat",
+      "Fermented Cured",
+      "High Protein",
+      "Charcuterie"
+    ]
+  },
+  {
+    "id": "hot-dog",
+    "name": "Beef Hot Dog / Frankfurter",
+    "category": "Proteins",
+    "image": "/images/hot-dog.jpg",
+    "servingBaseGrams": 100,
+    "calories": 330,
+    "macros": {
+      "fat": 29.8,
+      "carbs": 3.2,
+      "protein": 11.5
+    },
+    "micros": {
+      "potassium": "220 mg",
+      "magnesium": "12 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Rapid Caloric Energy",
+      "Complete Bioavailable Protein",
+      "Supplies Heme Iron & Selenium"
+    ],
+    "tags": [
+      "Processed Meat",
+      "Quick Fuel",
+      "High Fat"
     ]
   }
 ]
