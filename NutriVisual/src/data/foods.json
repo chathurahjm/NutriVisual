@@ -4542,6 +4542,575 @@
       "Keto Friendly",
       "Vegetarian Protein"
     ]
+  },
+  {
+    "id": "ground-beef",
+    "name": "Lean Ground Beef (85/15)",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 215,
+    "macros": {
+      "fat": 15.0,
+      "carbs": 0.0,
+      "protein": 18.6
+    },
+    "micros": {
+      "potassium": "289 mg",
+      "magnesium": "18 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Dense Heme Iron & Bioavailable Zinc",
+      "Complete Muscle-Building Amino Acid Profile",
+      "High Satiety for Caloric Management"
+    ],
+    "tags": [
+      "High Protein",
+      "Keto Friendly",
+      "Carnivore Staple",
+      "Essential Minerals"
+    ]
+  },
+  {
+    "id": "chicken-wings",
+    "name": "Roasted Chicken Wings",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 203,
+    "macros": {
+      "fat": 12.8,
+      "carbs": 0.0,
+      "protein": 20.2
+    },
+    "micros": {
+      "potassium": "175 mg",
+      "magnesium": "16 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Rich in Type II Collagen & Gelatin",
+      "Complete Poultry Protein Matrix",
+      "Zero Sugar Low-Carb Satiety"
+    ],
+    "tags": [
+      "High Protein",
+      "Keto Friendly",
+      "Collagen Source"
+    ]
+  },
+  {
+    "id": "turkey-bacon",
+    "name": "Turkey Bacon (Cooked)",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1528751014936-863e6e7a319c?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 382,
+    "macros": {
+      "fat": 28.0,
+      "carbs": 2.3,
+      "protein": 29.9
+    },
+    "micros": {
+      "potassium": "380 mg",
+      "magnesium": "21 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Leaner Alternative to Traditional Pork Bacon",
+      "High Protein-to-Volume Ratio",
+      "Supplies B-Complex Vitamins & Phosphorus"
+    ],
+    "tags": [
+      "High Protein",
+      "Breakfast Staple",
+      "Low Carb"
+    ]
+  },
+  {
+    "id": "tilapia",
+    "name": "Tilapia Fillet (Cooked)",
+    "category": "Proteins",
+    "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 128,
+    "macros": {
+      "fat": 2.7,
+      "carbs": 0.0,
+      "protein": 26.2
+    },
+    "micros": {
+      "potassium": "380 mg",
+      "magnesium": "34 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Ultra-Lean White Fish Protein",
+      "Rich in Antioxidant Selenium (47mcg)",
+      "Low Caloric Density for Body Recomposition"
+    ],
+    "tags": [
+      "High Protein",
+      "Low Calorie",
+      "Lean Muscle",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "feta-cheese",
+    "name": "Traditional Feta Cheese",
+    "category": "Dairy & Alternatives",
+    "image": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 264,
+    "macros": {
+      "fat": 21.3,
+      "carbs": 4.1,
+      "protein": 14.2
+    },
+    "micros": {
+      "potassium": "62 mg",
+      "magnesium": "19 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "High Bioavailable Calcium (493mg/100g)",
+      "Sheep & Goat Milk Easy-Digest A2 Proteins",
+      "Natural Conjugated Linoleic Acid (CLA)"
+    ],
+    "tags": [
+      "High Calcium",
+      "Mediterranean Diet",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "cream-cheese",
+    "name": "Cream Cheese",
+    "category": "Dairy & Alternatives",
+    "image": "https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 342,
+    "macros": {
+      "fat": 34.2,
+      "carbs": 4.1,
+      "protein": 5.9
+    },
+    "micros": {
+      "potassium": "138 mg",
+      "magnesium": "9 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Rich Lipid Matrix for Ketogenic Satiety",
+      "Supplies Vitamin A & Fat-Soluble Nutrients",
+      "Culinary Versatility for Low-Carb Baking"
+    ],
+    "tags": [
+      "Keto Friendly",
+      "High Fat",
+      "Dairy"
+    ]
+  },
+  {
+    "id": "sour-cream",
+    "name": "Cultured Sour Cream",
+    "category": "Dairy & Alternatives",
+    "image": "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 198,
+    "macros": {
+      "fat": 19.4,
+      "carbs": 4.6,
+      "protein": 2.4
+    },
+    "micros": {
+      "potassium": "141 mg",
+      "magnesium": "12 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "Cultured Lactic Acid Fermentation Support",
+      "Lower Calorie Density Than Mayonnaise or Butter",
+      "Enhances Fat-Soluble Vitamin Bioavailability"
+    ],
+    "tags": [
+      "Keto Friendly",
+      "Fermented Dairy",
+      "Culinary Staple"
+    ]
+  },
+  {
+    "id": "peach",
+    "name": "Fresh Yellow Peach",
+    "category": "Fruits",
+    "image": "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 39,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 9.5,
+      "protein": 0.9
+    },
+    "micros": {
+      "potassium": "190 mg",
+      "magnesium": "9 mg",
+      "fiber": "1.5 g"
+    },
+    "benefits": [
+      "Rich in Carotenoids & Vitamin C",
+      "Hydration-Dense Low Calorie Fruit",
+      "Gentle Soluble Pectin Fiber"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Antioxidant Rich",
+      "Hydration"
+    ]
+  },
+  {
+    "id": "pear",
+    "name": "Fresh Pear",
+    "category": "Fruits",
+    "image": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 57,
+    "macros": {
+      "fat": 0.1,
+      "carbs": 15.2,
+      "protein": 0.4
+    },
+    "micros": {
+      "potassium": "116 mg",
+      "magnesium": "7 mg",
+      "fiber": "3.1 g"
+    },
+    "benefits": [
+      "High Soluble Pectin Fiber for Cholesterol Balance",
+      "Prebiotic Colonic Microbiome Support",
+      "Low Glycemic Index Energy Arc"
+    ],
+    "tags": [
+      "High Fiber",
+      "Gut Health",
+      "Whole Foods"
+    ]
+  },
+  {
+    "id": "raspberries",
+    "name": "Fresh Red Raspberries",
+    "category": "Fruits",
+    "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 52,
+    "macros": {
+      "fat": 0.7,
+      "carbs": 11.9,
+      "protein": 1.2
+    },
+    "micros": {
+      "potassium": "151 mg",
+      "magnesium": "22 mg",
+      "fiber": "6.5 g"
+    },
+    "benefits": [
+      "Top-Tier Fiber Density (6.5g Fiber, Only 5.4g Net Carbs)",
+      "High Ellagitannins & Antioxidant Capacity",
+      "Blunts Postprandial Glucose & Insulin Spikes"
+    ],
+    "tags": [
+      "High Fiber",
+      "Keto Friendly",
+      "Superfood",
+      "Low Glycemic"
+    ]
+  },
+  {
+    "id": "blackberries",
+    "name": "Fresh Blackberries",
+    "category": "Fruits",
+    "image": "https://images.unsplash.com/photo-1517456793572-1d8efd6dc135?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 43,
+    "macros": {
+      "fat": 0.5,
+      "carbs": 9.6,
+      "protein": 1.4
+    },
+    "micros": {
+      "potassium": "162 mg",
+      "magnesium": "20 mg",
+      "fiber": "5.3 g"
+    },
+    "benefits": [
+      "High Anthocyanin Shield for Brain Longevity",
+      "Exceptional Fiber-to-Calorie Ratio",
+      "Supports Oral & Vascular Endothelial Health"
+    ],
+    "tags": [
+      "High Fiber",
+      "Low Calorie",
+      "Keto Friendly",
+      "Antioxidant Rich"
+    ]
+  },
+  {
+    "id": "romaine-lettuce",
+    "name": "Crisp Romaine Lettuce",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 17,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 3.3,
+      "protein": 1.2
+    },
+    "micros": {
+      "potassium": "247 mg",
+      "magnesium": "14 mg",
+      "fiber": "2.1 g"
+    },
+    "benefits": [
+      "Premier Volume Eating Base (17 kcal/100g)",
+      "Supplies Folate, Vitamin K, and Lutein",
+      "High Cellular Hydration (95% Water Content)"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Volume Eating",
+      "High Hydration",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "white-button-mushroom",
+    "name": "White Button Mushroom",
+    "category": "Vegetables",
+    "image": "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 22,
+    "macros": {
+      "fat": 0.3,
+      "carbs": 3.3,
+      "protein": 3.1
+    },
+    "micros": {
+      "potassium": "318 mg",
+      "magnesium": "9 mg",
+      "fiber": "1.0 g"
+    },
+    "benefits": [
+      "Ergothioneine Longevity Antioxidant Shield",
+      "Prebiotic Beta-Glucans Priming Immune Cells",
+      "High Potassium Vasodilation Support"
+    ],
+    "tags": [
+      "Low Calorie",
+      "Immune Support",
+      "Clean Foods"
+    ]
+  },
+  {
+    "id": "bagel",
+    "name": "Plain Bagel",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 250,
+    "macros": {
+      "fat": 1.5,
+      "carbs": 48.9,
+      "protein": 10.2
+    },
+    "micros": {
+      "potassium": "135 mg",
+      "magnesium": "24 mg",
+      "fiber": "2.3 g"
+    },
+    "benefits": [
+      "High Energy Density for Athletic Glycogen Reload",
+      "Provides Non-Heme Iron & B-Complex Vitamins",
+      "Substantial Plant-Based Wheat Protein (10g/100g)"
+    ],
+    "tags": [
+      "High Carb",
+      "Breakfast Staple",
+      "Pre-Workout Energy"
+    ]
+  },
+  {
+    "id": "english-muffin",
+    "name": "Whole Grain English Muffin",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 235,
+    "macros": {
+      "fat": 1.8,
+      "carbs": 46.0,
+      "protein": 8.2
+    },
+    "micros": {
+      "potassium": "140 mg",
+      "magnesium": "20 mg",
+      "fiber": "2.8 g"
+    },
+    "benefits": [
+      "Lower Portion Size & Calorie Density Than Bagels",
+      "Controlled Glycemic Rise with Whole Grains",
+      "Versatile Breakfast Protein-Sandwich Vehicle"
+    ],
+    "tags": [
+      "Whole Grain",
+      "Breakfast Staple",
+      "Calorie Smart"
+    ]
+  },
+  {
+    "id": "corn-tortilla",
+    "name": "Yellow Corn Tortilla",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 218,
+    "macros": {
+      "fat": 2.8,
+      "carbs": 44.6,
+      "protein": 5.7
+    },
+    "micros": {
+      "potassium": "186 mg",
+      "magnesium": "47 mg",
+      "fiber": "6.3 g"
+    },
+    "benefits": [
+      "Naturally Gluten-Free Whole Grain Corn",
+      "High Dietary Fiber (6.3g/100g) for Digestion",
+      "Nixtamalization Enhances Bioavailable Calcium & Niacin"
+    ],
+    "tags": [
+      "Gluten Free",
+      "Whole Grain",
+      "High Fiber"
+    ]
+  },
+  {
+    "id": "popcorn",
+    "name": "Air-Popped Popcorn",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 387,
+    "macros": {
+      "fat": 4.5,
+      "carbs": 77.8,
+      "protein": 12.9
+    },
+    "micros": {
+      "potassium": "329 mg",
+      "magnesium": "144 mg",
+      "fiber": "14.5 g"
+    },
+    "benefits": [
+      "#1 Volume Eating Snack (Only 31 kcal per Popcorn Cup)",
+      "Exceptional Whole Grain Fiber Density (14.5g/100g)",
+      "High Ferulic Acid & Polyphenol Antioxidants"
+    ],
+    "tags": [
+      "High Fiber",
+      "Volume Eating",
+      "Whole Grain",
+      "Snack"
+    ]
+  },
+  {
+    "id": "hummus",
+    "name": "Classic Chickpea Hummus",
+    "category": "Superfoods",
+    "image": "https://images.unsplash.com/photo-1577906096429-f73c2c312435?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 166,
+    "macros": {
+      "fat": 9.6,
+      "carbs": 14.3,
+      "protein": 7.9
+    },
+    "micros": {
+      "potassium": "228 mg",
+      "magnesium": "29 mg",
+      "fiber": "6.0 g"
+    },
+    "benefits": [
+      "Synergistic Chickpea & Tahini Plant Protein Matrix",
+      "High Satiety Resistant Starch & Prebiotic Fiber",
+      "Heart-Healthy Sesame & Olive Oil Lipids"
+    ],
+    "tags": [
+      "Plant Protein",
+      "High Fiber",
+      "Mediterranean Diet",
+      "Gut Health"
+    ]
+  },
+  {
+    "id": "almond-butter",
+    "name": "Natural Almond Butter",
+    "category": "Nuts & Seeds",
+    "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 614,
+    "macros": {
+      "fat": 55.5,
+      "carbs": 18.8,
+      "protein": 21.0
+    },
+    "micros": {
+      "potassium": "748 mg",
+      "magnesium": "279 mg",
+      "fiber": "10.3 g"
+    },
+    "benefits": [
+      "Superior Vitamin E & Monounsaturated Lipid Density",
+      "High Potassium & Magnesium for Vascular Elasticity",
+      "Substantial Complete Protein & Fiber Satiety"
+    ],
+    "tags": [
+      "Healthy Fat",
+      "High Protein",
+      "High Magnesium",
+      "Keto Friendly"
+    ]
+  },
+  {
+    "id": "honey",
+    "name": "Pure Raw Honey",
+    "category": "Carbohydrates",
+    "image": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=600&q=80",
+    "servingBaseGrams": 100,
+    "calories": 304,
+    "macros": {
+      "fat": 0.0,
+      "carbs": 82.4,
+      "protein": 0.3
+    },
+    "micros": {
+      "potassium": "52 mg",
+      "magnesium": "2 mg",
+      "fiber": "0.2 g"
+    },
+    "benefits": [
+      "Bioactive Pinocembrin & Flavonoid Antioxidants",
+      "Natural Prebiotic Oligosaccharides for Gut Flora",
+      "Rapid Post-Workout Glycogen Replenishment"
+    ],
+    "tags": [
+      "Natural Energy",
+      "Antioxidants",
+      "Prebiotic"
+    ]
   }
 ]
+
 

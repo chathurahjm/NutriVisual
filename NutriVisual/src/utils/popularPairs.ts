@@ -74,7 +74,27 @@ export const popularPairs: Array<[string, string]> = [
   ['hot-dog', 'double-burger'],
   ['halloumi', 'fresh-mozzarella'],
   ['halloumi', 'tofu'],
-  ['halloumi', 'cheddar-cheese']
+  ['halloumi', 'cheddar-cheese'],
+  ['ground-beef', 'sirloin'],
+  ['turkey-bacon', 'bacon'],
+  ['chicken-wings', 'chicken-breast'],
+  ['tilapia', 'cod-fillet'],
+  ['feta-cheese', 'fresh-mozzarella'],
+  ['cream-cheese', 'cottage-cheese'],
+  ['sour-cream', 'greek-yogurt'],
+  ['peach', 'apple'],
+  ['pear', 'apple'],
+  ['raspberries', 'blueberries'],
+  ['blackberries', 'blueberries'],
+  ['romaine-lettuce', 'spinach'],
+  ['white-button-mushroom', 'cremini-mushrooms'],
+  ['bagel', 'english-muffin'],
+  ['english-muffin', 'whole-wheat-bread'],
+  ['corn-tortilla', 'whole-wheat-bread'],
+  ['popcorn', 'french-fries'],
+  ['hummus', 'peanut-butter'],
+  ['almond-butter', 'peanut-butter'],
+  ['honey', 'peanut-butter']
 ];
 
 

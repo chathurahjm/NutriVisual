@@ -402,6 +402,206 @@ export const biohackDatabase = {
       metabolism: 'Very low carbohydrate content (2g/100g) prevents insulin spikes while the protein-lipid combination stimulates peptide YY for long-lasting satiety.'
     }
   },
+  'ground-beef': {
+    scores: { brain: 85, muscle: 94, gut: 42, heart: 60, metabolism: 82 },
+    reasons: {
+      brain: 'High in bioavailable heme iron, vitamin B12, and creatine that power cerebral energy metabolism and neurotransmission.',
+      muscle: 'Delivers 18.6g complete protein with high leucine content to stimulate mTOR and accelerate myofibrillar protein synthesis.',
+      gut: 'Zero dietary fiber; slow gastric transit provides long-lasting satiety with minimal colonic fermentation.',
+      heart: 'Contains saturated fats and stearic acid alongside potassium (289mg); mindful portioning supports balanced lipid profiles.',
+      metabolism: 'Zero carbohydrates completely prevent glycemic fluctuations while high protein increases the thermic effect of food (TEF).'
+    }
+  },
+  'chicken-wings': {
+    scores: { brain: 68, muscle: 88, gut: 40, heart: 62, metabolism: 78 },
+    reasons: {
+      brain: 'Supplies vitamin B6, choline, and niacin required for myelin synthesis and cellular energy production.',
+      muscle: 'Delivers 20.2g complete poultry protein rich in essential amino acids and collagenous connective tissue peptides.',
+      gut: 'Zero fiber; collagen and gelatin from skin and connective tissues support intestinal mucosal barrier integrity.',
+      heart: 'Moderate saturated and monounsaturated fatty acid profile; pairs best with potassium-rich greens.',
+      metabolism: 'Zero carbohydrates ensure flat postprandial glucose curves and sustained ketogenic satiety.'
+    }
+  },
+  'turkey-bacon': {
+    scores: { brain: 68, muscle: 86, gut: 38, heart: 58, metabolism: 76 },
+    reasons: {
+      brain: 'Supplies essential B-complex vitamins, phosphorus, and choline supporting cognitive cellular maintenance.',
+      muscle: 'Provides 29.9g concentrated lean protein per 100g to preserve lean muscle mass during caloric deficits.',
+      gut: 'Zero dietary fiber; dense protein structure promotes sustained gastric fullness.',
+      heart: 'Significantly lower saturated fat than traditional pork bacon, though curing salts elevate dietary sodium intake.',
+      metabolism: 'Minimal carbohydrates (2.3g) prevent insulin surges while providing high satiety per calorie.'
+    }
+  },
+  'tilapia': {
+    scores: { brain: 74, muscle: 96, gut: 36, heart: 80, metabolism: 90 },
+    reasons: {
+      brain: 'Provides essential selenium (47mcg) and vitamin B12 needed for antioxidant defense in brain tissue.',
+      muscle: 'Ultra-pure protein density (26.2g protein per 128 kcal) delivering peak amino acid efficiency for lean muscle growth.',
+      gut: 'Zero dietary fiber; exceptionally easy to digest with fast gastric transit and minimal GI burden.',
+      heart: 'Very low in saturated fat and cholesterol; supplies potassium (380mg) to assist circulatory equilibrium.',
+      metabolism: 'Extremely high protein-to-calorie ratio maximizes thermogenesis and supports aggressive fat-loss phases.'
+    }
+  },
+  'feta-cheese': {
+    scores: { brain: 72, muscle: 82, gut: 70, heart: 60, metabolism: 74 },
+    reasons: {
+      brain: 'Contains bioavailable vitamin B12 and sheep/goat milk phospholipids that support neurodevelopment and focus.',
+      muscle: 'Supplies 14.2g complete dairy protein with bioavailable calcium (493mg) supporting muscular contraction.',
+      gut: 'Traditional brine aging lowers lactose content while sheep/goat A2 casein is gentler on digestion than A1 cow dairy.',
+      heart: 'Moderate sodium from brine curing is balanced by high calcium and conjugated linoleic acid (CLA).',
+      metabolism: 'Low net carbohydrate impact (4.1g) paired with high lipid satiety blunts post-meal appetite.'
+    }
+  },
+  'cream-cheese': {
+    scores: { brain: 66, muscle: 55, gut: 50, heart: 48, metabolism: 70 },
+    reasons: {
+      brain: 'Contains milk fat globule membranes (MFGM) and vitamin A that nourish neuronal cell membranes.',
+      muscle: 'Provides modest protein (5.9g/100g); serves primarily as an energy-dense lipid vehicle.',
+      gut: 'Cultured lactic acid ferments break down milk sugars; low lactose content aids tolerance.',
+      heart: 'Dense saturated fat content suggests moderation or pairing with high-fiber whole foods.',
+      metabolism: 'Minimal carbohydrates (4.1g) prevent insulin spikes, making it a functional fat source in ketogenic diets.'
+    }
+  },
+  'sour-cream': {
+    scores: { brain: 68, muscle: 52, gut: 65, heart: 52, metabolism: 68 },
+    reasons: {
+      brain: 'Supplies dairy lipids and fat-soluble vitamins (A, D) essential for cerebral membrane integrity.',
+      muscle: 'Provides modest dairy protein (2.4g/100g); useful as an emulsifying caloric fat source.',
+      gut: 'Cultured with lactic acid bacteria that partially ferment milk sugars and support gastric comfort.',
+      heart: 'Contains milk-fat globule membrane lipids; lower in calories and fat than mayonnaise or butter.',
+      metabolism: 'Low carbohydrate density blunts postprandial glucose response when used in savory whole food dishes.'
+    }
+  },
+  'peach': {
+    scores: { brain: 76, muscle: 42, gut: 82, heart: 84, metabolism: 80 },
+    reasons: {
+      brain: 'Rich in lutein, zeaxanthin, and beta-carotene antioxidants that cross into neural tissue to combat oxidative stress.',
+      muscle: 'Low protein content; supplies quick fructose and glucose for pre-workout or post-workout cellular hydration.',
+      gut: 'Delivers soluble and insoluble pectin fiber (1.5g) that acts as a gentle prebiotic for gut microbiota.',
+      heart: 'Potassium (190mg) and bioactive polyphenols support healthy vasodilation and arterial endothelial function.',
+      metabolism: 'Low caloric density (39 kcal/100g) and low glycemic index make it ideal for calorie-restricted fruit intake.'
+    }
+  },
+  'pear': {
+    scores: { brain: 74, muscle: 40, gut: 90, heart: 86, metabolism: 82 },
+    reasons: {
+      brain: 'Rich in copper and vitamin C, vital cofactors for neurotransmitter synthesis and free radical scavenging.',
+      muscle: 'Minimal protein; supplies slow-burning natural carbohydrates for sustained glycogen replenishment.',
+      gut: 'Outstanding source of soluble pectin fiber (3.1g/100g) that feeds colonic Bifidobacteria and supports gut motility.',
+      heart: 'Clinical studies associate regular pear consumption with lower stroke risk and favorable blood pressure regulation.',
+      metabolism: 'High fiber-to-calorie ratio slows gastric emptying and stabilizes postprandial glycemic excursions.'
+    }
+  },
+  'raspberries': {
+    scores: { brain: 88, muscle: 45, gut: 96, heart: 92, metabolism: 94 },
+    reasons: {
+      brain: 'Concentrated ellagitannins and anthocyanins protect hippocampal neurons and enhance memory consolidation.',
+      muscle: 'Provides gentle hydration and cellular repair antioxidants to blunt exercise-induced free radical damage.',
+      gut: 'Phenomenal fiber density (6.5g fiber per 100g) fuels short-chain fatty acid (butyrate) synthesis in the colon.',
+      heart: 'High polyphenol content improves arterial flow-mediated dilation and reduces systemic inflammatory markers.',
+      metabolism: 'With only 5.4g net carbs per 100g, raspberries are the ultimate fiber-dense, keto-friendly superfood fruit.'
+    }
+  },
+  'blackberries': {
+    scores: { brain: 86, muscle: 46, gut: 92, heart: 90, metabolism: 92 },
+    reasons: {
+      brain: 'Dense cyanidin-3-glucoside anthocyanins cross the blood-brain barrier to enhance neurogenesis and spatial memory.',
+      muscle: 'Supplies manganese and vitamin C for collagen synthesis and joint cartilage maintenance.',
+      gut: 'Packed with 5.3g dietary fiber per 100g, promoting regular bowel transit and prebiotic microbiome diversity.',
+      heart: 'Rich in bioflavonoids that strengthen capillary walls and inhibit LDL cholesterol oxidation.',
+      metabolism: 'Very low glycemic load with high fiber content suppresses appetite and maintains fasting insulin sensitivity.'
+    }
+  },
+  'romaine-lettuce': {
+    scores: { brain: 80, muscle: 42, gut: 86, heart: 90, metabolism: 96 },
+    reasons: {
+      brain: 'Exceptional source of folate (vitamin B9) and lutein, crucial for homocysteine clearance and cognitive longevity.',
+      muscle: 'Low protein; provides intracellular hydration and electrolytes to support muscular cellular turgor.',
+      gut: 'Supplies delicate cellulose fiber and 95% structured water to gently support healthy gastrointestinal transit.',
+      heart: 'Potassium (247mg) and vitamin K activate osteocalcin while keeping calcium out of arterial vessel walls.',
+      metabolism: 'Ultimate volume eating vegetable (17 kcal/100g) providing massive plate fullness with near-zero caloric cost.'
+    }
+  },
+  'white-button-mushroom': {
+    scores: { brain: 82, muscle: 64, gut: 86, heart: 84, metabolism: 88 },
+    reasons: {
+      brain: 'High in ergothioneine, a master mitochondrial antioxidant with specific cellular transporters in neural tissue.',
+      muscle: 'Delivers 3.1g plant protein per 22 kcal, making it one of the most protein-dense vegetables by calorie.',
+      gut: 'Rich in chitin and beta-glucan prebiotic fibers that prime mucosal immune defenses in the gut.',
+      heart: 'Natural sodium-free, potassium-rich profile (318mg) supports optimal fluid balance and blood pressure.',
+      metabolism: 'Negligible glycemic impact combined with high glutamate savoriness (umami) enhances meal satiety.'
+    }
+  },
+  'bagel': {
+    scores: { brain: 65, muscle: 76, gut: 55, heart: 60, metabolism: 50 },
+    reasons: {
+      brain: 'Supplies rapid complex carbohydrates and fortified B-vitamins for immediate neural glucose utilization.',
+      muscle: 'Delivers 10.2g plant protein and 48.9g carbohydrates, ideal for rapid post-workout glycogen resynthesis.',
+      gut: 'Contains moderate wheat dietary fiber (2.3g); dense crumb structure requires thorough mastication.',
+      heart: 'Low in saturated fat and cholesterol, but high glycemic load warrants mindful portioning.',
+      metabolism: 'High carbohydrate and caloric density (250 kcal/100g) generates a pronounced insulin response.'
+    }
+  },
+  'english-muffin': {
+    scores: { brain: 68, muscle: 72, gut: 65, heart: 68, metabolism: 62 },
+    reasons: {
+      brain: 'Whole grain carbohydrates provide steady glucose release without the extreme spikes of larger bakery goods.',
+      muscle: 'Supplies 8.2g protein per 100g to contribute toward daily amino acid requirements in breakfast meals.',
+      gut: 'Contains 2.8g dietary fiber; fermentation and toasting improve starch digestibility and gut comfort.',
+      heart: 'Naturally low in fat (1.8g) and cholesterol-free; superior calorie-to-portion ratio compared to bagels.',
+      metabolism: 'Controlled portion size (typically 60g per muffin, ~140 kcal) supports calorie-conscious weight management.'
+    }
+  },
+  'corn-tortilla': {
+    scores: { brain: 70, muscle: 65, gut: 82, heart: 74, metabolism: 70 },
+    reasons: {
+      brain: 'Provides complex starch energy and carotenoid antioxidants (lutein, zeaxanthin) that support ocular and neural health.',
+      muscle: 'Supplies 5.7g plant protein and 44.6g complex carbohydrates to fuel athletic training sessions.',
+      gut: 'High dietary fiber (6.3g/100g) from intact whole corn kernels supports beneficial colonic fermentation.',
+      heart: 'Traditional nixtamalization enhances bioavailable calcium and niacin, supporting vascular health.',
+      metabolism: 'Low in fat and naturally gluten-free; superior glycemic control compared to refined white flour tortillas.'
+    }
+  },
+  'popcorn': {
+    scores: { brain: 72, muscle: 60, gut: 88, heart: 78, metabolism: 90 },
+    reasons: {
+      brain: 'Supplies ferulic acid and bound polyphenols that combat systemic oxidative stress and protect vascular endothelium.',
+      muscle: 'Contains 12.9g plant protein per 100g along with magnesium (144mg) for neuromuscular relaxation.',
+      gut: 'Outstanding whole grain insoluble fiber (14.5g/100g) adds bulk to stool and optimizes digestive transit.',
+      heart: '100% whole grain with zero cholesterol and low fat when air-popped, promoting arterial health.',
+      metabolism: 'Premier volume-eating snack: one cup of popped corn is only ~31 kcal, triggering high stomach volume satiety.'
+    }
+  },
+  'hummus': {
+    scores: { brain: 78, muscle: 74, gut: 88, heart: 86, metabolism: 82 },
+    reasons: {
+      brain: 'Chickpea choline and sesame sesamin antioxidants support neurotransmitter synthesis and cerebral blood flow.',
+      muscle: 'Combines legume and seed proteins (7.9g/100g) to create a complementary essential amino acid spectrum.',
+      gut: 'Rich in prebiotic resistant starch and soluble fiber (6.0g) that nourish beneficial Bifidobacteria and produce SCFAs.',
+      heart: 'Extra virgin olive oil and tahini deliver monounsaturated and polyunsaturated fats that improve lipid ratios.',
+      metabolism: 'Slow-release complex carbohydrates and healthy fats provide sustained satiety and low glycemic impact.'
+    }
+  },
+  'almond-butter': {
+    scores: { brain: 86, muscle: 80, gut: 84, heart: 92, metabolism: 84 },
+    reasons: {
+      brain: 'Exceptional vitamin E (alpha-tocopherol) density protects neural cell membranes against lipid peroxidation.',
+      muscle: 'Provides 21.0g plant protein per 100g combined with magnesium (279mg) for muscular recovery and ATP production.',
+      gut: 'Delivers 10.3g dietary fiber per 100g with prebiotic almond skins that stimulate microbiome diversity.',
+      heart: 'High monounsaturated oleic acid and potassium (748mg) strongly promote arterial elasticity and healthy blood pressure.',
+      metabolism: 'Extremely satiating protein-fat-fiber matrix induces strong CCK release, preventing between-meal hunger.'
+    }
+  },
+  'honey': {
+    scores: { brain: 74, muscle: 62, gut: 78, heart: 72, metabolism: 58 },
+    reasons: {
+      brain: 'Rich in pinocembrin, an exclusive neuroprotective flavonoid that improves cognitive function and cerebral blood flow.',
+      muscle: 'Provides an optimal 1:1 ratio of natural glucose and fructose for rapid glycogen resynthesis following intense training.',
+      gut: 'Natural prebiotic oligosaccharides feed probiotic gut bacteria; mild antimicrobial enzymes support oral/gut hygiene.',
+      heart: 'Contains phenolic acids that help protect vascular endothelial cells from oxidative lipid damage.',
+      metabolism: 'Pure natural sugar (82g carbs); raises insulin rapidly, making it ideal for targeted pre/post workout energy.'
+    }
+  },
   'pesto-genovese': {
     scores: { brain: 86, muscle: 65, gut: 82, heart: 90, metabolism: 84 },
     reasons: {

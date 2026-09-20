@@ -46,8 +46,14 @@ export const FOOD_SYNONYMS = {
   'salmon': 'atlantic salmon',
   'chicken': 'chicken breast',
   'steak': 'beef',
-  'ground beef': 'beef',
-  'minced beef': 'beef',
+  'ground beef': 'ground-beef',
+  'minced beef': 'ground-beef',
+  'mince': 'ground-beef',
+  'ground chuck': 'ground-beef',
+  'wings': 'chicken-wings',
+  'buffalo wings': 'chicken-wings',
+  'turkey bacon': 'turkey-bacon',
+  'tilapia fish': 'tilapia',
   'tuna fish': 'tuna',
   'cod fish': 'cod fillet',
   'cod': 'cod fillet',
@@ -67,6 +73,7 @@ export const FOOD_SYNONYMS = {
   'cashew': 'cashews',
   'pistachio': 'pistachios',
   'pecan': 'pecans',
+  'almond butter': 'almond-butter',
 
   // Dairy & Milks
   'soya milk': 'soy milk',
@@ -78,7 +85,36 @@ export const FOOD_SYNONYMS = {
   'haloumi': 'halloumi',
   'hellim': 'halloumi',
   'halloumi cheese': 'halloumi',
-  'grilled halloumi': 'halloumi'
+  'grilled halloumi': 'halloumi',
+  'feta': 'feta-cheese',
+  'greek feta': 'feta-cheese',
+  'cream cheese': 'cream-cheese',
+  'creamcheese': 'cream-cheese',
+  'sour cream': 'sour-cream',
+  'sourcream': 'sour-cream',
+
+  // Fruits, Vegetables & Fungi
+  'peaches': 'peach',
+  'nectarine': 'peach',
+  'pears': 'pear',
+  'raspberry': 'raspberries',
+  'blackberry': 'blackberries',
+  'lettuce': 'romaine-lettuce',
+  'romaine': 'romaine-lettuce',
+  'cos lettuce': 'romaine-lettuce',
+  'button mushroom': 'white-button-mushroom',
+  'white mushroom': 'white-button-mushroom',
+  'champignon': 'white-button-mushroom',
+
+  // Carbs, Bakery & Snacks
+  'bagels': 'bagel',
+  'muffin': 'english-muffin',
+  'tortilla': 'corn-tortilla',
+  'tortillas': 'corn-tortilla',
+  'taco shell': 'corn-tortilla',
+  'popcorn': 'popcorn',
+  'houmous': 'hummus',
+  'raw honey': 'honey'
 };
 
 /**
