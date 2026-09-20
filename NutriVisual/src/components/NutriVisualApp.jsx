@@ -20,6 +20,10 @@ const handleFoodImgError = (e, food) => {
     e.currentTarget.src = '/images/bacon.jpg';
     return;
   }
+  if (food?.id === 'halloumi') {
+    e.currentTarget.src = '/images/halloumi.jpg';
+    return;
+  }
   e.currentTarget.src = 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80';
 };
 

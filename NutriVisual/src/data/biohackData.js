@@ -392,6 +392,16 @@ export const biohackDatabase = {
       metabolism: 'Low carbohydrate content helps avoid sudden postprandial glycemic peaks.'
     }
   },
+  'halloumi': {
+    scores: { brain: 72, muscle: 86, gut: 65, heart: 58, metabolism: 76 },
+    reasons: {
+      brain: 'Supplies dense vitamin B12, choline, and dairy phospholipids that fortify myelin sheaths and support acetylcholine neurotransmitter synthesis.',
+      muscle: 'Delivers 21.5g of high-quality complete sheep and goat milk protein per 100g, rich in branched-chain amino acids (BCAAs) for muscle protein synthesis.',
+      gut: 'Fermented semi-hard curd structure has minimal lactose content, and the high-protein matrix supports gastric satiety without intestinal irritation.',
+      heart: 'Dense bioavailable calcium (approx. 850mg) and vitamin K2 guide calcium into bones, though moderate portioning is advised due to brine sodium.',
+      metabolism: 'Very low carbohydrate content (2g/100g) prevents insulin spikes while the protein-lipid combination stimulates peptide YY for long-lasting satiety.'
+    }
+  },
   'pesto-genovese': {
     scores: { brain: 86, muscle: 65, gut: 82, heart: 90, metabolism: 84 },
     reasons: {

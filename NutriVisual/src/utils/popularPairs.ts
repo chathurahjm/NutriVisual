@@ -71,7 +71,10 @@ export const popularPairs: Array<[string, string]> = [
   ['pork-sausage', 'chicken-breast'],
   ['salami', 'prosciutto'],
   ['pepperoni', 'salami'],
-  ['hot-dog', 'double-burger']
+  ['hot-dog', 'double-burger'],
+  ['halloumi', 'fresh-mozzarella'],
+  ['halloumi', 'tofu'],
+  ['halloumi', 'cheddar-cheese']
 ];
 
 

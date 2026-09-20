@@ -74,7 +74,11 @@ export const FOOD_SYNONYMS = {
   'milk': 'whole milk',
   'yogurt': 'greek yogurt',
   'yoghurt': 'greek yogurt',
-  'curd': 'greek yogurt'
+  'curd': 'greek yogurt',
+  'haloumi': 'halloumi',
+  'hellim': 'halloumi',
+  'halloumi cheese': 'halloumi',
+  'grilled halloumi': 'halloumi'
 };
 
 /**

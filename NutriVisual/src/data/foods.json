@@ -4513,5 +4513,35 @@
       "Quick Fuel",
       "High Fat"
     ]
+  },
+  {
+    "id": "halloumi",
+    "name": "Halloumi Cheese (Grilled)",
+    "category": "Dairy & Alternatives",
+    "image": "/images/halloumi.jpg",
+    "servingBaseGrams": 100,
+    "calories": 321,
+    "macros": {
+      "fat": 26.0,
+      "carbs": 2.0,
+      "protein": 21.5
+    },
+    "micros": {
+      "potassium": "130 mg",
+      "magnesium": "22 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "High-Bioavailability Calcium Matrix (Supports Bone Mineral Density)",
+      "High Smoke Point & Heat Resistance (Grillable Without Melting)",
+      "Dense Vegetarian Protein with Complete Essential Amino Acids"
+    ],
+    "tags": [
+      "High Protein",
+      "High Calcium",
+      "Keto Friendly",
+      "Vegetarian Protein"
+    ]
   }
 ]
+
