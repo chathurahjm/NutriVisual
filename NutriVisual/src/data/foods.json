@@ -4345,7 +4345,7 @@
     "id": "bacon",
     "name": "Bacon (Pan-Fried)",
     "category": "Proteins",
-    "image": "/images/bacon.jpg",
+    "image": "https://images.unsplash.com/photo-1606851094655-b2593a9af63f?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 541,
     "macros": {

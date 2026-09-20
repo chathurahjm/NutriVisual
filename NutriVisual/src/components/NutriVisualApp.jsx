@@ -12,6 +12,17 @@ const RIBBON_COLORS = [
   '#3b82f6', '#14b8a6', '#f97316', '#84cc16', '#e11d48'
 ];
 
+const handleFoodImgError = (e, food) => {
+  if (!e || !e.currentTarget) return;
+  if (e.currentTarget.dataset.errorHandled) return;
+  e.currentTarget.dataset.errorHandled = 'true';
+  if (food?.id === 'bacon') {
+    e.currentTarget.src = '/images/bacon.jpg';
+    return;
+  }
+  e.currentTarget.src = 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80';
+};
+
 export default function NutriVisualApp() {
   const [activeTab, setActiveTab] = useState('explorer'); // 'explorer' | 'compare' | 'biohack' | 'satiety' | 'plate'
   const [searchQuery, setSearchQuery] = useState('');
@@ -436,7 +447,12 @@ export default function NutriVisualApp() {
             <div className="glass-card" style={{ padding: '2rem' }}>
               <div className="layout-food-detail">
                 <div style={{ borderRadius: '12px', overflow: 'hidden', height: '260px', position: 'relative' }}>
-                  <img src={activeFood.image} alt={activeFood.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img
+                    src={activeFood.image}
+                    alt={activeFood.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => handleFoodImgError(e, activeFood)}
+                  />
                   <span style={{ position: 'absolute', top: '12px', left: '12px', backgroundColor: 'var(--bg-header)', padding: '0.35rem 0.75rem', borderRadius: '20px', fontSize: '0.8rem', color: 'var(--accent-green)', fontWeight: 600, backdropFilter: 'blur(8px)' }}>
                     {activeFood.category}
                   </span>
@@ -692,7 +708,12 @@ export default function NutriVisualApp() {
                         transition: 'all 0.15s ease'
                       }}
                     >
-                      <img src={food.image} alt={food.name} style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }} />
+                      <img
+                        src={food.image}
+                        alt={food.name}
+                        style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }}
+                        onError={(e) => handleFoodImgError(e, food)}
+                      />
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.4rem', justifyContent: 'space-between' }}>
                           <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{food.name}</span>
@@ -774,7 +795,12 @@ export default function NutriVisualApp() {
               </select>
 
               <div style={{ border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1.25rem', backgroundColor: 'var(--bg-surface)' }}>
-                <img src={compareFood1.image} alt={compareFood1.name} style={{ width: '100%', height: '140px', borderRadius: '8px', objectFit: 'cover', marginBottom: '1rem' }} />
+                <img
+                  src={compareFood1.image}
+                  alt={compareFood1.name}
+                  style={{ width: '100%', height: '140px', borderRadius: '8px', objectFit: 'cover', marginBottom: '1rem' }}
+                  onError={(e) => handleFoodImgError(e, compareFood1)}
+                />
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>{compareFood1.name}</h3>
                 <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-green)', fontFamily: 'var(--font-mono)', marginBottom: '1rem' }}>{compareFood1.calories} kcal/100g</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem' }}>
@@ -800,7 +826,12 @@ export default function NutriVisualApp() {
               </select>
 
               <div style={{ border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1.25rem', backgroundColor: 'var(--bg-surface)' }}>
-                <img src={compareFood2.image} alt={compareFood2.name} style={{ width: '100%', height: '140px', borderRadius: '8px', objectFit: 'cover', marginBottom: '1rem' }} />
+                <img
+                  src={compareFood2.image}
+                  alt={compareFood2.name}
+                  style={{ width: '100%', height: '140px', borderRadius: '8px', objectFit: 'cover', marginBottom: '1rem' }}
+                  onError={(e) => handleFoodImgError(e, compareFood2)}
+                />
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>{compareFood2.name}</h3>
                 <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)', marginBottom: '1rem' }}>{compareFood2.calories} kcal/100g</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem' }}>
@@ -1173,6 +1204,7 @@ export default function NutriVisualApp() {
                           <img
                             src={food.image}
                             alt={food.name}
+                            onError={(e) => handleFoodImgError(e, food)}
                             style={{
                               width: '44px',
                               height: '44px',
@@ -1480,6 +1512,7 @@ export default function NutriVisualApp() {
                       <img
                         src={food.image}
                         alt={food.name}
+                        onError={(e) => handleFoodImgError(e, food)}
                         style={{
                           width: '48px',
                           height: '48px',
@@ -1549,6 +1582,7 @@ export default function NutriVisualApp() {
                         <img
                           src={food.image}
                           alt={food.name}
+                          onError={(e) => handleFoodImgError(e, food)}
                           style={{
                             width: '40px',
                             height: '40px',

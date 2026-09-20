@@ -232,7 +232,12 @@ const comparisons = [
       <div class="glass-card" style="padding: 2.5rem; margin-bottom: 3rem;">
         <div class="layout-food-hero">
           <div style="border-radius: 16px; overflow: hidden; height: 320px; position: relative;">
-            <img src={food.image} alt={food.name} style="width: 100%; height: 100%; object-fit: cover;" />
+            <img
+              src={food.image}
+              alt={food.name}
+              style="width: 100%; height: 100%; object-fit: cover;"
+              onerror={`if (!this.dataset.failed) { this.dataset.failed = '1'; this.src = '${food.id === 'bacon' ? '/images/bacon.jpg' : 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80'}'; }`}
+            />
             <span style="position: absolute; top: 16px; left: 16px; background-color: var(--bg-header); padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.85rem; color: var(--accent-green); font-weight: 600; backdrop-filter: blur(8px);">
               {food.category}
             </span>
