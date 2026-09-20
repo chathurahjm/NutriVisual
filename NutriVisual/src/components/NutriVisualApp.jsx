@@ -372,47 +372,6 @@ export default function NutriVisualApp() {
                 }}
               />
 
-              {/* Quick Popular Food Presets */}
-              <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
-                {[
-                  { id: 'avocado', label: '🥑 Avocado' },
-                  { id: 'bacon', label: '🥓 Bacon' },
-                  { id: 'atlantic-salmon', label: '🐟 Salmon' },
-                  { id: 'chicken-breast', label: '🍗 Chicken' },
-                  { id: 'beef', label: '🥩 Beef' },
-                  { id: 'ham', label: '🍖 Ham' },
-                  { id: 'cheddar-cheese', label: '🧀 Cheddar' },
-                  { id: 'eggs', label: '🥚 Eggs' },
-                  { id: 'broccoli', label: '🥦 Broccoli' }
-                ].map((preset) => {
-                  const isSel = activeFood.id === preset.id;
-                  return (
-                    <button
-                      key={preset.id}
-                      type="button"
-                      onClick={() => {
-                        setSelectedFoodId(preset.id);
-                        setSearchQuery('');
-                        setOutcomeFilter('');
-                      }}
-                      style={{
-                        fontSize: '0.78rem',
-                        padding: '0.3rem 0.7rem',
-                        borderRadius: '16px',
-                        backgroundColor: isSel ? 'var(--accent-green)' : 'var(--bg-surface)',
-                        color: isSel ? '#ffffff' : 'var(--text-muted)',
-                        border: `1px solid ${isSel ? 'var(--accent-green)' : 'var(--border-color)'}`,
-                        cursor: 'pointer',
-                        fontWeight: 600,
-                        transition: 'all 0.15s ease'
-                      }}
-                    >
-                      {preset.label}
-                    </button>
-                  );
-                })}
-              </div>
-
               {/* Intelligent "Did you search for...?" suggestion bar (handles typos, quantities, and synonyms) */}
               {showSuggestion && smartMatch && (
                 <div
