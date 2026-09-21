@@ -24,6 +24,10 @@ const handleFoodImgError = (e, food) => {
     e.currentTarget.src = '/images/halloumi.jpg';
     return;
   }
+  if (food?.id === 'chicken-liver') {
+    e.currentTarget.src = '/images/chicken-liver.jpg';
+    return;
+  }
   e.currentTarget.src = 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80';
 };
 

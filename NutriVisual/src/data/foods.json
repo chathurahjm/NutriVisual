@@ -5110,7 +5110,39 @@
       "Antioxidants",
       "Prebiotic"
     ]
+  },
+  {
+    "id": "chicken-liver",
+    "name": "Chicken Liver (Pan-Seared)",
+    "category": "Proteins",
+    "image": "/images/chicken-liver.jpg",
+    "servingBaseGrams": 100,
+    "calories": 167,
+    "macros": {
+      "fat": 4.8,
+      "carbs": 0.9,
+      "protein": 24.5
+    },
+    "micros": {
+      "potassium": "230 mg",
+      "magnesium": "19 mg",
+      "fiber": "0 g"
+    },
+    "benefits": [
+      "World-Class Natural Folate (Vitamin B9) & Retinol Vitamin A",
+      "Bioavailable Heme Iron & Active Vitamin B12 Powerhouse",
+      "Dense Choline & Selenium for Cellular Methylation & Brain Health"
+    ],
+    "tags": [
+      "Organ Meat",
+      "High Protein",
+      "Nutrient Dense",
+      "Iron Rich",
+      "Keto Friendly",
+      "Chiken Liver"
+    ]
   }
 ]
+
 
 

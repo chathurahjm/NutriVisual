@@ -170,6 +170,16 @@ export const biohackDatabase = {
       metabolism: 'Potent micronutrient density optimizes thyroid hormone conversion (T4 to active T3).'
     }
   },
+  'chicken-liver': {
+    scores: { brain: 96, muscle: 90, gut: 65, heart: 80, metabolism: 92 },
+    reasons: {
+      brain: 'Astounding natural folate (588mcg/100g, ~147% DV) and choline drive DNA methylation, acetylcholine synthesis, and homocysteine clearance.',
+      muscle: 'Delivers 24.5g of complete bioavailable animal protein packed with leucine and heme iron to fuel muscle oxygenation and repair.',
+      gut: 'Provides readily absorbable bioavailable zinc, selenium, and pre-formed vitamin A essential for mucosal barrier integrity.',
+      heart: 'Abundant heme iron and active vitamin B12 supercharge hemoglobin synthesis and oxygen-carrying capacity without vascular strain.',
+      metabolism: 'High protein-to-energy ratio with under 1g carb stimulates metabolic thermogenesis while stabilizing basal insulin.'
+    }
+  },
   'pork-tenderloin': {
     scores: { brain: 86, muscle: 94, gut: 30, heart: 78, metabolism: 90 },
     reasons: {

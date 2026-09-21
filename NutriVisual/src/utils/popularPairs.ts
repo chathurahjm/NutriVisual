@@ -14,6 +14,8 @@ export const popularPairs: Array<[string, string]> = [
   ['brussels-sprouts', 'broccoli'],
   ['chicken-breast', 'beef'],
   ['beef-liver', 'ribeye'],
+  ['chicken-liver', 'beef-liver'],
+  ['chicken-liver', 'chicken-breast'],
   ['tofu', 'tempeh'],
   ['tofu', 'eggs'],
   ['tuna', 'tofu'],
