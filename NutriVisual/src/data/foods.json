@@ -1207,7 +1207,7 @@
     "id": "cacao-nibs",
     "name": "Cacao Nibs",
     "category": "Superfoods",
-    "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+    "image": "https://plus.unsplash.com/premium_photo-1787271758585-9db8c8122ee7?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 570,
     "macros": {
@@ -2496,7 +2496,7 @@
     "id": "cucumber",
     "name": "Cucumber",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1449339854873-750e6913301b?auto=format&fit=crop&w=600&q=80",
+    "image": "https://images.unsplash.com/photo-1589621316382-008455b857cd?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 15,
     "macros": {
@@ -2552,7 +2552,7 @@
     "id": "celery",
     "name": "Celery",
     "category": "Vegetables",
-    "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80",
+    "image": "https://plus.unsplash.com/premium_photo-1723485646947-c73bf14ccdb7?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 16,
     "macros": {
@@ -3140,7 +3140,7 @@
     "id": "mussels",
     "name": "Blue Mussels (Cooked)",
     "category": "Proteins",
-    "image": "https://images.unsplash.com/photo-1548695607-9c73430ba065?auto=format&fit=crop&w=600&q=80",
+    "image": "https://images.unsplash.com/photo-1757972367630-fbfcec63bb41?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 172,
     "macros": {
@@ -4830,7 +4830,7 @@
     "id": "blackberries",
     "name": "Fresh Blackberries",
     "category": "Fruits",
-    "image": "https://images.unsplash.com/photo-1517456793572-1d8efd6dc135?auto=format&fit=crop&w=600&q=80",
+    "image": "https://images.unsplash.com/photo-1567870335471-1129836babcf?auto=format&fit=crop&w=600&q=80",
     "servingBaseGrams": 100,
     "calories": 43,
     "macros": {

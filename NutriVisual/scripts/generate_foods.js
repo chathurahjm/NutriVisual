@@ -60,7 +60,7 @@ const foodImageMap = {
   "Chia Pudding": "https://images.unsplash.com/photo-1517673400267-0251440c45dc?auto=format&fit=crop&w=600&q=80",
   "Kimchi": "https://images.unsplash.com/photo-1583224964978-2257b960c3d3?auto=format&fit=crop&w=600&q=80",
   "Bone Broth": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80",
-  "Cacao Nibs": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+  "Cacao Nibs": "https://plus.unsplash.com/premium_photo-1787271758585-9db8c8122ee7?auto=format&fit=crop&w=600&q=80",
   "Sweet Potato": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
   "Brussels Sprouts": "https://images.unsplash.com/photo-1438118991616-0e5d0337c7e5?auto=format&fit=crop&w=600&q=80",
   "Red Beets": "https://images.unsplash.com/photo-1593105544559-ecb03bf76f82?auto=format&fit=crop&w=600&q=80",
